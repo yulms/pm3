@@ -1,0 +1,573 @@
+.check, .radio {
+  display: block; /* ??? */
+  padding-left: 28px;
+}
+
+.check-input, .radio-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* not checked */
+.check__box, .radio__box {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid #adadad;
+  margin-left: -28px;
+  margin-top: 1px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.check__box {
+border-radius: 4px;
+}
+
+.radio__box {
+  border-radius: 50%;  
+}
+
+/* Checked */
+.check-input:checked + .check__box {
+  background-color: #01768b;
+  border-color: #01768b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolyline points='2,8 6,13 14,3' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+/* focused или hovered */
+.check-input:focus + .check__box,
+.check-input:hover + .check__box {
+  border-color: #01768b;
+}
+
+/* Checked Hovered + Checked Focused */
+.check-input:checked:focus:not(:disabled) + .check__box,
+.check-input:checked:hover:not(:disabled) + .check__box {
+  background-color: #006475;
+  border-color: #006475;
+}
+
+.check-input:disabled + .check__box {
+  border-color: #e0e0e0;
+}
+
+.check-input:checked:disabled + .check__box {
+  background-color: #e0e0e0;
+}
+
+/* not checked */
+
+
+/* Checked */
+.radio-input:checked + .radio__box {
+  border-color: #01768b;
+  box-shadow: inset 0 0 0 2px white,
+              inset 0 0 0 8px #01768b;
+}
+
+/* focused или hovered */
+.radio-input:focus + .radio__box,
+.radio-input:hover + .radio__box {
+  border-color: #01768b;
+}
+
+/* Checked Hovered + Checked Focused */
+.radio-input:checked:focus + .radio__box,
+.radio-input:checked:hover + .radio__box {
+  border-color: #006475;
+  box-shadow: inset 0 0 0 2px white,
+              inset 0 0 0 8px #006475;
+}
+
+.radio-input:not(:checked):disabled + .radio__box {
+  border-color: #e0e0e0;
+}
+
+.radio-input:checked:disabled + .radio__box {
+  border-color: #e0e0e0;
+  box-shadow: inset 0 0 0 2px white,
+              inset 0 0 0 8px #e0e0e0;
+}
+
+
+.textfield {
+  position: relative;
+  display: block;
+  padding-top: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+textarea.textfield__element {
+  resize: vertical;
+  display: block;
+  overflow: auto;
+}
+
+/* Input, Textarea */
+.textfield__element {
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-top-color: transparent;
+  border-radius: 4px;
+  padding: 11px 13px 11px;
+  width: 100%;
+  height: inherit;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: white;
+  box-shadow: none; /* Firefox */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Span */
+.textfield__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  border-color: rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-height: 100%;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+  cursor: text;
+  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+/* Corners */
+.textfield__placeholder::before,
+.textfield__placeholder::after {
+  content: "";
+  display: block;
+  margin-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  min-width: 10px;
+  height: 8px;
+  pointer-events: none;
+  box-shadow: inset 0 1px transparent;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.textfield__placeholder::before {
+  margin-right: 4px;
+  border-left: solid 1px transparent;
+  border-radius: 4px 0;
+}
+
+.textfield__placeholder::after {
+  flex-grow: 1;
+  margin-left: 4px;
+  border-right: solid 1px transparent;
+  border-radius: 0 4px;
+}
+
+.textfield:hover > .textfield__element {
+  border-color: #01768b;
+  border-top-color: transparent;
+}
+
+.textfield:hover > .textfield__placeholder::before,
+.textfield:hover > .textfield__placeholder::after {
+  border-top-color: #01768b;
+}
+
+.textfield:hover > .textfield__element:not(:focus):placeholder-shown {
+  border-top-color: #01768b;
+}
+
+/* Placeholder-shown */
+.textfield__element:not(:focus):placeholder-shown {
+  border-top-color: rgba(0, 0, 0, 0.12);
+}
+
+.textfield__element:not(:focus):placeholder-shown + .textfield__placeholder {
+  font-size: inherit;
+  line-height: 64px;
+}
+
+.textfield__element:not(:focus):placeholder-shown
+  + .textfield__placeholder::before,
+.textfield__element:not(:focus):placeholder-shown
+  + .textfield__placeholder::after {
+  border-top-color: transparent;
+}
+
+/* Focus */
+.textfield__element:focus {
+  border-color: #01768b;
+  border-top-color: transparent;
+  box-shadow: inset 1px 0 #01768b, inset -1px 0 #01768b, inset 0 -1px #01768b;
+  outline: none;
+}
+
+.textfield__element:focus + .textfield__placeholder {
+  color: #01768b;
+}
+
+.textfield > input:focus + span::before,
+.textfield > input:focus + span::after,
+.textfield > textarea:focus + span::before,
+.textfield > textarea:focus + span::after {
+  border-top-color: #01768b;
+  box-shadow: inset 0 1px #01768b;
+}
+
+/* Disabled */
+.textfield__element:disabled,
+.textfield__element:disabled + .textfield__placeholder {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-top-color: transparent !important;
+  color: rgba(0, 0, 0, 0.38);
+  pointer-events: none;
+}
+
+.textfield__element:disabled + .textfield__placeholder::before,
+.textfield__element:disabled + .textfield__placeholder::after {
+  border-top-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.textfield__element:disabled:placeholder-shown,
+.textfield__element:disabled:placeholder-shown + .textfield__placeholder {
+  border-top-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.textfield__element:disabled:placeholder-shown
+  + .textfield__placeholder::before,
+.textfield__element:disabled:placeholder-shown
+  + .textfield__placeholder::after {
+  border-top-color: transparent !important;
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .textfield__element,
+    .textfield__placeholder,
+    .textfield__placeholder::before,
+    .textfield__placeholder::after {
+      transition-duration: 0.1s;
+    }
+  }
+}
+
+
+
+
+
+.button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  font: inherit;
+  letter-spacing: inherit;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .15s;
+  color: inherit;
+}
+
+.button__text {
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+.button .icon + .button__text {
+  margin-left: 0;
+}
+
+.button__icon {
+  vertical-align: middle;
+}
+
+.button--type--action-prymary {
+  height: 48px;
+  border-radius: 4px;
+  background-color: #ffd343;
+  color: rgba(0,0,0,.9);
+}
+
+.button--type--action-prymary:hover,
+.button--type--action-prymary:focus {
+  background-color: #ffc400;
+}
+
+.button--type--action-secondary {
+  height: 48px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid #ffd343;
+}
+
+.button--type--action-secondary:hover,
+.button--type--action-secondary:focus {
+  background-color: rgba(255,196,0,.06);
+  border-color: #ffc400;
+}
+
+.button--type--options-prymary {
+  height: 48px;
+  border-radius: 4px;
+  background-color: #01768B;
+  color: #fff;
+}
+
+.button--type--options-prymary:hover,
+.button--type--options-prymary:focus {
+  background-color: #006475;
+}
+
+.button--type--options-secondary {
+  height: 32px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid #01768B;
+}
+
+.button--type--options-secondary:hover,
+.button--type--options-secondary:focus {
+  background-color: rgba(1,118,139,.06);
+  border-color: #006475;
+}
+
+.button[disabled] {
+  background-color: rgba(0,0,0,.12);
+  border: 0;
+  color: rgba(0,0,0,.54);
+  cursor: auto;
+}
+
+.button[disabled] .icon {
+  opacity: 0.3;
+}
+
+.button--type--filter-remove {
+  height: 32px;
+  border-radius: 16px;
+  background-color: #faf9f7;
+  box-shadow: inset 0 0 0 1px #888;
+}
+
+.button--type--filter-remove .button__text {
+  margin: 0 4px 0 16px;
+}
+
+.button--type--filter-remove .button__icon {
+  margin-right: 4px;
+  stroke: #888;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.button--type--filter-remove:hover {
+  box-shadow: inset 0 0 0 2px #01768B;
+}
+
+.button--type--filter-remove:hover .button__icon {
+  stroke: #01768B;
+}
+
+.radio-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.radio-button__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 24px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
+  transition: background 0.15s;
+}
+
+.radio-button--big .radio-button__box {
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 24px;
+}
+
+.radio-input:hover + .radio-button__box,
+.radio-input:focus + .radio-button__box {
+  background-color: rgba(1,118,139,.06);
+}
+
+.radio-input:checked + .radio-button__box {
+  box-shadow: inset 0 0 0 2px #01768B;
+}
+
+.radio-input:disabled + .radio-button__box {
+  box-shadow: none;
+  background-color: rgba(0,0,0,.12);
+  color: rgba(0,0,0,.54);
+  cursor: not-allowed;
+}
+
+
+
+
+.switch-view {
+  display: inline-flex;
+}
+
+.switch-view__box {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.radio-input:checked + .switch-view__icon {
+  box-shadow: inset 0 0 0 2px #01768B;
+}
+
+.radio-input:hover + .switch-view__icon,
+.radio-input:focus + .switch-view__icon {
+  background-color: rgba(1,118,139,.06);
+}
+
+
+
+
+.range-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.range-select > .textfield {
+  flex-grow: 1;
+  flex-basis: 90px;
+}
+
+.range-select > span {
+  text-align: center;
+  margin: 0 8px;
+  flex-grow: 0.6;
+}
+
+.range-slider {
+  flex-basis: 100%;
+  margin: 24px 12px 0;
+}
+
+
+/*! nouislider - 14.1.1 - 12/15/2019 */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.noUi-target {
+  position: relative;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+.noUi-base,
+.noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+.noUi-connect,
+.noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+.noUi-connect {
+  height: 100%;
+  width: 100%;
+  background: #01768b;
+}
+.noUi-origin {
+  height: 0;
+  width: 10%;
+}
+.noUi-handle {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: -12px;
+  top: -8px;
+  border: 2px solid #01768b;
+  border-radius: 50%;
+  background: #FFF;
+  cursor: default;
+}
+.noUi-touch-area {
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  left: -14px;
+  top: -14px;
+}
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+.noUi-horizontal {
+  height: 8px;
+}
+.noUi-active {
+  background-color: #01768b;
+  box-shadow: inset 0 0 0 2px white;
+}
+[disabled] .noUi-connect {
+  background: #e0e0e0;
+}
+[disabled] .noUi-handle {
+  border: 2px solid #e0e0e0;
+}
+
+[disabled].noUi-target,
+[disabled].noUi-handle,
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+.noUi-value-horizontal {
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="js/nouislider.min.js"></script>
+  <style>
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    h4 {
+      margin: 32px 0 16px;
+    }
+    h4:first-child {
+      margin-top: 0;
+    }
+    h5 {
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    .group {
+      flex-basis: 300px;
+      box-shadow: 0px 3px 6px #00000029;
+      margin: 16px;
+      padding: 24px;
+      flex-grow: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- CHECK -->
+    <section class="group">
+      <h4>Check</h4>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox">
+        <span class="check__box"></span>
+        <span>Not checked</span>
+      </label>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox" checked>
+        <span class="check__box"></span>
+        Checked
+      </label>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox" disabled>
+        <span class="check__box"></span>
+        Not checked disabled
+      </label>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox" checked disabled>
+        <span class="check__box"></span>
+        Checked disabled
+      </label>
+    </section>
+
+    <!-- RADIO -->
+    <section class="group">
+      <h4>Radio</h4>
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem" value="one">
+        <span class="radio__box"></span>
+        Not checked
+      </label>
+
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem" value="two" checked>
+        <span class="radio__box"></span>
+        Checked
+      </label>
+
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem2" value="two" disabled>
+        <span class="radio__box"></span>
+        Not checked disabled
+      </label>
+
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem2" value="two" checked disabled>
+        <span class="radio__box"></span>
+        Checked disabled
+      </label>
+    </section>
+
+    <!-- TEXT-FIELDS -->
+    <section class="group">
+      <h4>Text</h4>
+      <label class="textfield">
+        <input class="textfield__element" type="text" placeholder=" ">
+        <span class="textfield__placeholder">Ваш email</span>
+      </label>
+
+      <h4>Textarea</h4>
+      <label class="textfield"> 
+        <textarea class="textfield__element" rows="5" cols="50" placeholder=" "></textarea>
+        <span class="textfield__placeholder">Ваш email</span>
+      </label>
+
+      <h4>Number</h4>
+      <label class="textfield">
+        <input class="textfield__element" type="number" value="1" min="1" placeholder=" ">
+        <span class="textfield__placeholder">Количество</span>
+      </label>
+    </section>
+
+    <!-- RANGE-SELECT -->
+    <section class="group">
+      <h4>Range select</h4>
+      <div class="range-select">
+        <label class="textfield">
+          <input class="textfield__element" id="input-from" type="number" value="1" min="1" max="1000" placeholder=" ">
+          <span class="textfield__placeholder">Минимум</span>
+        </label>
+        <span>до</span>
+        <label class="textfield">
+          <input class="textfield__element" id="input-to" type="number" value="1" min="1" max="1000" placeholder=" ">
+          <span class="textfield__placeholder">Максимум</span>
+        </label>
+
+        <div class="range-slider" id="range-slider"></div>
+        <script>
+          var rangeSlider = document.getElementById('range-slider');
+          noUiSlider.create(rangeSlider, {
+              range: {
+                  'min': [1],
+                  'max': [1000]
+              },
+              start: [1, 1000],
+              margin: 0, // минимальная разница
+              connect: true, //цветной центр
+              step: 1,
+              format: {
+                to: function (value) {
+                    return parseInt(value);
+                },
+                from: function (value) {
+                    return parseInt(value);
+                }
+              }
+          });
+          var inputFrom = document.getElementById('input-from');
+          var inputTo = document.getElementById('input-to');
+          var inputs = [inputFrom, inputTo];
+          rangeSlider.noUiSlider.on('update', function (values, handle) {
+              inputs[handle].value = values[handle];
+          });
+          inputFrom.addEventListener('change', function () {
+              rangeSlider.noUiSlider.set([this.value, null]);
+          });
+          inputTo.addEventListener('change', function () {
+              rangeSlider.noUiSlider.set([null, this.value]);
+          });
+        </script>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="group">
+      <h4>Buttons</h4>
+
+      <h5>Call to action - prymary</h5>
+      <button class="button button--type--action-prymary">
+        <span class="button__text">Купить</span>
+      </button>
+      <button class="button button--type--action-prymary" disabled>
+        <span class="button__text">Action disabled</span>
+      </button>
+
+      <h5>Call to action - secondary</h5>
+      <button class="button button--type--action-secondary">
+        <span class="icon icon--size--24px icon--type--favorite button__icon"></span>
+        <span class="button__text">Сохранить</span>
+      </button>
+      <button class="button button--type--action-secondary" disabled>
+        <span class="icon icon--size--24px icon--type--favorite button__icon"></span>
+        <span class="button__text">Disabled</span>
+      </button>
+
+      <h5>Options - prymary</h5>
+      <button class="button button--type--options-prymary">
+        <span class="button__text">Secondary</span>
+      </button>
+      <button class="button button--type--options-prymary" disabled>
+        <span class="button__text">Secondary disabled</span>
+      </button>
+
+      <h5>Options - secondary</h5>
+      <button class="button button--type--options-secondary">
+        <span class="button__text">Secondary</span>
+      </button>
+      <button class="button button--type--options-secondary" disabled>
+        <span class="button__text">Secondary disabled</span>
+      </button>
+
+      <h5>Remove Filter</h5>
+      <button class="button button--type--filter-remove">
+        <span class="button__text">от 100 до 250 руб.</span>
+        <svg class="button__icon" width="24" height="24" viewBox='0 0 24 24'>
+          <line x1='7' y1='7' x2='17' y2='17'/>
+          <line x1='7' y1='17' x2='17' y2='7'/>
+        </svg>
+      </button>
+
+      <button class="button button--type--filter-remove">
+        <span class="button__text">BergHOFF</span>
+        <svg class="button__icon" width="24" height="24" viewBox='0 0 24 24'>
+          <line x1='7' y1='7' x2='17' y2='17'/>
+          <line x1='7' y1='17' x2='17' y2='7'/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- RADIO-BUTTONS -->
+    <section class="group">
+      <h4>Radio Buttons</h4>
+
+      <h5>Radio button - Big</h5>
+      <label class="radio-button radio-button--big">
+        <input class="radio-input" type="radio" name="radio-button" value="1" checked>
+        <span class="radio-button__box">Красный</span>
+      </label>
+
+      <label class="radio-button radio-button--big">
+        <input class="radio-input" type="radio" name="radio-button" value="2">
+        <span class="radio-button__box">Синий</span>
+      </label>
+
+      <label class="radio-button radio-button--big">
+        <input class="radio-input" type="radio" name="radio-button" value="3">
+        <span class="radio-button__box">Оранжевый</span>
+      </label>
+
+      <label class="radio-button radio-button--big">
+        <input class="radio-input" type="radio" name="radio-button" value="4" disabled>
+        <span class="radio-button__box">Зеленwый</span>
+      </label>
+
+
+      <h5>Radio button - Small</h5>
+      <label class="radio-button">
+        <input class="radio-input" type="radio" name="radio-sort" value="1" checked>
+        <span class="radio-button__box">Популярности</span>
+      </label>
+
+      <label class="radio-button">
+        <input class="radio-input" type="radio" name="radio-sort" value="2">
+        <span class="radio-button__box">Цене</span>
+      </label>
+
+      <label class="radio-button">
+        <input class="radio-input" type="radio" name="radio-sort" value="3" disabled>
+        <span class="radio-button__box">Рейтингу</span>
+      </label>
+
+
+      <h5>Radio button - Switch View</h5>
+      <div class="switch-view">
+        <span>Вид каталога:</span>
+        <label class="switch-view__box">
+          <input class="radio-input" type="radio" name="radio-view" value="1" checked>
+          <svg class="switch-view__icon" width="24" height="24" viewbox="0 0 24 24"  stroke-width="2" stroke="#888" fill="none">
+            <rect width="5" height="5" x="5" y="5"/>
+            <rect width="5" height="5" x="5" y="14"/>
+            <rect width="5" height="5" x="14" y="5"/>
+            <rect width="5" height="5" x="14" y="14"/>
+          </svg>
+        </label>
+
+        <label class="switch-view__box">
+          <input class="radio-input" type="radio" name="radio-view" value="2">
+          <svg class="switch-view__icon" width="24" height="24" viewbox="0 0 24 24"  stroke-width="2" stroke="#888" fill="none">
+            <rect width="5" height="5" x="5" y="5"/>
+            <rect width="5" height="5" x="5" y="14"/>
+            <line x1="14" y1="5" x2="20" y2="5"/>
+            <line x1="14" y1="9" x2="20" y2="9"/>
+            <line x1="14" y1="14" x2="20" y2="14"/>
+            <line x1="14" y1="18" x2="20" y2="18"/>
+          </svg>
+        </label>
+      </div>
+    </section>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
