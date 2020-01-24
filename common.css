@@ -131,6 +131,33 @@ img {
   line-height: 1.42857;
 }
 
+.text-on-dark {
+  color: #ccc;
+}
+
+.link {
+  color: #01768B;
+  transition: color 0.1s;
+  cursor: pointer;
+}
+
+.link--nounderline {
+  text-decoration: none;
+}
+
+.link--nounderline:hover {
+    text-decoration: underline;
+    /* border-bottom: 2px dotted currentColor; */
+}
+
+.link--white {
+  color: #ccc;
+}
+
+.link--white:hover {
+  color: #fff;
+}
+
 .price {
   font-size: 1.5rem;
   color: rgba(0,0,0,.7);
@@ -146,5 +173,5 @@ img {
 }
 
 .price--discount {
-    color: #C91F24;
+  color: #C91F24;
 }

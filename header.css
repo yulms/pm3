@@ -11,9 +11,8 @@
 @media (min-width: 980px) {
   .header__top-panel {
     margin: 0;
-    justify-content: space-between;
-    align-items: baseline;
     display: flex;
+    align-items: baseline;
   }
 }
 
@@ -52,6 +51,7 @@
 @media (min-width: 980px) {
   .header__top-banner {
     flex-grow: 1;
+    margin-right: 96px;
     border-bottom-right-radius: 22px;
   }
 }
@@ -64,23 +64,26 @@
   .header__top-menu {
     display: flex;
     list-style: none;
-    margin: 0 24px;
+    margin: 0 24px 0 auto;
     padding: 0;
+    min-height: 32px;
   }
   .header__top-menu-item {
+    display: inline-flex;
+    align-items: center;
     white-space: nowrap;
   }
   .header__top-menu-item + .header__top-menu-item {
-    margin-left: 24px;
+    margin-left: 48px;
   }
 }
 
 /* удалить после верстки */
-.header__main-panel div,
+/* .header__main-panel div,
 .header__main-panel a {
   outline: 1px dashed silver;
   background-color: #508C97;
-}
+} */
 
 .header__main-panel {
   display: flex;
@@ -91,35 +94,66 @@
 
 @media (min-width: 980px) {
   .header__main-panel {
-    padding-top: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 
 .header__link {
-  flex-basis: 32px;
   max-width: 48px;
   height: 48px;
   flex-grow: 1;
-}
-
-.header__icon {
-  width: 100%;
-  stroke: #ccc;
-  stroke-width: 2px;
-}
-
-.header__link:hover .header__icon {
-  stroke: #fff;
-}
-
-.header__logo {
-  height: 48px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  color: #ccc;
+}
+
+.header__link:hover {
+  color: #fff;
+}
+
+@media (min-width: 980px) {
+  .header__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.header__logo-container {
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 980px) {
+  .header__logo {
+    width: 136px;
+    height: 48px;
+  }
+}
+
+.header__logo-caption {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  .header__logo-caption {
+    display: inline;
+    margin-top: -6px;
+    font-size: 10px;
+    color: #a8a8a8;
+    text-decoration: none;
+  }
 }
 
 .header__link--tel {
   margin-left: auto;
+}
+
+.header__link--cart {
+  background-color: transparent;
 }
 
 @media (min-width: 608px) {
@@ -153,7 +187,7 @@
   .header__link--burger {
     display: none;
   }
-  .header__logo {
+  .header__logo-container {
     order: -2;
   }
 }
@@ -165,6 +199,15 @@
 .header__search-button {
   width: 48px;
   flex-shrink: 0;
+}
+
+.header__city {
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
 }
 
 
