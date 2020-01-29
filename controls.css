@@ -278,6 +278,7 @@ textarea.textfield__element {
   -webkit-appearance: button;
   white-space: nowrap;
   cursor: pointer;
+  background: 0 0;
   transition: background .15s;
   color: inherit;
 }
