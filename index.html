@@ -149,8 +149,8 @@
         <ul class="main-nav__list main-nav__list--lvl1">
           <li class="main-nav__item--lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Кухонная посуда</a>
-            <ul class="main-nav__list main-nav__list--lvl2">
-              <li class="main-nav__item--close">
+            <div class="main-nav__dropdown">
+              <div class="main-nav__close-container">
                 <button class="button button--modal-close" type="button">
                   <span class="button__flex-container">
                     <span class="button__text link">Закрыть</span>
@@ -159,66 +159,77 @@
                     </svg>
                   </span>
                 </button>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
-                </ul>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
-                </ul>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
-                </ul>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
-                </ul>
-              </li>
-            </ul>
+              </div>
+              <ul class="main-nav__list main-nav__list--lvl2">
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a class="main-nav__banner" href="#">
+                <div class="banner-offer">
+                  <h2 class="title1">Подари радость любимой</h2>
+                  <p class="banner-offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+                  <p class="banner-offer__p banner-offer__p--action">распродажа!</p>
+                  <span class="banner-offer__button">Подробнее</span>
+                </div>
+                <img src="img\menu-banner-1.jpg" width="400" height="400" alt="Перейти к спецпредложению">
+              </a>
+            </div>
           </li>
           <li class="main-nav__item--lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Столовая посуда</a>
-            <ul class="main-nav__list main-nav__list--lvl2">
-              <li class="main-nav__item--close">
+            <div class="main-nav__dropdown">
+              <div class="main-nav__close-container">
                 <button class="button button--modal-close" type="button">
                   <span class="button__flex-container">
                     <span class="button__text link">Закрыть</span>
@@ -227,64 +238,179 @@
                     </svg>
                   </span>
                 </button>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
-                </ul>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
-                </ul>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
-                </ul>
-              </li>
-              <li class="main-nav__item--lvl2">
-                <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
-                <ul class="main-nav__list">
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
-                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
-                </ul>
-              </li>
-            </ul>
+              </div>
+              <ul class="main-nav__list main-nav__list--lvl2">
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a class="main-nav__banner" href="#">
+                <div class="banner-offer">
+                  <h2 class="title1">Подари радость любимой</h2>
+                  <p class="banner-offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+                  <p class="banner-offer__p banner-offer__p--action">распродажа!</p>
+                  <span class="banner-offer__button">Подробнее</span>
+                </div>
+                <img src="img\menu-banner-2.jpg" width="400" height="400" alt="Перейти к спецпредложению">
+              </a>
+            </div>
           </li>
           <li class="main-nav__item--lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Кухонные принадлежности</a>
+            <div class="main-nav__dropdown">
+              <div class="main-nav__close-container">
+                <button class="button button--modal-close" type="button">
+                  <span class="button__flex-container">
+                    <span class="button__text link">Закрыть</span>
+                    <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="svg/sprite.svg#icon-close"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <ul class="main-nav__list main-nav__list--lvl2">
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item--lvl2">
+                  <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
+                  <ul class="main-nav__list">
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
+                    <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="main-nav__item--lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Посуда для хранения</a>
@@ -305,7 +431,7 @@
 
   <main>
 
-    <h1>Интернет-магазин посуды</h1>
+    <h1 class="visually-hidden">Интернет-магазин посуды</h1>
 
     <!-- Промоблоки -->
     <section>
