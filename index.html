@@ -1,219 +1,305 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="preload" href="fonts\montserrat-v14-latin_cyrillic-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-
-  <svg style="display: none">
-
-    <symbol id="icon-logo" viewBox="0 0 102 32">
-      <g data-name="Subtraction 1" fill="none">
-        <path d="M63.74 31.6V30c10.1-.26 19.45-1.44 26.32-3.33 6.9-1.9 10.7-4.35 10.7-6.92 0-1.39-1.09-2.74-3.24-4.01a34.34 34.34 0 00-8.86-3.28c-7.81-1.94-18.2-3.02-29.24-3.02-11.37 0-21.97 1.13-29.84 3.18h-1.35c8.3-2.52 19.9-3.97 31.8-3.97 11.26 0 21.85 1.27 29.8 3.56a32.33 32.33 0 018.92 3.8c2.16 1.45 3.25 2.97 3.25 4.53 0 1.48-.98 2.89-2.92 4.2a28.72 28.72 0 01-8.06 3.41c-7 2-16.68 3.22-27.28 3.45z"/>
-        <path d="M63.74 31.6V30c10.1-.26 19.45-1.44 26.32-3.33 6.9-1.9 10.7-4.35 10.7-6.92 0-1.4-1.09-2.74-3.24-4.01-2.08-1.23-5.07-2.33-8.86-3.28-7.81-1.94-18.2-3.02-29.24-3.02-11.37 0-21.97 1.13-29.84 3.18h-1.35c8.31-2.52 19.9-3.97 31.8-3.97 11.26 0 21.85 1.27 29.8 3.56 3.82 1.1 6.82 2.38 8.92 3.8 2.16 1.45 3.25 2.97 3.25 4.53 0 1.48-.98 2.89-2.92 4.2-1.88 1.28-4.59 2.42-8.06 3.42-7 1.99-16.68 3.21-27.28 3.44z" fill="#e8e8e8"/>
-      </g>
-      <g fill="#e8e8e8">
-        <path data-name="Logo ПосудаМАРТ" d="M9.42 9.98V23.7H8.26V11h-7.1v12.7H0V9.98zm6.34 13.8a4.37 4.37 0 01-2.2-.55 4.03 4.03 0 01-1.53-1.53 4.36 4.36 0 01-.56-2.2 4.36 4.36 0 01.56-2.21 3.97 3.97 0 011.54-1.52 4.42 4.42 0 012.19-.55 4.42 4.42 0 012.2.55 3.91 3.91 0 011.52 1.52 4.4 4.4 0 01.55 2.2 4.4 4.4 0 01-.55 2.21 3.97 3.97 0 01-1.53 1.53 4.37 4.37 0 01-2.19.55zm0-1a3.18 3.18 0 001.6-.41 2.84 2.84 0 001.12-1.17 3.59 3.59 0 00.4-1.71 3.59 3.59 0 00-.4-1.71 2.84 2.84 0 00-1.11-1.16 3.18 3.18 0 00-1.61-.41 3.18 3.18 0 00-1.6.4 2.9 2.9 0 00-1.13 1.17 3.53 3.53 0 00-.4 1.71 3.53 3.53 0 00.4 1.71 2.9 2.9 0 001.12 1.16 3.18 3.18 0 001.61.41zm9.58 1a4.54 4.54 0 01-2.23-.54 3.94 3.94 0 01-1.54-1.53 4.4 4.4 0 01-.56-2.22 4.36 4.36 0 01.56-2.2 3.95 3.95 0 011.54-1.52 4.54 4.54 0 012.23-.55 4.32 4.32 0 011.95.43 3.23 3.23 0 011.35 1.24l-.85.57a2.65 2.65 0 00-1.05-.93 3.13 3.13 0 00-1.4-.32 3.3 3.3 0 00-1.64.41 2.87 2.87 0 00-1.13 1.16 3.53 3.53 0 00-.41 1.71 3.52 3.52 0 00.4 1.72 2.88 2.88 0 001.14 1.16 3.3 3.3 0 001.64.4 3.2 3.2 0 001.4-.3 2.6 2.6 0 001.05-.93l.85.58a3.22 3.22 0 01-1.36 1.24 4.34 4.34 0 01-1.94.42zm11.87-8.5l-4.2 9.43a4.02 4.02 0 01-1.18 1.68 2.65 2.65 0 01-1.62.5 3.3 3.3 0 01-1.13-.2 2.46 2.46 0 01-.92-.57l.53-.85a2.1 2.1 0 001.54.64 1.55 1.55 0 00.98-.32 2.9 2.9 0 00.76-1.09l.37-.81-3.76-8.4h1.18l3.17 7.15 3.17-7.15zm8.98 7.43v3.02h-1.07V23.7h-7.54v2.03h-1.07v-3.02H37q.85-.05 1.15-1.25a18.27 18.27 0 00.42-3.36l.11-2.81h6.21v7.42zm-6.59-4.54a20.97 20.97 0 01-.3 2.95 2.51 2.51 0 01-.8 1.59h5.25v-6.42H39.7zm11.06-2.95a3.56 3.56 0 012.52.83 3.18 3.18 0 01.88 2.44v5.21h-1.08V22.4a2.6 2.6 0 01-1.13 1.02 3.95 3.95 0 01-1.77.37 3.46 3.46 0 01-2.24-.67 2.17 2.17 0 01-.83-1.78 2.15 2.15 0 01.77-1.73 3.8 3.8 0 012.48-.65h2.67v-.52a2.16 2.16 0 00-.61-1.65 2.51 2.51 0 00-1.78-.57 4.51 4.51 0 00-1.53.26 3.87 3.87 0 00-1.27.73l-.5-.85a4.54 4.54 0 011.53-.84 5.98 5.98 0 011.89-.29zm-.4 7.67a3 3 0 001.64-.44 2.63 2.63 0 001.03-1.28V19.8h-2.64q-2.16 0-2.16 1.5a1.38 1.38 0 00.56 1.16 2.55 2.55 0 001.57.43zM64.74 23.7l2.88-20.82-5.71 11.4h-.87l-6.7-11.42 3.83 20.84h-1.83L52.51 0h2.1l6.91 11.98L67.54 0h1.88l-2.87 23.7zm7.04-8.64a4.17 4.17 0 012.9.9 3.5 3.5 0 011 2.73v5.01h-1.9v-1.04a2.33 2.33 0 01-1.04.86 4.1 4.1 0 01-1.64.3 4.02 4.02 0 01-1.68-.33 2.6 2.6 0 01-1.12-.92 2.31 2.31 0 01-.4-1.32 2.26 2.26 0 01.87-1.85 4.25 4.25 0 012.7-.7h2.2v-.12a1.75 1.75 0 00-.53-1.38 2.32 2.32 0 00-1.6-.48 4.6 4.6 0 00-1.41.23 3.48 3.48 0 00-1.18.62l-.78-1.46a4.86 4.86 0 011.61-.78 7.19 7.19 0 012-.27zm-.27 7.3a2.58 2.58 0 001.34-.34 1.87 1.87 0 00.82-.99v-.99h-2.06q-1.73 0-1.73 1.14a1.02 1.02 0 00.43.86 1.98 1.98 0 001.2.32zm10.74-7.3a4.54 4.54 0 012.23.54 3.92 3.92 0 011.54 1.54 4.57 4.57 0 01.56 2.29 4.62 4.62 0 01-.56 2.3 3.9 3.9 0 01-1.54 1.54 4.54 4.54 0 01-2.23.54 3.45 3.45 0 01-2.74-1.15l-.1 8.94h-2l.1-16.44h1.9v1.12a3.1 3.1 0 011.23-.91 4.13 4.13 0 011.6-.3zm-.23 7.04a2.42 2.42 0 001.82-.73 2.67 2.67 0 00.71-1.94 2.67 2.67 0 00-.71-1.94 2.42 2.42 0 00-1.82-.73 2.57 2.57 0 00-1.3.33 2.37 2.37 0 00-.9.93 2.86 2.86 0 00-.34 1.41 2.86 2.86 0 00.33 1.4 2.37 2.37 0 00.91.94 2.57 2.57 0 001.3.33zm12.36-5.25h-3v6.85h-2v-6.85h-3v-1.7h8z"/>
-      </g>
-    </symbol>
-
-    <symbol id="icon-burger" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
-      <path d="M3 5h18"/>
-      <path d="M3 12h18"/>
-      <path d="M3 19h18"/>
-    </symbol>
-
-    <symbol id="icon-love" viewBox='0 0 24 24'>
-      <path d="M16.05 4A4.45 4.45 0 0012 6a4.32 4.32 0 00-4.05-2A5.1 5.1 0 003 9.03c0 2.06 1.35 4.11 3.94 6.74a36.81 36.81 0 004.72 4L12 20l.34-.23a36.81 36.81 0 004.72-4C19.65 13.14 21 11.1 21 8.91A5.1 5.1 0 0016.05 4z" vector-effect="non-scaling-stroke"/>
-    </symbol>
-
-    <symbol id="icon-tel" viewBox='0 0 24 24'>
-      <path d="M16.25 13.54a1.64 1.64 0 00-1.2-.56 1.7 1.7 0 00-1.21.55l-1.12 1.13-.27-.14a2.29 2.29 0 01-.35-.19 12.22 12.22 0 01-2.92-2.69 7.28 7.28 0 01-.95-1.52c.29-.27.56-.55.82-.82l.3-.3a1.66 1.66 0 000-2.48l-.97-.98-.33-.34-.66-.67a1.67 1.67 0 00-1.19-.52 1.73 1.73 0 00-1.2.52v.01L3.8 5.77a2.64 2.64 0 00-.78 1.67 6.35 6.35 0 00.45 2.65 15.47 15.47 0 002.7 4.58 16.7 16.7 0 005.56 4.4 8.57 8.57 0 003.11.93h.23a2.65 2.65 0 002.04-.88l.01-.02a8.1 8.1 0 01.62-.65l.46-.46a1.8 1.8 0 00.54-1.24 1.73 1.73 0 00-.55-1.23z" vector-effect="non-scaling-stroke"/>
-      <path d="M18 10c0-4.99-5-5-5-5M14 1.96s7.04.02 7.04 7.04" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-    </symbol>
-
-    <symbol id="icon-user" viewBox="0 0 24 24">
-      <path d="M12 3a5 5 0 11-5 5 5 5 0 015-5z" vector-effect="non-scaling-stroke"/>
-      <path d="M12 15c5 0 9 2.3 9 4s-4 2-9 2-9-.3-9-2 4-4 9-4z" vector-effect="non-scaling-stroke"/>
-    </symbol>
-
-    <symbol id="icon-cart" viewBox="0 0 24 24">
-      <path d="M6 8h12a1 1 0 011 1v4a35.48 35.48 0 001 7 1 1 0 01-1 1H5a1 1 0 01-1-1 35.48 35.48 0 001-7V9a1 1 0 011-1z" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-      <path d="M9 10s-.75-3.25 0-5 1.5-2 3-2 2.25.25 3 2 0 5 0 5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-    </symbol>
-
-    <symbol id="icon-place" viewBox="0 0 24 24">
-      <path d="M12 4a6 6 0 016 6c0 3.3-6 11-6 11s-6-7.7-6-11a6 6 0 016-6z" vector-effect="non-scaling-stroke"/>
-      <circle r="2" cx="12" cy="10" vector-effect="non-scaling-stroke"/>
-    </symbol>
-
-
-  </svg>
-
 
   <header class="header">
 
-    <div class="header__top-panel">
+    <div class="header__top-panel wrapper">
       <!-- Баннер хедера -->
       <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
 
       <!-- Secondary menu -->
-      <ul class="header__top-menu">
-        <li class="header__top-menu-item">
-          <span class="text-on-dark">Доставка в </span>
+      <div class="header__top-menu">
+        <ul class="header__top-menu-list">
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link city-choose" href="#">
+              <span class="city-choose__caption">Доставка в город: </span>
+              <svg class="city-choose__icon city-choose__icon--place" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-place"></use>
+              </svg>
+              <span class="visually-hidden">Выбор города. Текущий выбор: </span>
+              <span class="city-choose__current-city">г. Минск</span>
+              <svg class="city-choose__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </a>
+          </li>
 
-          <a class="link link--nounderline header__city" href="#">
-            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#icon-place"></use>
-            </svg>
-            г. Минск
-          </a>
-        </li>
-        <li class="header__top-menu-item">
-          <a class="link link--nounderline link--white" href="#">Доставка и оплата</a>
-        </li>
-        <li class="header__top-menu-item">
-          <a class="link link--nounderline link--white" href="#">Самовывоз</a>
-        </li>
-      </ul>
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link" href="#">Доставка и оплата</a>
+          </li>
+
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link" href="#">Самовывоз</a>
+          </li>
+        </ul>
+
+        <ul class="header__top-menu-list header__top-menu-list--secondary">
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link" href="#">Гарантии</a>
+          </li>
+
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link" href="#">Акции</a>
+          </li>
+
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link" href="#">О магазине</a>
+          </li>
+
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link" href="#">Контакты</a>
+          </li>
+        </ul>
+
+      </div>
     </div>
 
-    <div class="header__main-panel">
-      
+    <div class="header__main-panel wrapper">
+
       <!-- Бургер -->
-      <button class="button header__link" type="button">
-        <svg class="icon header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-burger"></use>
+      <button class="button header__link header__link--burger" type="button">
+        <span class="visually-hidden">Дополнительное меню</span>
+        <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="svg/sprite.svg#icon-burger"></use>
         </svg>
       </button>
 
       <!-- Логотип -->
-      <a class="header__logo-container" href="#" >
-        <svg class="header__logo" width="102" height="32" role="img" xmlns="http://www.w3.org/2000/svg">
+      <a class="header__logo-container" href="#">
+        <svg class="header__logo-svg" width="102" height="32" role="img" xmlns="http://www.w3.org/2000/svg">
           <title>Перейти на главную страницу магазина</title>
-          <use xlink:href="#icon-logo"></use>
+          <use xlink:href="svg/sprite.svg#icon-logo"></use>
         </svg>
         <span class="header__logo-caption">интернет-гипермаркет</span>
       </a>
 
       <!-- Телефоны -->
-      <a class="header__link header__link--tel" href="#">
-        <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-tel"></use>
-        </svg>
-      </a>
+      <div class="header__contacts">
+        <a class="header__link header__link--tel" href="#">
+          <svg class="icon icon--thin header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-tel"></use>
+          </svg>
+          <span class="header__contacts-tel">+375-29-681-05-07</span>
+          <span class="visually-hidden">Показать дополнительные контакты</span>
+          <svg class="icon icon--thin" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+          </svg>
+        </a>
+        <!-- Вместо перезвоните мне. Возможно придется вообще убрать, смотреть на финише -->
+        <p class="header__contacts-caption">консультация эксперта</p>
+      </div>
 
       <!-- Список желаний -->
-      <a class="header__link header__link--love" href="#" >
+      <a class="header__link header__link--love" href="#">
         <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-love"></use>
+          <use xlink:href="svg/sprite.svg#icon-love"></use>
         </svg>
+        <span class="visually-hidden">Закладки</span>
       </a>
-      
+
       <!-- User -->
       <a class="header__link header__link--user" href="#">
         <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-user"></use>
+          <use xlink:href="svg/sprite.svg#icon-user"></use>
         </svg>
-        <span>Мой аккаунт</span>
+        <span class="header__link-caption">Мой аккаунт</span>
       </a>
-      
-      <!-- Корзина -->
-      <button class="button header__link" type="button">
-        <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-cart"></use>
-        </svg>
-        <span>Корзина</span>
-      </button>
 
-      <form class="header__search-form" action="#">
-        <input class="header__search-input" type="search" name="search">
-        <button class="header__search-button" type="button">Искать</button>
+      <!-- Корзина -->
+      <a class="header__link header__link--cart" href="#">
+        <div class="header__quantity-positioner">
+          <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-cart"></use>
+          </svg>
+          <span class="visually-hidden">Товаров: </span>
+          <span class="sticker-quantity">0</span>
+        </div>
+        <span class="header__link-caption">Корзина</span>
+      </a>
+
+      <form class="search-form header__search-form" action="#" method="post" role="search">
+        <label class="search-form__label" for="search-input">
+          <span class="visually-hidden">Поиск товаров по каталогу:</span>
+        </label>
+        <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Я ищу ...">
+        <button class="search-form__button" type="submit">
+          <span class="button__flex-container">
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-search"></use>
+            </svg>
+            <span class="visually-hidden">Искать</span>
+          </span>
+        </button>
       </form>
     </div>
 
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Кухонная посуда</a>
-          <ul>
-            <li>
-              <a href="#">Посуда для приготовления</a>
-              <ul>
-                <li><a href="#">Наборы посуды</a></li>
-                <li><a href="#">Кастрюли</a></li>
-                <li><a href="#">Ковши</a></li>
-                <li><a href="#">Сотейники</a></li>
-                <li><a href="#">Сковороды</a></li>
-                <li><a href="#">Сковороды-гриль</a></li>
-                <li><a href="#">Блинницы</a></li>
-                <li><a href="#">Формы и блюда для запекания</a></li>
-                <li><a href="#">Противни</a></li>
-                <li><a href="#">Жаровни и горшочки</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Посуда для чая и кофе</a>
-              <ul>
-                <li><a href="#">Чайники наплитные</a></li>
-                <li><a href="#">Гейзерные кофеварки</a></li>
-                <li><a href="#">Турки</a></li>
-                <li><a href="#">Заварочные чайники и кофейники</a></li>
-                <li><a href="#">Френч-прессы</a></li>
-                <li><a href="#">Термокружки</a></li>
-                <li><a href="#">Термосы</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Барбекю</a>
-              <ul>
-                <li><a href="#">Решетки-гриль</a></li>
-                <li><a href="#">Барбукю уличный</a></li>
-                <li><a href="#">Мангалы</a></li>
-                <li><a href="#">Казаны и печи для казанов</a></li>
-                <li><a href="#">Шампуры</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">По бренду</a>
-              <ul>
-                <li><a href="#">BergHOFF</a></li>
-                <li><a href="#">Peterhoff</a></li>
-                <li><a href="#">Bohmann</a></li>
-                <li><a href="#">Bekker</a></li>
-                <li><a href="#">Fissman</a></li>
-                <li><a href="#">Maestro</a></li>
-                <li><a href="#">Zillinger</a></li>
-                <li><a href="#">Rondell</a></li>
-                <li><a href="#">Miristar</a></li>
-                <li><a href="#">KS-Kotchsysteme</a></li>
-                <li><a href="#">Bekker</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Столовая посуда</a>
-        </li>
-        <li>
-          <a href="#">Кухонные принадлежности</a>
-        </li>
-        <li>
-          <a href="#">Посуда для хранения</a>
-        </li>
-        <li>
-          <a href="#">Посуда для бара</a>
-        </li>
-        <li>
-          <a href="#">Гриль и барбекю</a>
-        </li>
-        <li>
-          <a href="#">Акции</a>
-        </li>
-      </ul>
+    <nav class="main-nav">
+      <div class="wrapper">
+        <ul class="main-nav__list main-nav__list--lvl1">
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Кухонная посуда</a>
+            <ul class="main-nav__list main-nav__list--lvl2">
+              <li class="main-nav__item--close">
+                <button class="button button--modal-close" type="button">
+                  <span class="button__flex-container">
+                    <span class="button__text link">Закрыть</span>
+                    <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="svg/sprite.svg#icon-close"></use>
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
+                </ul>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
+                </ul>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
+                </ul>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Столовая посуда</a>
+            <ul class="main-nav__list main-nav__list--lvl2">
+              <li class="main-nav__item--close">
+                <button class="button button--modal-close" type="button">
+                  <span class="button__flex-container">
+                    <span class="button__text link">Закрыть</span>
+                    <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="svg/sprite.svg#icon-close"></use>
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Peterhoff</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bohmann</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Fissman</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Maestro</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Zillinger</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Rondell</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Miristar</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">KS-Kotchsysteme</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
+                </ul>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Кастрюли</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Ковши</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сотейники</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Сковороды-гриль</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Блинницы</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Формы и блюда для запекания</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Противни</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
+                </ul>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Гейзерные кофеварки</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Турки</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Заварочные чайники и кофейники</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Френч-прессы</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термокружки</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
+                </ul>
+              </li>
+              <li class="main-nav__item--lvl2">
+                <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
+                <ul class="main-nav__list">
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Барбукю уличный</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Мангалы</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Казаны и печи для казанов</a></li>
+                  <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Кухонные принадлежности</a>
+          </li>
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Посуда для хранения</a>
+          </li>
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Посуда для бара</a>
+          </li>
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Гриль и барбекю</a>
+          </li>
+          <li class="main-nav__item--lvl1">
+            <a class="main-nav__link main-nav__link--lvl1" href="#">Акции</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -221,44 +307,32 @@
 
     <h1>Интернет-магазин посуды</h1>
 
-    <!-- Слайдер и промоблоки -->
+    <!-- Промоблоки -->
     <section>
-
-      <h2>Акции и специальные предложения</h2>
-
-      <!-- Слайдер -->
-      <ul>
-        <li>
-          <h3>Специальное предложение к дню Святого Валентина!</h3> <!-- скрыть -->
-          <img src="https://via.placeholder.com/608x304" width="608" height="304" alt="Специальное предложение">
-          <p><span>Специальное предложение</span> <br>ко дню всех влюбленных скидка на посуду BergHOFF <span>30%</span></p>
-          <a href="#">Подробнее</a>
-        </li>
-        <li>
-          <h3>Акция к 8 марта!</h3> <!-- скрыть -->
-          <img src="https://via.placeholder.com/608x304" width="608" height="304" alt="Специальное предложение">
-          <p><span>Специальное предложение</span> <br>к 8 марта скидка на посуду BergHOFF <span>30%</span></p>
-          <a href="#">Подробнее</a>
-        </li>
-      </ul>
-
-      <!-- Промоблоки -->
+      <h2 class="visually-hidden">Акции и специальные предложения</h2>
+      <!-- Слайдер - убираем, вместо него карточки, как в 6pm -->
       <article>
-        <h3>Акция на BergHOFF</h3> <!-- скрыть -->
-        <img src="https://via.placeholder.com/296x163" width="296" height="163" alt="Специальное предложение">
-        <p>Акция на посуду BergHOFF! <br>Скидка 20 % по промокоду BERG</p>
+        <h3 class="visulally-hidden">Специальное предложение к дню Святого Валентина!</h3>
+        <img src="img/banner-1.jpg" width="320" alt="Специальное предложение">
+        <p><span>Специальное предложение</span> <br>ко дню всех влюбленных скидка на посуду BergHOFF <span>30%</span></p>
         <a href="#">Подробнее</a>
       </article>
       <article>
-        <h3>Peterhoff - это круто!</h3> <!-- скрыть -->
-        <img src="https://via.placeholder.com/296x163" width="296" height="163" alt="Специальное предложение">
+        <h3 class="visulally-hidden">Акция к 8 марта!</h3>
+        <img src="img/banner-2.jpg" width="320" alt="Специальное предложение">
+        <p><span>Специальное предложение</span> <br>к 8 марта скидка на посуду BergHOFF <span>30%</span></p>
+        <a href="#">Подробнее</a>
+      </article>
+      <article>
+        <h3 class="visulally-hidden">Акция к 23 февраля!</h3>
+        <img src="img/banner-3.jpg" width="320" alt="Специальное предложение">
+        <p><span>Специальное предложение</span> <br>к 23 февраля скидка всем мужикам <span>30%</span></p>
+        <a href="#">Подробнее</a>
+      </article>
+      <article>
+        <h3 class="visulally-hidden">Peterhoff - это круто!</h3>
+        <img src="img/banner-4.jpg" width="320" alt="Специальное предложение">
         <p>Акция на посуду PeterHOFF! <br>Готовьте с удовольствием!</p>
-        <a href="#">Подробнее</a>
-      </article>
-      <article>
-        <h3>Специальное предложение на Zillinger</h3> <!-- скрыть -->
-        <img src="https://via.placeholder.com/296x343" width="296" height="343" alt="Специальное предложение">
-        <p>Специальное предложение на Zillinger! <br>Лучше не бывает!</p>
         <a href="#">Подробнее</a>
       </article>
     </section>
@@ -270,7 +344,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Перейти в раздел наборы посуды">
+              <img src="img/popular-cat-1.jpg" width="40" alt="Перейти в раздел наборы посуды">
               <figcaption>Наборы посуды</figcaption>
             </figure>
           </a>
@@ -278,7 +352,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Перейти в раздел наборы тарелок">
+              <img src="img/popular-cat-2.jpg" width="40" alt="Перейти в раздел наборы тарелок">
               <figcaption>Наборы тарелок</figcaption>
             </figure>
           </a>
@@ -286,7 +360,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Перейти в раздел сковороды">
+              <img src="img/popular-cat-3.jpg" width="40" alt="Перейти в раздел сковороды">
               <figcaption>Сковороды</figcaption>
             </figure>
           </a>
@@ -294,7 +368,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Перейти в раздел чайники">
+              <img src="img/popular-cat-4.jpg" width="40" alt="Перейти в раздел чайники">
               <figcaption>Чайники</figcaption>
             </figure>
           </a>
@@ -302,7 +376,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Наборы ножей">
+              <img src="img/popular-cat-5.jpg" width="40" alt="Перейти в раздел Наборы ножей">
               <figcaption>Наборы ножей</figcaption>
             </figure>
           </a>
@@ -310,7 +384,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Френч-прессы">
+              <img src="img/popular-cat-6.jpg" width="40" alt="Перейти в раздел Френч-прессы">
               <figcaption>Френч-прессы</figcaption>
             </figure>
           </a>
@@ -318,7 +392,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Грили">
+              <img src="img/popular-cat-7.jpg" width="40" alt="Перейти в раздел Грили">
               <figcaption>Грили</figcaption>
             </figure>
           </a>
@@ -326,7 +400,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Казаны">
+              <img src="img/popular-cat-8.jpg" width="40" alt="Перейти в раздел Казаны">
               <figcaption>Казаны</figcaption>
             </figure>
           </a>
@@ -334,7 +408,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Столовые приборы">
+              <img src="img/popular-cat-9.jpg" width="40" alt="Перейти в раздел Столовые приборы">
               <figcaption>Столовые приборы</figcaption>
             </figure>
           </a>
@@ -342,7 +416,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Пиалы">
+              <img src="img/popular-cat-10.jpg" width="40" alt="Перейти в раздел Пиалы">
               <figcaption>Пиалы</figcaption>
             </figure>
           </a>
@@ -350,7 +424,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Перейти в раздел наборы посуды">
+              <img src="img/popular-cat-1.jpg" width="40" alt="Перейти в раздел наборы посуды">
               <figcaption>Наборы посуды</figcaption>
             </figure>
           </a>
@@ -358,7 +432,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Перейти в раздел наборы тарелок">
+              <img src="img/popular-cat-2.jpg" width="40" alt="Перейти в раздел наборы тарелок">
               <figcaption>Наборы тарелок</figcaption>
             </figure>
           </a>
@@ -367,18 +441,44 @@
     </section>
 
     <!-- Популярные товары -->
-    <section>
+    <section class="carousel">
       <h2>Популярные товары</h2>
+
+      <!-- переключение - влево-вправо -->
+      <button class="carousel__toggle carousel__toggle--left" type="button">
+        <span class="visually-hidden">Предыдущий слайд</span>
+      </button>
+      <button class="carousel__toggle carousel__toggle--right" type="button">
+        <span class="visually-hidden">Следующий слайд</span>
+      </button>
+      <!-- ссылки-точки -->
+      <ul class="carousel__point-list">
+        <li class="carousel__point-item carousel__point-item--active">
+          <a class="carousel__point" href="#"><span class="visually-hidden">Перейти к слайду 1</span></a>
+        </li>
+        <li class="carousel__point-item">
+          <a class="carousel__point" href="#"><span class="visually-hidden">Перейти к слайду 2</span></a>
+        </li>
+        <li class="carousel__point-item">
+          <a class="carousel__point" href="#"><span class="visually-hidden">Перейти к слайду 3</span></a>
+        </li>
+      </ul>
+
       <ul>
-
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-1.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
+          <strong>Хит</strong>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -387,20 +487,28 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
 
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-2.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
+          <strong>Новинка</strong>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg cl ass="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -409,20 +517,28 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
 
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-3.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
+          <strong>Акция</strong>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg cl ass="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -431,20 +547,27 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
 
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-4.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg cl ass="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -453,20 +576,27 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
 
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-5.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg cl ass="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -475,20 +605,27 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
 
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-6.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg cl ass="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -497,20 +634,27 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
 
         <li>
           <a href="#">
             <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <img src="img/mini-cart-1.jpg" width="160" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
           </a>
           <p>Бренд: BergHOFF</p>
           <div>
-            <button type="button">Характеристики</button>
+            <button type="button">
+              Характеристики
+              <svg cl ass="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-arrow"></use>
+              </svg>
+            </button>
             <ul>
               <li>Материал: нержавеющая сталь</li>
               <li>Количество предметов: 12</li>
@@ -519,9 +663,11 @@
               <li>Сталь: AISI 304</li>
             </ul>
           </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
+          <p><a href="#">12 отзывов</a></p>
+          <p>
+            <span aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+            <del aria-label="Цена без скидки: ">196.30 р.</del>
+          </p>
           <p>Доставка: сегодня после 18-00, бесплатно</p>
         </li>
       </ul>
@@ -534,7 +680,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/160x160" width="160" height="160" alt="Перейти в раздел наборы посуды">
+              <img src="img/catalog-1.jpg" width="160" height="160" alt="Перейти в раздел наборы посуды">
               <figcaption>Кухонная посуда</figcaption>
             </figure>
           </a>
@@ -542,7 +688,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/160x160" width="160" height="160" alt="Перейти в раздел наборы посуды">
+              <img src="img/catalog-2.jpg" width="160" height="160" alt="Перейти в раздел наборы посуды">
               <figcaption>Столовая посуда</figcaption>
             </figure>
           </a>
@@ -550,7 +696,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/160x160" width="160" height="160" alt="Перейти в раздел наборы посуды">
+              <img src="img/catalog-3.jpg" width="160" height="160" alt="Перейти в раздел наборы посуды">
               <figcaption>Кухонные принадлежности</figcaption>
             </figure>
           </a>
@@ -558,7 +704,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/160x160" width="160" height="160" alt="Перейти в раздел наборы посуды">
+              <img src="img/catalog-4.jpg" width="160" height="160" alt="Перейти в раздел наборы посуды">
               <figcaption>Ножи</figcaption>
             </figure>
           </a>
@@ -566,7 +712,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/160x160" width="160" height="160" alt="Перейти в раздел наборы посуды">
+              <img src="img/catalog-5.jpg" width="160" height="160" alt="Перейти в раздел наборы посуды">
               <figcaption>Барбекю</figcaption>
             </figure>
           </a>
@@ -574,7 +720,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="https://via.placeholder.com/160x160" width="160" height="160" alt="Перейти в раздел наборы посуды">
+              <img src="img/catalog-6.jpg" width="160" height="160" alt="Перейти в раздел наборы посуды">
               <figcaption>Для чая и кофе</figcaption>
             </figure>
           </a>
@@ -583,229 +729,129 @@
     </section>
 
     <!-- Распродажа -->
-    <section>
-      <h2>Распродажа</h2>
-      <ul>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-
-        <li>
-          <a href="#">
-            <h3>Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <img src="https://via.placeholder.com/200x200" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
-          </a>
-          <p>Бренд: BergHOFF</p>
-          <div>
-            <button type="button">Характеристики</button>
-            <ul>
-              <li>Материал: нержавеющая сталь</li>
-              <li>Количество предметов: 12</li>
-              <li>Ручки: съемные</li>
-              <li>Тип комфорок: любые, включая индукционные</li>
-              <li>Сталь: AISI 304</li>
-            </ul>
-          </div>
-          <span>156.80 р.</span>
-          <span>196.30 р.</span>
-          <a href="#">12 отзывов</a>
-          <p>Доставка: сегодня после 18-00, бесплатно</p>
-        </li>
-      </ul>
+    <section class="carousel">
+      <!-- Блок аналогичен любой другой карусели -->
     </section>
 
-    <!-- Статья -->
+    <!-- Статья - нужна? -->
     <article>
 
       <h2>Наш интернет-магазин</h2>
-      <img src="https://via.placeholder.com/120x80" width="120" height="80" alt="наш магазин">
       <p>Для Вашего удобства наш интернет магазин предлагает широкие возможности для того, что бы быстро и недорого купить посуду для кухни онлайн. Цены и ассортимент нашего магазина Вас приятно удивят. Мы предлагаем нашим покупателям быструю доставку посуды по Минску и всей территории Беларуси, а 31 пункт самовывоза по всей стране позволит сэкономить на доставке.</p>
 
       <h3>Доставка по Минску</h3>
-      <img src="https://via.placeholder.com/120x80" width="120" height="80" alt="наш магазин">
+      <img src="img/article-delivery.jpg" alt="наш магазин">
       <p>Доставка по Минску осуществляется в рабочие дни с 9-00 до 22-00. Посуда, заказанная до 15-00 доставляется в этот же день. Заказы, принятые после 15-00 доставляются на следующий рабочий день. Для этого способа доставки доступны следующие способы оплаты: наличный расчет, банковская карта, ЕРИП, безналичный расчет</p>
 
       <h3>Доставка по Беларуси</h3>
-      <img src="https://via.placeholder.com/120x80" width="120" height="80" alt="наш магазин">
+      <img src="img/article-map.jpg" alt="наш магазин">
       <p>Как правило доставка посуды «до двери» в крупные населенные пункты осуществляется в течении 2-3 рабочих дней с момента поступления заказа. Доставка кухонной утвари в мелкие населенные пункты может занимать больше времени – до 7 дней. Оплата стоимости может производиться как предварительно: ЕРИП, безналичный расчет, так и в момент получения заказа: наличный расчет, банковская карта.</p>
 
       <h3>Самовывоз</h3>
-      <img src="https://via.placeholder.com/120x80" width="120" height="80" alt="наш магазин">
+      <img src="img/article-samovyvoz.jpg" alt="наш магазин">
       <p>Самый недорогой способ доставки посуды. Организован 31 пункт самовывоза по всей территории Беларуси, посмотрите нашу страничку с информацией о самовывозе в Минске и Беларуси, очень вероятно, что он рядом с Вами. Оплата за посуду в случае выбора этого способа доставки производится непосредственно при получении товара – наличными деньгами или банковской картой. Это не исключает и другие способы оплаты – ЕРИП, безналичный расчет.</p>
 
       <h3>Гарантия качества</h3>
-      <img src="https://via.placeholder.com/120x80" width="120" height="80" alt="наш магазин">
+      <img src="img/article-garant.jpg" alt="наш магазин">
       <p>На купленную в нашем магазине посуду предоставляется официальная гарантия. Мы в кратчайшие сроки разрешаем возникшие непредвиденные проблемы с товаром. В своей работе мы придерживаемся принципа – покупатель должен быть удовлетворен купленной посудой и работой магазина во что бы то ни стало.</p>
     </article>
 
-    <!-- Наши бренды - слайдер -->
+    <!-- Наши бренды - карусель -->
     <section>
       <h2>Наши бренды</h2>
+
+      <!-- переключение - влево-вправо -->
+      <button class="carousel__toggle carousel__toggle--left" type="button">
+        <span class="visually-hidden">Предыдущий слайд</span>
+      </button>
+      <button class="carousel__toggle carousel__toggle--right" type="button">
+        <span class="visually-hidden">Следующий слайд</span>
+      </button>
+      <!-- ссылки-точки -->
+      <ul class="carousel__point-list">
+        <li class="carousel__point-item carousel__point-item--active">
+          <a class="carousel__point" href="#"><span class="visually-hidden">Перейти к слайду 1</span></a>
+        </li>
+        <li class="carousel__point-item">
+          <a class="carousel__point" href="#"><span class="visually-hidden">Перейти к слайду 2</span></a>
+        </li>
+        <li class="carousel__point-item">
+          <a class="carousel__point" href="#"><span class="visually-hidden">Перейти к слайду 3</span></a>
+        </li>
+      </ul>
+
       <ul>
-        <li><a href="#"><img src="https://via.placeholder.com/112x84" width="112" height="84" alt="Bekker"></a></li>
-        <li><a href="#"><img src="https://via.placeholder.com/112x84" width="112" height="84" alt="BergHOFF"></a></li>
-        <li><a href="#"><img src="https://via.placeholder.com/112x84" width="112" height="84" alt="Peterhof"></a></li>
-        <li><a href="#"><img src="https://via.placeholder.com/112x84" width="112" height="84" alt="Zillinger"></a></li>
-        <li><a href="#"><img src="https://via.placeholder.com/112x84" width="112" height="84" alt="KS-Kotchsysteme"></a></li>
-        <li><a href="#"><img src="https://via.placeholder.com/112x84" width="112" height="84" alt="Bekker"></a></li>
+        <li><a href="#"><img src="img/brand-1.png" width="112" alt="Bekker"></a></li>
+        <li><a href="#"><img src="img/brand-2.png" width="112" alt="BergHOFF"></a></li>
+        <li><a href="#"><img src="img/brand-3.png" width="112" alt="Peterhof"></a></li>
+        <li><a href="#"><img src="img/brand-4.png" width="112" alt="Zillinger"></a></li>
+        <li><a href="#"><img src="img/brand-5.png" width="112" alt="KS-Kotchsysteme"></a></li>
+        <li><a href="#"><img src="img/brand-6.png" width="112" alt="Bekker"></a></li>
       </ul>
     </section>
   </main>
 
-  <footer>
-    
+  <footer role="contentinfo">
+    <h2 class="visually-hidden">Общая информация</h2>
     <!-- Наши преимущества -->
     <div>
-      <h2>Наши преимущества</h2> <!-- скрыть -->
+      <h3 class="visually-hidden">Наши преимущества</h3>
       <ul>
-        <li>Бесплатная доставка</li>
-        <li>Гарантия качества</li>
-        <li>Прием заказов круглосуточно</li>
-        <li>Возврат товара</li>
-        <li>Удобные пункты самовывоза</li>
-        <li>Бонусы за покупки</li>
+        <li>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-delivery"></use>
+          </svg>
+          Бесплатная доставка
+        </li>
+        <li>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-garant"></use>
+          </svg>
+          Гарантия качества
+        </li>
+        <li>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-24hours"></use>
+          </svg>
+          Прием заказов круглосуточно
+        </li>
+        <li>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-exchange"></use>
+          </svg>
+          Возврат товара
+        </li>
+        <li>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-placeholder"></use>
+          </svg>
+          Удобные пункты самовывоза
+        </li>
+        <li>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-gift"></use>
+          </svg>
+          Бонусы за покупки
+        </li>
       </ul>
     </div>
 
-    <!-- Рассылка -->
-    <form>
+    <!-- Подписка на рассылку -->
+    <div>
+      <h3 class="visually-hidden">Подписка на нашу рассылку</h3>
       <p>Подпишитесь на нашу рассылку и получайте информацию о скидках</p>
-      <input type="email">
-      <button type="submit">Подписаться</button>
-    </form>
+      <form>
+        <label>
+          <input type="email" name="email" required>
+          <span>Email</span>
+        </label>
+        <button type="submit">Подписаться!</button>
+      </form>
+    </div>
 
     <!-- Информация - ссылки -->
-    <section>
-      <h2>Информация</h2>
+    <div>
+      <h3>Информация</h3>
       <ul>
         <li><a href="#">Контакты</a></li>
         <li><a href="#">Договор публичной оферты</a></li>
@@ -816,11 +862,11 @@
         <li><a href="#">Гарантии</a></li>
         <li><a href="#">Карта сайта</a></li>
       </ul>
-    </section>
+    </div>
 
-    <!-- Каталог -->
-    <section>
-      <h2>Каталог</h2>
+    <!-- Каталог - позже пересмотреть необходимость этого блока -->
+    <div>
+      <h3>Отделы</h3>
       <ul>
         <li><a href="#">Кухонная посуда</a></li>
         <li><a href="#">Столовая посуда</a></li>
@@ -830,23 +876,280 @@
         <li><a href="#">Посуда по брендам</a></li>
         <li><a href="#">Акции</a></li>
       </ul>
-    </section>
+    </div>
 
+    <!-- Мы принимаем к оплате -->
     <div>
-      <p>Мы принимаем к оплате:</p>
+      <h3>Мы принимаем к оплате:</h3>
       <ul>
         <!-- Позже заменить на svg use -->
-        <li><img src="https://via.placeholder.com/60x40" width="60" height="40" alt="Виза"></li>
-        <li><img src="https://via.placeholder.com/60x40" width="60" height="40" alt="Виза"></li>
-        <li><img src="https://via.placeholder.com/60x40" width="60" height="40" alt="Виза"></li>
+        <li>
+          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-visa"></use>
+          </svg>
+          <span class="visually-hidden">Visa</span>
+        </li>
+        <li>
+          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-mastercard"></use>
+          </svg>
+          <span class="visually-hidden">Mastercard</span>
+        </li>
+        <li>
+          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-maestro"></use>
+          </svg>
+          <span class="visually-hidden">Maestro</span>
+        </li>
+        <li>
+          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-erip"></use>
+          </svg>
+          <span class="visually-hidden">Ерип расчет</span>
+        </li>
       </ul>
     </div>
 
+    <!-- Ссылки на социальные сети -->
+    <div>
+      <h3>Мы в социальных сетях, присоединяйтесь!</h3>
+      <ul>
+        <li>
+          <a href="#" target="_blank" rel="noopener nofollow" title="Наш Вконтакте">
+            <span class="visually-hidden">Наша группа в ВК</span>
+            <svg class="icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener nofollow" title="Наш Фэйсбук">
+            <span class="visually-hidden">Наша группа в Фэйсбук</span>
+            <svg class="icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener nofollow" title="Наш Одноклассники">
+            <span class="visually-hidden">Наша группа в Одноклассниках</span>
+            <svg class="icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-odnoclasniki"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Контактная информация</h3>
+      <ul>
+        <li>
+          <a href="tel:+375296810507">
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-a1"></use>
+            </svg>
+            +375-29-681-05-07
+          </a>
+        </li>
+        <li>
+          <a href="tel:+375336810507">
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-mts"></use>
+            </svg>
+            +375-33-681-05-07
+          </a>
+        </li>
+        <li>
+          <a href="tel:+375256810507">
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-life"></use>
+            </svg>
+            +375-25-681-05-07
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-viber"></use>
+            </svg>
+            Viber posudamart.by
+          </a>
+        </li>
+      </ul>
+
+      <p>
+        ИП Лемеш Юрий Ренальдович <br>
+        Режим работы: ПН, ВТ, СР, ЧТ, ПТ, СБ, ВС с 9:00 до 21:00 <br>
+        Свидетельство 193155682 выдано 23.10.2018 Минский горисполком <br>
+        УНП 193155682 <br>
+        220121 г. Минск ул. Притыцкого 49-110 <br>
+        Дата регистрации в Торговом реестре РБ: 18.01.2019
+      </p>
+    </div>
 
 
-
-
+    <p class="footer__copyright">© ИП Лемеш Ю.Р., 2020</p>
   </footer>
 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- заказ звонка -->
+  <section class="modal modal--call-order">
+    <h2 class="visually-hidden">Заказ обратного звонка</h2>
+    <p>Укажите номер телефона</p>
+    <p class="modal__entry-text">Мы вам перезвоним</p>
+    <form>
+      <label>
+        <input type="tel" name="call-order__phone" required>
+        <span>Ваш телефон</span>
+      </label>
+      <span aria-hidden="true">Номер вашего телефона</span>
+      <button type="submit">Отравить</button>
+    </form>
+  </section>
+
+  <!-- выбор города -->
+  <section class="modal modal--choose-city">
+    <h2>Выберите город</h2>
+    <p class="modal__entry-text">Стоимость и срок доставки заказов зависят от вашего местоположения.</p>
+    <p class="modal__entry-text">Укажите город</p>
+    <form>
+      <label>
+        <input type="text" name="choose-city__city" required>
+        <span>Ваш город</span>
+      </label>
+      <span aria-hidden="true">Быстрый поиск населенного пункта</span>
+      <button type="submit">Применить</button>
+    </form>
+  </section>
+
+  <!-- модальное окно контактов - переместить в хедер -->
+  <div class="header-contacts__modal" aria-label="Дополнительные контакты">
+    <ul class="header-contacts__list">
+      <li class="header-contacts__item"><a href="tel:+375336810507">+375-33-681-05-07</a></li>
+      <li class="header-contacts__item"><a href="tel:+375256810507">+375-25-681-05-07</a></li>
+      <li class="header-contacts__item"><a href="tel:+375296810507">+375-29-681-05-07</a></li>
+    </ul>
+    <button>Перезвоните мне!</button>
+    <p>Время работы Call-центра: с 9-00 до 20-00 Пн-Пт</p>
+    <ul class="header-contacts__secondary-list">
+      <li class="header-contacts__secondary-item">
+        <a href="#">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-viber"></use>
+          </svg>
+          Viber
+        </a>
+      </li>
+      <li class="header-contacts__secondary-item">
+        <a href="#">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-telegram--colored"></use>
+          </svg>
+          Telegram
+        </a>
+      </li>
+      <li class="header-contacts__secondary-item">
+        <a href="mailto:posudamn@gmail.com">
+          posudamn@gmail.com
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- меню акаунта - переместить в хедер -->
+  <section class="modal modal--account">
+    <h2 class="visually-hidden">Меню пользователя</h2>
+    <p>Добро пожаловать</p>
+    <a href="#">Войти</a>
+    <div class="socials-login">
+      <span>Войти через:</span>
+      <ul class="socials-login__list">
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Google</span></a></li>
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Вконтакте</span></a></li>
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Фэйсбук</span></a></li>
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Однокласники</span></a></li>
+      </ul>
+    </div>
+    <span>Новый покупатель?</span>
+    <a href="#">Зарегистрироваться</a>
+    <ul>
+      <li><a href="#">Личные данные</a></li>
+      <li><a href="#">История заказов</a></li>
+      <li><a href="#">История просмотров</a></li>
+      <li><a href="#">Избранные товары</a></li>
+      <li><a href="#">Лист ожиданий</a></li>
+    </ul>
+    <a href="#">Выйти</a>
+  </section>
+
+  <!-- login -->
+  <section class="modal modal--login">
+    <h2>Вход</h2>
+    <form>
+      <label>
+        <input type="text" name="user-email" required>
+        <span>Email</span>
+      </label>
+      <label>
+        <input type="password" name="password" required>
+        <span>Пароль</span>
+      </label>
+      <div>
+        <button type="button">Напомнить пароль</button>
+        <button type="submit">Войти</button>
+      </div>
+    </form>
+    <div class="socials-login">
+      <span>Или войти через:</span>
+      <ul class="socials-login__list">
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Google</span></a></li>
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Вконтакте</span></a></li>
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Фэйсбук</span></a></li>
+        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Однокласники</span></a></li>
+      </ul>
+    </div>
+    <span>Нет акаунта?</span>
+    <a href="#">Зарегистрироваться</a>
+    <button class="button button--modal-close" type="button">
+      <span class="visually-hidden">Закрыть окно</span>
+    </button>
+  </section>
+
+  <!-- регистрация -->
+  <section class="modal modal--login">
+    <h2>Регистрация</h2>
+    <form>
+      <label>
+        <input type="text" name="user-email" required>
+        <span>Email</span>
+      </label>
+      <label>
+        <input type="password" name="password" required>
+        <span>Пароль</span>
+      </label>
+      <button type="submit">Войти</button>
+    </form>
+    <span>Уже есть аккаунт?</span>
+    <a href="#">Войти</a>
+    <button class="button button--modal-close" type="button">
+      <span class="visually-hidden">Закрыть окно</span>
+    </button>
+  </section>
+
+
+
+
 </body>
+
 </html>
