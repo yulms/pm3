@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="main-page">
 
   <header class="header">
 
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="header__main-panel wrapper">
+    <div class="header__main-panel">
 
       <!-- Бургер -->
       <button class="button header__link header__link--burger" type="button">
@@ -215,15 +215,24 @@
                   </ul>
                 </li>
               </ul>
-              <a class="main-nav__banner" href="#">
-                <div class="banner-offer">
-                  <h2 class="title1">Подари радость любимой</h2>
-                  <p class="banner-offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
-                  <p class="banner-offer__p banner-offer__p--action">распродажа!</p>
-                  <span class="banner-offer__button">Подробнее</span>
+
+
+              <a class="banner main-nav__banner" href="#">
+                <p class="banner__image-container">
+                  <img class="banner__image" src="img\menu-banner-1.jpg" width="400" height="400" alt="Перейти к спецпредложению">
+                </p>
+                <div class="banner__offer">
+                  <p class="title1">Подари радость любимой</p>
+                  <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+                  <p class="banner__offer__p">
+                    <strong class="banner__offer__action">Спешите, количество ограничено</strong>
+                  </p>
+                  <span class="banner__offer__action-button-1">Подробнее</span>
                 </div>
-                <img src="img\menu-banner-1.jpg" width="400" height="400" alt="Перейти к спецпредложению">
+
               </a>
+
+
             </div>
           </li>
           <li class="main-nav__item--lvl1">
@@ -295,11 +304,13 @@
                 </li>
               </ul>
               <a class="main-nav__banner" href="#">
-                <div class="banner-offer">
-                  <h2 class="title1">Подари радость любимой</h2>
-                  <p class="banner-offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
-                  <p class="banner-offer__p banner-offer__p--action">распродажа!</p>
-                  <span class="banner-offer__button">Подробнее</span>
+                <div class="banner__offer">
+                  <p class="title1">Подари радость любимой</p>
+                  <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+                  <p class="banner__offer__p">
+                    <strong class="banner__offer__action">Скидки до 40%</strong>
+                  </p>
+                  <span class="banner__offer__button">Подробнее</span>
                 </div>
                 <img src="img\menu-banner-2.jpg" width="400" height="400" alt="Перейти к спецпредложению">
               </a>
@@ -422,7 +433,7 @@
             <a class="main-nav__link main-nav__link--lvl1" href="#">Гриль и барбекю</a>
           </li>
           <li class="main-nav__item--lvl1">
-            <a class="main-nav__link main-nav__link--lvl1" href="#">Акции</a>
+            <a class="main-nav__link main-nav__link--lvl1 main-nav__link--sale" href="#">Акции</a>
           </li>
         </ul>
       </div>
@@ -434,33 +445,60 @@
     <h1 class="visually-hidden">Интернет-магазин посуды</h1>
 
     <!-- Промоблоки -->
-    <section>
+    <section class="promo main-page__promo wrapper">
       <h2 class="visually-hidden">Акции и специальные предложения</h2>
-      <!-- Слайдер - убираем, вместо него карточки, как в 6pm -->
-      <article>
-        <h3 class="visulally-hidden">Специальное предложение к дню Святого Валентина!</h3>
-        <img src="img/banner-1.jpg" width="320" alt="Специальное предложение">
-        <p><span>Специальное предложение</span> <br>ко дню всех влюбленных скидка на посуду BergHOFF <span>30%</span></p>
-        <a href="#">Подробнее</a>
-      </article>
-      <article>
-        <h3 class="visulally-hidden">Акция к 8 марта!</h3>
-        <img src="img/banner-2.jpg" width="320" alt="Специальное предложение">
-        <p><span>Специальное предложение</span> <br>к 8 марта скидка на посуду BergHOFF <span>30%</span></p>
-        <a href="#">Подробнее</a>
-      </article>
-      <article>
-        <h3 class="visulally-hidden">Акция к 23 февраля!</h3>
-        <img src="img/banner-3.jpg" width="320" alt="Специальное предложение">
-        <p><span>Специальное предложение</span> <br>к 23 февраля скидка всем мужикам <span>30%</span></p>
-        <a href="#">Подробнее</a>
-      </article>
-      <article>
-        <h3 class="visulally-hidden">Peterhoff - это круто!</h3>
-        <img src="img/banner-4.jpg" width="320" alt="Специальное предложение">
-        <p>Акция на посуду PeterHOFF! <br>Готовьте с удовольствием!</p>
-        <a href="#">Подробнее</a>
-      </article>
+
+      <a class="banner banner--1" href="#">
+        <h3 class="visually-hidden">Специальное предложение к дню Святого Валентина!</h3>
+        <p class="banner__image-container">
+          <img class="banner__image" src="img/banner-1.webp" width="320" alt="Перейти к предложению">
+        </p>
+        <div class="banner__offer">
+          <p class="title2">Подари радость любимой</p>
+          <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+          <p class="banner__offer__p">
+            <strong class="banner__offer__action">Скидки до <span class="price--discount">40%</span></strong>
+          </p>
+          <span class="banner__offer__action-button-1">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="banner banner--2" href="#">
+        <h3 class="visually-hidden">Акция к 8 марта</h3>
+        <p class="banner__image-container">
+          <img class="banner__image" src="img/banner-2.jpg" width="320" alt="Перейти к предложению">
+        </p>
+        <div class="banner__offer">
+          <p class="title2">Специальное предложение</p>
+          <p class="banner__offer__p">к 8 марта скидка на посуду BergHOFF <span class="price--discount">30%</span></p>
+          <span class="banner__offer__action-button-2">Узнать больше</span>
+        </div>
+      </a>
+
+      <a class="banner banner--3" href="#">
+        <h3 class="visually-hidden">Акция к 23 февраля!</h3>
+        <p class="banner__image-container">
+          <img class="banner__image" src="img/banner-3.jpg" width="320" alt="Перейти к предложению">
+        </p>
+        <div class="banner__offer">
+          <p class="title2">Подари мечту</p>
+          <p class="banner__offer__p">23 февраля скидка всем мужикам <span class="price--discount">30%</span></p>
+          <span class="banner__offer__action-button-1">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="banner banner--4" href="#">
+        <h3 class="visually-hidden">Peterhoff - это круто!</h3>
+        <p class="banner__image-container">
+          <img class="banner__image" src="img/banner-4.jpg" width="320" alt="Перейти к предложению">
+        </p>
+        <div class="banner__offer">
+          <p class="title2">Peterhoff - посуда вашей мечты</p>
+          <p class="banner__offer__p">Акция на посуду PeterHOFF <br> Готовьте с удовольствием!</p>
+          <span class="banner__offer__action-button-2">Узнать больше</span>
+        </div>
+      </a>
+
     </section>
 
     <!-- Популярные категории -->

@@ -36,6 +36,11 @@ body {
   color: rgba(0, 0, 0, 0.75);
 }
 
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 img,
 frame {
   max-width: 100%;
@@ -54,7 +59,6 @@ frame {
 }
 
 .title1 {
-  margin: 0 0 24px;
   font-size: 1.5625rem;
   font-weight: 600;
   line-height: 1.28;
@@ -70,7 +74,6 @@ frame {
 }
 
 .title2 {
-  margin: 0 0 16px;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.2;
@@ -86,7 +89,6 @@ frame {
 }
 
 .title3 {
-  margin: 0 0 16px;
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.333;
@@ -102,7 +104,6 @@ frame {
 }
 
 .title4 {
-  margin: 0 0 8px;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -147,7 +148,7 @@ frame {
   overflow: visible;
   background: 0 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   transition: background-color 0.15s, box-shadow 0.15s;
@@ -379,7 +380,7 @@ frame {
 }
 
 .check__box {
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .radio__box {
@@ -475,7 +476,7 @@ textarea.textfield__element {
   box-shadow: none; /* Firefox */
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-top-color: transparent;
-  border-radius: 4px;
+  border-radius: 2px;
   transition: border 0.2s, box-shadow 0.2s;
 }
 
@@ -647,7 +648,7 @@ textarea.textfield__element {
 .noUi-target {
   position: relative;
   background: #e0e0e0;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .noUi-base,
@@ -784,7 +785,7 @@ textarea.textfield__element {
   color: #c91f24;
 }
 
-@keyframes bounce {
+@keyfram.es bounce {
   0% {
     transform: translate(-50%, -250%);
   }
@@ -819,40 +820,173 @@ textarea.textfield__element {
   animation-duration: 0.4s;
 }
 
-.banner-offer {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 60%;
-  min-width: 240px;
-  padding: 32px;
-  color: rgba(0, 0, 0, 0.75);
+@media (min-width: 980px) {
+  .promo {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.main-page__promo {
+  margin-top: 16px;
+}
+
+@media (min-width: 608px) {
+  .banner--1 {
+    grid-area: banner--1;
+  }
+
+  .banner--2 {
+    grid-area: banner--2;
+  }
+
+  .banner--3 {
+    grid-area: banner--3;
+  }
+
+  .banner--4 {
+    grid-area: banner--4;
+  }
+}
+
+@media (min-width: 608px) and (max-width: 1279px) {
+  .main-page__promo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "banner--1 banner--2"
+      "banner--3 banner--4";
+    row-gap: 32px;
+    column-gap: 8px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  .main-page__promo {
+    row-gap: 8px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-page__promo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    grid-template-areas:
+      "banner--1 banner--2 banner--4"
+      "banner--1 banner--3 banner--4";
+    gap: 8px;
+  }
+}
+
+.banner {
+  display: block;
   text-decoration: none;
-  background-color: hsla(0, 0%, 100%, 0.9);
 }
 
-.banner-offer__p {
-  margin: 0 0 24px;
-  line-height: 20px;
+@media (min-width: 980px) {
+  .banner {
+    display: grid;
+    /* задается позиционирование, что б внутренний
+    элемент banner__offer с z-index: 1 не выходил
+    за пределы контекста наложения */
+    position: relative;
+    z-index: 0;
+  }
 }
 
-.banner-offer__p--action {
-  font-size: 16px;
+@media (max-width: 607px) {
+  .banner + .banner {
+    margin-top: 32px;
+  }
+}
+
+.banner__image-container {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  margin: 0;
+  /* для предотвращения вывыливания большого изображения за грид */
+  min-height: 0;
+}
+
+.banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner__offer {
+  padding: 8px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 607px) {
+  .banner__offer {
+    text-align: center;
+  }
+}
+
+/* на ширине более 608 блок с текстом баннера вкладывается в изображение */
+@media (min-width: 980px) {
+  .banner__offer {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: center;
+    z-index: 1;
+    width: 45%;
+    min-width: 340px;
+    max-width: 420px;
+    max-height: 100%;
+    padding: 24px;
+    overflow: hidden;
+    background-color: hsla(0, 0%, 100%, 0.7);
+  }
+}
+
+.banner__offer [class*="title"] {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 608px) {
+  .banner__offer [class*="title"] {
+    margin-top: 0;
+  }
+}
+
+.banner__offer__p {
+  margin: 0 0 16px;
+}
+
+.banner__offer__action {
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 600;
-  text-transform: uppercase;
-  color: #c91f24;
+  letter-spacing: -0.03em;
 }
 
-.banner-offer__button {
+.banner__offer__action-button-1 {
   display: inline-block;
   padding: 8px 32px;
   color: rgba(0, 0, 0, 0.9);
-  border: 2px solid #ffd343;
-  border-radius: 4px;
+  box-shadow: inset 0 0 0 2px #ffd343;
+  border-radius: 2px;
 }
 
-.banner-offer:hover .banner-offer__button {
+.banner__offer:hover .banner__offer__action-button-1 {
   background-color: #ffd343;
+}
+
+.banner__offer__action-button-2 {
+  display: inline-block;
+  color: #01768b;
+  box-shadow: 0 2px 0 0 #01768b;
+}
+
+.banner__offer:hover .banner__offer__action-button-2 {
+  box-shadow: none;
 }
 
 /*  */
@@ -867,17 +1001,19 @@ textarea.textfield__element {
 /*  */
 /* --------------   МОДУЛИ (БОЛЬШИЕ БЛОКИ)  ------------------ */
 
-.wrapper {
-  max-width: 1520px;
-  margin: 0 auto;
-}
-
 .header {
   color: #cccccc;
   background-color: #233240;
+  background-image: url("../svg/background-min.svg");
+  background-size: 900px;
+  background-position: 0 236px;
 }
 
 @media (min-width: 980px) {
+  .header {
+    background-size: 1300px;
+    background-position: 0 -40px;
+  }
   .header__top-panel {
     display: flex;
     align-items: baseline;
@@ -939,7 +1075,7 @@ textarea.textfield__element {
   padding-top: 8px;
   padding-bottom: 16px;
   background-color: #ffffff;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
@@ -1042,6 +1178,9 @@ textarea.textfield__element {
 
 @media (min-width: 608px) {
   .header__main-panel {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -1062,7 +1201,7 @@ textarea.textfield__element {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
+  height: 56px;
   padding: 0;
   color: #ccc;
   text-decoration: none;
@@ -1136,7 +1275,7 @@ textarea.textfield__element {
 
 @media (min-width: 980px) {
   .header__contacts-caption {
-    margin: -12px 0 0;
+    margin: -16px 0 0;
     font-size: 0.6875rem;
     font-weight: 600;
     color: #a8a8a8;
@@ -1214,18 +1353,19 @@ textarea.textfield__element {
 .header__search-form {
   display: flex;
   flex-basis: 100%;
-  height: 32px;
   margin-left: 16px;
   margin-right: 16px;
 }
 
 .search-form__input {
   width: 100%;
+  height: 40px;
   padding: 8px 16px;
   font-size: 16px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   border: none;
+  background-color: #faf9f7;
   outline: none;
 }
 
@@ -1263,8 +1403,8 @@ textarea.textfield__element {
   flex-shrink: 0;
   color: #233240;
   background-color: #ffd343;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -1286,7 +1426,7 @@ textarea.textfield__element {
 }
 
 /* Забеление по краю */
-@media (max-width: 980px) {
+/* @media (max-width: 980px) {
   .main-nav .wrapper:after {
     content: "";
     position: absolute;
@@ -1297,7 +1437,7 @@ textarea.textfield__element {
     background-image: linear-gradient(90deg, transparent, #fff);
     pointer-events: none;
   }
-}
+} */
 
 .main-nav__list {
   margin: 0;
@@ -1347,10 +1487,19 @@ textarea.textfield__element {
 @media (min-width: 980px) {
   .main-nav__item--lvl1:hover .main-nav__dropdown,
   .main-nav__item--lvl1:focus .main-nav__dropdown {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 2fr;
     grid-auto-columns: minmax(auto, 1fr);
-    grid-auto-flow: column;
+    grid-auto-flow: column; */
+    display: flex;
+  }
+
+  .main-nav__list--lvl2 {
+    flex-grow: 1;
+  }
+
+  .main-nav__banner {
+    max-width: 33%;
   }
 }
 
@@ -1446,6 +1595,15 @@ textarea.textfield__element {
   }
 }
 
+.main-nav__link--sale {
+  padding-left: 56px;
+  color: #c91f24;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M489 256l22-59c2-6 1-13-5-18l-49-39-9-62c-2-7-7-12-14-13l-62-10-39-49c-5-5-12-7-18-5l-59 23-59-23c-6-2-13 0-18 5l-39 49-62 10c-7 1-12 6-13 13l-10 62-49 39c-5 5-7 12-5 18l23 59-23 59c-2 6 0 13 5 18l49 39 10 62c1 7 6 12 13 14l62 9 39 49c5 6 12 7 18 5l59-22 59 22a16 16 0 0018-5l39-49 62-9c7-2 12-7 14-14l9-62 49-39c6-5 7-12 5-18l-22-59z' fill='%23f44336'/%3E%3Cg fill='%23fafafa'%3E%3Cpath d='M208 224a48 48 0 110-96 48 48 0 010 96zm0-64a16 16 0 100 32 16 16 0 000-32zM304 384a48 48 0 110-96 48 48 0 010 96zm0-64c-9 0-16 7-16 16s7 16 16 16 16-7 16-16-7-16-16-16zM176 384l-9-3c-7-5-9-15-4-22l160-224a16 16 0 1126 18L189 377c-3 5-8 7-13 7z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 16px 50%;
+}
+
 .main-nav__list--lvl2 .main-nav__link:hover,
 .main-nav__list--lvl2 .main-nav__link:focus {
   color: #01768b;
@@ -1458,21 +1616,17 @@ textarea.textfield__element {
 
 @media (min-width: 980px) {
   .main-nav__banner {
-    display: block;
-    position: relative;
-    right: -24px;
-    bottom: -24px;
+    display: grid;
+    margin-right: -24px;
+    margin-bottom: -24px;
+    margin-left: 32px;
     overflow: hidden;
+    text-decoration: none;
     background-image: linear-gradient(to left, transparent 70%, white), linear-gradient(to top, transparent 70%, white);
   }
 
-  .main-nav__banner img {
-    position: relative;
-    z-index: -1;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .main-nav__banner .banner__offer {
+    align-self: start;
   }
 }
 
