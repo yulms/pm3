@@ -1821,13 +1821,13 @@ textarea.textfield__element {
 .carousel {
   position: relative;
   padding-left: 16px;
-  padding-right: 16px;
+  /* padding-right: 16px; */
 }
 
 @media (min-width: 608px) {
   .carousel {
     padding-left: 24px;
-    padding-right: 24px;
+    /* padding-right: 24px; */
   }
 }
 
@@ -1900,7 +1900,7 @@ textarea.textfield__element {
 .carousel__list {
   display: flex;
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
   margin: 32px 0 0;
   padding: 0;
   list-style: none;
