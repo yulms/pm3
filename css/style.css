@@ -41,20 +41,6 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 607px) {
-  .wrapper {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (min-width: 608px) {
-  .wrapper {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
 img,
 frame {
   max-width: 100%;
@@ -72,63 +58,66 @@ frame {
   clip: rect(0 0 0 0);
 }
 
-.title1 {
-  font-size: 1.5625rem;
-  font-weight: 600;
-  line-height: 1.28;
+/* .article h1 и т.д. - контент, заполняемый из админки */
+.title1,
+.article h1 {
+  font-size: 2rem;
+  line-height: 1.125;
   letter-spacing: -0.05em;
-  color: rgba(0, 0, 0, 0.7);
 }
 
-@media (min-width: 308px) {
-  .title1 {
-    font-size: 2rem;
-    line-height: 1.125;
-  }
-}
-
-.title2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.2;
+.title2,
+.article h2 {
+  font-size: 1.5625rem;
+  line-height: 1.28;
   letter-spacing: -0.04em;
   color: rgba(0, 0, 0, 0.7);
 }
 
-@media (min-width: 308px) {
-  .title2 {
-    font-size: 1.5625rem;
-    line-height: 1.28;
-  }
-}
-
-.title3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.333;
+.title3,
+.article h3 {
+  font-size: 1.25rem;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   color: rgba(0, 0, 0, 0.7);
 }
 
-@media (min-width: 308px) {
-  .title3 {
-    font-size: 1.25rem;
-    line-height: 1.2;
-  }
-}
-
-.title4 {
+.title4,
+.article h4 {
   font-size: 1rem;
-  font-weight: 600;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.7);
 }
 
-.title5 {
+.title5,
+.article h5 {
   font-size: 0.875rem;
-  font-weight: 600;
   line-height: 1.714286;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.title1,
+.title2,
+.title3,
+.title4,
+.title5,
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5 {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.article p,
+.article ul,
+.article ol,
+.article pre,
+.article table,
+.article blockquote {
+  margin-top: 0px;
+  margin-bottom: 24px;
 }
 
 .secondary-text {
@@ -1658,7 +1647,14 @@ textarea.textfield__element {
   margin-top: 16px;
 }
 
-.promo {
+@media (min-width: 980px) {
+  .promo {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.main-page__promo {
   display: grid;
 }
 
@@ -1699,8 +1695,26 @@ textarea.textfield__element {
 }
 
 .main-page__category,
-.main-page__catalog {
+.main-page__catalog,
+.main-page__carousel,
+.main-page__article {
   margin-top: 64px;
+}
+
+.category,
+.catalog,
+.article {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 608px) {
+  .category,
+  .catalog,
+  .article {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .category__title,
@@ -1849,11 +1863,6 @@ textarea.textfield__element {
 
 .carousel {
   position: relative;
-}
-
-.main-page__carousel {
-  max-width: 1400px;
-  margin: 64px auto 0;
 }
 
 @media (min-width: 980px) {
@@ -2013,6 +2022,14 @@ textarea.textfield__element {
 
 .carousel__item + .carousel__item {
   margin-left: 16px;
+}
+
+.carousel__image {
+  display: block;
+  width: 140px;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .minicard {
