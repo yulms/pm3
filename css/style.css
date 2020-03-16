@@ -1333,9 +1333,6 @@ textarea.textfield__element {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  /* mozilla?
-  scrollbar-color: transparent transparent;
-  scrollbar-width: 0px; */
 }
 
 .main-nav__list--lvl1::-webkit-scrollbar {
@@ -1694,23 +1691,28 @@ textarea.textfield__element {
   }
 }
 
-.main-page__category {
+.main-page__category,
+.main-page__catalog,
+.main-page__carousel {
   margin-top: 64px;
 }
 
-.category {
+.category,
+.catalog {
   padding-left: 16px;
   padding-right: 16px;
 }
 
 @media (min-width: 608px) {
-  .category {
+  .category,
+  .catalog {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 
-.category__title {
+.category__title,
+.catalog__title {
   margin: 0;
 }
 
@@ -1732,13 +1734,8 @@ textarea.textfield__element {
   }
 }
 
-/* @media (max-width: 607px) {
-  .category__item + .category__item {
-    margin-top: 8px;
-  }
-} */
-
-.category__link {
+.category__link,
+.catalog__link {
   display: block;
   height: 100%;
   text-decoration: none;
@@ -1747,7 +1744,9 @@ textarea.textfield__element {
 }
 
 .category__link:hover,
-.category__link:focus {
+.category__link:focus,
+.catalog__link:hover,
+.catalog__link:focus {
   text-decoration: underline;
   color: #01768b;
 }
@@ -1804,7 +1803,8 @@ textarea.textfield__element {
   }
 }
 
-.category__figure figcaption {
+.category__figure figcaption,
+.catalog__figure figcaption {
   word-break: break-word;
 }
 
@@ -1826,8 +1826,33 @@ textarea.textfield__element {
   }
 }
 
-.main-page__carousel {
-  margin-top: 64px;
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  row-gap: 16px;
+  column-gap: 8px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 608px) {
+  .catalog__list {
+    column-gap: 16px;
+  }
+}
+
+.catalog__figure {
+  margin: 0;
+}
+
+.catalog__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin-bottom: 4px;
+  object-fit: cover;
 }
 
 .carousel {
@@ -1983,15 +2008,9 @@ textarea.textfield__element {
   scroll-snap-align: start;
 }
 
-@media (max-width: 607px) {
+@media (max-width: 979px) {
   .carousel__item {
     scroll-margin-left: 16px;
-  }
-}
-
-@media (min-width: 608px) and (max-width: 979px) {
-  .carousel__item {
-    scroll-margin-left: 24px;
   }
 }
 
