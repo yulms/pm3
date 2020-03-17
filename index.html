@@ -1079,205 +1079,242 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <h2 class="visually-hidden">Общая информация</h2>
-    <!-- Наши преимущества -->
-    <div>
-      <h3 class="visually-hidden">Наши преимущества</h3>
-      <ul>
-        <li>
-          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-delivery"></use>
-          </svg>
-          Бесплатная доставка
-        </li>
-        <li>
-          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-garant"></use>
-          </svg>
-          Гарантия качества
-        </li>
-        <li>
-          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-24hours"></use>
-          </svg>
-          Прием заказов круглосуточно
-        </li>
-        <li>
-          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-exchange"></use>
-          </svg>
-          Возврат товара
-        </li>
-        <li>
-          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-placeholder"></use>
-          </svg>
-          Удобные пункты самовывоза
-        </li>
-        <li>
-          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-gift"></use>
-          </svg>
-          Бонусы за покупки
-        </li>
-      </ul>
-    </div>
-
-    <!-- Подписка на рассылку -->
-    <div>
-      <h3 class="visually-hidden">Подписка на нашу рассылку</h3>
-      <p>Подпишитесь на нашу рассылку и получайте информацию о скидках</p>
-      <form>
-        <label>
-          <input type="email" name="email" required>
-          <span>Email</span>
-        </label>
-        <button type="submit">Подписаться!</button>
-      </form>
-    </div>
-
-    <!-- Информация - ссылки -->
-    <div>
-      <h3>Информация</h3>
-      <ul>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">Договор публичной оферты</a></li>
-        <li><a href="#">Доставка и оплата</a></li>
-        <li><a href="#">Самовывозы в Минске</a></li>
-        <li><a href="#">Самовывозы в РБ</a></li>
-        <li><a href="#">Новости</a></li>
-        <li><a href="#">Гарантии</a></li>
-        <li><a href="#">Карта сайта</a></li>
-      </ul>
-    </div>
-
-    <!-- Каталог - позже пересмотреть необходимость этого блока -->
-    <div>
-      <h3>Отделы</h3>
-      <ul>
-        <li><a href="#">Кухонная посуда</a></li>
-        <li><a href="#">Столовая посуда</a></li>
-        <li><a href="#">Кухонные принадлежнсти</a></li>
-        <li><a href="#">Посуда для чая и кофе</a></li>
-        <li><a href="#">Посуда для бара</a></li>
-        <li><a href="#">Посуда по брендам</a></li>
-        <li><a href="#">Акции</a></li>
-      </ul>
-    </div>
-
-    <!-- Мы принимаем к оплате -->
-    <div>
-      <h3>Мы принимаем к оплате:</h3>
-      <ul>
-        <!-- Позже заменить на svg use -->
-        <li>
-          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-visa"></use>
-          </svg>
-          <span class="visually-hidden">Visa</span>
-        </li>
-        <li>
-          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-mastercard"></use>
-          </svg>
-          <span class="visually-hidden">Mastercard</span>
-        </li>
-        <li>
-          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-maestro"></use>
-          </svg>
-          <span class="visually-hidden">Maestro</span>
-        </li>
-        <li>
-          <svg class="icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-erip"></use>
-          </svg>
-          <span class="visually-hidden">Ерип расчет</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Ссылки на социальные сети -->
-    <div>
-      <h3>Мы в социальных сетях, присоединяйтесь!</h3>
-      <ul>
-        <li>
-          <a href="#" target="_blank" rel="noopener nofollow" title="Наш Вконтакте">
-            <span class="visually-hidden">Наша группа в ВК</span>
-            <svg class="icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-vk"></use>
+  <footer class="footer" role="contentinfo">
+    <div class="wrapper">
+      <h2 class="visually-hidden">Общая информация</h2>
+      <!-- Наши преимущества -->
+      <div class="footer__benefits">
+        <h3 class="visually-hidden">Наши преимущества</h3>
+        <ul class="footer__benefits--list">
+          <li class="footer__benefits--item">
+            <svg class="footer__benefits--icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-delivery"></use>
             </svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener nofollow" title="Наш Фэйсбук">
-            <span class="visually-hidden">Наша группа в Фэйсбук</span>
-            <svg class="icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-facebook"></use>
+            Бесплатная доставка
+          </li>
+          <li class="footer__benefits--item">
+            <svg class="footer__benefits--icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-garant"></use>
             </svg>
-          </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noopener nofollow" title="Наш Одноклассники">
-            <span class="visually-hidden">Наша группа в Одноклассниках</span>
-            <svg class="icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-odnoclasniki"></use>
+            Гарантия качества
+          </li>
+          <li class="footer__benefits--item">
+            <svg class="footer__benefits--icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-24hours"></use>
             </svg>
-          </a>
-        </li>
-      </ul>
+            Прием заказов круглосуточно
+          </li>
+          <li class="footer__benefits--item">
+            <svg class="footer__benefits--icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-exchange"></use>
+            </svg>
+            Возврат товара
+          </li>
+          <li class="footer__benefits--item">
+            <svg class="footer__benefits--icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-placeholder"></use>
+            </svg>
+            Удобные пункты самовывоза
+          </li>
+          <li class="footer__benefits--item">
+            <svg class="footer__benefits--icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-gift"></use>
+            </svg>
+            Бонусы за покупки
+          </li>
+        </ul>
+      </div>
+
+      <!-- Подписка на рассылку -->
+      <div class="footer__subscribe">
+        <h3 class="visually-hidden">Подписка на нашу рассылку</h3>
+        <p class="footer__subscribe-text">
+          <svg class="footer__subscribe-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-newsletter"></use>
+          </svg>
+          Подпишитесь на нашу рассылку и получайте информацию о скидках
+        </p>
+        <form class="footer__subscribe-form">
+          <label for="subscribe-input">
+            <span class="visually-hidden">Ваш email</span>
+          </label>
+          <input class="footer__subscribe-input" id="subscribe-input" type="email" name="email" placeholder="Ваш email ..." required>
+          <button class="button button--action-prymary" type="submit">Подписаться!</button>
+        </form>
+      </div>
+
+      <div class="footer__main">
+        <!-- Информация - ссылки -->
+        <div class="footer__menu">
+          <h3 class="title3 footer__title3">Информация</h3>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Контакты</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Договор публичной оферты</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Самовывозы в Минске</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Самовывозы в РБ</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Новости</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Гарантии</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Карта сайта</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Каталог - позже пересмотреть необходимость этого блока -->
+        <div class="footer__menu">
+          <h3 class="title3 footer__title3">Отделы</h3>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Кухонная посуда</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Столовая посуда</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Кухонные принадлежнсти</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Посуда для чая и кофе</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Посуда для бара</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Посуда по брендам</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Акции</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Мы принимаем к оплате -->
+        <div class="footer__payinfo">
+          <h3 class="title3 footer__title3">Мы принимаем к оплате:</h3>
+          <ul class="footer__payinfo-list">
+            <li class="footer__payinfo-item">
+              <svg class="footer__payinfo-icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-visa"></use>
+              </svg>
+              <span class="visually-hidden">Visa</span>
+            </li>
+            <li class="footer__payinfo-item">
+              <svg class="footer__payinfo-icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-mastercard"></use>
+              </svg>
+              <span class="visually-hidden">Mastercard</span>
+            </li>
+            <li class="footer__payinfo-item">
+              <svg class="footer__payinfo-icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-maestro"></use>
+              </svg>
+              <span class="visually-hidden">Maestro</span>
+            </li>
+            <li class="footer__payinfo-item">
+              <svg class="footer__payinfo-icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-erip"></use>
+              </svg>
+              <span class="visually-hidden">Ерип расчет</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ссылки на социальные сети -->
+        <div class="footer__social">
+          <h3 class="title3 footer__title3">Мы в социальных сетях, присоединяйтесь!</h3>
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" target="_blank" rel="noopener nofollow" title="Наш Вконтакте">
+                <span class="visually-hidden">Наша группа в ВК</span>
+                <svg class="footer__social-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" target="_blank" rel="noopener nofollow" title="Наш Фэйсбук">
+                <span class="visually-hidden">Наша группа в Фэйсбук</span>
+                <svg class="footer__social-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#" target="_blank" rel="noopener nofollow" title="Наш Одноклассники">
+                <span class="visually-hidden">Наша группа в Одноклассниках</span>
+                <svg class="footer__social-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-odnoclasniki"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <h3 class="title3 footer__title3">Контактная информация</h3>
+          <ul class="footer__contact-list">
+            <li class="footer__contact-item">
+              <a class="footer__contact-link" href="tel:+375296810507">
+                <svg class="footer__contact-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-a1"></use>
+                </svg>
+                +375-29-681-05-07
+              </a>
+            </li>
+            <li class="footer__contact-item">
+              <a class="footer__contact-link" href="tel:+375336810507">
+                <svg class="footer__contact-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-mts"></use>
+                </svg>
+                +375-33-681-05-07
+              </a>
+            </li>
+            <li class="footer__contact-item">
+              <a class="footer__contact-link" href="tel:+375256810507">
+                <svg class="footer__contact-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-life"></use>
+                </svg>
+                +375-25-681-05-07
+              </a>
+            </li>
+            <li class="footer__contact-item">
+              <a class="footer__contact-link" href="#">
+                <svg class="footer__contact-icon footer__contact-icon--viber-bw" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-viber"></use>
+                </svg>
+                Viber posudamart.by
+              </a>
+            </li>
+          </ul>
+
+          <p>
+            ИП Лемеш Юрий Ренальдович <br>
+            Режим работы: ПН, ВТ, СР, ЧТ, ПТ, СБ, ВС с 9:00 до 21:00 <br>
+            Свидетельство 193155682 выдано 23.10.2018 Минский горисполком <br>
+            УНП 193155682 <br>
+            220121 г. Минск ул. Притыцкого 49-110 <br>
+            Дата регистрации в Торговом реестре РБ: 18.01.2019
+          </p>
+        </div>
+      </div>
+
+      <p class="footer__copyright">© ИП Лемеш Ю.Р., 2020</p>
     </div>
-
-    <div>
-      <h3>Контактная информация</h3>
-      <ul>
-        <li>
-          <a href="tel:+375296810507">
-            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-a1"></use>
-            </svg>
-            +375-29-681-05-07
-          </a>
-        </li>
-        <li>
-          <a href="tel:+375336810507">
-            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-mts"></use>
-            </svg>
-            +375-33-681-05-07
-          </a>
-        </li>
-        <li>
-          <a href="tel:+375256810507">
-            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-life"></use>
-            </svg>
-            +375-25-681-05-07
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-viber"></use>
-            </svg>
-            Viber posudamart.by
-          </a>
-        </li>
-      </ul>
-
-      <p>
-        ИП Лемеш Юрий Ренальдович <br>
-        Режим работы: ПН, ВТ, СР, ЧТ, ПТ, СБ, ВС с 9:00 до 21:00 <br>
-        Свидетельство 193155682 выдано 23.10.2018 Минский горисполком <br>
-        УНП 193155682 <br>
-        220121 г. Минск ул. Притыцкого 49-110 <br>
-        Дата регистрации в Торговом реестре РБ: 18.01.2019
-      </p>
-    </div>
-
-
-    <p class="footer__copyright">© ИП Лемеш Ю.Р., 2020</p>
   </footer>
 
 
