@@ -1331,7 +1331,8 @@ textarea.textfield__element {
 @media (max-width: 607px) {
   .footer__benefits,
   .footer__subscribe,
-  .footer__main {
+  .footer__main,
+  .footer__copyright {
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -1340,7 +1341,8 @@ textarea.textfield__element {
 @media (min-width: 608px) {
   .footer__benefits,
   .footer__subscribe,
-  .footer__main {
+  .footer__main,
+  .footer__copyright {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -1419,6 +1421,7 @@ textarea.textfield__element {
 .footer__subscribe-text {
   display: flex;
   align-items: center;
+  flex-basis: 370px;
   margin: 0;
 }
 
@@ -1478,6 +1481,51 @@ textarea.textfield__element {
   }
 }
 
+.footer__main {
+  display: grid;
+  row-gap: 32px;
+  margin-top: 32px;
+}
+
+@media (min-width: 500px) {
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+}
+
+@media (min-width: 980px) {
+  .footer__main {
+    grid-template-columns: 2fr 2fr 3fr 3fr;
+    grid-template-areas:
+      "inf-links cat-links social cont"
+      "inf-links cat-links paym   shop";
+  }
+  .footer__info-links {
+    grid-area: inf-links;
+  }
+  .footer__catalog-links {
+    grid-area: cat-links;
+  }
+  .footer__payinfo {
+    grid-area: paym;
+  }
+  .footer__social {
+    grid-area: social;
+  }
+  .footer__contact {
+    grid-area: cont;
+  }
+  .footer__shop-official {
+    grid-area: shop;
+    display: block;
+    margin: 0;
+    font-size: 10px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.54);
+  }
+}
+
 .footer__title3 {
   margin: 0 0 16px 0;
   color: #ffffff;
@@ -1492,7 +1540,6 @@ textarea.textfield__element {
 
 .footer__menu-link {
   display: block;
-  /* padding: 4px 0; */
   color: #cccccc;
   text-decoration: none;
 }
@@ -1537,6 +1584,16 @@ textarea.textfield__element {
   fill: currentColor;
 }
 
+.footer__contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__contact-item + .footer__contact-item {
+  margin-top: 8px;
+}
+
 .footer__social-link:hover,
 .footer__social-link:focus,
 .footer__contact-link:hover,
@@ -1558,12 +1615,19 @@ textarea.textfield__element {
   fill: currentColor;
 }
 
-.footer__contact-icon--viber-bw .cls-1 {
-  fill: currentColor;
+@media (max-width: 1279px) {
+  .footer__shop-official {
+    display: none;
+  }
 }
 
-.footer__contact-icon--viber-bw .cls-2 {
-  stroke: currentColor;
+.footer__copyright {
+  display: block;
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.54);
 }
 
 .main-nav {
@@ -2008,15 +2072,8 @@ textarea.textfield__element {
 }
 
 @media (min-width: 980px) {
-  .category__link:hover .category__figure,
-  .category__link:focus .category__figure {
-    background-color: #faf9f7;
-    border-radius: 2px;
-  }
-
   .category__link:hover .category__image,
   .category__link:focus .category__image {
-    border-radius: 50%;
     transform: translateY(-4px);
     transition: 0.15s;
   }
@@ -2036,11 +2093,23 @@ textarea.textfield__element {
 
 @media (min-width: 980px) {
   .category__figure {
-    display: flex;
+    position: relative;
+    z-index: 0;
     flex-direction: column;
-    padding: 8px;
+    padding: 16px;
     box-shadow: none;
     background-color: transparent;
+  }
+  .category__figure::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 2px;
   }
 }
 
@@ -2074,10 +2143,10 @@ textarea.textfield__element {
 
 @media (min-width: 980px) {
   .category__image {
-    width: 144px;
-    height: 144px;
+    width: 120px;
+    height: 120px;
     margin-right: 0;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     border-radius: 0;
   }
 }
@@ -2113,6 +2182,7 @@ textarea.textfield__element {
 
 .carousel {
   position: relative;
+  z-index: 0;
 }
 
 @media (min-width: 980px) {
@@ -2279,6 +2349,7 @@ textarea.textfield__element {
 
 .carousel__image-container {
   position: relative;
+  z-index: 0;
   display: block;
   /* соотношение сторон фото 1:1 */
   padding-top: 100%;
@@ -2434,7 +2505,7 @@ textarea.textfield__element {
   padding: 0;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: inset 0 0 0 0 transparent, 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
 .minicard__love-button:hover,
