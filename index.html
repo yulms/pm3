@@ -91,7 +91,7 @@
 
       <!-- Телефоны -->
       <div class="header__contacts">
-        <div class="button header__link header__link--tel js-header__link--tel" tabindex="0">
+        <button class="button header__link header__link--tel js-header__link--tel">
           <svg class="icon icon--thin header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="svg/sprite.svg#icon-tel"></use>
           </svg>
@@ -100,64 +100,62 @@
           <svg class="icon icon--thin" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="svg/sprite.svg#icon-arrow"></use>
           </svg>
+        </button>
 
+        <div class="header__contacts-modal closed" aria-label="Дополнительные контакты">
+          <ul class="header__contacts-list header__contacts-list--tel">
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="tel:+375336810507">
+                <span class="secondary-text">+375-33-</span>
+                681-05-07
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="tel:+375256810507">
+                <span class="secondary-text">+375-25-</span>
+                681-05-07
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="tel:+375296810507">
+                <span class="secondary-text">+375-29-</span>
+                681-05-07
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="button button--action-secondary" href="tel:+375336810507">
+                <span class="button__text">Позвонить</span>
+              </a>
+            </li>
+          </ul>
 
-          <div class="header__contacts-modal" aria-label="Дополнительные контакты">
-            <ul class="header__contacts-list header__contacts-list--tel">
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="tel:+375336810507">
-                  <span class="secondary-text">+375-33-</span>
-                  681-05-07
-                </a>
-              </li>
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="tel:+375256810507">
-                  <span class="secondary-text">+375-25-</span>
-                  681-05-07
-                </a>
-              </li>
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="tel:+375296810507">
-                  <span class="secondary-text">+375-29-</span>
-                  681-05-07
-                </a>
-              </li>
-              <li class="header__contacts-item">
-                <a class="button button--action-secondary" href="tel:+375336810507">
-                  <span class="button__text">Позвонить</span>
-                </a>
-              </li>
-            </ul>
+          <!-- <button>Перезвоните мне!</button> -->
+          <p class="header__contacts-worktime">Время работы: <br>с 9-00 до 20-00 Пн-Пт</p>
 
-            <!-- <button>Перезвоните мне!</button> -->
-            <p class="header__contacts-worktime">Время работы: <br>с 9-00 до 20-00 Пн-Пт</p>
-
-            <ul class="header__contacts-list">
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="#">
-                  <svg class="header__contacts-icon header__contacts-icon--viber-colored" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="svg/sprite.svg#icon-viber"></use>
-                  </svg>
-                  Viber
-                </a>
-              </li>
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="#">
-                  <svg class="header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="svg/sprite.svg#icon-telegram--colored"></use>
-                  </svg>
-                  Telegram
-                </a>
-              </li>
-              <li class="header__contacts-item">
-                <a class="header__contacts-link" href="mailto:posudamn@gmail.com">
-                  posudamn@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
+          <ul class="header__contacts-list">
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="#">
+                <svg class="header__contacts-icon header__contacts-icon--viber-colored" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-viber"></use>
+                </svg>
+                Viber
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="#">
+                <svg class="header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="svg/sprite.svg#icon-telegram--colored"></use>
+                </svg>
+                Telegram
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="mailto:posudamn@gmail.com">
+                posudamn@gmail.com
+              </a>
+            </li>
+          </ul>
         </div>
-
 
 
 

@@ -10,10 +10,20 @@ buttonBurger.addEventListener("click", function(evt) {
   modalOverlay.classList.remove("closed");
 });
 
-modalOverlay.addEventListener("click", function(evt) {
-  evt.preventDefault();
+function closeModals() {
   secondaryMenu.classList.remove("header__top-menu--active");
   modalOverlay.classList.add("closed");
+  modalTel.classList.add("closed");
+}
+
+modalOverlay.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  closeModals();
+});
+
+modalOverlay.addEventListener("mouseover", function(evt) {
+  evt.preventDefault();
+  setTimeout(closeModals, 1000);
 });
 
 // Закрытие основного меню по клику на кнопке закрыть
@@ -27,9 +37,21 @@ for (let i = 0; i < closeMainNav.length; i++) {
 }
 
 let buttonTel = document.querySelector(".js-header__link--tel");
+let modalTel = document.querySelector(".header__contacts-modal");
+
+function openModalTel() {
+  modalOverlay.classList.remove("closed");
+  modalTel.classList.remove("closed");
+}
+
+buttonTel.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  openModalTel();
+});
+
 buttonTel.addEventListener("mouseover", function(evt) {
   evt.preventDefault();
-  console.log("1");
+  setTimeout(openModalTel, 200);
 });
 
 // Double Range Slider

@@ -1247,43 +1247,32 @@ textarea.textfield__element {
   text-decoration: none;
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-.header__link--tel:hover .header__contacts-modal {
-  /* display: block; */
-  visibility: visible;
-  transition-delay: 0.5s;
+.header__link--tel:focus {
+  position: relative;
+  z-index: 2;
 }
 
-.header__link--tel:focus .header__contacts-modal {
-  /* display: block; */
-  visibility: visible;
-  transition-delay: 0;
-}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 .header__contacts-modal {
-  /* display: none; */
-  visibility: hidden;
   position: absolute;
   z-index: 2;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 240px;
+  min-width: 248px;
   padding: 8px 32px;
   color: rgba(0, 0, 0, 0.75);
   background-color: #ffffff;
   border-radius: 2px;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.16);
-  cursor: auto;
-  transition: 1s;
 }
 
 .header__contacts-modal::before {
@@ -1321,6 +1310,7 @@ textarea.textfield__element {
 @media (max-width: 979px) {
   .header__contacts-item .button {
     width: 100%;
+    margin-top: 8px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 20px;
