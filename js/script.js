@@ -26,6 +26,12 @@ for (let i = 0; i < closeMainNav.length; i++) {
   });
 }
 
+let buttonTel = document.querySelector(".js-header__link--tel");
+buttonTel.addEventListener("mouseover", function(evt) {
+  evt.preventDefault();
+  console.log("1");
+});
+
 // Double Range Slider
 // let rangeSlider = document.getElementById("range-slider");
 // noUiSlider.create(rangeSlider, {
