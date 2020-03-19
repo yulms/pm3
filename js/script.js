@@ -5,16 +5,26 @@ let secondaryMenu = document.querySelector(".header__top-menu");
 let modalOverlay = document.querySelector(".modal-overlay");
 
 buttonBurger.addEventListener("click", function(evt) {
-  evt.preventDefault;
+  evt.preventDefault();
   secondaryMenu.classList.add("header__top-menu--active");
   modalOverlay.classList.remove("closed");
 });
 
 modalOverlay.addEventListener("click", function(evt) {
-  evt.preventDefault;
+  evt.preventDefault();
   secondaryMenu.classList.remove("header__top-menu--active");
   modalOverlay.classList.add("closed");
 });
+
+// Закрытие основного меню по клику на кнопке закрыть
+let closeMainNav = document.querySelectorAll(".js-button--main-nav-close");
+for (let i = 0; i < closeMainNav.length; i++) {
+  closeMainNav[i].addEventListener("click", function(evt) {
+    // поиск элемента с фокусом и его расфокусировка
+    let el = document.querySelector(":focus");
+    if (el) el.blur();
+  });
+}
 
 // Double Range Slider
 // let rangeSlider = document.getElementById("range-slider");
