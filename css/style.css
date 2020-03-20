@@ -1039,7 +1039,7 @@ textarea.textfield__element {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     transition: 0.2s;
   }
-  .header__top-menu--active {
+  .header__top-menu--isopened {
     left: 0;
   }
 }
@@ -1107,7 +1107,7 @@ textarea.textfield__element {
 }
 
 @media (max-width: 979px) {
-  .header__top-menu--active .city-choose {
+  .header__top-menu--isopened .city-choose {
     border-bottom: 1px solid #e0e0e0;
   }
 }
@@ -1118,7 +1118,7 @@ textarea.textfield__element {
 }
 
 @media (max-width: 979px) {
-  .header__top-menu--active .city-choose__current-city {
+  .header__top-menu--isopened .city-choose__current-city {
     color: #01768b;
     text-decoration: underline;
     word-break: break-word;
@@ -1203,6 +1203,10 @@ textarea.textfield__element {
   color: #fff;
 }
 
+.header__link:focus {
+  outline: 1px solid #ffffff;
+}
+
 .header__logo-container {
   min-height: 48px;
   display: flex;
@@ -1239,17 +1243,25 @@ textarea.textfield__element {
 }
 
 .header__contacts {
-  position: relative;
   margin-left: auto;
 }
 
-.header__link--tel {
-  text-decoration: none;
-}
-
-.header__link--tel:focus {
+.header__contacts--isopened {
   position: relative;
   z-index: 2;
+}
+
+.header__contacts--isopened .header__contacts-modal {
+  display: block;
+}
+
+/* .header__contacts:hover,
+.header__contacts:focus-within {
+  z-index: 2;
+} */
+
+.header__link--tel {
+  text-decoration: none;
 }
 
 /*  */
@@ -1262,6 +1274,7 @@ textarea.textfield__element {
 /*  */
 
 .header__contacts-modal {
+  display: none;
   position: absolute;
   z-index: 2;
   top: 100%;

@@ -1,48 +1,26 @@
 "use strict";
 
-let buttonBurger = document.querySelector(".header__link--burger");
-let secondaryMenu = document.querySelector(".header__top-menu");
-let modalOverlay = document.querySelector(".modal-overlay");
+const modalOverlay = document.querySelector(".modal-overlay");
 
+// бургер - открытие вспомогательного меню
+const buttonBurger = document.querySelector(".header__link--burger");
+const secondaryMenu = document.querySelector(".header__top-menu");
 buttonBurger.addEventListener("click", function(evt) {
   evt.preventDefault();
-  secondaryMenu.classList.add("header__top-menu--active");
+  secondaryMenu.classList.add("header__top-menu--isopened");
   modalOverlay.classList.remove("closed");
 });
 
-function closeModals() {
-  secondaryMenu.classList.remove("header__top-menu--active");
-  modalOverlay.classList.add("closed");
-  modalTel.classList.add("closed");
-}
-
-modalOverlay.addEventListener("click", function(evt) {
-  evt.preventDefault();
-  closeModals();
-});
-
-modalOverlay.addEventListener("mouseover", function(evt) {
-  evt.preventDefault();
-  setTimeout(closeModals, 1000);
-});
-
-// Закрытие основного меню по клику на кнопке закрыть
-let closeMainNav = document.querySelectorAll(".js-button--main-nav-close");
-for (let i = 0; i < closeMainNav.length; i++) {
-  closeMainNav[i].addEventListener("click", function(evt) {
-    // поиск элемента с фокусом и его расфокусировка
-    let el = document.querySelector(":focus");
-    if (el) el.blur();
-  });
-}
-
-let buttonTel = document.querySelector(".js-header__link--tel");
-let modalTel = document.querySelector(".header__contacts-modal");
-
+// открытие окна телефонов
+const modalTel = document.querySelector(".header__contacts-modal");
+// родительский блок, с которого отлавливаем mouseleave
+const contactsBlock = modalTel.parentNode;
 function openModalTel() {
   modalOverlay.classList.remove("closed");
-  modalTel.classList.remove("closed");
+  contactsBlock.classList.add("header__contacts--isopened");
 }
+
+const buttonTel = document.querySelector(".js-header__link--tel");
 
 buttonTel.addEventListener("click", function(evt) {
   evt.preventDefault();
@@ -51,8 +29,48 @@ buttonTel.addEventListener("click", function(evt) {
 
 buttonTel.addEventListener("mouseover", function(evt) {
   evt.preventDefault();
-  setTimeout(openModalTel, 200);
+  // setTimeout(openModalTel, 200);
+  openModalTel();
 });
+
+//
+//
+//
+//
+//
+
+function closeModals() {
+  secondaryMenu.classList.remove("header__top-menu--isopened");
+  modalOverlay.classList.add("closed");
+  contactsBlock.classList.remove("header__contacts--isopened");
+}
+
+modalOverlay.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  closeModals();
+});
+
+contactsBlock.addEventListener("mouseleave", function(evt) {
+  evt.preventDefault();
+  closeModals();
+});
+
+// Закрытие главного меню по клику на кнопке закрыть
+const closeMainNav = document.querySelectorAll(".js-button--main-nav-close");
+for (let i = 0; i < closeMainNav.length; i++) {
+  closeMainNav[i].addEventListener("click", function(evt) {
+    // поиск элемента с фокусом и его расфокусировка
+    let el = document.querySelector(":focus");
+    if (el) el.blur();
+  });
+}
+
+//
+//
+//
+//
+//
+//
 
 // Double Range Slider
 // let rangeSlider = document.getElementById("range-slider");
