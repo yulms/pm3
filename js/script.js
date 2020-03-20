@@ -29,8 +29,27 @@ buttonTel.addEventListener("click", function(evt) {
 
 buttonTel.addEventListener("mouseover", function(evt) {
   evt.preventDefault();
-  // setTimeout(openModalTel, 200);
   openModalTel();
+});
+
+// открытие User Menu
+const modalUser = document.querySelector(".user-menu");
+// родительский блок, с которого отлавливаем mouseleave
+const userBlock = modalUser.parentNode;
+function openModalUser() {
+  modalOverlay.classList.remove("closed");
+  userBlock.classList.add("header__user--isopened");
+}
+
+const buttonUser = document.querySelector(".header__link--user");
+buttonUser.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  openModalUser();
+});
+
+buttonUser.addEventListener("mouseover", function(evt) {
+  evt.preventDefault();
+  openModalUser();
 });
 
 //
@@ -43,6 +62,7 @@ function closeModals() {
   secondaryMenu.classList.remove("header__top-menu--isopened");
   modalOverlay.classList.add("closed");
   contactsBlock.classList.remove("header__contacts--isopened");
+  userBlock.classList.remove("header__user--isopened");
 }
 
 modalOverlay.addEventListener("click", function(evt) {
@@ -51,6 +71,11 @@ modalOverlay.addEventListener("click", function(evt) {
 });
 
 contactsBlock.addEventListener("mouseleave", function(evt) {
+  evt.preventDefault();
+  closeModals();
+});
+
+userBlock.addEventListener("mouseleave", function(evt) {
   evt.preventDefault();
   closeModals();
 });

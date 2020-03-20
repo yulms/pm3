@@ -21,9 +21,9 @@
 
       <!-- Secondary menu -->
       <div class="header__top-menu">
-        <ul class="header__top-menu-list">
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link city-choose" href="#">
+        <ul class="dropdown-menu header__top-menu-list">
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link city-choose" href="#">
               <span class="city-choose__caption">Доставка в город: </span>
               <svg class="city-choose__icon city-choose__icon--place" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="svg/sprite.svg#icon-place"></use>
@@ -36,30 +36,30 @@
             </a>
           </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Доставка и оплата</a>
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link" href="#">Доставка и оплата</a>
           </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Самовывоз</a>
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link" href="#">Самовывоз</a>
           </li>
         </ul>
 
-        <ul class="header__top-menu-list header__top-menu-list--secondary">
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Гарантии</a>
+        <ul class="dropdown-menu header__top-menu-list--secondary">
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link" href="#">Гарантии</a>
           </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Акции</a>
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link" href="#">Акции</a>
           </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">О магазине</a>
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link" href="#">О магазине</a>
           </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Контакты</a>
+          <li class="dropdown-menu__item header__top-menu-item">
+            <a class="dropdown-menu__link header__top-menu-link" href="#">Контакты</a>
           </li>
         </ul>
 
@@ -90,7 +90,7 @@
 
 
       <!-- Телефоны -->
-      <div class="header__contacts">
+      <div class="header__layout-item header__contacts">
         <button class="button header__link header__link--tel js-header__link--tel">
           <svg class="icon icon--thin header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="svg/sprite.svg#icon-tel"></use>
@@ -166,31 +166,100 @@
           </ul>
         </div>
 
-
-
-
-        <!-- Вместо перезвоните мне. Возможно придется вообще убрать, смотреть на финише -->
         <p class="header__contacts-caption">консультация эксперта</p>
       </div>
 
       <!-- Список желаний -->
-      <a class="header__link header__link--love" href="#">
+      <a class="header__layout-item header__layout-item--love header__link" href="#">
         <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="svg/sprite.svg#icon-love"></use>
         </svg>
         <span class="visually-hidden">Закладки</span>
       </a>
 
+
+
+
       <!-- User -->
-      <a class="header__link header__link--user" href="#">
-        <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="svg/sprite.svg#icon-user"></use>
-        </svg>
-        <span class="header__link-caption">Мой аккаунт</span>
-      </a>
+      <div class="header__layout-item header__layout-item--user header__user">
+        <a class="header__link header__link--user" href="#">
+          <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-user"></use>
+          </svg>
+          <span class="header__link-caption">Мой аккаунт</span>
+        </a>
+
+        <div class="user-menu" aria-label="Меню пользователя">
+          <h2 class="visually-hidden">Меню пользователя</h2>
+          <p class="user-menu__entry-text">Добро пожаловать</p>
+          <a class="button button--options-prymary user-menu__login-button" href="#">Войти</a>
+
+          <div class="socials-login">
+            <span>Войти через:</span>
+            <ul class="socials-login__list">
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="socials-login__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-google"></use>
+                  </svg>
+                  <span class="visually-hidden">Google</span>
+                </a>
+              </li>
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="socials-login__icon icon-vk" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-vk"></use>
+                  </svg>
+                  <span class="visually-hidden">Вконтакте</span>
+                </a>
+              </li>
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="socials-login__icon icon-fb" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-facebook"></use>
+                  </svg>
+                  <span class="visually-hidden">Фэйсбук</span>
+                </a>
+              </li>
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="socials-login__icon icon-ok" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-ok"></use>
+                  </svg>
+                  <span class="visually-hidden">Однокласники</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="user-menu__call2reg">
+            <span>Новый покупатель?</span>
+            <a class="link link--underline" href="#">Зарегистрироваться</a>
+          </div>
+
+          <ul class="dropdown-menu user-menu__dropdown-menu">
+            <li><a class="dropdown-menu__link" href="#">Личные данные</a></li>
+            <li><a class="dropdown-menu__link" href="#">История заказов</a></li>
+            <li><a class="dropdown-menu__link" href="#">История просмотров</a></li>
+            <li><a class="dropdown-menu__link" href="#">Избранные товары</a></li>
+            <li><a class="dropdown-menu__link" href="#">Лист ожиданий</a></li>
+          </ul>
+          <a class="user-menu__logout link link--nounderline" href="#">Выйти</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
 
       <!-- Корзина -->
-      <a class="header__link header__link--cart" href="#">
+      <a class="header__layout-item header__layout-item--cart header__link" href="#">
         <div class="header__quantity-positioner">
           <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="svg/sprite.svg#icon-cart"></use>
@@ -1299,7 +1368,7 @@
               <a class="footer__social-link" href="#" target="_blank" rel="noopener nofollow" title="Наш Одноклассники">
                 <span class="visually-hidden">Наша группа в Одноклассниках</span>
                 <svg class="footer__social-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="svg/sprite.svg#icon-odnoclasniki"></use>
+                  <use xlink:href="svg/sprite.svg#icon-ok"></use>
                 </svg>
               </a>
             </li>
@@ -1429,31 +1498,7 @@
     </form>
   </section>
 
-  <!-- меню акаунта - переместить в хедер -->
-  <section class="modal modal--account">
-    <h2 class="visually-hidden">Меню пользователя</h2>
-    <p>Добро пожаловать</p>
-    <a href="#">Войти</a>
-    <div class="socials-login">
-      <span>Войти через:</span>
-      <ul class="socials-login__list">
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Google</span></a></li>
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Вконтакте</span></a></li>
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Фэйсбук</span></a></li>
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Однокласники</span></a></li>
-      </ul>
-    </div>
-    <span>Новый покупатель?</span>
-    <a href="#">Зарегистрироваться</a>
-    <ul>
-      <li><a href="#">Личные данные</a></li>
-      <li><a href="#">История заказов</a></li>
-      <li><a href="#">История просмотров</a></li>
-      <li><a href="#">Избранные товары</a></li>
-      <li><a href="#">Лист ожиданий</a></li>
-    </ul>
-    <a href="#">Выйти</a>
-  </section>
+
 
   <!-- login -->
   <section class="modal modal--login">
@@ -1475,10 +1520,26 @@
     <div class="socials-login">
       <span>Или войти через:</span>
       <ul class="socials-login__list">
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Google</span></a></li>
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Вконтакте</span></a></li>
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Фэйсбук</span></a></li>
-        <li class="socials-login__item"><a href="#"><span class="visually-hidden">Однокласники</span></a></li>
+        <li class="socials-login__item">
+          <a href="#">
+            <span class="visually-hidden">Google</span>
+          </a>
+        </li>
+        <li class="socials-login__item">
+          <a href="#">
+            <span class="visually-hidden">Вконтакте</span>
+          </a>
+        </li>
+        <li class="socials-login__item">
+          <a href="#">
+            <span class="visually-hidden">Фэйсбук</span>
+          </a>
+        </li>
+        <li class="socials-login__item">
+          <a href="#">
+            <span class="visually-hidden">Однокласники</span>
+          </a>
+        </li>
       </ul>
     </div>
     <span>Нет акаунта?</span>
