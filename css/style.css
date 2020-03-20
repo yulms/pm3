@@ -793,6 +793,19 @@ textarea.textfield__element {
   }
 }
 
+/* используем блок т.к. может использоваться самостоятельно */
+.icon-viber {
+  fill: #675dac;
+}
+
+.icon-mts {
+  fill: #e30613;
+}
+
+.icon-life {
+  fill: #062594;
+}
+
 .price {
   font-size: 1.5rem;
   line-height: 1.333333333;
@@ -1281,7 +1294,7 @@ textarea.textfield__element {
   left: 50%;
   transform: translateX(-50%);
   min-width: 248px;
-  padding: 8px 32px;
+  padding: 8px 24px;
   color: rgba(0, 0, 0, 0.75);
   background-color: #ffffff;
   border-radius: 2px;
@@ -1360,12 +1373,9 @@ textarea.textfield__element {
   vertical-align: middle;
   width: 24px;
   height: 24px;
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
-.header__contacts-icon--viber-colored {
-  fill: #675dac;
-}
 /*  */
 /*  */
 /*  */
