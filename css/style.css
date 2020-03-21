@@ -1232,7 +1232,6 @@ textarea.textfield__element {
 
 .header__layout-item {
   height: 56px;
-  padding: 0;
 }
 
 @media (max-width: 607px) {
@@ -1265,8 +1264,23 @@ textarea.textfield__element {
   outline: 1px solid #ffffff;
 }
 
+@media (max-width: 979px) {
+  .header__burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+  }
+}
+
+@media (min-width: 980px) {
+  .header__burger {
+    display: none;
+  }
+}
+
 .header__logo-container {
-  min-height: 48px;
+  min-height: 56px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1304,6 +1318,12 @@ textarea.textfield__element {
   margin-left: auto;
 }
 
+@media (min-width: 980px) {
+  .header__contacts {
+    height: auto;
+  }
+}
+
 .header__contacts--isopened,
 .header__user--isopened {
   position: relative;
@@ -1314,14 +1334,32 @@ textarea.textfield__element {
   display: block;
 }
 
-/* .header__contacts:hover,
-.header__contacts:focus-within {
-  z-index: 2;
-} */
-
-.header__link--tel {
+.header__button-tel {
   height: 100%;
+  padding: 0;
+  color: #cccccc;
   text-decoration: none;
+}
+
+@media (min-width: 980px) {
+  .header__button-tel {
+    height: auto;
+  }
+}
+
+@media (max-width: 979px) {
+  .header__contacts-caption {
+    display: none;
+  }
+}
+
+@media (min-width: 980px) {
+  .header__contacts-caption {
+    margin: 0;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #a8a8a8;
+  }
 }
 
 .header__link--user {
@@ -1415,21 +1453,6 @@ textarea.textfield__element {
   width: 24px;
   height: 24px;
   margin-right: 8px;
-}
-
-@media (max-width: 979px) {
-  .header__contacts-caption {
-    display: none;
-  }
-}
-
-@media (min-width: 980px) {
-  .header__contacts-caption {
-    margin: -16px 0 0;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: #a8a8a8;
-  }
 }
 
 .header__contacts-tel {
@@ -1540,9 +1563,6 @@ textarea.textfield__element {
     margin-right: 0;
     padding-left: 16px;
     padding-right: 16px;
-  }
-  .header__link--burger {
-    display: none;
   }
   .header__logo-container {
     order: -2;

@@ -3,7 +3,7 @@
 const modalOverlay = document.querySelector(".modal-overlay");
 
 // бургер - открытие вспомогательного меню
-const buttonBurger = document.querySelector(".header__link--burger");
+const buttonBurger = document.querySelector(".header__burger");
 const secondaryMenu = document.querySelector(".header__top-menu");
 buttonBurger.addEventListener("click", function(evt) {
   evt.preventDefault();
@@ -20,7 +20,7 @@ function openModalTel() {
   contactsBlock.classList.add("header__contacts--isopened");
 }
 
-const buttonTel = document.querySelector(".js-header__link--tel");
+const buttonTel = document.querySelector(".header__button-tel");
 
 buttonTel.addEventListener("click", function(evt) {
   evt.preventDefault();
