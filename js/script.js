@@ -11,45 +11,37 @@ buttonBurger.addEventListener("click", function(evt) {
   modalOverlay.classList.remove("closed");
 });
 
-// открытие окна телефонов
-const modalTel = document.querySelector(".header__contacts-modal");
-// родительский блок, с которого отлавливаем mouseleave
-const contactsBlock = modalTel.parentNode;
-function openModalTel() {
+let modalOpened;
+function headerModalShow(button) {
   modalOverlay.classList.remove("closed");
-  contactsBlock.classList.add("header__contacts--isopened");
+  // добавляем класс открытия окна родителю
+  modalOpened = button.parentNode;
+  modalOpened.classList.add("header-modal--isopened");
+
+  modalOpened.addEventListener("mouseleave", function(evt) {
+    evt.preventDefault();
+    closeModals();
+  });
 }
 
-const buttonTel = document.querySelector(".header__button-tel");
-
-buttonTel.addEventListener("click", function(evt) {
+const buttonContacts = document.querySelector(".header__button-tel");
+buttonContacts.addEventListener("click", function(evt) {
   evt.preventDefault();
-  openModalTel();
+  headerModalShow(buttonContacts);
 });
-
-buttonTel.addEventListener("mouseover", function(evt) {
+buttonContacts.addEventListener("mouseover", function(evt) {
   evt.preventDefault();
-  openModalTel();
+  headerModalShow(buttonContacts);
 });
-
 // открытие User Menu
-const modalUser = document.querySelector(".user-menu");
-// родительский блок, с которого отлавливаем mouseleave
-const userBlock = modalUser.parentNode;
-function openModalUser() {
-  modalOverlay.classList.remove("closed");
-  userBlock.classList.add("header__user--isopened");
-}
-
 const buttonUser = document.querySelector(".header__link--user");
 buttonUser.addEventListener("click", function(evt) {
   evt.preventDefault();
-  openModalUser();
+  headerModalShow(buttonUser);
 });
-
 buttonUser.addEventListener("mouseover", function(evt) {
   evt.preventDefault();
-  openModalUser();
+  headerModalShow(buttonUser);
 });
 
 //
@@ -61,21 +53,13 @@ buttonUser.addEventListener("mouseover", function(evt) {
 function closeModals() {
   secondaryMenu.classList.remove("header__top-menu--isopened");
   modalOverlay.classList.add("closed");
-  contactsBlock.classList.remove("header__contacts--isopened");
-  userBlock.classList.remove("header__user--isopened");
+  let modalOpened = document.querySelector(".header-modal--isopened");
+  if (modalOpened) {
+    modalOpened.classList.remove("header-modal--isopened");
+  }
 }
 
 modalOverlay.addEventListener("click", function(evt) {
-  evt.preventDefault();
-  closeModals();
-});
-
-contactsBlock.addEventListener("mouseleave", function(evt) {
-  evt.preventDefault();
-  closeModals();
-});
-
-userBlock.addEventListener("mouseleave", function(evt) {
   evt.preventDefault();
   closeModals();
 });
