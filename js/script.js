@@ -17,7 +17,7 @@ function headerModalShow(button) {
   // добавляем класс открытия окна родителю
   modalOpened = button.parentNode;
   modalOpened.classList.add("header-modal--isopened");
-
+  // навешиваем обработчик закрытия окна по уходу мыши
   modalOpened.addEventListener("mouseleave", function(evt) {
     evt.preventDefault();
     closeModals();
@@ -62,6 +62,14 @@ function closeModals() {
 modalOverlay.addEventListener("click", function(evt) {
   evt.preventDefault();
   closeModals();
+});
+
+// закрытие окна по нажатию esc
+window.addEventListener("keydown", function(evt) {
+  // если нажата esc
+  if (evt.keyCode === 27) {
+    if (modalOpened) closeModals();
+  }
 });
 
 // Закрытие главного меню по клику на кнопке закрыть
