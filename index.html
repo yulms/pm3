@@ -188,7 +188,7 @@
         <div class="header-modal header-modal--user-menu" aria-label="Меню пользователя">
           <h2 class="visually-hidden">Меню пользователя</h2>
           <p class="user-menu__entry-text">Добро пожаловать</p>
-          <a class="button button--options-prymary user-menu__login-button" href="#">Войти</a>
+          <a class="button button--options-primary user-menu__login-button" href="#">Войти</a>
 
           <div class="socials-login">
             <span>Войти через:</span>
@@ -245,16 +245,130 @@
       </div>
 
       <!-- Корзина -->
-      <a class="header__layout-item header__layout-item--cart header__link" href="#">
-        <div class="header__quantity-positioner">
-          <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="svg/sprite.svg#icon-cart"></use>
-          </svg>
-          <span class="visually-hidden">Товаров: </span>
-          <span class="sticker-quantity">0</span>
+      <div class="header__layout-item header__layout-item--cart">
+        <a class="header__link header__link--cart" href="#">
+          <div class="header__quantity-positioner">
+            <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-cart"></use>
+            </svg>
+            <span class="visually-hidden">Товаров: </span>
+            <span class="sticker-quantity">0</span>
+          </div>
+          <span class="header__link-caption">Корзина</span>
+        </a>
+
+        <!-- всплывающая корзина -->
+        <div class="header-modal header-modal--cart" aria-label="Корзина покупателя">
+          <h2 class="title2">Корзина товаров</h2>
+          <ul class="cart-list">
+            <li class="cart-list__item">
+              <!-- сделать блок из элемента! -->
+              <p class="image-container">
+                <img class="image-container__image" src="img/mini-cart-1.jpg" alt="Кастрюля">
+              </p>
+
+              <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
+
+              <dl class="cart-list__options-dl secondary-text">
+                <dt class="cart-list__options-dt">Цвет</dt>
+                <dd class="cart-list__options-dd">Синий</dd>
+              </dl>
+
+              <fieldset class="quantity-input fieldset cart-list__fieldset">
+                <legend class="visually-hidden">Изменение количества товара</legend>
+                <label class="quantity-input__label visually-hidden" for="quantity">Количество: </label>
+                <div class="quantity-input__container">
+                  <button class="button quantity-input__button quantity-input__button--less" type="button">
+                    <span class="visually-hidden">Уменьшить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                      <line x1="4" y1="12" x2="20" y2="12"></line>
+                    </svg>
+                  </button>
+                  <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
+                  <button class="button quantity-input__button quantity-input__button--more" type="button">
+                    <span class="visually-hidden">Увеличить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                      <line x1="4" y1="12" x2="20" y2="12"></line>
+                      <line x1="12" y1="4" x2="12" y2="20"></line>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+
+              <div class="price-block">
+                <span class="price minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+                <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
+              </div>
+
+              <div class="cart-list__buttons">
+                <button class="button cart-list__button" type="button">Удалить</button>
+                <button class="button cart-list__button" type="button">Сохранить</button>
+              </div>
+
+            </li>
+
+            <li class="cart-list__item">
+              <!-- сделать блок из элемента! -->
+              <p class="image-container">
+                <img class="image-container__image" src="img/mini-cart-2.jpg" alt="Кастрюля">
+              </p>
+
+              <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
+
+              <fieldset class="quantity-input fieldset cart-list__fieldset">
+                <legend class="visually-hidden">Изменение количества товара</legend>
+                <label class="quantity-input__label visually-hidden" for="quantity">Количество: </label>
+                <div class="quantity-input__container">
+                  <button class="button quantity-input__button quantity-input__button--less" type="button">
+                    <span class="visually-hidden">Уменьшить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                      <line x1="4" y1="12" x2="20" y2="12"></line>
+                    </svg>
+                  </button>
+                  <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
+                  <button class="button quantity-input__button quantity-input__button--more" type="button">
+                    <span class="visually-hidden">Увеличить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                      <line x1="4" y1="12" x2="20" y2="12"></line>
+                      <line x1="12" y1="4" x2="12" y2="20"></line>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+
+              <div class="price-block">
+                <span class="price minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+                <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
+              </div>
+
+              <div class="cart-list__buttons">
+                <button class="button cart-list__button" type="button">Удалить</button>
+                <button class="button cart-list__button" type="button">Сохранить</button>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="header-modal--cart__footer">
+            <p class="header-modal--cart__footer-summary">
+              <span>Всего (2 товара):</span>
+              <span>312,56 руб.</span>
+            </p>
+
+            <div class="header-modal--cart__buttons">
+              <button class="button button--action-secondary header-modal--cart__button" type="button">Купить в 1 клик</button>
+              <button class="button button--action-primary header-modal--cart__button" type="button">Оформить заказ</button>
+            </div>
+          </div>
+
+          <button class="button button--modal-close" type="button">
+            <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="svg/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
         </div>
-        <span class="header__link-caption">Корзина</span>
-      </a>
+
+      </div>
 
       <form class="search-form header__search-form" action="#" method="post" role="search">
         <label class="search-form__label" for="search-input">
@@ -262,12 +376,10 @@
         </label>
         <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Я ищу ...">
         <button class="search-form__button" type="submit">
-          <span class="button__flex-container">
-            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="svg/sprite.svg#icon-search"></use>
-            </svg>
-            <span class="visually-hidden">Искать</span>
-          </span>
+          <svg class="icon search-form__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-search"></use>
+          </svg>
+          <span class="visually-hidden">Искать</span>
         </button>
       </form>
     </div>
@@ -280,12 +392,10 @@
             <div class="main-nav__dropdown">
               <div class="main-nav__close-container">
                 <button class="button button--modal-close js-button--main-nav-close" type="button">
-                  <span class="button__flex-container">
-                    <span class="button__text link">Закрыть</span>
-                    <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="svg/sprite.svg#icon-close"></use>
-                    </svg>
-                  </span>
+                  <span class="button__text link">Закрыть</span>
+                  <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-close"></use>
+                  </svg>
                 </button>
               </div>
               <ul class="main-nav__list main-nav__list--lvl2">
@@ -363,12 +473,10 @@
             <div class="main-nav__dropdown">
               <div class="main-nav__close-container">
                 <button class="button button--modal-close js-button--main-nav-close" type="button">
-                  <span class="button__flex-container">
-                    <span class="button__text link">Закрыть</span>
-                    <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="svg/sprite.svg#icon-close"></use>
-                    </svg>
-                  </span>
+                  <span class="button__text link">Закрыть</span>
+                  <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-close"></use>
+                  </svg>
                 </button>
               </div>
               <ul class="main-nav__list main-nav__list--lvl2">
@@ -441,20 +549,6 @@
                 </div>
               </a>
 
-
-              <!-- <a class="main-nav__banner" href="#">
-                <div class="banner__offer">
-                  <p class="title1">Распродажа посуды</p>
-                  <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
-                  <p class="banner__offer__p">
-                    <strong class="banner__offer__action">Скидки до 40%</strong>
-                  </p>
-                  <span class="banner__offer__button">Подробнее</span>
-                </div>
-                <img src="img\menu-banner-2.jpg" width="400" height="400" alt="Перейти к спецпредложению">
-              </a> -->
-
-
             </div>
           </li>
           <li class="main-nav__item--lvl1">
@@ -462,12 +556,10 @@
             <div class="main-nav__dropdown">
               <div class="main-nav__close-container">
                 <button class="button button--modal-close js-button--main-nav-close" type="button">
-                  <span class="button__flex-container">
-                    <span class="button__text link">Закрыть</span>
-                    <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="svg/sprite.svg#icon-close"></use>
-                    </svg>
-                  </span>
+                  <span class="button__text link">Закрыть</span>
+                  <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="svg/sprite.svg#icon-close"></use>
+                  </svg>
                 </button>
               </div>
               <ul class="main-nav__list main-nav__list--lvl2">
@@ -769,17 +861,17 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор кухонной посуды Peterhof PH-18256</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-1.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-1.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--new">Новинка</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price price--discount minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-            <del class="minicard__old-price secondary-text" aria-label="Цена без скидки: ">196.30 р.</del>
+            <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
           </p>
           <div class="minicard__star-review">
             <div class="stars">
@@ -803,15 +895,15 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-2.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-2.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--hit">Хит</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price minicard__price" aria-label="Текущая цена: ">280<sup>40</sup> р.</span>
           </p>
           <div class="minicard__star-review">
@@ -836,15 +928,15 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-3.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-3.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--new">Новинка</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price minicard__price" aria-label="Текущая цена: ">56<sup>77</sup> р.</span>
           </p>
           <div class="minicard__star-review">
@@ -869,8 +961,8 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-1.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-1.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
@@ -879,9 +971,9 @@
             <strong class="minicard__sticker-elem minicard__sticker-elem--sale">Акция</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price price--discount minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-            <del class="minicard__old-price secondary-text" aria-label="Цена без скидки: ">196.30 р.</del>
+            <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
           </p>
           <div class="minicard__star-review">
             <div class="stars">
@@ -905,15 +997,15 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-2.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-2.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--hit">Хит</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price minicard__price" aria-label="Текущая цена: ">280<sup>40</sup> р.</span>
           </p>
           <div class="minicard__star-review">
@@ -938,15 +1030,15 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-3.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-3.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--new">Новинка</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price minicard__price" aria-label="Текущая цена: ">56<sup>77</sup> р.</span>
           </p>
           <div class="minicard__star-review">
@@ -971,15 +1063,15 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-2.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-2.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--hit">Хит</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price minicard__price" aria-label="Текущая цена: ">280<sup>40</sup> р.</span>
           </p>
           <div class="minicard__star-review">
@@ -1004,15 +1096,15 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор кухонной посуды Peterhof PH-18256 на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-3.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-3.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
             <strong class="minicard__sticker-elem minicard__sticker-elem--new">Новинка</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price minicard__price" aria-label="Текущая цена: ">56<sup>77</sup> р.</span>
           </p>
           <div class="minicard__star-review">
@@ -1037,8 +1129,8 @@
         <li class="carousel__item minicard carousel__layout">
           <a class="minicard__link" href="#">
             <h3 class="minicard__title">Набор на 12 персон из нержавеющей стали</h3>
-            <p class="carousel__image-container minicard__image-container">
-              <img class="carousel__image" src="img/mini-cart-1.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
+            <p class="image-container minicard__image-container">
+              <img class="image-container__image" src="img/mini-cart-1.jpg" alt="Открыть страницу покупки Набор кухонной посуды Peterhof PH-18256">
             </p>
           </a>
           <p class="minicard__sticker">
@@ -1047,9 +1139,9 @@
             <strong class="minicard__sticker-elem minicard__sticker-elem--sale">Акция</strong>
           </p>
           <p class="secondary-text minicard__text">Бренд: BergHOFF</p>
-          <p class="minicard__price-block">
+          <p class="price-block minicard__price-block">
             <span class="price price--discount minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-            <del class="minicard__old-price secondary-text" aria-label="Цена без скидки: ">196.30 р.</del>
+            <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
           </p>
           <div class="minicard__star-review">
             <div class="stars">
@@ -1140,7 +1232,7 @@
 
       <h3>Доставка по Беларуси</h3>
       <img src="img/article-map.jpg" alt="наш магазин">
-      <p>Как правило доставка посуды «до двери» в крупные населенные пункты осуществляется в течении 2-3 рабочих дней с момента поступления заказа. Доставка кухонной утвари в мелкие населенные пункты может занимать больше времени – до 7 дней. Оплата стоимости может производиться как предварительно: ЕРИП, безналичный расчет, так и в момент получения заказа: наличный расчет, банковская карта.</p>
+      <p>Как правило доставка посуды «до двери» в крупные населенные пункты осуществляется в течении 2-3 рабочих дней ������ момента поступления заказа. Доставка кухонной утвари в мелкие населенные пункты может занимать больше времени – до 7 дней. Оплата стоимости может производиться как предварительно: ЕРИП, безналичный расчет, так и в момент получения заказа: наличный расчет, банковская карта.</p>
 
       <h3>Самовывоз</h3>
       <img src="img/article-samovyvoz.jpg" alt="наш магазин">
@@ -1171,35 +1263,35 @@
 
       <ul class="carousel__list">
         <li class="carousel__item carousel__layout">
-          <a class="carousel__image-container carousel__image-container--ratio-1-2" href="#">
-            <!-- <p class="carousel__image-container"> -->
-            <img class="carousel__image carousel__image--big-paddings" src="img/brand-1.png" alt="Bekker">
+          <a class="image-container image-container--ratio-1-2" href="#">
+            <!-- <p class="image-container"> -->
+            <img class="image-container__image image-container__image--big-paddings" src="img/brand-1.png" alt="Bekker">
             <!-- </p> -->
           </a>
         </li>
         <li class="carousel__item carousel__layout">
-          <a class="carousel__image-container carousel__image-container--ratio-1-2" href="#">
-            <img class="carousel__image carousel__image--big-paddings" src="img/brand-2.png" alt="BergHOFF">
+          <a class="image-container image-container--ratio-1-2" href="#">
+            <img class="image-container__image image-container__image--big-paddings" src="img/brand-2.png" alt="BergHOFF">
           </a>
         </li>
         <li class="carousel__item carousel__layout">
-          <a class="carousel__image-container carousel__image-container--ratio-1-2" href="#">
-            <img class="carousel__image carousel__image--big-paddings" src="img/brand-3.png" alt="Peterhof">
+          <a class="image-container image-container--ratio-1-2" href="#">
+            <img class="image-container__image image-container__image--big-paddings" src="img/brand-3.png" alt="Peterhof">
           </a>
         </li>
         <li class="carousel__item carousel__layout">
-          <a class="carousel__image-container carousel__image-container--ratio-1-2" href="#">
-            <img class="carousel__image carousel__image--big-paddings" src="img/brand-4.png" alt="Zillinger">
+          <a class="image-container image-container--ratio-1-2" href="#">
+            <img class="image-container__image image-container__image--big-paddings" src="img/brand-4.png" alt="Zillinger">
           </a>
         </li>
         <li class="carousel__item carousel__layout">
-          <a class="carousel__image-container carousel__image-container--ratio-1-2" href="#">
-            <img class="carousel__image carousel__image--big-paddings" src="img/brand-5.png" alt="KS-Kotchsysteme">
+          <a class="image-container image-container--ratio-1-2" href="#">
+            <img class="image-container__image image-container__image--big-paddings" src="img/brand-5.png" alt="KS-Kotchsysteme">
           </a>
         </li>
         <li class="carousel__item carousel__layout">
-          <a class="carousel__image-container carousel__image-container--ratio-1-2" href="#">
-            <img class="carousel__image carousel__image--big-paddings" src="img/brand-6.png" alt="Bekker">
+          <a class="image-container image-container--ratio-1-2" href="#">
+            <img class="image-container__image image-container__image--big-paddings" src="img/brand-6.png" alt="Bekker">
           </a>
         </li>
       </ul>
@@ -1266,7 +1358,7 @@
             <span class="visually-hidden">Ваш email</span>
           </label>
           <input class="footer__subscribe-input" id="subscribe-input" type="email" name="email" placeholder="Ваш email ..." required>
-          <button class="button button--action-prymary" type="submit">Подписаться!</button>
+          <button class="button button--action-primary" type="submit">Подписаться!</button>
         </form>
       </div>
 
@@ -1449,57 +1541,6 @@
 
 
 
-  <!-- всплывающая корзина -->
-  <section class="modal modal--cart" style="display: block">
-    <h2 class="title2">Корзина товаров</h2>
-    <ul class="cart-list">
-      <li class="cart-list__item">
-        <img src="img\catalog-1.jpg" alt="Кастрюля">
-        <dl>
-          <dt>Цвет</dt>
-          <dd>Синий</dd>
-          <dt>Емкость</dt>
-          <dd>5 л.</dd>
-        </dl>
-        <button class="button link link--nounderline" type="button">Удалить</button>
-        <button class="button link link--nounderline" type="button">Сохранить</button>
-
-
-        <fieldset class="quantity-input fieldset cart-list__fieldset">
-          <legend class="visually-hidden">Изменение количества товара</legend>
-          <label class="visually-hidden" for="quantity">Текущее количество: </label>
-          <button class="button quantity-input__button quantity-input__button--less" type="button">
-            <span class="button__flex-container">
-              <span class="visually-hidden">Уменьшить</span>
-              <svg width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
-                <line x1="4" y1="12" x2="20" y2="12"></line>
-              </svg>
-            </span>
-          </button>
-          <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
-          <button class="button quantity-input__button quantity-input__button--more" type="button">
-            <span class="button__flex-container">
-              <span class="visually-hidden">Увеличить</span>
-              <svg width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
-                <line x1="4" y1="12" x2="20" y2="12"></line>
-                <line x1="12" y1="4" x2="12" y2="20"></line>
-              </svg>
-            </span>
-          </button>
-        </fieldset>
-
-      </li>
-
-      <li>
-        <img src="" alt="">
-        <p></p>
-        <p></p>
-      </li>
-    </ul>
-
-
-
-  </section>
 
 
 

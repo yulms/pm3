@@ -12,10 +12,11 @@ buttonBurger.addEventListener("click", function(evt) {
 });
 
 let modalOpened;
+
 function headerModalShow(button) {
   modalOverlay.classList.remove("closed");
   // добавляем класс открытия окна родителю
-  modalOpened = button.parentNode;
+  modalOpened = button.parentElement;
   modalOpened.classList.add("header-modal--isopened");
   // навешиваем обработчик закрытия окна по уходу мыши
   modalOpened.addEventListener("mouseleave", function(evt) {
@@ -24,6 +25,7 @@ function headerModalShow(button) {
   });
 }
 
+// открытие Телефонов
 const buttonContacts = document.querySelector(".header__button-tel");
 buttonContacts.addEventListener("click", function(evt) {
   evt.preventDefault();
@@ -42,6 +44,16 @@ buttonUser.addEventListener("click", function(evt) {
 buttonUser.addEventListener("mouseover", function(evt) {
   evt.preventDefault();
   headerModalShow(buttonUser);
+});
+// открытие Корзины
+const buttonCart = document.querySelector(".header__link--cart");
+buttonCart.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  headerModalShow(buttonCart);
+});
+buttonCart.addEventListener("mouseover", function(evt) {
+  evt.preventDefault();
+  headerModalShow(buttonCart);
 });
 
 //

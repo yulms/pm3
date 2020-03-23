@@ -2,6 +2,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -143,11 +144,11 @@
     <section class="group">
       <h4>Buttons</h4>
 
-      <h5>Call to action - prymary</h5>
-      <button class="button button--action-prymary">
+      <h5>Call to action - primary</h5>
+      <button class="button button--action-primary">
         <span class="button__text">Купить</span>
       </button>
-      <button class="button button--action-prymary" disabled>
+      <button class="button button--action-primary" disabled>
         <span class="button__text">Action disabled</span>
       </button>
 
@@ -169,11 +170,11 @@
         </span>
       </button>
 
-      <h5>Options - prymary</h5>
-      <button class="button button--options-prymary">
+      <h5>Options - primary</h5>
+      <button class="button button--options-primary">
         <span class="button__text">Secondary</span>
       </button>
-      <button class="button button--options-prymary" disabled>
+      <button class="button button--options-primary" disabled>
         <span class="button__text">Secondary disabled</span>
       </button>
 
@@ -203,6 +204,32 @@
           </svg>
         </span>
       </button>
+
+      <h5>Quantity</h5>
+      <fieldset class="quantity-input fieldset cart-list__fieldset">
+        <legend class="visually-hidden">Изменение количества товара</legend>
+        <label class="quantity-input__label" for="quantity">Количество: </label>
+        <div class="quantity-input__container">
+          <button class="button quantity-input__button quantity-input__button--less" type="button">
+            <span class="visually-hidden">Уменьшить</span>
+            <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+            </svg>
+          </button>
+          <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
+          <button class="button quantity-input__button quantity-input__button--more" type="button">
+            <span class="visually-hidden">Увеличить</span>
+            <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="12" y1="4" x2="12" y2="20"></line>
+            </svg>
+          </button>
+        </div>
+      </fieldset>
+
+
+
+
     </section>
 
     <!-- RADIO-BUTTONS -->
@@ -289,6 +316,7 @@
 
   <script src="js/nouislider.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/controls.js"></script>
 </body>
 
 </html>
