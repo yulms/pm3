@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link rel="stylesheet" href="css/style.min.css">
+
+
+  <style>
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    h4 {
+      margin: 32px 0 16px;
+    }
+
+    h4:first-child {
+      margin-top: 0;
+    }
+
+    h5 {
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    .group {
+      flex-basis: 300px;
+      box-shadow: 0px 3px 6px #00000029;
+      margin: 16px;
+      padding: 24px;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- CHECK -->
+    <section class="group">
+      <h4>Check</h4>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox">
+        <span class="check__box"></span>
+        <span>Not checked</span>
+      </label>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox" checked>
+        <span class="check__box"></span>
+        Checked
+      </label>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox" disabled>
+        <span class="check__box"></span>
+        Not checked disabled
+      </label>
+
+      <label class="check">
+        <input class="check-input" name="" type="checkbox" checked disabled>
+        <span class="check__box"></span>
+        Checked disabled
+      </label>
+    </section>
+
+    <!-- RADIO -->
+    <section class="group">
+      <h4>Radio</h4>
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem" value="one">
+        <span class="radio__box"></span>
+        Not checked
+      </label>
+
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem" value="two" checked>
+        <span class="radio__box"></span>
+        Checked
+      </label>
+
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem2" value="two" disabled>
+        <span class="radio__box"></span>
+        Not checked disabled
+      </label>
+
+      <label class="radio">
+        <input class="radio-input" type="radio" name="lorem2" value="two" checked disabled>
+        <span class="radio__box"></span>
+        Checked disabled
+      </label>
+    </section>
+
+    <!-- TEXT-FIELDS -->
+    <section class="group">
+      <h4>Text</h4>
+      <label class="textfield">
+        <input class="textfield__element" type="text" placeholder=" ">
+        <span class="textfield__placeholder">Ваш email</span>
+      </label>
+
+      <h4>Textarea</h4>
+      <label class="textfield">
+        <textarea class="textfield__element" rows="5" cols="50" placeholder=" "></textarea>
+        <span class="textfield__placeholder">Ваш email</span>
+      </label>
+
+      <h4>Number</h4>
+      <label class="textfield">
+        <input class="textfield__element" type="number" value="1" min="1" placeholder=" ">
+        <span class="textfield__placeholder">Количество</span>
+      </label>
+    </section>
+
+    <!-- RANGE-SELECT -->
+    <section class="group">
+      <h4>Range select</h4>
+
+      <fieldset class="fieldset">
+        <legend>Цена</legend>
+        <div class="range-select">
+          <label class="textfield range-select__textfield">
+            <input class="textfield__element" id="input-from" type="number" value="1" min="1" max="1000" placeholder=" ">
+            <span class="textfield__placeholder">Минимум</span>
+          </label>
+          <span class="range-select__between-text">до</span>
+          <label class="textfield range-select__textfield">
+            <input class="textfield__element" id="input-to" type="number" value="1" min="1" max="1000" placeholder=" ">
+            <span class="textfield__placeholder">Максимум</span>
+          </label>
+          <div class="range-slider" id="range-slider"></div>
+        </div>
+      </fieldset>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="group">
+      <h4>Buttons</h4>
+
+      <h5>Call to action - primary</h5>
+      <button class="button button--action-primary">
+        <span class="button__text">Купить</span>
+      </button>
+      <button class="button button--action-primary" disabled>
+        <span class="button__text">Action disabled</span>
+      </button>
+
+      <h5>Call to action - secondary</h5>
+      <button class="button button--action-secondary">
+        <span class="button__flex-container">
+          <svg class="button__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-love"></use>
+          </svg>
+          <span class="button__text">Сохранить</span>
+        </span>
+      </button>
+      <button class="button button--action-secondary" disabled>
+        <span class="button__flex-container">
+          <svg class="button__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-love"></use>
+          </svg>
+          <span class="button__text">Disabled</span>
+        </span>
+      </button>
+
+      <h5>Options - primary</h5>
+      <button class="button button--options-primary">
+        <span class="button__text">Secondary</span>
+      </button>
+      <button class="button button--options-primary" disabled>
+        <span class="button__text">Secondary disabled</span>
+      </button>
+
+      <h5>Options - secondary</h5>
+      <button class="button button--options-secondary">
+        <span class="button__text">Secondary</span>
+      </button>
+      <button class="button button--options-secondary" disabled>
+        <span class="button__text">Secondary disabled</span>
+      </button>
+
+      <h5>Remove Filter</h5>
+      <button class="button button--filter-remove">
+        <span class="button__flex-container">
+          <span class="button__text">от 100 до 250 руб.</span>
+          <svg class="button__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <button class="button button--filter-remove">
+        <span class="button__flex-container">
+          <span class="button__text">BergHOFF</span>
+          <svg class="button__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="svg/sprite.svg#icon-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <h5>Quantity</h5>
+      <fieldset class="quantity-input fieldset cart-list__fieldset">
+        <legend class="visually-hidden">Изменение количества товара</legend>
+        <label class="quantity-input__label" for="quantity">Количество: </label>
+        <div class="quantity-input__container">
+          <button class="button quantity-input__button quantity-input__button--less" type="button">
+            <span class="visually-hidden">Уменьшить</span>
+            <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+            </svg>
+          </button>
+          <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
+          <button class="button quantity-input__button quantity-input__button--more" type="button">
+            <span class="visually-hidden">Увеличить</span>
+            <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="12" y1="4" x2="12" y2="20"></line>
+            </svg>
+          </button>
+        </div>
+      </fieldset>
+
+
+
+
+    </section>
+
+    <!-- RADIO-BUTTONS -->
+    <section class="group">
+      <h4>Radio Buttons</h4>
+
+      <h5>Radio button - Big</h5>
+
+      <fieldset class="fieldset radio-button radio-button--big-rounded">
+        <legend>Выберите цвет:</legend>
+        <ul class="radio-button__list">
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="radio-button-1" type="radio" name="radio-button" value="1" checked>
+            <label class="radio-button__label" for="radio-button-1">Красный</label>
+          </li>
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="radio-button-2" type="radio" name="radio-button" value="2">
+            <label class="radio-button__label" for="radio-button-2">Синий</label>
+          </li>
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="radio-button-3" type="radio" name="radio-button" value="3" disabled>
+            <label class="radio-button__label" for="radio-button-3">Зеленый</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <h5>Radio button - Small</h5>
+      <fieldset class="fieldset radio-button radio-button--rounded">
+        <legend>Сортировать по:</legend>
+        <ul class="radio-button__list">
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="radio-button-4" type="radio" name="radio-sort" value="1" checked>
+            <label class="radio-button__label" for="radio-button-4">Популярности</label>
+          </li>
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="radio-button-5" type="radio" name="radio-sort" value="2">
+            <label class="radio-button__label" for="radio-button-5">Цене</label>
+          </li>
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="radio-button-5" type="radio" name="radio-sort" value="3" disabled>
+            <label class="radio-button__label" for="radio-button-3">Рейтингу</label>
+          </li>
+        </ul>
+      </fieldset>
+
+
+
+      <h5>Radio button - Switch View</h5>
+      <fieldset class="fieldset radio-button">
+        <legend>Вид каталога:</legend>
+        <ul class="radio-button__list">
+
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="switch-table" type="radio" name="switch-input" value="1" checked>
+            <label class="radio-button__label" for="switch-table">
+              <svg class="radio-button__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-switch-view--table"></use>
+              </svg>
+              <span class="visually-hidden">Показать товары списком</span>
+            </label>
+          </li>
+
+          <li class="radio-button__item">
+            <input class="radio-button__input" id="switch-list" type="radio" name="switch-input" value="2">
+            <label class="radio-button__label" for="switch-list">
+              <svg class="radio-button__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="svg/sprite.svg#icon-switch-view--list"></use>
+              </svg>
+              <span class="visually-hidden">Показать товары таблицей</span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+
+    </section>
+
+
+
+
+
+
+  </div>
+
+  <script src="js/nouislider.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/controls.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: $mobile-only) {
+    max-width: $mobile-max-width;
+    padding-left: $side-paddings-mobile;
+    padding-right: $side-paddings-mobile;
+  }
+
+  @media (min-width: $tablet) and (max-width: $tablet-only) {
+    max-width: $tablet-max-width;
+    padding-left: $side-paddings-tablet;
+    padding-right: $side-paddings-tablet;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: $desktop-max-width;
+    padding-left: $side-paddings-desktop;
+    padding-right: $side-paddings-desktop;
+  }
+}
