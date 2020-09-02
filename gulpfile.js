@@ -6,7 +6,7 @@ const del = require('del');
 
 const copyData = require('./gulp_tasks/copy-data');
 const minifyHTML = require('./gulp_tasks/minify-html');
-const makeCSS = require('./gulp_tasks/make-css');
+const makeCSS = require('./gulp_tasks/make-css').bind(null, browserSync);
 const makeRasterImages = require('./gulp_tasks/make-raster-images');
 const createSvgSprite = require('./gulp_tasks/create-svg-sprite');
 const makeSvgBackground = require('./gulp_tasks/make-svg-background');
@@ -19,6 +19,13 @@ const build = gulp.parallel(
   makeRasterImages,
   createSvgSprite,
   makeSvgBackground,
+  makeJs
+);
+
+const quickBuild = gulp.parallel(
+  copyData,
+  minifyHTML,
+  makeCSS,
   makeJs
 );
 
@@ -52,3 +59,4 @@ function reloadServer(cb) {
 module.exports.server = server;
 module.exports.build = gulp.series(clean, build);
 module.exports.start = gulp.series(clean, build, server);
+module.exports.quickstart = gulp.series(quickBuild, server);

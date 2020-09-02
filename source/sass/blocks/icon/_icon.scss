@@ -1,11 +1,11 @@
 .icon {
   display: inline-block;
-  background-repeat: no-repeat;
-  stroke: currentColor;
-  stroke-width: 2px;
-  fill: none;
   width: 24px;
   height: 24px;
+  stroke-width: 2px;
+  stroke: currentColor;
+  fill: none;
+  background-repeat: no-repeat;
 }
 
 .icon--thin {
@@ -16,4 +16,31 @@
   .icon--thin {
     stroke-width: 2px;
   }
+}
+
+.icon-viber {
+  fill: #675dac;
+}
+
+.icon-mts {
+  fill: #e30613;
+}
+
+.icon-life {
+  fill: #062594;
+}
+
+.icon-vk {
+  background-color: #48729e;
+  border-radius: 2px;
+}
+
+.icon-fb {
+  background-color: #3c5a98;
+  border-radius: 2px;
+}
+
+.icon-ok {
+  background-color: #eb722e;
+  border-radius: 2px;
 }

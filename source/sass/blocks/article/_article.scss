@@ -1,0 +1,59 @@
+/* .article h1 и т.д. - контент, заполняемый из админки */
+.article {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 608px) {
+  .article {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5 {
+  font-weight: 600;
+  color: $color-font__title;
+}
+
+.article h1 {
+  font-size: 2rem;
+  line-height: 1.125;
+  letter-spacing: -0.05em;
+}
+
+.article h2 {
+  font-size: 1.5625rem;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+}
+
+.article h3 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.article h4 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.article h5 {
+  font-size: 0.875rem;
+  line-height: 1.714286;
+}
+
+.article p,
+.article ul,
+.article ol,
+.article pre,
+.article table,
+.article blockquote {
+  margin-top: 0;
+  margin-bottom: 24px;
+}

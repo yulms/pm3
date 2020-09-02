@@ -8,9 +8,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const shorthand = require('gulp-shorthand');
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
-const browserSync = require('browser-sync').create();
 
-function makeCSS () {
+function makeCSS (server) {
   return gulp.src('source/sass/style.scss')
     .pipe(plumber())
     .pipe(sourcemap.init())
@@ -21,7 +20,7 @@ function makeCSS () {
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/css'))
-    .pipe(browserSync.stream());
+    .pipe(server.stream());
 }
 
 module.exports = makeCSS;

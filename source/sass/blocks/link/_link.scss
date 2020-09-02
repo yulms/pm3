@@ -1,0 +1,26 @@
+.link {
+  color: $color__primary;
+  transition: color 0.1s;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.link:hover,
+.link:focus {
+  color: $color__primary-dark;
+  text-decoration: none;
+}
+
+.link:active {
+  opacity: 0.3;
+}
+
+.link--nounderline {
+  text-decoration: none;
+}
+
+.link--nounderline:hover,
+.link--nounderline:focus {
+  text-decoration: underline;
+  text-underline-position: under;
+}

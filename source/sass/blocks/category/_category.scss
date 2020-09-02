@@ -1,0 +1,128 @@
+.category {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 608px) {
+  .category {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.category__title {
+  margin: 0;
+}
+
+.category__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+  row-gap: 8px;
+  column-gap: 16px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 980px) {
+  .category__list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+.category__link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.category__link:hover,
+.category__link:focus {
+  text-decoration: underline;
+  text-underline-position: under;
+  color: #01768b;
+}
+
+@media (min-width: 980px) {
+  .category__link:hover .category__image,
+  .category__link:focus .category__image {
+    transform: translateY(-4px);
+    transition: 0.15s;
+  }
+}
+
+.category__figure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 4px 44px 4px 8px;
+  box-shadow: inset 0 0 0 1px #e0e0e0;
+  border-radius: 2px;
+  background-color: #faf9f7;
+}
+
+@media (min-width: 980px) {
+  .category__figure {
+    position: relative;
+    z-index: 0;
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .category__figure::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 979px) {
+  .category__figure::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 48px;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke='%23888888' stroke-width='2' fill='none' stroke-linejoin='round'%3E%3Cpolyline points='15,7 19,12 15,17' stroke-linecap='round' vector-effect='non-scaling-stroke' /%3E%3Cline x1='4' y1='12' x2='19' y2='12' stroke-linecap='round' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+}
+
+.category__figure figcaption {
+  word-break: break-word;
+}
+
+.category__image {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  border-radius: 50%;
+}
+
+@media (min-width: 980px) {
+  .category__image {
+    width: 120px;
+    height: 120px;
+    margin-right: 0;
+    margin-bottom: 16px;
+    border-radius: 0;
+  }
+}
