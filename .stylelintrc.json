@@ -9,6 +9,24 @@
           "inside-parens"
         ]
       }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "mixin",
+          "define-mixin",
+          "include",
+          "content",
+          "rules",
+          "each",
+          "function",
+          "error",
+          "return",
+          "else",
+          "if"
+        ]
+      }
     ]
   }
 }

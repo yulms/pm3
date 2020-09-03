@@ -1,22 +1,24 @@
 .wrapper {
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (max-width: $mobile-only) {
-    max-width: $mobile-max-width;
-    padding-left: $side-paddings-mobile;
-    padding-right: $side-paddings-mobile;
+  @include media-breakpoint-down(xs) {
+    padding-left: $side-paddings-xs;
+    padding-right: $side-paddings-xs;
   }
 
-  @media (min-width: $tablet) and (max-width: $tablet-only) {
-    max-width: $tablet-max-width;
-    padding-left: $side-paddings-tablet;
-    padding-right: $side-paddings-tablet;
+  @include media-breakpoint-only(sm) {
+    padding-left: $side-paddings-sm;
+    padding-right: $side-paddings-sm;
   }
 
-  @media (min-width: $desktop) {
-    max-width: $desktop-max-width;
-    padding-left: $side-paddings-desktop;
-    padding-right: $side-paddings-desktop;
+  @include media-breakpoint-only(md) {
+    padding-left: $side-paddings-md;
+    padding-right: $side-paddings-md;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: $lg-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $side-paddings-lg;
+    padding-right: $side-paddings-lg;
   }
 }

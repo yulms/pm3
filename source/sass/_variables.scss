@@ -1,29 +1,26 @@
-$mobile: 0;
-$mobile-only: 607px;
-$tablet: 608px;
-$tablet-only: 1279px;
-$desktop: 1280px;
 
-$retina-dpi: 144dpi;
-$retina-dppx: 1.5dppx;
+
+$lg-max-width: 1520px;
 
 $grid-baseline: 8px;
 
-$side-paddings-mobile: $grid-baseline * 2;
-$side-paddings-tablet: $grid-baseline * 3;
-$side-paddings-desktop: $grid-baseline * 3;
+$side-paddings-xs: $grid-baseline * 2;
+$side-paddings-sm: $grid-baseline * 3;
+$side-paddings-md: $grid-baseline * 3;
+$side-paddings-lg: $grid-baseline * 3;
 
-$mobile-column-count: 4;
-$tablet-column-count: 6;
-$desktop-column-count: 12;
+$xs-column-count: 4;
+$sm-column-count: 6;
+$md-column-count: 12;
+$lg-column-count: 12;
 
-$mobile-column-width: 100% / $mobile-column-count;
-$tablet-column-width: 100% / $tablet-column-count;
-$desktop-column-width: 100% / $desktop-column-count;
+$xs-column-width: 100% / $xs-column-count;
+$sm-column-width: 100% / $sm-column-count;
+$md-column-width: 100% / $md-column-count;
+$lg-column-width: 100% / $lg-column-count;
 
-$mobile-max-width: 600px;
-$tablet-max-width: 900px;
-$desktop-max-width: 1520px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
 
 $color__primary: #01768b;
 $color__primary-dark: #006475;

@@ -3,12 +3,13 @@
   color: #cccccc;
   background-color: #233240;
   background-image: url("/img/svg/background.svg");
-  background-size: 900px;
-  background-position: 0 236px;
-}
 
-@media (min-width: 980px) {
-  .footer {
+  @include media-breakpoint-down(sm) {
+    background-size: 900px;
+    background-position: 0 236px;
+  }
+
+  @include media-breakpoint-up(md) {
     background-size: 1300px;
     background-position: 0 -40px;
   }
