@@ -1,16 +1,3 @@
-.modal-overlay {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(34, 25, 36, 0.5);
-  transition-delay: 0.2s;
-  transition-property: background-color, opacity;
-  pointer-events: auto;
-}
-
 .modal {
   position: fixed;
   display: none;
@@ -34,8 +21,4 @@
   margin: 0;
   padding: 16px 0;
   border-bottom: 1px solid #e0e0e0;
-}
-
-.modal-overlay--closed {
-  display: none;
 }

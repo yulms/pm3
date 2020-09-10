@@ -1,0 +1,21 @@
+.city-choose {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.city-choose__caption {
+  margin-right: 8px;
+}
+
+.city-choose__city-container {
+  display: flex;
+  align-items: center;
+  color: $color__primary;
+}
+
+.city-choose__current-city {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-position: under;
+}

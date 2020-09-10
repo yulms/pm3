@@ -1,13 +1,8 @@
+$space: 1rem;
+$page-paddings-mobile: 1rem;
+$page-paddings-other: 2rem;
 
-
-$lg-max-width: 1520px;
-
-$grid-baseline: 8px;
-
-$side-paddings-xs: $grid-baseline * 2;
-$side-paddings-sm: $grid-baseline * 3;
-$side-paddings-md: $grid-baseline * 3;
-$side-paddings-lg: $grid-baseline * 3;
+$max-width: 1520px;
 
 $xs-column-count: 4;
 $sm-column-count: 6;
@@ -22,6 +17,7 @@ $lg-column-width: 100% / $lg-column-count;
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
+$color__background: #ffffff;
 $color__primary: #01768b;
 $color__primary-dark: #006475;
 $color__primary-light: #ebf4f6;
@@ -59,3 +55,14 @@ $color-font__price: #4c4c4c;
 $color-font__sale: #c91f24;
 
 $controls__border-radius: 2px;
+
+
+:root {
+  @include media-mobile-only {
+    --page-paddings: #{$page-paddings-mobile};
+  }
+
+  @include media-tablet-portrait-up {
+    --page-paddings: #{$page-paddings-other};
+  }
+}

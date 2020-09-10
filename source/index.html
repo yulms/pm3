@@ -16,25 +16,27 @@
   <header class="header">
 
     <div class="header__top-panel">
-      <!-- Баннер хедера -->
       <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
 
-      <!-- Secondary menu -->
       <div class="header__top-menu">
         <ul class="header__top-menu-list">
           <li class="header__top-menu-item">
-            <a class="header__top-menu-link city-choose" href="#">
-              <span class="city-choose__caption">Доставка в город: </span>
-              <svg class="city-choose__icon city-choose__icon--place" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
-              </svg>
-              <span class="visually-hidden">Выбор города. Текущий выбор: </span>
-              <span class="city-choose__current-city">г. Минск</span>
-              <svg class="city-choose__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
-              </svg>
+            <a class="header__top-menu-link city-choose header__city-choose" href="#">
+              <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
+              <div class="city-choose__city-container header__city-container">
+                <svg class="icon icon--2x icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
+                </svg>
+                <span class="visually-hidden">Текущий выбор: </span>
+                <span class="city-choose__current-city">г.&nbspМинск</span>
+                <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+                </svg>
+              </div>
             </a>
           </li>
+        </ul>
+        <ul class="header__top-menu-list">
 
           <li class="header__top-menu-item">
             <a class="header__top-menu-link" href="#">Доставка и оплата</a>
@@ -44,8 +46,7 @@
             <a class="header__top-menu-link" href="#">Самовывоз</a>
           </li>
         </ul>
-
-        <ul class="header__top-menu-list--secondary">
+        <ul class="header__top-menu-list header__top-menu-list--secondary">
           <li class="header__top-menu-item">
             <a class="header__top-menu-link" href="#">Гарантии</a>
           </li>
@@ -62,7 +63,6 @@
             <a class="header__top-menu-link" href="#">Контакты</a>
           </li>
         </ul>
-
       </div>
     </div>
 
@@ -1560,7 +1560,7 @@
     </form>
   </section>
 
-  <script src="js/script.min.js"></script>
+  <script src="js/script.js"></script>
   <!-- <script src="js/controls.js"></script> -->
 </body>
 

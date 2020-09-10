@@ -1,46 +1,57 @@
 .icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  stroke-width: 2px;
+  width: $space * 1.5;
+  height: $space * 1.5;
+  flex-shrink: 0;
+  // background-repeat: no-repeat;Зачем?
+}
+
+.icon--2x {
+  width: $space * 2;
+  height: $space * 2;
+}
+
+.icon--stroked {
   stroke: currentColor;
-  fill: none;
-  background-repeat: no-repeat;
-}
 
-.icon--thin {
-  stroke-width: 1px;
-}
-
-@media (min-width: 608px) {
-  .icon--thin {
+  @media (max-resolution: $retina-dpi),
+    (max-resolution: $retina-dppx) {
     stroke-width: 2px;
+  }
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    stroke-width: 1px;
   }
 }
 
-.icon-viber {
-  fill: #675dac;
+.icon--filled {
+  fill: currentColor;
 }
 
-.icon-mts {
-  fill: #e30613;
-}
 
-.icon-life {
-  fill: #062594;
-}
+// .icon-viber {
+//   fill: #675dac;
+// }
 
-.icon-vk {
-  background-color: #48729e;
-  border-radius: 2px;
-}
+// .icon-mts {
+//   fill: #e30613;
+// }
 
-.icon-fb {
-  background-color: #3c5a98;
-  border-radius: 2px;
-}
+// .icon-life {
+//   fill: #062594;
+// }
 
-.icon-ok {
-  background-color: #eb722e;
-  border-radius: 2px;
-}
+// .icon-vk {
+//   background-color: #48729e;
+//   border-radius: 2px;
+// }
+
+// .icon-fb {
+//   background-color: #3c5a98;
+//   border-radius: 2px;
+// }
+
+// .icon-ok {
+//   background-color: #eb722e;
+//   border-radius: 2px;
+// }

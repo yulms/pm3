@@ -1,3 +1,14 @@
+// @font-face {
+//   font-family: "Montserrat";
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: local("Montserrat Regular"),
+//     local("Montserrat-Regular"),
+//     url("../fonts/montserrat-v14-latin_cyrillic-regular.woff2") format("woff2"),
+//     url("../fonts/montserrat-v14-latin_cyrillic-regular.woff") format("woff");
+// }
+
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -20,8 +31,13 @@
     url("../fonts/montserrat-v14-latin_cyrillic-600.woff") format("woff");
 }
 
+
 html {
   box-sizing: border-box;
+
+  @include media-tablet-portrait-down {
+    font-size: 87.5%;
+  }
 }
 
 *,
@@ -35,11 +51,11 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Montserrat", "Arial", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.714286;
+  font-size: 1rem;
+  line-height: $space * 2;
   font-weight: 500;
   color: $color-font__base;
-  background-color: #ffffff;
+  background-color: $color__background;
 }
 
 img,
