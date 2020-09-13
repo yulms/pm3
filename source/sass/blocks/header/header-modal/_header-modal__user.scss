@@ -1,0 +1,37 @@
+.header-modal__user {
+  right: 0;
+  width: $space * 20;
+  margin: -2*$space 0;
+}
+
+.header-modal__user-entry-text {
+  margin: 0 0 $space;
+  padding: $space 0;
+  border-bottom: 1px solid $color__additional-2;
+}
+
+.header-modal__user-login-button {
+  width: 100%;
+  margin: 0 0 $space;
+}
+
+.header-modal__user-socials-login {
+  margin-bottom: $space;
+}
+
+.header-modal__user-call2reg {
+  margin-bottom: $space;
+}
+
+.header-modal__user-dropdown-menu {
+  margin-left: -2 * $space;
+  margin-right: -2 * $space;
+  border-top: 1px solid #e0e0e0;
+}
+
+.header-modal__user-logout {
+  display: block;
+  margin-top: $space * 0.75;
+  margin-bottom: $space * 0.75;
+  text-align: center;
+}

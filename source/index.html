@@ -15,374 +15,376 @@
 
   <header class="header">
 
-    <div class="header__top-panel">
-      <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
+    <!-- <div class="header__top-panel"> -->
+    <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
 
-      <div class="header__top-menu">
-        <ul class="header__top-menu-list">
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link city-choose header__city-choose" href="#">
-              <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
-              <div class="city-choose__city-container header__city-container">
-                <svg class="icon icon--2x icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
-                </svg>
-                <span class="visually-hidden">Текущий выбор: </span>
-                <span class="city-choose__current-city">г.&nbspМинск</span>
-                <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
-                </svg>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul class="header__top-menu-list">
+    <div class="header__top-menu">
+      <ul class="dropdown-menu header__top-menu-list">
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#">
+            <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
+            <div class="city-choose__city-container header__city-container">
+              <svg class="icon icon--2x icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
+              </svg>
+              <span class="visually-hidden">Текущий выбор: </span>
+              <span class="city-choose__current-city">г.&nbspМинск</span>
+              <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+              </svg>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="dropdown-menu header__top-menu-list">
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Доставка и оплата</a>
-          </li>
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link" href="#">Доставка и оплата</a>
+        </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Самовывоз</a>
-          </li>
-        </ul>
-        <ul class="header__top-menu-list header__top-menu-list--secondary">
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Гарантии</a>
-          </li>
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link" href="#">Самовывоз</a>
+        </li>
+      </ul>
+      <ul class="dropdown-menu header__top-menu-list header__top-menu-list--secondary">
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link" href="#">Гарантии</a>
+        </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Акции</a>
-          </li>
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link" href="#">Акции</a>
+        </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">О магазине</a>
-          </li>
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link" href="#">О магазине</a>
+        </li>
 
-          <li class="header__top-menu-item">
-            <a class="header__top-menu-link" href="#">Контакты</a>
-          </li>
-        </ul>
-      </div>
+        <li class="header__top-menu-item">
+          <a class="header__top-menu-link dropdown-menu__link" href="#">Контакты</a>
+        </li>
+      </ul>
     </div>
+    <!-- </div> -->
 
-    <div class="header__main-panel">
+    <!-- <div class="header__main-panel"> -->
 
-      <!-- Бургер -->
-      <button class="header__layout-item button header__burger" type="button">
-        <span class="visually-hidden">Дополнительное меню</span>
-        <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/svg/_sprite.svg#icon-burger"></use>
+    <!-- Бургер -->
+    <button class="button header__burger" type="button">
+      <span class="visually-hidden">Дополнительное меню</span>
+      <svg class="icon icon--2x header__burger-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="img/svg/_sprite.svg#icon-burger"></use>
+      </svg>
+    </button>
+
+    <!-- Логотип -->
+    <a class="header__logo" href="#">
+      <svg class="header__logo-image" width="102" height="32" role="img" xmlns="http://www.w3.org/2000/svg">
+        <title>Перейти на главную страницу магазина</title>
+        <use xlink:href="img/svg/_sprite.svg#icon-logo"></use>
+      </svg>
+      <span class="header__logo-caption">интернет-гипермаркет</span>
+    </a>
+
+    <!-- Телефоны -->
+    <div class="header__contacts">
+      <button class="button header__contacts-button" type="button">
+        <svg class="icon icon--stroked header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/svg/_sprite.svg#icon-tel"></use>
+        </svg>
+        <span class="header__contacts-phone">+375-29-681-05-07</span>
+        <span class="visually-hidden">Показать дополнительные контакты</span>
+        <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
         </svg>
       </button>
 
-      <!-- Логотип -->
-      <a class="header__logo-container" href="#">
-        <svg class="header__logo-svg" width="102" height="32" role="img" xmlns="http://www.w3.org/2000/svg">
-          <title>Перейти на главную страницу магазина</title>
-          <use xlink:href="img/svg/_sprite.svg#icon-logo"></use>
-        </svg>
-        <span class="header__logo-caption">интернет-гипермаркет</span>
-      </a>
+      <div class="header-modal header-modal__contacts" aria-label="Дополнительные контакты">
+        <ul class="header-modal__contacts-list header-modal__contacts-list--tel">
+          <li class="header-modal__contacts-item">
+            <a class="header-modal__contacts-link" href="tel:+375336810507">
+              <svg class="icon header-modal__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-a1--colored"></use>
+              </svg>
+              <span class="header-modal__contacts-phoneprefix">+375-33-</span>
+              <span class="header-modal__contacts-phone">681-05-07</span>
+            </a>
+          </li>
+          <li class="header-modal__contacts-item">
+            <a class="header-modal__contacts-link" href="tel:+375256810507">
+              <svg class="icon header-modal__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-mts"></use>
+              </svg>
+              <span class="header-modal__contacts-phoneprefix">+375-25-</span>
+              <span class="header-modal__contacts-phone">681-05-07</span>
+            </a>
+          </li>
+          <li class="header-modal__contacts-item">
+            <a class="header-modal__contacts-link" href="tel:+375296810507">
+              <svg class="icon header-modal__contacts-icon icon-life" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-life"></use>
+              </svg>
+              <span class="header-modal__contacts-phoneprefix">+375-29-</span>
+              <span class="header-modal__contacts-phone">681-05-07</span>
+            </a>
+          </li>
+          <li class="header-modal__contacts-item header-modal__contacts-item--call-button">
+            <a class="button button--action-secondary header-modal__call-button" href="tel:+375336810507">
+              <span>Позвонить</span>
+            </a>
+          </li>
+        </ul>
 
-      <!-- Телефоны -->
-      <div class="header__layout-item header__contacts">
-        <button class="button header__button-tel">
-          <span class="button__flex-container">
-            <svg class="icon icon--thin header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/svg/_sprite.svg#icon-tel"></use>
-            </svg>
-            <span class="header__contacts-tel">+375-29-681-05-07</span>
-            <span class="visually-hidden">Показать дополнительные контакты</span>
-            <svg class="icon icon--thin" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
-            </svg>
-          </span>
-        </button>
+        <p class="header-modal__contacts-worktime">Время работы: <br>с 9-00 до 20-00 Пн-Пт</p>
 
-        <div class="header-modal header-modal--contacts" aria-label="Дополнительные контакты">
-          <ul class="header__contacts-list header__contacts-list--tel">
-            <li class="header__contacts-item">
-              <a class="header__contacts-link" href="tel:+375336810507">
-                <svg class="header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-a1--colored"></use>
-                </svg>
-                <span class="header__contacts-link-phoneprefix">+375-33-</span>
-                <span>681-05-07</span>
-              </a>
-            </li>
-            <li class="header__contacts-item">
-              <a class="header__contacts-link" href="tel:+375256810507">
-                <svg class="header__contacts-icon icon-mts" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-mts"></use>
-                </svg>
-                <span class="header__contacts-link-phoneprefix">+375-25-</span>
-                <span>681-05-07</span>
-              </a>
-            </li>
-            <li class="header__contacts-item">
-              <a class="header__contacts-link" href="tel:+375296810507">
-                <svg class="header__contacts-icon icon-life" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-life"></use>
-                </svg>
-                <span class="header__contacts-link-phoneprefix">+375-29-</span>
-                <span>681-05-07</span>
-              </a>
-            </li>
-            <li class="header__contacts-item">
-              <a class="button button--action-secondary" href="tel:+375336810507">
-                <span class="button__text">Позвонить</span>
-              </a>
-            </li>
-          </ul>
-
-          <!-- <button>Перезвоните мне!</button> -->
-          <p class="header__contacts-worktime">Время работы: <br>с 9-00 до 20-00 Пн-Пт</p>
-
-          <ul class="header__contacts-list">
-            <li class="header__contacts-item">
-              <a class="header__contacts-link" href="#">
-                <svg class="header__contacts-icon icon-viber" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-viber"></use>
-                </svg>
-                Viber
-              </a>
-            </li>
-            <li class="header__contacts-item">
-              <a class="header__contacts-link" href="#">
-                <svg class="header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-telegram--colored"></use>
-                </svg>
-                Telegram
-              </a>
-            </li>
-            <li class="header__contacts-item">
-              <a class="header__contacts-link" href="mailto:posudamn@gmail.com">
-                posudamn@gmail.com
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <p class="header__contacts-caption">консультация эксперта</p>
+        <ul class="header-modal__contacts-list">
+          <li class="header-modal__contacts-item">
+            <a class="header-modal__contacts-link" href="#">
+              <svg class="icon header-modal__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-viber"></use>
+              </svg>
+              Viber
+            </a>
+          </li>
+          <li class="header-modal__contacts-item">
+            <a class="header-modal__contacts-link" href="#">
+              <svg class="icon header-modal__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/svg/_sprite.svg#icon-telegram--colored"></use>
+              </svg>
+              Telegram
+            </a>
+          </li>
+          <li class="header-modal__contacts-item">
+            <a class="header-modal__contacts-link" href="mailto:posudamn@gmail.com">
+              posudamn@gmail.com
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <!-- Список желаний -->
-      <a class="header__layout-item header__layout-item--love header__link" href="#">
-        <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+      <div class="header__contacts-caption">консультация эксперта</div>
+    </div>
+
+    <!-- Список желаний -->
+    <div class="header__wishlist">
+      <a class="header__link" href="#">
+        <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="img/svg/_sprite.svg#icon-love"></use>
         </svg>
         <span class="visually-hidden">Закладки</span>
       </a>
+    </div>
 
-      <!-- User -->
-      <!-- header__user нужен? -->
-      <div class="header__layout-item header__layout-item--user header__user">
-        <a class="header__link header__link--user" href="#">
-          <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
-          </svg>
-          <span class="header__link-caption">Мой аккаунт</span>
-        </a>
+    <!-- User -->
+    <div class="header__user">
+      <a class="header__link" href="#">
+        <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
+        </svg>
+        <span class="header__link-caption">Мой аккаунт</span>
+      </a>
 
-        <div class="header-modal header-modal--user-menu" aria-label="Меню пользователя">
-          <h2 class="visually-hidden">Меню пользователя</h2>
-          <p class="user-menu__entry-text">Добро пожаловать</p>
-          <a class="button button--options-primary user-menu__login-button" href="#">Войти</a>
+      <div class="header-modal header-modal__user" aria-label="Меню пользователя">
+        <h2 class="visually-hidden">Меню пользователя</h2>
+        <p class="header-modal__user-entry-text">Добро пожаловать</p>
+        <a class="button button--options-primary header-modal__user-login-button" href="#">Войти</a>
 
-          <div class="socials-login">
-            <span>Войти через:</span>
-            <ul class="socials-login__list">
-              <li class="socials-login__item">
-                <a class="socials-login__link" href="#">
-                  <svg class="socials-login__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/svg/_sprite.svg#icon-google"></use>
-                  </svg>
-                  <span class="visually-hidden">Google</span>
-                </a>
-              </li>
-              <li class="socials-login__item">
-                <a class="socials-login__link" href="#">
-                  <svg class="socials-login__icon icon-vk" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/svg/_sprite.svg#icon-vk"></use>
-                  </svg>
-                  <span class="visually-hidden">Вконтакте</span>
-                </a>
-              </li>
-              <li class="socials-login__item">
-                <a class="socials-login__link" href="#">
-                  <svg class="socials-login__icon icon-fb" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/svg/_sprite.svg#icon-facebook"></use>
-                  </svg>
-                  <span class="visually-hidden">Фэйсбук</span>
-                </a>
-              </li>
-              <li class="socials-login__item">
-                <a class="socials-login__link" href="#">
-                  <svg class="socials-login__icon icon-ok" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/svg/_sprite.svg#icon-ok"></use>
-                  </svg>
-                  <span class="visually-hidden">Однокласники</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="user-menu__call2reg">
-            <span>Новый покупатель?</span>
-            <a class="link link--underline" href="#">Зарегистрироваться</a>
-          </div>
-
-          <ul class="dropdown-menu user-menu__dropdown-menu">
-            <li><a class="dropdown-menu__link" href="#">Личные данные</a></li>
-            <li><a class="dropdown-menu__link" href="#">История заказов</a></li>
-            <li><a class="dropdown-menu__link" href="#">История просмотров</a></li>
-            <li><a class="dropdown-menu__link" href="#">Избранные товары</a></li>
-            <li><a class="dropdown-menu__link" href="#">Лист ожиданий</a></li>
+        <div class="socials-login header-modal__user-socials-login">
+          <span>Войти через:</span>
+          <ul class="socials-login__list">
+            <li class="socials-login__item">
+              <a class="socials-login__link" href="#">
+                <svg class="icon socials-login__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-google"></use>
+                </svg>
+                <span class="visually-hidden">Google</span>
+              </a>
+            </li>
+            <li class="socials-login__item">
+              <a class="socials-login__link" href="#">
+                <svg class="icon socials-login__icon socials-login__icon--vk" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-vk"></use>
+                </svg>
+                <span class="visually-hidden">Вконтакте</span>
+              </a>
+            </li>
+            <li class="socials-login__item">
+              <a class="socials-login__link" href="#">
+                <svg class="icon socials-login__icon socials-login__icon--fb" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-facebook"></use>
+                </svg>
+                <span class="visually-hidden">Фэйсбук</span>
+              </a>
+            </li>
+            <li class="socials-login__item">
+              <a class="socials-login__link" href="#">
+                <svg class="icon socials-login__icon socials-login__icon--ok" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-ok"></use>
+                </svg>
+                <span class="visually-hidden">Однокласники</span>
+              </a>
+            </li>
           </ul>
-          <a class="user-menu__logout link link--nounderline" href="#">Выйти</a>
         </div>
+
+        <div class="header-modal__user-call2reg">
+          <span>Новый покупатель?</span>
+          <a class="link" href="#">Зарегистрироваться</a>
+        </div>
+
+        <ul class="dropdown-menu header-modal__user-dropdown-menu">
+          <li><a class="dropdown-menu__link" href="#">Личные данные</a></li>
+          <li><a class="dropdown-menu__link" href="#">История заказов</a></li>
+          <li><a class="dropdown-menu__link" href="#">История просмотров</a></li>
+          <li><a class="dropdown-menu__link" href="#">Избранные товары</a></li>
+          <li><a class="dropdown-menu__link" href="#">Лист ожиданий</a></li>
+        </ul>
+        <a class="link link--nounderline header-modal__user-logout" href="#">Выйти</a>
       </div>
+    </div>
 
-      <!-- Корзина -->
-      <div class="header__layout-item header__layout-item--cart">
-        <a class="header__link header__link--cart" href="#">
-          <div class="header__quantity-positioner">
-            <svg class="icon icon--thin header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/svg/_sprite.svg#icon-cart"></use>
-            </svg>
-            <span class="visually-hidden">Товаров: </span>
-            <span class="sticker-quantity">0</span>
-          </div>
-          <span class="header__link-caption">Корзина</span>
-        </a>
 
-        <!-- модальная корзина -->
-        <div class="header-modal header-modal--cart" aria-label="Корзина покупателя">
-          <h2 class="title2">Корзина товаров</h2>
-          <ul class="cart-list">
-            <li class="cart-list__item">
-              <!-- сделать блок из элемента! -->
-              <p class="image-container">
-                <img class="image-container__image" src="img/raster/mini-cart-1.jpg" alt="Кастрюля">
-              </p>
 
-              <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
 
-              <dl class="cart-list__options-dl">
-                <dt class="cart-list__options-dt">Цвет</dt>
-                <dd class="cart-list__options-dd">Синий</dd>
-              </dl>
+    <!-- Корзина -->
+    <div class="header__cart">
+      <a class="header__link" href="#">
+        <div class="header__cart-quantity-positioner">
+          <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/svg/_sprite.svg#icon-cart"></use>
+          </svg>
+          <span class="visually-hidden">Товаров: </span>
+          <span class="header__cart-quantity">0</span>
+        </div>
+        <span class="header__link-caption">Корзина</span>
+      </a>
 
-              <fieldset class="quantity-input cart-list__fieldset">
-                <legend class="visually-hidden">Изменение количества товара</legend>
-                <label class="quantity-input__label visually-hidden" for="quantity">Количество: </label>
-                <div class="quantity-input__container">
-                  <button class="button quantity-input__button quantity-input__button--less" type="button">
-                    <span class="visually-hidden">Уменьшить</span>
-                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
-                      <line x1="4" y1="12" x2="20" y2="12"></line>
-                    </svg>
-                  </button>
-                  <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
-                  <button class="button quantity-input__button quantity-input__button--more" type="button">
-                    <span class="visually-hidden">Увеличить</span>
-                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
-                      <line x1="4" y1="12" x2="20" y2="12"></line>
-                      <line x1="12" y1="4" x2="12" y2="20"></line>
-                    </svg>
-                  </button>
-                </div>
-              </fieldset>
+      <div class="header-modal header-modal__cart" aria-label="Корзина покупателя">
+        <h2 class="title title--2">Корзина товаров</h2>
+        <ul class="cart-list">
+          <li class="cart-list__item">
 
-              <div class="price-block">
-                <span class="price minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-                <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
-              </div>
-
-              <div class="cart-list__buttons">
-                <button class="button cart-list__button" type="button">Удалить</button>
-                <button class="button cart-list__button" type="button">Сохранить</button>
-              </div>
-
-            </li>
-
-            <li class="cart-list__item">
-              <!-- сделать блок из элемента! -->
-              <p class="image-container">
-                <img class="image-container__image" src="img/raster/mini-cart-2.jpg" alt="Кастрюля">
-              </p>
-
-              <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
-
-              <fieldset class="quantity-input cart-list__fieldset">
-                <legend class="visually-hidden">Изменение количества товара</legend>
-                <label class="quantity-input__label visually-hidden" for="quantity">Количество: </label>
-                <div class="quantity-input__container">
-                  <button class="button quantity-input__button quantity-input__button--less" type="button">
-                    <span class="visually-hidden">Уменьшить</span>
-                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
-                      <line x1="4" y1="12" x2="20" y2="12"></line>
-                    </svg>
-                  </button>
-                  <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
-                  <button class="button quantity-input__button quantity-input__button--more" type="button">
-                    <span class="visually-hidden">Увеличить</span>
-                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
-                      <line x1="4" y1="12" x2="20" y2="12"></line>
-                      <line x1="12" y1="4" x2="12" y2="20"></line>
-                    </svg>
-                  </button>
-                </div>
-              </fieldset>
-
-              <div class="price-block">
-                <span class="price minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-                <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
-              </div>
-
-              <div class="cart-list__buttons">
-                <button class="button cart-list__button" type="button">Удалить</button>
-                <button class="button cart-list__button" type="button">Сохранить</button>
-              </div>
-
-            </li>
-          </ul>
-
-          <div class="header-modal--cart__footer">
-            <p class="header-modal--cart__footer-summary">
-              <span>Всего (2 товара):</span>
-              <span>312,56 руб.</span>
+            <p class="image-container">
+              <img class="image-container__image" src="img/raster/mini-cart-1.jpg" alt="Кастрюля">
             </p>
 
-            <div class="header-modal--cart__buttons">
-              <button class="button button--action-secondary header-modal--cart__button" type="button">Купить в 1 клик</button>
-              <button class="button button--action-primary header-modal--cart__button" type="button">Оформить заказ</button>
-            </div>
-          </div>
+            <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
 
-          <button class="button button--modal-close" type="button">
-            <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
-            </svg>
-          </button>
+            <dl class="cart-list__options-dl">
+              <dt class="cart-list__options-dt">Цвет</dt>
+              <dd class="cart-list__options-dd">Синий</dd>
+            </dl>
+
+            <fieldset class="quantity-input cart-list__fieldset">
+              <legend class="visually-hidden">Изменение количества товара</legend>
+              <label class="quantity-input__label visually-hidden" for="quantity">Количество: </label>
+              <div class="quantity-input__container">
+                <button class="button quantity-input__button quantity-input__button--less" type="button">
+                  <span class="visually-hidden">Уменьшить</span>
+                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                  </svg>
+                </button>
+                <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
+                <button class="button quantity-input__button quantity-input__button--more" type="button">
+                  <span class="visually-hidden">Увеличить</span>
+                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="12" y1="4" x2="12" y2="20"></line>
+                  </svg>
+                </button>
+              </div>
+            </fieldset>
+
+            <div class="price-block">
+              <span class="price minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+              <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
+            </div>
+
+            <div class="cart-list__buttons">
+              <button class="button cart-list__button" type="button">Удалить</button>
+              <button class="button cart-list__button" type="button">Сохранить</button>
+            </div>
+
+          </li>
+
+          <li class="cart-list__item">
+            <!-- сделать блок из элемента! -->
+            <p class="image-container">
+              <img class="image-container__image" src="img/raster/mini-cart-2.jpg" alt="Кастрюля">
+            </p>
+
+            <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
+
+            <fieldset class="quantity-input cart-list__fieldset">
+              <legend class="visually-hidden">Изменение количества товара</legend>
+              <label class="quantity-input__label visually-hidden" for="quantity">Количество: </label>
+              <div class="quantity-input__container">
+                <button class="button quantity-input__button quantity-input__button--less" type="button">
+                  <span class="visually-hidden">Уменьшить</span>
+                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                  </svg>
+                </button>
+                <input class="quantity-input__input-field" type="number" name="quantity" id="quantity" pattern="[0-9]+" value="1" autocomplete="off">
+                <button class="button quantity-input__button quantity-input__button--more" type="button">
+                  <span class="visually-hidden">Увеличить</span>
+                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="#888888">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="12" y1="4" x2="12" y2="20"></line>
+                  </svg>
+                </button>
+              </div>
+            </fieldset>
+
+            <div class="price-block">
+              <span class="price minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+              <del class="old-price" aria-label="Цена без скидки: ">196.30 р.</del>
+            </div>
+
+            <div class="cart-list__buttons">
+              <button class="button cart-list__button" type="button">Удалить</button>
+              <button class="button cart-list__button" type="button">Сохранить</button>
+            </div>
+
+          </li>
+        </ul>
+
+        <div class="header-modal--cart__footer">
+          <p class="header-modal--cart__footer-summary">
+            <span>Всего (2 товара):</span>
+            <span>312,56 руб.</span>
+          </p>
+
+          <div class="header-modal--cart__buttons">
+            <button class="button button--action-secondary header-modal--cart__button" type="button">Купить в 1 клик</button>
+            <button class="button button--action-primary header-modal--cart__button" type="button">Оформить заказ</button>
+          </div>
         </div>
 
-      </div>
-
-      <form class="search-form header__search-form" action="#" method="post" role="search">
-        <label class="search-form__label" for="search-input">
-          <span class="visually-hidden">Поиск товаров по каталогу:</span>
-        </label>
-        <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Я ищу ...">
-        <button class="search-form__button" type="submit">
-          <svg class="icon search-form__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/svg/_sprite.svg#icon-search"></use>
+        <button class="button button--modal-close" type="button">
+          <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
           </svg>
-          <span class="visually-hidden">Искать</span>
         </button>
-      </form>
+      </div>
     </div>
+
+
+
+
+    <form class="search-form header__search-form" action="#" method="post" role="search">
+      <label class="search-form__label" for="search-input">
+        <span class="visually-hidden">Поиск товаров по каталогу:</span>
+      </label>
+      <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Я ищу ...">
+      <button class="search-form__button" type="submit">
+        <svg class="icon search-form__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/svg/_sprite.svg#icon-search"></use>
+        </svg>
+        <span class="visually-hidden">Искать</span>
+      </button>
+    </form>
+    <!-- </div> -->
 
     <nav class="main-nav">
       <div class="wrapper">

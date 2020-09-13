@@ -1,0 +1,12 @@
+.header__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:focus {
+  color: #ffffff;
+}

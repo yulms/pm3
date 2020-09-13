@@ -32,14 +32,6 @@
 }
 
 .header__top-menu-list {
-  padding: 0;
-  list-style: none;
-
-  @include media-tablet-portrait-down {
-    margin: 0;
-    border-bottom: 1px solid $color__additional-2;
-  }
-
   @include media-tablet-landscape-up {
     display: flex;
     justify-content: flex-end;
@@ -62,26 +54,13 @@
 }
 
 .header__top-menu-link {
-  text-decoration: none;
-
-  @include media-tablet-portrait-down {
-    display: flex;
-    align-items: center;
-    padding: $space var(--page-paddings);
-    color: $color-font__base;
-
-    &:hover,
-    &:focus {
-      background-color: $color__primary-light;
-    }
-  }
-
   @include media-tablet-landscape-up {
     color: $color-font__base-inverted;
 
     &:hover,
     &:focus {
       color: $color-font__title-inverted;
+      background-color: transparent;
     }
   }
 }

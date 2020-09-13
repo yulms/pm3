@@ -31,35 +31,35 @@ function headerModalShow(button) {
 }
 
 // открытие Телефонов
-const buttonContacts = document.querySelector('.header__button-tel');
+const buttonContacts = document.querySelector('.header__contacts-button');
 buttonContacts.addEventListener('click', function(evt) {
   evt.preventDefault();
   headerModalShow(buttonContacts);
 });
-buttonContacts.addEventListener('mouseover', function(evt) {
-  evt.preventDefault();
-  headerModalShow(buttonContacts);
-});
+// buttonContacts.addEventListener('mouseover', function(evt) {
+//   evt.preventDefault();
+//   headerModalShow(buttonContacts);
+// });
 // открытие User Menu
-const buttonUser = document.querySelector('.header__link--user');
+const buttonUser = document.querySelector('.header__user .header__link');
 buttonUser.addEventListener('click', function(evt) {
   evt.preventDefault();
   headerModalShow(buttonUser);
 });
-buttonUser.addEventListener('mouseover', function(evt) {
-  evt.preventDefault();
-  headerModalShow(buttonUser);
-});
+// buttonUser.addEventListener('mouseover', function(evt) {
+//   evt.preventDefault();
+//   headerModalShow(buttonUser);
+// });
 // открытие Корзины
-const buttonCart = document.querySelector('.header__link--cart');
+const buttonCart = document.querySelector('.header__cart .header__link');
 buttonCart.addEventListener('click', function(evt) {
   evt.preventDefault();
   headerModalShow(buttonCart);
 });
-buttonCart.addEventListener('mouseover', function(evt) {
-  evt.preventDefault();
-  headerModalShow(buttonCart);
-});
+// buttonCart.addEventListener('mouseover', function(evt) {
+//   evt.preventDefault();
+//   headerModalShow(buttonCart);
+// });
 
 //
 //

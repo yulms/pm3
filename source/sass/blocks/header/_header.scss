@@ -1,5 +1,3 @@
-@import "header__top-menu";
-
 .header {
   color: $color-font__base-inverted;
   background-color: $color__third;
@@ -16,48 +14,29 @@
   }
 }
 
-.header__top-panel {
-  @include media-tablet-landscape-up {
-    display: flex;
-    align-items: flex-start;
-    padding-left: var(--page-paddings);
-    padding-right: var(--page-paddings);
-  }
+@import "header__icon";
+@import "header__link";
+@import "header__top-banner";
+@import "header__top-menu";
+@import "header__burger";
+@import "header__logo";
+@import "header__contacts";
+@import "header__user";
+@import "header__cart";
+@import "header-modal/header-modal";
 
-  @include media-desktop-up {
-    max-width: $max-width;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
-.header__top-banner {
-  margin: 0;
-  padding-top: $space * 0.5;
-  padding-bottom: $space * 0.5;
-  color: $color-font__title-inverted;
-  background-color: $color__primary;
+// .header__top-panel {
+//   @include media-tablet-landscape-up {
+//     display: flex;
+//     align-items: flex-start;
+//     padding-left: var(--page-paddings);
+//     padding-right: var(--page-paddings);
+//   }
 
-  @include media-tablet-portrait-down {
-    padding-left: var(--page-paddings);
-    padding-right: var(--page-paddings);
-  }
-
-  @include media-tablet-landscape-up {
-    position: relative;
-    flex-grow: 1;
-    margin-right: $space * 3;
-    padding-right: $space;
-    border-bottom-right-radius: $space * 2;
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: 100%;
-      top: 0;
-      bottom: 0;
-      width: 100vw;
-      background-color: inherit;
-    }
-  }
-}
+//   @include media-desktop-up {
+//     max-width: $max-width;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// }

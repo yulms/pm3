@@ -1,0 +1,5 @@
+.header__user .header__link-caption {
+  @include media-tablet-portrait-down {
+    display: none;
+  }
+}

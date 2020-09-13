@@ -1,8 +1,6 @@
 .icon {
   width: $space * 1.5;
   height: $space * 1.5;
-  flex-shrink: 0;
-  // background-repeat: no-repeat;Зачем?
 }
 
 .icon--2x {
@@ -11,6 +9,7 @@
 }
 
 .icon--stroked {
+  fill: none;
   stroke: currentColor;
 
   @media (max-resolution: $retina-dpi),
@@ -27,31 +26,3 @@
 .icon--filled {
   fill: currentColor;
 }
-
-
-// .icon-viber {
-//   fill: #675dac;
-// }
-
-// .icon-mts {
-//   fill: #e30613;
-// }
-
-// .icon-life {
-//   fill: #062594;
-// }
-
-// .icon-vk {
-//   background-color: #48729e;
-//   border-radius: 2px;
-// }
-
-// .icon-fb {
-//   background-color: #3c5a98;
-//   border-radius: 2px;
-// }
-
-// .icon-ok {
-//   background-color: #eb722e;
-//   border-radius: 2px;
-// }

@@ -1,0 +1,17 @@
+.header__burger {
+  @include media-tablet-landscape-down {
+    padding: 0 $space*0.5;
+    color: #ffffff;
+  }
+
+  @include media-tablet-landscape-up {
+    display: none;
+  }
+}
+
+.header__burger-icon {
+  @include media-tablet-landscape-down {
+    display: block;
+    stroke: currentColor;
+  }
+}

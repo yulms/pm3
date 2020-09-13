@@ -1,0 +1,28 @@
+.header__contacts-button {
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+.header__contacts-phone {
+  @include media-mobile-only {
+    display: none;
+  }
+
+  @include media-tablet-portrait-up {
+    font-size: $space * 1.15;
+    font-weight: 600;
+    color: $color-font__title-inverted;
+  }
+}
+
+.header__contacts-caption {
+  @include media-tablet-portrait-down {
+    display: none;
+  }
+
+  @include media-tablet-landscape-up {
+    font-size: 0.6875rem;
+    opacity: 0.8;
+  }
+}
