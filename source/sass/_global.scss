@@ -35,9 +35,9 @@
 html {
   box-sizing: border-box;
 
-  @include media-tablet-portrait-down {
-    font-size: 87.5%;
-  }
+  // @include media-tablet-portrait-down {
+  //   font-size: 87.5%;
+  // }
 }
 
 *,
@@ -51,8 +51,9 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Montserrat", "Arial", sans-serif;
-  font-size: 1rem;
-  line-height: $space * 2;
+  // font-size: 1rem;
+  font-size: 87.5%;
+  line-height: $space * 1.5;
   font-weight: 500;
   color: $color-font__base;
   background-color: $color__background;
@@ -62,4 +63,10 @@ img,
 frame {
   max-width: 100%;
   height: auto;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
 }

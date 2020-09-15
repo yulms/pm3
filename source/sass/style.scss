@@ -8,14 +8,14 @@
 // @import "blocks/article/article";
 @import "blocks/button/button";
 @import "blocks/icon/icon";
-// @import "blocks/button/button";
+@import "blocks/image-container/image-container";
 @import "blocks/link/link";
 @import "blocks/dropdown-menu/dropdown-menu";
-// @import "blocks/quantity-input/quantity-input";
+@import "blocks/quantity-input/quantity-input";
 // @import "blocks/textfield/textfield";
 
 @import "blocks/socials-login/socials-login";
-// @import "blocks/modal/modal";
+@import "blocks/modal/modal";
 @import "blocks/modal-overlay/modal-overlay";
 // @import "blocks/stars/stars";
 // @import "blocks/tooltip/tooltip";
@@ -30,5 +30,5 @@
 // @import "blocks/catalog/catalog";
 // @import "blocks/carousel/carousel";
 // @import "blocks/minicard/minicard";
-// @import "blocks/cart-list/cart-list";
-// @import "blocks/price-block/price-block";
+@import "blocks/cart-list/cart-list";
+@import "blocks/price/price";

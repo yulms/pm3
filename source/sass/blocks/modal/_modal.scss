@@ -1,24 +1,62 @@
-.modal {
-  position: fixed;
-  display: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  padding: 0 16px 16px;
-  background-color: #ffffff;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.75);
-}
-
-.modal--show {
+.modal--isopened .modal {
   display: block;
-  animation-name: bounce;
-  animation-duration: 0.4s;
 }
 
-.modal .title2,
-.header-modal .title2 {
-  margin: 0;
-  padding: 16px 0;
-  border-bottom: 1px solid #e0e0e0;
+.modal {
+  --vertical-paddings: #{$space};
+  --horizontal-paddings: #{$space * 2};
+
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+  padding: var(--vertical-paddings) var(--horizontal-paddings);
+  color: $color-font__base;
+  background-color: $color__background;
+  border-radius: $controls__border-radius;
+  box-shadow: 0 6px 6px 0 $color__shadows;
+  // box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.75);
 }
+
+.modal--centered {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal--isopened {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 9px solid $color__background;
+  }
+}
+
+.modal__header {
+  margin: $space * 0.5 $space * 3 $space 0;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+
+// .modal--show {
+//   display: block;
+//   animation-name: bounce;
+//   animation-duration: 0.4s;
+// }

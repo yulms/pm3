@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #cccccc;
+  color: $color-font__base-inverted;
   text-decoration: none;
-}
 
-.header__link:hover,
-.header__link:focus {
-  color: #ffffff;
+  &:hover,
+  &:focus {
+    color: $color-font__title-inverted;
+  }
 }

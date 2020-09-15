@@ -1,5 +1,39 @@
+.header__user-modal {
+  right: 0;
+  width: $space * 20;
+}
+
 .header__user .header__link-caption {
   @include media-tablet-portrait-down {
     display: none;
   }
+}
+
+.header__user-entry-text {
+  margin: 0 0 $space;
+  padding-bottom: $space;
+  border-bottom: 1px solid $color__additional-2;
+}
+
+.header__user-login-button {
+  width: 100%;
+  margin: 0 0 $space;
+}
+
+.header__user-socials-login {
+  margin-bottom: $space;
+}
+
+.header__user-call2reg {
+  margin-bottom: $space;
+}
+
+.header__user-dropdown-menu {
+  margin: 0 calc(var(--horizontal-paddings) * -1) $space;
+  border-top: 1px solid $color__additional-2;
+}
+
+.header__user-logout {
+  display: block;
+  text-align: center;
 }

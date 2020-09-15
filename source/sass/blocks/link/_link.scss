@@ -3,6 +3,7 @@
   transition: color 0.1s;
   text-decoration: underline;
   text-underline-position: under;
+  text-decoration-skip-ink: none;
 
   &:hover,
   &:focus {

@@ -1,0 +1,22 @@
+.price__current {
+  font-size: 171.4285%;
+  line-height: 2rem;
+  letter-spacing: -0.02em;
+  color: $color-font__title;
+  white-space: nowrap;
+}
+
+.price__current--big {
+  font-size: 200%;
+  line-height: 3rem;
+}
+
+.price__old {
+  margin-left: $space * 0.5;
+  color: $color-font__secondary;
+  white-space: nowrap;
+}
+
+.price__current--discount {
+  color: $color-font__sale;
+}

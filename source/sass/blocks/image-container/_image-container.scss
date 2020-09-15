@@ -1,10 +1,9 @@
 .image-container {
   position: relative;
   z-index: 0;
-  display: block;
+  margin: 0;
   /* соотношение сторон фото 1:1 */
   padding-top: 100%;
-  margin: 0;
 }
 
 .image-container--ratio-1-2 {
@@ -20,7 +19,7 @@
   bottom: 0;
   left: 0;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $color__image-overlay;
   transition: 0.15s;
 }
 
@@ -29,11 +28,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: calc(100% - 8px);
-  max-width: calc(100% - 8px);
+  width: 100%;
+  max-height: calc(100% - #{$space * 0.5});
+  max-width: calc(100% - #{$space * 0.5});
 }
 
 .image-container__image--big-paddings {
-  max-height: calc(100% - 24px);
-  max-width: calc(100% - 24px);
+  max-height: calc(100% - #{$space * 1.5});
+  max-width: calc(100% - #{$space * 1.5});
 }

@@ -6,7 +6,7 @@
   text-transform: none;
   text-decoration: none;
   overflow: visible;
-  word-break: break-all;
+  word-break: break-word;
   background: 0;
   border: none;
   cursor: pointer;
@@ -14,8 +14,21 @@
   transition: all 0.1s;
 }
 
+.button--action-primary {
+  padding: $space * 0.75 $space;
+  color: $color-font__button;
+  background-color: $color__secondary;
+  border-radius: $controls__border-radius;
+
+  &:hover,
+  &:focus {
+    background-color: $color__secondary-bright;
+  }
+}
+
+
 .button--action-secondary {
-  padding: calc(#{$space} * 0.5 - 2px) $space;
+  padding: calc(#{$space} * 0.75 - 2px) $space;
   color: $color-font__button;
   background-color: transparent;
   border: 2px solid $color__secondary;
@@ -46,6 +59,35 @@
   &:active {
     background-color: darken($color__primary-dark, 5%);
   }
+}
+
+.button--modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: $space * 5;
+  min-height: $space * 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transition: all 0.1s;
+}
+
+.button--modal-close .button__icon {
+  width: $space * 3;
+  height: $space * 3;
+  stroke: $color__additional-4;
+  stroke-width: 2px;
+}
+
+.button--modal-close:hover .button__icon,
+.button--modal-close:focus .button__icon {
+  stroke: $color__primary;
+}
+
+.button--modal-close:active {
+  opacity: 0.3;
 }
 
 
@@ -88,19 +130,6 @@
 
 // .button__text + .button__icon {
 //   margin-left: $grid-baseline / 2;
-// }
-
-// .button--action-primary {
-//   padding: $grid-baseline * 1.5;
-//   color: $color-font__button;
-//   background-color: $color__secondary;
-//   border-radius: $controls__border-radius;
-//   outline: none;
-// }
-
-// .button--action-primary:hover,
-// .button--action-primary:focus {
-//   background-color: $color__secondary-bright;
 // }
 
 
@@ -152,27 +181,4 @@
 //   cursor: default;
 //   opacity: 0.4;
 //   filter: grayscale(1);
-// }
-
-// .button--modal-close {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   min-width: 64px;
-//   min-height: 64px;
-//   padding: 0;
-// }
-
-// .button--modal-close .button__icon {
-//   stroke: $color__additional-4;
-//   stroke-width: 2px;
-// }
-
-// .button--modal-close:hover .button__icon,
-// .button--modal-close:focus .button__icon {
-//   stroke: $color__primary;
-// }
-
-// .button--modal-close:active {
-//   opacity: 0.3;
 // }
