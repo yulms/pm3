@@ -7,7 +7,6 @@
   <meta name="theme-color" content="#01768b">
   <title>Document</title>
   <link rel="preload" href="fonts\montserrat-v14-latin_cyrillic-500.woff2" as="font" type="font/woff2" crossorigin>
-  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -85,8 +84,8 @@
       <span class="header__logo-caption">интернет-гипермаркет</span>
     </a>
 
-    <!-- Телефоны -->
-    <div class="header__contacts">
+    <!-- Контакты -->
+    <div class="header__contacts modal modal--parent-bounded modal--closed">
       <button class="button header__contacts-button" type="button">
         <svg class="icon icon--stroked header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="img/svg/_sprite.svg#icon-tel"></use>
@@ -98,7 +97,7 @@
         </svg>
       </button>
 
-      <div class="modal modal--parent-bounded header__contacts-modal" aria-label="Дополнительные контакты">
+      <div class="modal__inner header__contacts-modal" aria-label="Дополнительные контакты">
         <ul class="header__contacts-list header__contacts-list--tel">
           <li class="header__contacts-item">
             <a class="header__contacts-link" href="tel:+375336810507">
@@ -175,7 +174,7 @@
     </div>
 
     <!-- User -->
-    <div class="header__user">
+    <div class="header__user modal modal--parent-bounded modal--closed">
       <a class="header__link" href="#">
         <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
@@ -183,7 +182,7 @@
         <span class="header__link-caption">Мой аккаунт</span>
       </a>
 
-      <div class="modal modal--parent-bounded header__user-modal" aria-label="Меню пользователя">
+      <div class="modal__inner header__user-modal" aria-label="Меню пользователя">
         <h2 class="visually-hidden">Меню пользователя</h2>
         <p class="header__user-entry-text">Добро пожаловать</p>
         <a class="button button--options-primary header__user-login-button" href="#">Войти</a>
@@ -243,7 +242,7 @@
     </div>
 
     <!-- Корзина -->
-    <div class="header__cart">
+    <div class="header__cart modal modal--parent-bounded modal--closed">
       <a class="header__link" href="#">
         <div class="header__cart-quantity-positioner">
           <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -255,7 +254,7 @@
         <span class="header__link-caption">Корзина</span>
       </a>
 
-      <div class="modal modal--parent-bounded header__cart-modal" aria-label="Корзина покупателя">
+      <div class="modal__inner header__cart-modal" aria-label="Корзина покупателя">
         <h2 class="modal__header">Корзина товаров</h2>
 
         <ul class="cart-list">
@@ -356,7 +355,7 @@
           </div>
         </div>
 
-        <button class="button button--modal-close" type="button">
+        <button class="button button--modal-close modal__js-close-button" type="button">
           <svg class="button__icon" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
           </svg>

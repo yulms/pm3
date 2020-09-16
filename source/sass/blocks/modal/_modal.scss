@@ -1,14 +1,12 @@
-.modal--isopened .modal {
-  display: block;
+.modal--closed .modal__inner {
+  display: none;
 }
 
-.modal {
+.modal__inner {
   --vertical-paddings: #{$space};
   --horizontal-paddings: #{$space * 2};
 
-  display: none;
   position: absolute;
-  top: 100%;
   z-index: 2;
   padding: var(--vertical-paddings) var(--horizontal-paddings);
   color: $color-font__base;
@@ -18,18 +16,11 @@
   // box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.75);
 }
 
-.modal--centered {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.modal--parent-bounded .modal__inner {
+  top: 100%;
 }
 
-.modal--isopened {
+.modal--parent-bounded:not(.modal--closed) {
   position: relative;
   z-index: 2;
 
@@ -39,6 +30,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
     width: 0;
     height: 0;
     border-left: 11px solid transparent;
@@ -55,8 +47,25 @@
 }
 
 
+// .modal-overlay--closed {
+//   display: none;
+// }
+
+
 // .modal--show {
 //   display: block;
 //   animation-name: bounce;
 //   animation-duration: 0.4s;
+// }
+
+
+// .modal--centered {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 // }
