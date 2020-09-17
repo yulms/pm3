@@ -1,10 +1,4 @@
-import * as quantityInput from './_quantity-input.js';
-quantityInput.init();
-
 import * as modal from './_modal.js';
-// modal.init('.header__contacts-button', '.header__contacts');
-// modal.init('.header__user .header__link', '.header__user');
-
 modal.init([
   {
     buttonSelector: '.header__contacts-button',
@@ -18,16 +12,13 @@ modal.init([
   }
 ]);
 
+import * as quantityInput from './_quantity-input.js';
+quantityInput.init();
 
-const modalOverlay = document.querySelector('.modal-overlay');
+import * as headerTopMenu from './_header__top-menu.js';
+headerTopMenu.init();
 
-const buttonBurger = document.querySelector('.header__burger');
-const secondaryMenu = document.querySelector('.header__top-menu');
-buttonBurger.addEventListener('click', function(evt) {
-  evt.preventDefault();
-  secondaryMenu.classList.add('header__top-menu--isopened');
-  modalOverlay.classList.remove('modal-overlay--closed');
-});
+
 
 // let modalOpened;
 // function headerModalShow(button) {

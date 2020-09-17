@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  z-index: 1;
   color: $color-font__base-inverted;
   background-color: $color__third;
   background-image: url("/img/svg/background.svg");

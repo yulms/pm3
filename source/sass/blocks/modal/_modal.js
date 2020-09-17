@@ -3,6 +3,8 @@ import { isEscapePressEvent } from './util.js';
 const CLOSE_MODAL_CLASS = 'modal--closed';
 const CLOSE_BUTTON_SELECTOR = '.modal__js-close-button';
 const OVERLAY_SELECTOR = 'overlay';
+const SHOW_DELAY = 200;
+const CLOSE_DELAY = 200;
 
 
 export function init(modalInfo) {
@@ -11,12 +13,34 @@ export function init(modalInfo) {
     modal.isOpened = false;
     if (modal.buttonElement) {
       modal.buttonElement.addEventListener('click', onShowModalButtonClick.bind(null, modal));
+      modal.buttonElement.addEventListener('mouseenter', onShowModalMouseEnter.bind(null, modal));
+      modal.buttonElement.addEventListener('mouseleave', onShowModalMouseLeave.bind(null, modal));
     }
   });
 }
 
 
 function onShowModalButtonClick(modal, evt) {
+  showModal(modal, evt);
+}
+
+
+function onShowModalMouseEnter(modal, evt) {
+  modal.isCooldown = false;
+  setTimeout(function () {
+    if (!modal.isCooldown) {
+      showModal(modal, evt);
+    }
+  }, SHOW_DELAY);
+}
+
+
+function onShowModalMouseLeave(modal) {
+  modal.isCooldown = true;
+}
+
+
+function showModal(modal, evt) {
   if (modal.isOpened) return;
 
   evt.preventDefault();
@@ -38,7 +62,7 @@ function onShowModalButtonClick(modal, evt) {
   function addOverlay() {
     modal.overlayElement = document.createElement('div');
     modal.overlayElement.classList.add(OVERLAY_SELECTOR);
-    modal.modalElement.prepend(modal.overlayElement);
+    modal.modalElement.before(modal.overlayElement);
   }
 
   function removeCloseClass() {
@@ -58,12 +82,27 @@ function onShowModalButtonClick(modal, evt) {
       closeModal(modal);
     };
 
+    modal.onModalMouseLeave = function() {
+      modal.isCooldown = false;
+      setTimeout(function () {
+        if (!modal.isCooldown) {
+          closeModal(modal);
+        }
+      }, CLOSE_DELAY);
+    };
+
+    modal.onModalMouseEnter = function() {
+      modal.isCooldown = true;
+    };
+
 
     modal.overlayElement.addEventListener('click', modal.onOverlayClick);
     document.addEventListener('keydown', modal.onDocumentKeydown);
     if (modal.closeButtonElement) {
       modal.closeButtonElement.addEventListener('click', modal.onCloseButtonClick);
     }
+    modal.modalElement.addEventListener('mouseleave', modal.onModalMouseLeave);
+    modal.modalElement.addEventListener('mouseenter', modal.onModalMouseEnter);
   }
 }
 
@@ -88,5 +127,7 @@ function closeModal(modal) {
     if (modal.closeButtonElement) {
       modal.closeButtonElement.removeEventListener('click', modal.onCloseButtonClick);
     }
+    modal.modalElement.removeEventListener('mouseleave', modal.onModalMouseLeave);
+    modal.modalElement.removeEventListener('mouseenter', modal.onModalMouseEnter);
   }
 }
