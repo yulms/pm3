@@ -14,12 +14,6 @@ export function init() {
 
 
 function onMenuOpenButtonClick(menuElement, evt) {
-  evt.preventDefault();
-
-  addOverlay();
-  addOpenClass();
-  addHandlers();
-
 
   function addOverlay() {
     let overlayElement = document.createElement('div');
@@ -44,15 +38,16 @@ function onMenuOpenButtonClick(menuElement, evt) {
     menuElement.overlayElement.addEventListener('click', menuElement.onOverlayClick);
     document.addEventListener('keydown', menuElement.onDocumentKeydown);
   }
+
+
+  evt.preventDefault();
+  addOverlay();
+  addOpenClass();
+  addHandlers();
 }
 
 
 function closeMenu(menuElement) {
-  removeOverlay();
-  removeOpenClass();
-  removeHandlers();
-
-
   function removeOverlay() {
     menuElement.overlayElement.remove();
   }
@@ -65,4 +60,8 @@ function closeMenu(menuElement) {
     menuElement.overlayElement.removeEventListener('click', menuElement.onOverlayClick);
     document.removeEventListener('keydown', menuElement.onDocumentKeydown);
   }
+
+  removeOverlay();
+  removeOpenClass();
+  removeHandlers();
 }

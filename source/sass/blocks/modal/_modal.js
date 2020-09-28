@@ -3,131 +3,122 @@ import { isEscapePressEvent } from './util.js';
 const CLOSE_MODAL_CLASS = 'modal--closed';
 const CLOSE_BUTTON_SELECTOR = '.modal__js-close-button';
 const OVERLAY_SELECTOR = 'overlay';
-const SHOW_DELAY = 200;
-const CLOSE_DELAY = 200;
+const SHOW_DELAY = 500;
+const CLOSE_DELAY = 1000;
 
 
-export function init(modalInfo) {
-  modalInfo.forEach((modal) => {
-    modal.buttonElement = document.querySelector(modal.buttonSelector);
-    modal.isOpened = false;
-    if (modal.buttonElement) {
-      modal.buttonElement.addEventListener('click', onShowModalButtonClick.bind(null, modal));
-      modal.buttonElement.addEventListener('mouseenter', onShowModalMouseEnter.bind(null, modal));
-      modal.buttonElement.addEventListener('mouseleave', onShowModalMouseLeave.bind(null, modal));
-    }
-  });
-}
 
-
-function onShowModalButtonClick(modal, evt) {
-  showModal(modal, evt);
-}
-
-
-function onShowModalMouseEnter(modal, evt) {
-  modal.isCooldown = false;
-  setTimeout(function () {
-    if (!modal.isCooldown) {
-      showModal(modal, evt);
-    }
-  }, SHOW_DELAY);
-}
-
-
-function onShowModalMouseLeave(modal) {
-  modal.isCooldown = true;
-}
-
-
-function showModal(modal, evt) {
-  if (modal.isOpened) return;
-
-  evt.preventDefault();
-  createElements();
-  addOverlay();
-  removeCloseClass();
-  addHandlers();
-  modal.isOpened = true;
-
-  function createElements() {
-    if (!modal.modalElement) {
-      modal.modalElement = document.querySelector(modal.modalSelector);
-    }
-    if (!modal.closeButtonElement) {
-      modal.closeButtonElement = modal.modalElement.querySelector(CLOSE_BUTTON_SELECTOR);
-    }
-  }
-
-  function addOverlay() {
-    modal.overlayElement = document.createElement('div');
-    modal.overlayElement.classList.add(OVERLAY_SELECTOR);
-    modal.modalElement.before(modal.overlayElement);
-  }
-
-  function removeCloseClass() {
-    modal.modalElement.classList.remove(CLOSE_MODAL_CLASS);
-  }
-
-  function addHandlers() {
-    modal.onOverlayClick = function() {
-      closeModal(modal);
-    };
-
-    modal.onDocumentKeydown = function(evt) {
-      isEscapePressEvent(evt, closeModal.bind(null, modal));
-    };
-
-    modal.onCloseButtonClick = function() {
-      closeModal(modal);
-    };
-
-    modal.onModalMouseLeave = function() {
-      modal.isCooldown = false;
-      setTimeout(function () {
-        if (!modal.isCooldown) {
-          closeModal(modal);
+class Modal {
+  constructor({openButtonSelector, modalSelector}) {
+    this._isOpened = false;
+    this._buttonElement = document.querySelector(openButtonSelector);
+    this._buttonElement.addEventListener('click', this._showModal.bind(this));
+    this._buttonElement.addEventListener('mouseenter', (evt) => {
+      this._isCooldown = false;
+      setTimeout(() => {
+        if (!this._isCooldown) {
+          this._showModal(evt);
         }
-      }, CLOSE_DELAY);
+      }, SHOW_DELAY);
+    });
+    this._buttonElement.addEventListener('mouseleave', () => this._isCooldown = true);
+    this._modalSelector = modalSelector;
+  }
+
+
+  _showModal (evt) {
+
+    const createElements = () => {
+      if (!this._modalElement) {
+        this._modalElement = document.querySelector(this._modalSelector);
+      }
+      if (!this._closeButtonElement) {
+        this._closeButtonElement = this._modalElement.querySelector(CLOSE_BUTTON_SELECTOR);
+      }
     };
 
-    modal.onModalMouseEnter = function() {
-      modal.isCooldown = true;
+    const addOverlay = () => {
+      this._overlayElement = document.createElement('div');
+      this._overlayElement.classList.add(OVERLAY_SELECTOR);
+      this._modalElement.before(this._overlayElement);
+    };
+
+    const removeCloseClass = () => {
+      this._modalElement.classList.remove(CLOSE_MODAL_CLASS);
+    };
+
+    const addHandlers = () => {
+      this._onOverlayClick = () => {
+        this._closeModal();
+      };
+
+      this._onDocumentKeydown = (evt) => {
+        isEscapePressEvent(evt, this._closeModal.bind(this));
+      };
+
+      this._onCloseButtonClick = () => {
+        this._closeModal();
+      };
+
+      this._onModalMouseLeave = () => {
+        this._isCooldown = false;
+        setTimeout(() => {
+          if (!this._isCooldown) {
+            this._closeModal();
+          }
+        }, CLOSE_DELAY);
+      };
+
+      this._onModalMouseEnter = () => {
+        this._isCooldown = true;
+      };
+
+      this._overlayElement.addEventListener('click', this._onOverlayClick);
+      document.addEventListener('keydown', this._onDocumentKeydown);
+      if (this._closeButtonElement) {
+        this._closeButtonElement.addEventListener('click', this._onCloseButtonClick);
+      }
+      this._modalElement.addEventListener('mouseleave', this._onModalMouseLeave);
+      this._modalElement.addEventListener('mouseenter', this._onModalMouseEnter);
     };
 
 
-    modal.overlayElement.addEventListener('click', modal.onOverlayClick);
-    document.addEventListener('keydown', modal.onDocumentKeydown);
-    if (modal.closeButtonElement) {
-      modal.closeButtonElement.addEventListener('click', modal.onCloseButtonClick);
-    }
-    modal.modalElement.addEventListener('mouseleave', modal.onModalMouseLeave);
-    modal.modalElement.addEventListener('mouseenter', modal.onModalMouseEnter);
+    if (this._isOpened) return;
+    evt.preventDefault();
+    createElements();
+    addOverlay();
+    removeCloseClass();
+    addHandlers();
+    this._isOpened = true;
   }
+
+
+  _closeModal() {
+    const removeOverlay = () => {
+      this._overlayElement.remove();
+    };
+
+    const addCloseClass = () => {
+      this._modalElement.classList.add(CLOSE_MODAL_CLASS);
+    };
+
+    const removeHandlers = () => {
+      this._overlayElement.removeEventListener('click', this._onOverlayClick);
+      document.removeEventListener('keydown', this._onDocumentKeydown);
+      if (this._closeButtonElement) {
+        this._closeButtonElement.removeEventListener('click', this._onCloseButtonClick);
+      }
+      this._modalElement.removeEventListener('mouseleave', this._onModalMouseLeave);
+      this._modalElement.removeEventListener('mouseenter', this._onModalMouseEnter);
+    };
+
+    removeOverlay();
+    addCloseClass();
+    removeHandlers();
+    this._isOpened = false;
+
+  }
+
 }
 
-
-function closeModal(modal) {
-  removeOverlay();
-  addCloseClass();
-  removeHandlers();
-  modal.isOpened = false;
-
-  function removeOverlay() {
-    modal.overlayElement.remove();
-  }
-
-  function addCloseClass() {
-    modal.modalElement.classList.add(CLOSE_MODAL_CLASS);
-  }
-
-  function removeHandlers() {
-    modal.overlayElement.removeEventListener('click', modal.onOverlayClick);
-    document.removeEventListener('keydown', modal.onDocumentKeydown);
-    if (modal.closeButtonElement) {
-      modal.closeButtonElement.removeEventListener('click', modal.onCloseButtonClick);
-    }
-    modal.modalElement.removeEventListener('mouseleave', modal.onModalMouseLeave);
-    modal.modalElement.removeEventListener('mouseenter', modal.onModalMouseEnter);
-  }
-}
+export default Modal;

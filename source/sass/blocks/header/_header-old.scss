@@ -83,33 +83,3 @@
 // .header__link--cart {
 //   height: 100%;
 // }
-
-
-.header__search-form {
-  display: flex;
-  flex-basis: 100%;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-@media (min-width: 608px) and (max-width: 1279px) {
-  .header__search-form {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media (min-width: 980px) {
-  .header__search-form {
-    order: -1;
-    flex-basis: 40%;
-    margin-left: auto;
-    margin-right: 0;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .header__logo-container {
-    order: -2;
-  }
-}

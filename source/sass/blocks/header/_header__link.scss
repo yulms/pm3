@@ -9,4 +9,8 @@
   &:focus {
     color: $color-font__title-inverted;
   }
+
+  &:focus {
+    outline: 1px solid $color-font__title-inverted;
+  }
 }
