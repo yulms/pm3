@@ -57,6 +57,7 @@ function reloadServer(cb) {
 
 
 module.exports.server = server;
+module.exports.default = server;
 module.exports.build = gulp.series(clean, build);
 module.exports.start = gulp.series(clean, build, server);
 module.exports.quickstart = gulp.series(quickBuild, server);

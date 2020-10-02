@@ -1,11 +1,11 @@
 .city-choose {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
 .city-choose__caption {
-  margin-right: 8px;
+  margin-right: $space*0.5;
 }
 
 .city-choose__city-container {
@@ -14,7 +14,12 @@
   color: $color__primary;
 }
 
+.city-choose__pin-icon {
+  position: absolute;
+}
+
 .city-choose__current-city {
+  padding-left: $space*2;
   text-align: center;
   text-decoration: underline;
   text-underline-position: under;

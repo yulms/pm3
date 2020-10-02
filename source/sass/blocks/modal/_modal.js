@@ -3,8 +3,8 @@ import { isEscapePressEvent } from './util.js';
 const CLOSE_MODAL_CLASS = 'modal--closed';
 const CLOSE_BUTTON_SELECTOR = '.modal__js-close-button';
 const OVERLAY_SELECTOR = 'overlay';
-const SHOW_DELAY = 500;
-const CLOSE_DELAY = 1000;
+const SHOW_DELAY = 200;
+const CLOSE_DELAY = 200;
 
 
 
@@ -14,14 +14,9 @@ class Modal {
     this._buttonElement = document.querySelector(openButtonSelector);
     this._buttonElement.addEventListener('click', this._showModal.bind(this));
     this._buttonElement.addEventListener('mouseenter', (evt) => {
-      this._isCooldown = false;
-      setTimeout(() => {
-        if (!this._isCooldown) {
-          this._showModal(evt);
-        }
-      }, SHOW_DELAY);
+      this._timerOpenId = setTimeout(() => this._showModal(evt), SHOW_DELAY);
     });
-    this._buttonElement.addEventListener('mouseleave', () => this._isCooldown = true);
+    this._buttonElement.addEventListener('mouseleave', () => clearTimeout(this._timerOpenId));
     this._modalSelector = modalSelector;
   }
 
@@ -49,6 +44,7 @@ class Modal {
 
     const addHandlers = () => {
       this._onOverlayClick = () => {
+        clearTimeout(this._timerCloseId);
         this._closeModal();
       };
 
@@ -61,16 +57,11 @@ class Modal {
       };
 
       this._onModalMouseLeave = () => {
-        this._isCooldown = false;
-        setTimeout(() => {
-          if (!this._isCooldown) {
-            this._closeModal();
-          }
-        }, CLOSE_DELAY);
+        this._timerCloseId = setTimeout(() => this._closeModal(), CLOSE_DELAY);
       };
 
       this._onModalMouseEnter = () => {
-        this._isCooldown = true;
+        clearTimeout(this._timerCloseId);
       };
 
       this._overlayElement.addEventListener('click', this._onOverlayClick);
@@ -116,9 +107,7 @@ class Modal {
     addCloseClass();
     removeHandlers();
     this._isOpened = false;
-
   }
-
 }
 
 export default Modal;

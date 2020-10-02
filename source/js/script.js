@@ -1,4 +1,8 @@
 import Modal from './_modal.js';
+import HeaderTopMenu from './_header__top-menu.js';
+import * as quantityInput from './_quantity-input.js';
+import MainNav from './_main-nav.js';
+
 
 function initModals() {
   const modalContactsArgs = {
@@ -21,12 +25,22 @@ function initModals() {
   new Modal(modalCartArgs);
 }
 
+function initHeaderTopMenu() {
+  const headerTopMenuArgs = {
+    menuOpenSelector: '.header__burger',
+    menuSelector: '.header__top-menu',
+    openedMenuClass: 'header__top-menu--isopened'
+  };
+
+  new HeaderTopMenu(headerTopMenuArgs);
+}
+
+function initMainNav() {
+  new MainNav();
+}
+
+
+initHeaderTopMenu();
 initModals();
-
-
-
-import * as quantityInput from './_quantity-input.js';
 quantityInput.init();
-
-import * as headerTopMenu from './_header__top-menu.js';
-headerTopMenu.init();
+initMainNav();

@@ -21,10 +21,13 @@
 // @import "blocks/tooltip/tooltip";
 
 @import "blocks/city-choose/city-choose";
+@import "blocks/banner/banner"; // ! рефакторить!
 @import "blocks/header/header";
 @import "blocks/search-form/search-form";
+@import "blocks/main-nav/main-nav";
+@import "blocks/promo/promo";
+@import "blocks/main/main";
 // @import "blocks/footer/footer";
-@import "blocks/main-nav/main-nav";    // рефакторить
 // @import "blocks/main-page/main-page";
 // @import "blocks/category/category";
 // @import "blocks/catalog/catalog";

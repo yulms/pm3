@@ -1,7 +1,16 @@
 .header__burger {
-  @include media-tablet-landscape-down {
-    padding: 0 $space*0.5;
+  min-height: $space*3.5;
+
+  @include media-mobile-only {
+    padding: 0 $space*0.75;
+  }
+
+  @include media-tablet-portrait-down {
     color: #ffffff;
+  }
+
+  @include media-tablet-portrait-only {
+    padding: 0 $space*1.75;
   }
 
   @include media-tablet-landscape-up {

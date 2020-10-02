@@ -4,6 +4,7 @@
   color: $color-font__base-inverted;
   background-color: $color__third;
   background-image: url("/img/svg/background.svg");
+  transition: all 0.4s ease-in;
 
   @include media-tablet-portrait-down {
     background-size: 900px;
@@ -18,27 +19,14 @@
 
 @import "header__icon";
 @import "header__link";
+@import "header__top-panel";
 @import "header__top-banner";
 @import "header__top-menu";
+@import "header__main-panel";
 @import "header__burger";
 @import "header__logo";
 @import "header__contacts";
+@import "header__wishlist";
 @import "header__user";
 @import "header__cart";
 @import "header__search-form";
-
-
-// .header__top-panel {
-//   @include media-tablet-landscape-up {
-//     display: flex;
-//     align-items: flex-start;
-//     padding-left: var(--page-paddings);
-//     padding-right: var(--page-paddings);
-//   }
-
-//   @include media-desktop-up {
-//     max-width: $max-width;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-// }

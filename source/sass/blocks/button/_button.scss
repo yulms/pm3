@@ -11,7 +11,7 @@
   border: none;
   cursor: pointer;
   outline: none;
-  transition: all 0.1s;
+  transition: all 0.15s;
 }
 
 .button--action-primary {
@@ -28,7 +28,7 @@
 
 
 .button--action-secondary {
-  padding: calc(#{$space} * 0.75 - 2px) $space;
+  padding: calc(#{$space} * 0.5 - 2px) $space*2;
   color: $color-font__button;
   background-color: transparent;
   border: 2px solid $color__secondary;
@@ -36,8 +36,8 @@
 
   &:hover,
   &:focus {
-    background-color: $color__background;
-    border: 2px solid $color__secondary-bright;
+    border-color: $color__secondary-bright;
+    background-color: $color__secondary-bright;
   }
 
   &:active {
@@ -71,7 +71,6 @@
   justify-content: center;
   align-items: center;
   padding: 0;
-  transition: all 0.1s;
 }
 
 .button--modal-close .button__icon {
@@ -113,23 +112,6 @@
 
 // .button__flex-container .button__icon {
 //   flex-shrink: 0;
-// }
-
-
-// .button__text {
-//   vertical-align: middle;
-// }
-
-// .button__icon + .button__text {
-//   margin-left: $grid-baseline / 2;
-// }
-
-// .button__icon {
-//   vertical-align: middle;
-// }
-
-// .button__text + .button__icon {
-//   margin-left: $grid-baseline / 2;
 // }
 
 

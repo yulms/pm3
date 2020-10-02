@@ -1,4 +1,5 @@
 .header__link {
+  min-height: $space*3.5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +12,6 @@
   }
 
   &:focus {
-    outline: 1px solid $color-font__title-inverted;
+    outline: 2px dashed $color-font__title-inverted;
   }
 }

@@ -10,7 +10,7 @@
     padding-top: $space * 0.5;
     padding-bottom: $space * 0.5;
     border-radius: $controls__border-radius;
-    background-color: #ffffff;
+    background-color: $color__background;
     box-shadow: 0 3px 6px 0 $color__shadows;
     transition: left 0.2s;
   }
@@ -19,9 +19,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    margin-left: auto;
-    margin-top: $space * 0.5;
-    margin-bottom: $space * 0.5;
+    margin-top: $space*0.25;
+    margin-left: $space*-3;
+    font-size: 92.857%;
+    font-weight: 600;
+    letter-spacing: 0.03em;
   }
 }
 
@@ -37,6 +39,8 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     margin: $space*-0.5 0 0;
+    border-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -55,6 +59,8 @@
 
 .header__top-menu-link {
   @include media-tablet-landscape-up {
+    padding: 0;
+    white-space: nowrap;
     color: $color-font__base-inverted;
 
     &:hover,

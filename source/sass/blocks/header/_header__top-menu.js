@@ -1,67 +1,62 @@
 import { isEscapePressEvent } from './util.js';
 
 const OVERLAY_SELECTOR = 'overlay';
-const MENU_OPEN_SELECTOR = '.header__burger';
-const MENU_SELECTOR = '.header__top-menu';
 
 
-export function init() {
-  const menuOpenButtonElement = document.querySelector(MENU_OPEN_SELECTOR);
-  const menuElement = document.querySelector(MENU_SELECTOR);
-
-  menuOpenButtonElement.addEventListener('click', onMenuOpenButtonClick.bind(null, menuElement));
-}
-
-
-function onMenuOpenButtonClick(menuElement, evt) {
-
-  function addOverlay() {
-    let overlayElement = document.createElement('div');
-    overlayElement.classList.add(OVERLAY_SELECTOR);
-    menuElement.before(overlayElement);
-    menuElement.overlayElement = overlayElement;
+class HeaderTopMenu {
+  constructor({menuOpenSelector, menuSelector, openedMenuClass}) {
+    this._menuSelector = menuSelector;
+    this._openedMenuClass = openedMenuClass;
+    this._menuOpenButtonElement = document.querySelector(menuOpenSelector);
+    this._menuElement = document.querySelector(menuSelector);
+    this._menuOpenButtonElement.addEventListener('click', this._showMenu.bind(this));
   }
 
-  function addOpenClass() {
-    menuElement.classList.add('header__top-menu--isopened');
-  }
-
-  function addHandlers() {
-    menuElement.onOverlayClick = function () {
-      closeMenu(menuElement);
+  _showMenu(evt) {
+    const addOverlay = () => {
+      this._overlayElement = document.createElement('div');
+      this._overlayElement.classList.add(OVERLAY_SELECTOR);
+      this._menuElement.before(this._overlayElement);
     };
 
-    menuElement.onDocumentKeydown = function(evt) {
-      isEscapePressEvent(evt, closeMenu.bind(null, menuElement));
+    const addOpenClass = () => {
+      this._menuElement.classList.add(this._openedMenuClass);
     };
 
-    menuElement.overlayElement.addEventListener('click', menuElement.onOverlayClick);
-    document.addEventListener('keydown', menuElement.onDocumentKeydown);
+    const addHandlers = () => {
+      this._onOverlayClick = () => {
+        this._hideMenu();
+      };
+
+      this._onDocumentKeydown = (evt) => {
+        isEscapePressEvent(evt, this._hideMenu.bind(this));
+      };
+
+      this._overlayElement.addEventListener('click', this._onOverlayClick);
+      document.addEventListener('keydown', this._onDocumentKeydown);
+    };
+
+
+    evt.preventDefault();
+    addOverlay();
+    addOpenClass();
+    addHandlers();
   }
 
+  _hideMenu() {
+    const removeOverlay = () => this._overlayElement.remove();
 
-  evt.preventDefault();
-  addOverlay();
-  addOpenClass();
-  addHandlers();
+    const removeOpenClass = () => this._menuElement.classList.remove(this._openedMenuClass);
+
+    const removeHandlers = () => {
+      this._overlayElement.removeEventListener('click', this._onOverlayClick);
+      document.removeEventListener('keydown', this._onDocumentKeydown);
+    };
+
+    removeOverlay();
+    removeOpenClass();
+    removeHandlers();
+  }
 }
 
-
-function closeMenu(menuElement) {
-  function removeOverlay() {
-    menuElement.overlayElement.remove();
-  }
-
-  function removeOpenClass() {
-    menuElement.classList.remove('header__top-menu--isopened');
-  }
-
-  function removeHandlers() {
-    menuElement.overlayElement.removeEventListener('click', menuElement.onOverlayClick);
-    document.removeEventListener('keydown', menuElement.onDocumentKeydown);
-  }
-
-  removeOverlay();
-  removeOpenClass();
-  removeHandlers();
-}
+export default HeaderTopMenu;

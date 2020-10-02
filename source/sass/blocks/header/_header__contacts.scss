@@ -1,6 +1,17 @@
+.header__contacts {
+  @include media-mobile-only {
+    max-width: $space*3;
+    flex-grow: 1;
+  }
+
+  @include media-tablet-portrait-up {
+    margin-right: auto;
+  }
+}
+
 .header__contacts-modal {
-  // left: 50%;
-  // transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-50%);
   min-width: $space * 17;
   padding-top: $space * 2;
   padding-bottom: $space * 2;
@@ -9,7 +20,12 @@
 .header__contacts-button {
   display: flex;
   align-items: center;
+  padding: 0;
   color: inherit;
+
+  @include media-tablet-portrait-down {
+    min-height: $space*3.5;
+  }
 }
 
 .header__contacts-phone {

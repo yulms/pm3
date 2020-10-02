@@ -9,12 +9,13 @@
   font-size: 1rem;
   font-family: inherit;
   line-height: inherit;
-  border-top-left-radius: $controls__border-radius;
-  border-bottom-left-radius: $controls__border-radius;
+  border-top-left-radius: $space*1.5;
+  border-bottom-left-radius: $space*1.5;
   border: none;
   background-color: $color__additional-1;
   outline: none;
-  // box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 10px 15px 5px rgba(255, 255, 255, 0.1),
+    0 -5px 15px 5px rgba(255, 255, 255, 0.1);
 }
 
 .search-form__input:focus,
@@ -24,23 +25,23 @@
 
 .search-form__button {
   flex-shrink: 0;
-  margin-left: -1px;
-  padding: $space*0.75 $space;
+  padding: $space*0.5 $space;
   appearance: button;
   color: $color__third;
-  background-color: $color__secondary;
-  border-top-right-radius: $controls__border-radius;
-  border-bottom-right-radius: $controls__border-radius;
+  background-color: $color__additional-1;
+  border-top-right-radius: $space*1.5;
+  border-bottom-right-radius: $space*1.5;
   border: none;
   outline: none;
   cursor: pointer;
   transition: background-color 0.15s;
+
+  &:hover,
+  &:focus {
+    color: $color__primary;
+  }
 }
 
-.search-form__button:hover,
-.search-form__button:focus {
-  background-color: $color__secondary-bright;
-}
 
 .search-form__button-icon {
   display: block;

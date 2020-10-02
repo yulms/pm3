@@ -11,390 +11,386 @@
 </head>
 
 <body class="main-page">
-
   <header class="header">
 
-    <!-- <div class="header__top-panel"> -->
-    <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
+    <div class="header__top-panel">
+      <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
 
-    <nav class="header__top-menu" aria-label="Дополнительная навигация">
-      <ul class="dropdown-menu header__top-menu-list">
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#">
-            <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
-            <div class="city-choose__city-container header__city-container">
-              <svg class="icon icon--2x icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
-              </svg>
-              <span class="visually-hidden">Текущий выбор: </span>
-              <span class="city-choose__current-city">г.&nbspМинск</span>
-              <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
-              </svg>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <ul class="dropdown-menu header__top-menu-list">
+      <nav class="header__top-menu" aria-label="Дополнительная навигация">
+        <ul class="dropdown-menu header__top-menu-list">
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#">
+              <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
+              <div class="city-choose__city-container header__city-container">
+                <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
+                </svg>
+                <span class="visually-hidden">Текущий выбор: </span>
+                <span class="city-choose__current-city">г.&nbspМинск</span>
+                <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+                </svg>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul class="dropdown-menu header__top-menu-list">
 
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link" href="#">Доставка и оплата</a>
-        </li>
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link" href="#">Доставка и оплата</a>
+          </li>
 
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link" href="#">Самовывоз</a>
-        </li>
-      </ul>
-      <ul class="dropdown-menu header__top-menu-list header__top-menu-list--secondary">
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link" href="#">Гарантии</a>
-        </li>
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link" href="#">Самовывоз</a>
+          </li>
+        </ul>
+        <ul class="dropdown-menu header__top-menu-list header__top-menu-list--secondary">
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link" href="#">Гарантии</a>
+          </li>
 
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link" href="#">Акции</a>
-        </li>
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link" href="#">Акции</a>
+          </li>
 
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link" href="#">О магазине</a>
-        </li>
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link" href="#">О магазине</a>
+          </li>
 
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link" href="#">Контакты</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- </div> -->
+          <li class="header__top-menu-item">
+            <a class="header__top-menu-link dropdown-menu__link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-    <!-- <div class="header__main-panel"> -->
-
-    <!-- Бургер -->
-    <button class="button header__burger" type="button">
-      <span class="visually-hidden">Дополнительное меню</span>
-      <svg class="icon icon--2x header__burger-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-        <use xlink:href="img/svg/_sprite.svg#icon-burger"></use>
-      </svg>
-    </button>
-
-    <!-- Логотип -->
-    <a class="header__logo" href="#">
-      <svg class="header__logo-image" width="102" height="32" role="img" xmlns="http://www.w3.org/2000/svg">
-        <title>Перейти на главную страницу магазина</title>
-        <use xlink:href="img/svg/_sprite.svg#icon-logo"></use>
-      </svg>
-      <span class="header__logo-caption">интернет-гипермаркет</span>
-    </a>
-
-    <!-- Контакты -->
-    <div class="header__contacts modal modal--parent-bounded modal--closed">
-      <button class="button header__contacts-button" type="button">
-        <svg class="icon icon--stroked header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/svg/_sprite.svg#icon-tel"></use>
-        </svg>
-        <span class="header__contacts-phone">+375-29-681-05-07</span>
-        <span class="visually-hidden">Показать дополнительные контакты</span>
-        <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+    <div class="header__main-panel">
+      <!-- Бургер -->
+      <button class="button header__burger" type="button">
+        <span class="visually-hidden">Дополнительное меню</span>
+        <svg class="icon icon--2x header__burger-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/svg/_sprite.svg#icon-burger"></use>
         </svg>
       </button>
 
-      <div class="modal__inner header__contacts-modal" aria-label="Дополнительные контакты">
-        <ul class="header__contacts-list header__contacts-list--tel">
-          <li class="header__contacts-item">
-            <a class="header__contacts-link" href="tel:+375336810507">
-              <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-a1--colored"></use>
-              </svg>
-              <span class="header__contacts-phoneprefix">+375-33-</span>
-              <span class="header__contacts-phone-inner">681-05-07</span>
-            </a>
-          </li>
-          <li class="header__contacts-item">
-            <a class="header__contacts-link" href="tel:+375256810507">
-              <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-mts"></use>
-              </svg>
-              <span class="header__contacts-phoneprefix">+375-25-</span>
-              <span class="header__contacts-phone-inner">681-05-07</span>
-            </a>
-          </li>
-          <li class="header__contacts-item">
-            <a class="header__contacts-link" href="tel:+375296810507">
-              <svg class="icon header__contacts-icon icon-life" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-life"></use>
-              </svg>
-              <span class="header__contacts-phoneprefix">+375-29-</span>
-              <span class="header__contacts-phone-inner">681-05-07</span>
-            </a>
-          </li>
-          <li class="header__contacts-item header__contacts-item--call-button">
-            <a class="button button--action-secondary header__call-button" href="tel:+375336810507">
-              <span>Позвонить</span>
-            </a>
-          </li>
-        </ul>
-
-        <p class="header__contacts-worktime">Время работы: <br>с 9-00 до 20-00 Пн-Пт</p>
-
-        <ul class="header__contacts-list">
-          <li class="header__contacts-item">
-            <a class="header__contacts-link" href="#">
-              <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-viber"></use>
-              </svg>
-              Viber
-            </a>
-          </li>
-          <li class="header__contacts-item">
-            <a class="header__contacts-link" href="#">
-              <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-telegram--colored"></use>
-              </svg>
-              Telegram
-            </a>
-          </li>
-          <li class="header__contacts-item">
-            <a class="header__contacts-link" href="mailto:posudamn@gmail.com">
-              posudamn@gmail.com
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="header__contacts-caption">консультация эксперта</div>
-    </div>
-
-    <!-- Список желаний -->
-    <div class="header__wishlist">
-      <a class="header__link" href="#">
-        <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/svg/_sprite.svg#icon-love"></use>
+      <!-- Логотип -->
+      <a class="header__logo" href="#">
+        <svg class="header__logo-image" width="102" height="32" role="img" xmlns="http://www.w3.org/2000/svg">
+          <title>Перейти на главную страницу магазина</title>
+          <use xlink:href="img/svg/_sprite.svg#icon-logo"></use>
         </svg>
-        <span class="visually-hidden">Закладки</span>
-      </a>
-    </div>
-
-    <!-- User -->
-    <div class="header__user modal modal--parent-bounded modal--closed">
-      <a class="header__link" href="#">
-        <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
-        </svg>
-        <span class="header__link-caption">Мой аккаунт</span>
+        <span class="header__logo-caption">интернет-гипермаркет</span>
       </a>
 
-      <div class="modal__inner header__user-modal" aria-label="Меню пользователя">
-        <h2 class="visually-hidden">Меню пользователя</h2>
-        <p class="header__user-entry-text">Добро пожаловать</p>
-        <a class="button button--options-primary header__user-login-button" href="#">Войти</a>
+      <form class="search-form header__search-form" action="#" method="post" role="search">
+        <label class="search-form__label" for="search-input">
+          <span class="visually-hidden">Поиск товаров по каталогу:</span>
+        </label>
+        <input class="search-form__input" id="search-input" type="text" autocomplete="off" name="search" placeholder="Я ищу ...">
+        <button class="search-form__button" type="submit">
+          <svg class="search-form__button-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use xlink:href="img/svg/_sprite.svg#icon-search"></use>
+          </svg>
+          <span class="visually-hidden">Искать</span>
+        </button>
+      </form>
 
-        <div class="socials-login header__user-socials-login">
-          <span>Войти через:</span>
-          <ul class="socials-login__list">
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-google"></use>
+      <!-- Контакты -->
+      <div class="header__contacts modal modal--parent-bounded modal--closed">
+        <button class="button header__contacts-button" type="button">
+          <svg class="icon icon--stroked header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/svg/_sprite.svg#icon-tel"></use>
+          </svg>
+          <span class="header__contacts-phone">+375-29-681-05-07</span>
+          <span class="visually-hidden">Показать дополнительные контакты</span>
+          <svg class="icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+
+        <div class="modal__inner header__contacts-modal" aria-label="Дополнительные контакты">
+          <ul class="header__contacts-list header__contacts-list--tel">
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="tel:+375336810507">
+                <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-a1--colored"></use>
                 </svg>
-                <span class="visually-hidden">Google</span>
+                <span class="header__contacts-phoneprefix">+375-33-</span>
+                <span class="header__contacts-phone-inner">681-05-07</span>
               </a>
             </li>
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon socials-login__icon--vk" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-vk"></use>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="tel:+375256810507">
+                <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-mts"></use>
                 </svg>
-                <span class="visually-hidden">Вконтакте</span>
+                <span class="header__contacts-phoneprefix">+375-25-</span>
+                <span class="header__contacts-phone-inner">681-05-07</span>
               </a>
             </li>
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon socials-login__icon--fb" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-facebook"></use>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="tel:+375296810507">
+                <svg class="icon header__contacts-icon icon-life" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-life"></use>
                 </svg>
-                <span class="visually-hidden">Фэйсбук</span>
+                <span class="header__contacts-phoneprefix">+375-29-</span>
+                <span class="header__contacts-phone-inner">681-05-07</span>
               </a>
             </li>
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon socials-login__icon--ok" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/svg/_sprite.svg#icon-ok"></use>
+            <li class="header__contacts-item header__contacts-item--call-button">
+              <a class="button button--action-secondary header__call-button" href="tel:+375336810507">
+                <span>Позвонить</span>
+              </a>
+            </li>
+          </ul>
+
+          <p class="header__contacts-worktime">Время работы: <br>с 9-00 до 20-00 Пн-Пт</p>
+
+          <ul class="header__contacts-list">
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="#">
+                <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-viber"></use>
                 </svg>
-                <span class="visually-hidden">Однокласники</span>
+                Viber
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="#">
+                <svg class="icon header__contacts-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/svg/_sprite.svg#icon-telegram--colored"></use>
+                </svg>
+                Telegram
+              </a>
+            </li>
+            <li class="header__contacts-item">
+              <a class="header__contacts-link" href="mailto:posudamn@gmail.com">
+                posudamn@gmail.com
               </a>
             </li>
           </ul>
         </div>
 
-        <div class="header__user-call2reg">
-          <span>Новый покупатель?</span>
-          <a class="link" href="#">Зарегистрироваться</a>
-        </div>
-
-        <ul class="dropdown-menu header__user-dropdown-menu">
-          <li><a class="dropdown-menu__link" href="#">Личные данные</a></li>
-          <li><a class="dropdown-menu__link" href="#">История заказов</a></li>
-          <li><a class="dropdown-menu__link" href="#">История просмотров</a></li>
-          <li><a class="dropdown-menu__link" href="#">Избранные товары</a></li>
-          <li><a class="dropdown-menu__link" href="#">Лист ожиданий</a></li>
-        </ul>
-        <a class="link link--nounderline header__user-logout" href="#">Выйти</a>
+        <div class="header__contacts-caption">консультация эксперта</div>
       </div>
-    </div>
 
-    <!-- Корзина -->
-    <div class="header__cart modal modal--parent-bounded modal--closed">
-      <a class="header__link" href="#">
-        <div class="header__cart-quantity-positioner">
+      <!-- Список желаний -->
+      <div class="header__wishlist">
+        <a class="header__link" href="#">
           <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/svg/_sprite.svg#icon-cart"></use>
+            <use xlink:href="img/svg/_sprite.svg#icon-love"></use>
           </svg>
-          <span class="visually-hidden">Товаров: </span>
-          <span class="header__cart-quantity">0</span>
-        </div>
-        <span class="header__link-caption">Корзина</span>
-      </a>
+          <span class="visually-hidden">Закладки</span>
+        </a>
+      </div>
 
-      <div class="modal__inner header__cart-modal" aria-label="Корзина покупателя">
-        <h2 class="modal__header">Корзина товаров</h2>
+      <!-- User -->
+      <div class="header__user modal modal--parent-bounded modal--closed">
+        <a class="header__link" href="#">
+          <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
+          </svg>
+          <span class="header__link-caption header__user-caption">Мой аккаунт</span>
+        </a>
 
-        <ul class="cart-list">
-          <li class="cart-list__item">
+        <div class="modal__inner header__user-modal" aria-label="Меню пользователя">
+          <h2 class="visually-hidden">Меню пользователя</h2>
+          <p class="header__user-entry-text">Добро пожаловать</p>
+          <a class="button button--options-primary header__user-login-button" href="#">Войти</a>
 
-            <p class="image-container cart-list__image-container">
-              <img class="image-container__image" src="img/raster/mini-cart-1.jpg" width="90" alt="Кастрюля">
-            </p>
-
-            <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
-
-            <dl class="cart-list__options-list">
-              <dt class="cart-list__options-dt">Цвет</dt>
-              <dd class="cart-list__options-dd">Синий</dd>
-            </dl>
-
-            <div class="quantity-input cart-list__quantity-input">
-              <label class="visually-hidden" for="quantity-1">Количество: </label>
-              <div class="quantity-input__container">
-                <button class="quantity-input__button quantity-input__button--less" type="button">
-                  <span class="visually-hidden">Уменьшить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
+          <div class="socials-login header__user-socials-login">
+            <span>Войти через:</span>
+            <ul class="socials-login__list">
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="icon socials-login__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/svg/_sprite.svg#icon-google"></use>
                   </svg>
-                </button>
-                <input class="quantity-input__input-field" type="number" name="quantity-1" id="quantity-1" pattern="[0-9]+" value="1" autocomplete="off">
-                <button class="quantity-input__button quantity-input__button--more" type="button">
-                  <span class="visually-hidden">Увеличить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
-                    <line x1="12" y1="4" x2="12" y2="20" stroke-linecap="round"></line>
+                  <span class="visually-hidden">Google</span>
+                </a>
+              </li>
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="icon socials-login__icon socials-login__icon--vk" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/svg/_sprite.svg#icon-vk"></use>
                   </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="price cart-list__price">
-              <span class="price__current minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-              <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
-            </div>
-
-            <div class="cart-list__item-manage">
-              <button class="button cart-list__manage-item-button" type="button">Удалить</button>
-              <button class="button cart-list__manage-item-button" type="button">Сохранить</button>
-            </div>
-
-          </li>
-
-          <li class="cart-list__item">
-            <p class="image-container cart-list__image-container">
-              <img class="image-container__image" src="img/raster/mini-cart-2.jpg" width="90" alt="Кастрюля">
-            </p>
-
-            <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
-
-            <div class="quantity-input cart-list__quantity-input">
-              <label class="visually-hidden" for="quantity-2">Количество: </label>
-              <div class="quantity-input__container">
-                <button class="quantity-input__button quantity-input__button--less" type="button">
-                  <span class="visually-hidden">Уменьшить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
+                  <span class="visually-hidden">Вконтакте</span>
+                </a>
+              </li>
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="icon socials-login__icon socials-login__icon--fb" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/svg/_sprite.svg#icon-facebook"></use>
                   </svg>
-                </button>
-                <input class="quantity-input__input-field" type="number" name="quantity-2" id="quantity-2" pattern="[0-9]+" value="1" autocomplete="off">
-                <button class="quantity-input__button quantity-input__button--more" type="button">
-                  <span class="visually-hidden">Увеличить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
-                    <line x1="12" y1="4" x2="12" y2="20" stroke-linecap="round"></line>
+                  <span class="visually-hidden">Фэйсбук</span>
+                </a>
+              </li>
+              <li class="socials-login__item">
+                <a class="socials-login__link" href="#">
+                  <svg class="icon socials-login__icon socials-login__icon--ok" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/svg/_sprite.svg#icon-ok"></use>
                   </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="price cart-list__price">
-              <span class="price__current minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
-              <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
-            </div>
-
-            <div class="cart-list__item-manage">
-              <button class="button cart-list__manage-item-button" type="button">Удалить</button>
-              <button class="button cart-list__manage-item-button" type="button">Сохранить</button>
-            </div>
-
-          </li>
-        </ul>
-
-        <div class="header__cart-modal-footer">
-          <p class="header__cart-modal-summary">
-            <span>Всего (2 товара):</span>
-            <span>312,56 руб.</span>
-          </p>
-
-          <div class="header__cart-modal-buttons">
-            <button class="button button--action-secondary modal--cart__button" type="button">Купить в 1 клик</button>
-            <button class="button button--action-primary modal--cart__button" type="button">Оформить заказ</button>
+                  <span class="visually-hidden">Однокласники</span>
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
 
-        <button class="button button--modal-close modal__js-close-button" type="button">
-          <svg class="button__icon" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
-          </svg>
-        </button>
+          <div class="header__user-call2reg">
+            <span>Новый покупатель?</span>
+            <a class="link" href="#">Зарегистрироваться</a>
+          </div>
+
+          <ul class="dropdown-menu header__user-dropdown-menu">
+            <li><a class="dropdown-menu__link" href="#">Личные данные</a></li>
+            <li><a class="dropdown-menu__link" href="#">История заказов</a></li>
+            <li><a class="dropdown-menu__link" href="#">История просмотров</a></li>
+            <li><a class="dropdown-menu__link" href="#">Избранные товары</a></li>
+            <li><a class="dropdown-menu__link" href="#">Лист ожиданий</a></li>
+          </ul>
+          <a class="link link--nounderline header__user-logout" href="#">Выйти</a>
+        </div>
+      </div>
+
+      <!-- Корзина -->
+      <div class="header__cart modal modal--parent-bounded modal--closed">
+        <a class="header__link header__cart-link" href="#">
+          <div class="header__cart-quantity-positioner">
+            <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/svg/_sprite.svg#icon-cart"></use>
+            </svg>
+            <span class="visually-hidden">Товаров: </span>
+            <span class="header__cart-quantity">0</span>
+          </div>
+          <span class="header__link-caption">Корзина</span>
+        </a>
+
+        <div class="modal__inner header__cart-modal" aria-label="Корзина покупателя">
+          <h2 class="modal__header">Корзина товаров</h2>
+
+          <ul class="cart-list">
+            <li class="cart-list__item">
+
+              <p class="image-container cart-list__image-container">
+                <img class="image-container__image" src="img/raster/mini-cart-1.jpg" width="90" alt="Кастрюля">
+              </p>
+
+              <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
+
+              <dl class="cart-list__options-list">
+                <dt class="cart-list__options-dt">Цвет</dt>
+                <dd class="cart-list__options-dd">Синий</dd>
+              </dl>
+
+              <div class="quantity-input cart-list__quantity-input">
+                <label class="visually-hidden" for="quantity-1">Количество: </label>
+                <div class="quantity-input__container">
+                  <button class="quantity-input__button quantity-input__button--less" type="button">
+                    <span class="visually-hidden">Уменьшить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
+                      <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
+                    </svg>
+                  </button>
+                  <input class="quantity-input__input-field" type="number" name="quantity-1" id="quantity-1" pattern="[0-9]+" value="1" autocomplete="off">
+                  <button class="quantity-input__button quantity-input__button--more" type="button">
+                    <span class="visually-hidden">Увеличить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
+                      <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
+                      <line x1="12" y1="4" x2="12" y2="20" stroke-linecap="round"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="price cart-list__price">
+                <span class="price__current minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+                <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+              </div>
+
+              <div class="cart-list__item-manage">
+                <button class="button cart-list__manage-item-button" type="button">Удалить</button>
+                <button class="button cart-list__manage-item-button" type="button">Сохранить</button>
+              </div>
+
+            </li>
+
+            <li class="cart-list__item">
+              <p class="image-container cart-list__image-container">
+                <img class="image-container__image" src="img/raster/mini-cart-2.jpg" width="90" alt="Кастрюля">
+              </p>
+
+              <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
+
+              <div class="quantity-input cart-list__quantity-input">
+                <label class="visually-hidden" for="quantity-2">Количество: </label>
+                <div class="quantity-input__container">
+                  <button class="quantity-input__button quantity-input__button--less" type="button">
+                    <span class="visually-hidden">Уменьшить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
+                      <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
+                    </svg>
+                  </button>
+                  <input class="quantity-input__input-field" type="number" name="quantity-2" id="quantity-2" pattern="[0-9]+" value="1" autocomplete="off">
+                  <button class="quantity-input__button quantity-input__button--more" type="button">
+                    <span class="visually-hidden">Увеличить</span>
+                    <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
+                      <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
+                      <line x1="12" y1="4" x2="12" y2="20" stroke-linecap="round"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="price cart-list__price">
+                <span class="price__current minicard__price" aria-label="Текущая цена: ">156<sup>80</sup> р.</span>
+                <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+              </div>
+
+              <div class="cart-list__item-manage">
+                <button class="button cart-list__manage-item-button" type="button">Удалить</button>
+                <button class="button cart-list__manage-item-button" type="button">Сохранить</button>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="header__cart-modal-footer">
+            <p class="header__cart-modal-summary">
+              <span>Всего (2 товара):</span>
+              <span>312,56 руб.</span>
+            </p>
+
+            <div class="header__cart-modal-buttons">
+              <button class="button button--action-secondary modal--cart__button" type="button">Купить в 1 клик</button>
+              <button class="button button--action-primary modal--cart__button" type="button">Оформить заказ</button>
+            </div>
+          </div>
+
+          <button class="button button--modal-close modal__js-close-button" type="button">
+            <svg class="button__icon" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-
-
-
-    <form class="search-form header__search-form" action="#" method="post" role="search">
-      <label class="search-form__label" for="search-input">
-        <span class="visually-hidden">Поиск товаров по каталогу:</span>
-      </label>
-      <input class="search-form__input" id="search-input" type="text" autocomplete="off" name="search" placeholder="Я ищу ...">
-      <button class="search-form__button" type="submit">
-        <svg class="search-form__button-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <use xlink:href="img/svg/_sprite.svg#icon-search"></use>
-        </svg>
-        <span class="visually-hidden">Искать</span>
-      </button>
-    </form>
-    <!-- </div> -->
 
     <nav class="main-nav" aria-label="Навигация по каталогу">
-      <div class="wrapper">
+      <div class="main-nav__inner">
         <ul class="main-nav__list main-nav__list--lvl1">
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Кухонная посуда</a>
             <div class="main-nav__dropdown">
               <div class="main-nav__close-container">
-                <button class="button button--modal-close js-button--main-nav-close" type="button">
-                  <span class="button__text link">Закрыть</span>
+                <button class="button button--modal-close main-nav__close-button" type="button">
+                  <span class="link">Закрыть</span>
                   <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
                   </svg>
                 </button>
               </div>
               <ul class="main-nav__list main-nav__list--lvl2">
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
@@ -409,7 +405,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
@@ -421,7 +417,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
@@ -431,7 +427,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
@@ -452,30 +448,30 @@
                 <p class="banner__image-container">
                   <img class="banner__image" src="img/raster/menu-banner-1.jpg" width="400" height="400" alt="Перейти к спецпредложению">
                 </p>
-                <div class="banner__offer">
-                  <p class="title1">Подари радость любимой</p>
-                  <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
-                  <p class="banner__offer__p">
-                    <strong class="banner__offer__action">Спешите, количество ограничено</strong>
+                <div class="banner__offer-container">
+                  <p class="title title--2 banner__title">Подари радость любимой</p>
+                  <p class="banner__text">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+                  <p class="banner__text">
+                    <strong>Спешите, количество ограничено</strong>
                   </p>
-                  <span class="banner__offer__action-button-1">Подробнее</span>
+                  <span class="button button--action-secondary">Подробнее</span>
                 </div>
               </a>
             </div>
           </li>
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Столовая посуда</a>
             <div class="main-nav__dropdown">
               <div class="main-nav__close-container">
-                <button class="button button--modal-close js-button--main-nav-close" type="button">
-                  <span class="button__text link">Закрыть</span>
+                <button class="button button--modal-close main-nav__close-button" type="button">
+                  <span class="link">Закрыть</span>
                   <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
                   </svg>
                 </button>
               </div>
               <ul class="main-nav__list main-nav__list--lvl2">
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
@@ -491,7 +487,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
@@ -506,7 +502,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
@@ -518,7 +514,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
@@ -534,31 +530,31 @@
                 <p class="banner__image-container">
                   <img class="banner__image" src="img/raster/menu-banner-2.jpg" width="400" height="400" alt="Перейти к спецпредложению">
                 </p>
-                <div class="banner__offer">
-                  <p class="title1">Распродажа посуды</p>
-                  <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
-                  <p class="banner__offer__p">
-                    <strong class="banner__offer__action">Скидки до 40%</strong>
+                <div class="banner__offer-container">
+                  <p class="title title--2 banner__title">Распродажа посуды</p>
+                  <p class="banner__text">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+                  <p class="banner__text">
+                    <strong>Скидки до 40%</strong>
                   </p>
-                  <span class="banner__offer__action-button-2">Посмотреть предложение</span>
+                  <span class="link">Посмотреть предложение</span>
                 </div>
               </a>
 
             </div>
           </li>
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Кухонные принадлежности</a>
             <div class="main-nav__dropdown">
               <div class="main-nav__close-container">
-                <button class="button button--modal-close js-button--main-nav-close" type="button">
-                  <span class="button__text link">Закрыть</span>
+                <button class="button button--modal-close main-nav__close-button" type="button">
+                  <span class="link">Закрыть</span>
                   <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
                   </svg>
                 </button>
               </div>
               <ul class="main-nav__list main-nav__list--lvl2">
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
@@ -573,7 +569,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Жаровни и горшочки</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
@@ -585,7 +581,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
@@ -595,7 +591,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">По бренду</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">BergHOFF</a></li>
@@ -611,7 +607,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Bekker</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для чая и кофе</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Чайники наплитные</a></li>
@@ -623,7 +619,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Термосы</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Барбекю</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Решетки-гриль</a></li>
@@ -633,7 +629,7 @@
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Шампуры</a></li>
                   </ul>
                 </li>
-                <li class="main-nav__item--lvl2">
+                <li class="main-nav__item-lvl2">
                   <a class="main-nav__link main-nav__link--lvl2" href="#">Посуда для приготовления</a>
                   <ul class="main-nav__list">
                     <li><a class="main-nav__link main-nav__link--lvl3" href="#">Наборы посуды</a></li>
@@ -651,86 +647,85 @@
               </ul>
             </div>
           </li>
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Посуда для хранения</a>
           </li>
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Посуда для бара</a>
           </li>
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1" href="#">Гриль и барбекю</a>
           </li>
-          <li class="main-nav__item--lvl1">
+          <li class="main-nav__item-lvl1">
             <a class="main-nav__link main-nav__link--lvl1 main-nav__link--sale" href="#">Акции</a>
           </li>
         </ul>
       </div>
     </nav>
+
   </header>
 
-  <main class="main-page__main">
+  <main class="main main-page__main">
 
     <h1 class="visually-hidden">Интернет-магазин посуды</h1>
 
-    <!-- Промоблоки -->
-    <section class="promo main-page__promo wrapper">
+    <section class="promo">
       <h2 class="visually-hidden">Акции и специальные предложения</h2>
 
-      <a class="banner promo__banner--1" href="#">
+      <a class="promo__1 banner promo__banner" href="#">
         <h3 class="visually-hidden">Специальное предложение к дню Святого Валентина!</h3>
         <p class="banner__image-container">
           <img class="banner__image" src="img/raster/banner-1.webp" width="320" alt="Перейти к предложению">
         </p>
-        <div class="banner__offer">
-          <p class="title3">Подари радость любимой</p>
-          <p class="banner__offer__p">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
-          <p class="banner__offer__p">
-            <strong class="banner__offer__action">Скидки до <span class="price--discount">40%</span></strong>
+        <div class="banner__offer-container banner__offer-container--center">
+          <p class="title title--3 banner__title">Подари радость любимой</p>
+          <p class="banner__text">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+          <p class="banner__text">
+            <strong class="banner__call2action-text">Скидки до 40%</strong>
           </p>
-          <span class="banner__offer__action-button-1">Подробнее</span>
+          <span class="button button--action-secondary">Подробнее</span>
         </div>
       </a>
 
-      <a class="banner promo__banner--2" href="#">
+      <a class="promo__2 banner promo__banner" href="#">
         <h3 class="visually-hidden">Акция к 8 марта</h3>
         <p class="banner__image-container">
           <img class="banner__image" src="img/raster/banner-2.jpg" width="320" alt="Перейти к предложению">
         </p>
-        <div class="banner__offer">
-          <p class="title3">Специальное предложение</p>
-          <p class="banner__offer__p">к 8 марта скидка на посуду BergHOFF <span class="price--discount">30%</span></p>
-          <span class="banner__offer__action-button-2">Узнать больше</span>
+        <div class="banner__offer-container">
+          <p class="title title--3 banner__title">Специальное предложение</p>
+          <p class="banner__text">к 8 марта скидка на посуду BergHOFF 30%</p>
+          <span class="link">Узнать больше</span>
         </div>
       </a>
 
-      <a class="banner promo__banner--3" href="#">
+      <a class="promo__3 banner promo__banner" href="#">
         <h3 class="visually-hidden">Акция к 23 февраля!</h3>
         <p class="banner__image-container">
           <img class="banner__image" src="img/raster/banner-3.jpg" width="320" alt="Перейти к предложению">
         </p>
-        <div class="banner__offer">
-          <p class="title3">Подари мечту</p>
-          <p class="banner__offer__p">23 февраля скидка всем мужикам <span class="price--discount">30%</span></p>
-          <span class="banner__offer__action-button-1">Подробнее</span>
+        <div class="banner__offer-container banner__offer-container--center">
+          <p class="title title--3 banner__title">Подари мечту</p>
+          <p class="banner__text">23 февраля скидка всем мужикам 30%</p>
+          <span class="button button--action-secondary">Подробнее</span>
         </div>
       </a>
 
-      <a class="banner promo__banner--4" href="#">
+      <a class="promo__4 banner promo__banner" href="#">
         <h3 class="visually-hidden">Peterhoff - это круто!</h3>
         <p class="banner__image-container">
           <img class="banner__image" src="img/raster/banner-4.jpg" width="320" alt="Перейти к предложению">
         </p>
-        <div class="banner__offer">
-          <p class="title3">Peterhoff - посуда вашей мечты</p>
-          <p class="banner__offer__p">Акция на посуду PeterHOFF <br> Готовьте с удовольствием!</p>
-          <span class="banner__offer__action-button-2">Узнать больше</span>
+        <div class="banner__offer-container banner__offer-container--center">
+          <p class="title title--3 banner__title">Peterhoff - посуда вашей мечты</p>
+          <p class="banner__text">Акция на посуду PeterHOFF <br> Готовьте с удовольствием!</p>
+          <span class="link">Узнать больше</span>
         </div>
       </a>
 
     </section>
 
-    <!-- Популярные категории -->
-    <section class="category main-page__category wrapper">
+    <!-- <section class="category main-page__category wrapper">
       <h2 class="title2 category__title">Популярные категории</h2>
       <ul class="category__list">
         <li class="category__item">
@@ -830,13 +825,11 @@
           </a>
         </li>
       </ul>
-    </section>
+    </section> -->
 
-    <!-- Карусель - популярные товары -->
-    <section class="carousel main-page__carousel wrapper">
+    <!-- <section class="carousel main-page__carousel wrapper">
       <h2 class="title2 carousel__title">Популярные товары</h2>
 
-      <!-- переключение - влево-вправо -->
       <button class="button carousel__toggle carousel__toggle--left" type="button">
         <span class="visually-hidden">Предыдущий слайд</span>
         <svg class="carousel__toggle-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
@@ -1158,10 +1151,9 @@
         </li>
 
       </ul>
-    </section>
+    </section> -->
 
-    <!-- Каталог -->
-    <section class="catalog main-page__catalog wrapper">
+    <!-- <section class="catalog main-page__catalog wrapper">
       <h2 class="title2 catalog__title">Каталог</h2>
       <ul class="catalog__list">
         <li class="catalog__item">
@@ -1213,10 +1205,9 @@
           </a>
         </li>
       </ul>
-    </section>
+    </section> -->
 
-    <!-- Статья - нужна? -->
-    <article class="article main-page__article wrapper">
+    <!-- <article class="article main-page__article wrapper">
 
       <h2>Наш интернет-магазин</h2>
       <p>Для Вашего удобства наш интернет магазин предлагает широкие возможности для того, что бы быстро и недорого купить посуду для кухни онлайн. Цены и ассортимент нашего магазина Вас приятно удивят. Мы предлагаем нашим покупателям быструю доставку посуды по Минску и всей территории Беларуси, а 31 пункт самовывоза по всей стране позволит сэкономить на доставке.</p>
@@ -1236,13 +1227,11 @@
       <h3>Гарантия качества</h3>
       <img src="img/raster/article-garant.jpg" alt="наш магазин">
       <p>На купленную в нашем магазине посуду предоставляется официальная гарантия. Мы в кратчайшие сроки разрешаем возникшие непредвиденные проблемы с товаром. В своей работе мы придерживаемся принципа – покупатель должен быть удовлетворен купленной посудой и работой магазина во что бы то ни стало.</p>
-    </article>
+    </article> -->
 
-    <!-- Наши бренды - карусель -->
-    <section class="carousel main-page__carousel wrapper">
+    <!-- <section class="carousel main-page__carousel wrapper">
       <h2 class="title2 carousel__title">Наши бренды</h2>
 
-      <!-- переключение - влево-вправо -->
       <button class="button carousel__toggle carousel__toggle--left" type="button">
         <span class="visually-hidden">Предыдущий слайд</span>
         <svg class="carousel__toggle-icon" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
@@ -1259,9 +1248,7 @@
       <ul class="carousel__list">
         <li class="carousel__item carousel__layout">
           <a class="image-container image-container--ratio-1-2" href="#">
-            <!-- <p class="image-container"> -->
             <img class="image-container__image image-container__image--big-paddings" src="img/raster/brand-1.png" alt="Bekker">
-            <!-- </p> -->
           </a>
         </li>
         <li class="carousel__item carousel__layout">
@@ -1290,13 +1277,13 @@
           </a>
         </li>
       </ul>
-    </section>
+    </section> -->
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <!-- <footer class="footer" role="contentinfo">
     <div class="wrapper">
       <h2 class="visually-hidden">Общая информация</h2>
-      <!-- Наши преимущества -->
+
       <div class="footer__benefits">
         <h3 class="visually-hidden">Наши преимущества</h3>
         <ul class="footer__benefits--list">
@@ -1339,7 +1326,6 @@
         </ul>
       </div>
 
-      <!-- Подписка на рассылку -->
       <div class="footer__subscribe">
         <h3 class="visually-hidden">Подписка на нашу рассылку</h3>
         <p class="footer__subscribe-text">
@@ -1358,9 +1344,8 @@
       </div>
 
       <div class="footer__main">
-        <!-- Информация - ссылки -->
         <div class="footer__info-links footer__menu">
-          <h3 class="title3 footer__title3">Информация</h3>
+          <h3 class="title title--3 footer__title title--3">Информация</h3>
           <ul class="footer__menu-list">
             <li class="footer__menu-item">
               <a class="footer__menu-link" href="#">Контакты</a>
@@ -1389,9 +1374,8 @@
           </ul>
         </div>
 
-        <!-- Каталог - позже пересмотреть необходимость этого блока -->
         <div class="footer__catalog-links footer__menu">
-          <h3 class="title3 footer__title3">Отделы</h3>
+          <h3 class="title title--3 footer__title title--3">Отделы</h3>
           <ul class="footer__menu-list">
             <li class="footer__menu-item">
               <a class="footer__menu-link" href="#">Кухонная посуда</a>
@@ -1417,9 +1401,8 @@
           </ul>
         </div>
 
-        <!-- Ссылки на социальные сети -->
         <div class="footer__social">
-          <h3 class="title3 footer__title3">Мы в социальных сетях, присоединяйтесь!</h3>
+          <h3 class="title title--3 footer__title title--3">Мы в социальных сетях, присоединяйтесь!</h3>
           <ul class="footer__social-list">
             <li class="footer__social-item">
               <a class="footer__social-link" href="#" target="_blank" rel="noopener nofollow" title="Наш Вконтакте">
@@ -1448,9 +1431,8 @@
           </ul>
         </div>
 
-        <!-- Мы принимаем к оплате -->
         <div class="footer__payinfo">
-          <h3 class="title3 footer__title3">Мы принимаем к оплате:</h3>
+          <h3 class="title title--3 footer__title title--3">Мы принимаем к оплате:</h3>
           <ul class="footer__payinfo-list">
             <li class="footer__payinfo-item">
               <svg class="footer__payinfo-icon" width="64" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -1480,7 +1462,7 @@
         </div>
 
         <div class="footer__contact">
-          <h3 class="title3 footer__title3">Свяжитесь с нами</h3>
+          <h3 class="title title--3 footer__title title--3">Свяжитесь с нами</h3>
           <ul class="footer__contact-list">
             <li class="footer__contact-item">
               <a class="footer__contact-link" href="tel:+375296810507">
@@ -1528,7 +1510,7 @@
 
       <p class="footer__copyright">© ИП Лемеш Ю.Р., 2020</p>
     </div>
-  </footer>
+  </footer> -->
 
 
 
@@ -1536,7 +1518,7 @@
 
 
   <!-- выбор города -->
-  <section class="modal modal--choose-city">
+  <!-- <section class="modal modal--choose-city">
     <h2>Выберите город</h2>
     <p class="modal__entry-text">Стоимость и срок доставки заказов зависят от вашего местоположения.</p>
     <p class="modal__entry-text">Укажите город</p>
@@ -1548,7 +1530,7 @@
       <span aria-hidden="true">Быстрый поиск населенного пункта</span>
       <button type="submit">Применить</button>
     </form>
-  </section>
+  </section> -->
 
   <script src="js/script.js" type="module"></script>
   <!-- <script src="js/_quantity-input.js"></script> -->
