@@ -36,7 +36,8 @@ function initHeaderTopMenu() {
 }
 
 function initMainNav() {
-  new MainNav();
+  let mainNav = new MainNav();
+  mainNav.init();
 }
 
 
