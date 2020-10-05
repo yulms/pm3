@@ -116,8 +116,12 @@
   &:hover,
   &:focus {
     color: $color__primary;
-    text-decoration: underline;
-    text-underline-position: under;
+
+    @include media-tablet-portrait-down {
+      &::after {
+        color: inherit;
+      }
+    }
   }
 
   @include media-mobile-only {
@@ -128,8 +132,8 @@
     &::after {
       content: "\1F852";
       margin-left: $space*0.5;
-      color: #888888;
-      font-size: 24px;
+      color: $color__additional-4;
+      font-size: 1.5rem;
     }
   }
 
@@ -228,7 +232,8 @@
   }
 }
 
-.main-nav__list:hover + .main-nav__close-container {
+.main-nav__list:hover + .main-nav__close-container,
+.main-nav__list:focus-within + .main-nav__close-container {
   @include media-tablet-portrait-down {
     display: block;
   }
