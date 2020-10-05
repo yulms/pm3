@@ -208,8 +208,9 @@
 // * Close modal button
 
 .main-nav__close-container {
+  display: none;
+
   @include media-tablet-portrait-down {
-    display: none;
     position: absolute;
     z-index: 1;
     top: 100%;
@@ -225,9 +226,11 @@
       border-bottom: 1px solid $color__additional-2;
     }
   }
+}
 
-  @include media-tablet-landscape-up {
-    display: none;
+.main-nav__list:hover + .main-nav__close-container {
+  @include media-tablet-portrait-down {
+    display: block;
   }
 }
 
@@ -238,12 +241,6 @@
   margin-left: auto;
   padding-left: $space*0.5;
   padding-right: $space*0.5;
-}
-
-.main-nav__list:hover + .main-nav__close-container {
-  @include media-tablet-portrait-down {
-    display: block;
-  }
 }
 
 
