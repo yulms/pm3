@@ -46,6 +46,7 @@ function server() {
   gulp.watch('source/img/raster/**/*.{png,jpg}', gulp.series(makeRasterImages, reloadServer));
   gulp.watch('source/img/svg/sprited/**/*.svg', gulp.series(createSvgSprite, reloadServer));
   gulp.watch('source/img/svg/others/**/*.svg', gulp.series(makeSvgBackground, reloadServer));
+  gulp.watch('source/img/favicon/**', gulp.series(copyData, reloadServer));
   gulp.watch('source/*.html', gulp.series(minifyHTML, reloadServer));
   gulp.watch('source/**/*.js', gulp.series(makeJs, reloadServer));
 }

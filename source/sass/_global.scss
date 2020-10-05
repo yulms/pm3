@@ -46,6 +46,14 @@ body {
   font-weight: 500;
   color: $color-font__base;
   background-color: $color__background;
+
+  @media (pointer: coarse) {
+    background-color: silver;
+  }
+
+  // @media (hover: hover) {
+  //   background-color: silver;
+  // }
 }
 
 img,

@@ -1,7 +1,6 @@
 import Modal from './_modal.js';
 import HeaderTopMenu from './_header__top-menu.js';
 import * as quantityInput from './_quantity-input.js';
-import MainNav from './_main-nav.js';
 
 
 function initModals() {
@@ -35,13 +34,7 @@ function initHeaderTopMenu() {
   new HeaderTopMenu(headerTopMenuArgs);
 }
 
-function initMainNav() {
-  let mainNav = new MainNav();
-  mainNav.init();
-}
-
 
 initHeaderTopMenu();
 initModals();
 quantityInput.init();
-initMainNav();
