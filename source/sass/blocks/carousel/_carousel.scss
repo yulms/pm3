@@ -29,10 +29,12 @@
 
 
 .carousel__title {
-  margin: 0 0 $space*2;
-
   @include media-tablet-landscape-down {
     margin: 0 var(--page-paddings) $space*2;
+  }
+
+  @include media-desktop-up {
+    margin: 0 0 $space*2;
   }
 }
 
