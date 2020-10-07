@@ -8,7 +8,7 @@
 // @import "blocks/article/article";
 @import "blocks/button/button";
 @import "blocks/icon/icon";
-@import "blocks/image-container/image-container";
+@import "blocks/image-container/image-container";  // рефакторить
 @import "blocks/link/link";
 @import "blocks/dropdown-menu/dropdown-menu";
 @import "blocks/quantity-input/quantity-input";
@@ -17,8 +17,10 @@
 @import "blocks/socials-login/socials-login";
 @import "blocks/modal/modal";
 @import "blocks/overlay/overlay";
-// @import "blocks/stars/stars";
+@import "blocks/bullets/bullets";
+@import "blocks/stars/stars";
 // @import "blocks/tooltip/tooltip";
+
 
 @import "blocks/city-choose/city-choose";
 @import "blocks/banner/banner";
@@ -29,8 +31,8 @@
 @import "blocks/main/main";
 // @import "blocks/footer/footer";
 @import "blocks/category/category";
-// @import "blocks/catalog/catalog";
-// @import "blocks/carousel/carousel";
-// @import "blocks/minicard/minicard";
+@import "blocks/carousel/carousel";
+@import "blocks/catalog/catalog";
+@import "blocks/minicard/minicard"; // рефакторить
 @import "blocks/cart-list/cart-list";
 @import "blocks/price/price";

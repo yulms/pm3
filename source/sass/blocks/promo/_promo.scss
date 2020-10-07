@@ -1,7 +1,4 @@
 .promo {
-  max-width: $max-width;
-  margin: 0 auto;
-
   @include media-tablet-portrait-up {
     display: grid;
     gap: $space*0.5;

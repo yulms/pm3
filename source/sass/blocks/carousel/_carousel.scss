@@ -1,166 +1,143 @@
 .carousel {
+  --carousel-spacing: #{$space};
+
+  @include media-mobile-only {
+    --items-number: 2.5;
+    --space-between: #{$space*2};
+  }
+
+  @include media-tablet-portrait-only {
+    --items-number: 3.5;
+    --space-between: #{$space*3};
+  }
+
+  @include media-tablet-landscape-only {
+    --items-number: 5.5;
+    --space-between: #{$space*5};
+  }
+
+  @include media-desktop-up {
+    --items-number: 7;
+    --space-between: #{$space*6};
+  }
+
+  @include media-desktop-up {
+    padding-left: var(--page-paddings);
+    padding-right: var(--page-paddings);
+  }
+}
+
+
+.carousel__title {
+  margin: 0 0 $space*2;
+
+  @include media-tablet-landscape-down {
+    margin: 0 var(--page-paddings) $space*2;
+  }
+}
+
+
+.carousel__container {
   position: relative;
-  z-index: 0;
+  overflow: hidden;
 }
 
-@media (min-width: 980px) {
-  .carousel {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media (max-width: 607px) {
-  .carousel__title {
-    margin: 0 16px;
-  }
-}
-
-@media (min-width: 608px) and (max-width: 979px) {
-  .carousel__title {
-    margin: 0 24px;
-  }
-}
-
-@media (min-width: 980px) {
-  .carousel__title {
-    margin: 0;
-  }
-}
-
-/* Кнопки перелистывания слайдов лево-право только на компьютерах */
-@media (max-width: 979px) {
-  .carousel__toggle {
-    display: none;
-  }
-}
-
-@media (min-width: 980px) {
-  .carousel__toggle {
-    position: absolute;
-    /* помещаем кнопку ровно по центру блока */
-    /* 64px - высота заголовка и маргина к заголовку */
-    bottom: calc((100% - 64px) / 2);
-    transform: translateY(50%);
-    z-index: 1;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 1px #e0e0e0, 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background: #ffffff;
-  }
-
-  .carousel__toggle:hover,
-  .carousel__toggle:focus {
-    box-shadow: inset 0 0 0 1px #01768b, 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-  }
-
-  .carousel__toggle:hover .carousel__toggle-icon,
-  .carousel__toggle:focus .carousel__toggle-icon {
-    stroke: #01768b;
-  }
-
-  .carousel__toggle--left {
-    left: 32px;
-  }
-
-  .carousel__toggle--right {
-    right: 32px;
-  }
-
-  .carousel__toggle-icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    stroke-width: 2px;
-    stroke: #888888;
-    fill: none;
-  }
-
-  .carousel__toggle--left .carousel__toggle-icon {
-    transform: rotate(90deg);
-  }
-
-  .carousel__toggle--right .carousel__toggle-icon {
-    transform: rotate(-90deg);
-  }
-}
-
-.carousel__bullets {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -40px;
-}
-
-@media (min-width: 1280px) {
-  .carousel__bullets {
-    display: none;
-  }
-}
 
 .carousel__list {
   display: flex;
-  width: 100%;
+  margin: 0;
+  list-style: none;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
+  // scroll-snap-type: x mandatory;
+  // scroll-snap-type: x proximity;
   scroll-behavior: smooth;
-  margin: 32px 0 0;
-  padding: 0 16px;
-  list-style: none;
-}
 
-@media (min-width: 608px) and (max-width: 979px) {
-  .carousel__list {
-    padding: 0 24px;
+  @include media-tablet-landscape-down {
+    padding: 0 var(--page-paddings);
   }
-}
 
-@media (min-width: 980px) {
-  .carousel__list {
+  @include media-desktop-up {
     padding: 0;
   }
-}
 
-.carousel__list::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-@media (max-width: 607px) {
-  .carousel__layout {
-    width: calc((100vw - 32px) / 2.5);
-    max-width: 200px;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 }
 
-@media (min-width: 608px) and (max-width: 1279px) {
-  .carousel__layout {
-    width: calc((100vw - 48px) / 3.5);
-    max-width: 200px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .carousel__layout {
-    /* 6 колонок */
-    width: calc((100% - 80px) / 6);
-  }
-}
 
 .carousel__item {
   flex-shrink: 0;
   scroll-snap-align: start;
-}
+  scroll-margin-left: var(--page-paddings);
+  max-width: $space*15;
 
-@media (max-width: 979px) {
-  .carousel__item {
-    scroll-margin-left: 16px;
+  &:not(:last-child) {
+    margin-right: var(--carousel-spacing);
+  }
+
+  @include media-tablet-landscape-down {
+    width: calc((100% + var(--page-paddings) - var(--space-between)) / var(--items-number));
+  }
+
+  @include media-desktop-up {
+    width: calc((100% - var(--space-between)) / var(--items-number));
   }
 }
 
-.carousel__item + .carousel__item {
-  margin-left: 16px;
+
+// * Toggle buttons
+
+@media not all and (pointer: coarse) {
+  .carousel__toggle {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    padding: $space*0.75;
+    color: $color__additional-4;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 0 1px $color__additional-2,
+      0 3px 6px 0 $color__shadows;
+    background: #ffffff;
+
+    &--left {
+      left: $space;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &--right {
+      right: $space;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    &:hover,
+    &:focus {
+      color: $color__primary;
+      box-shadow:
+        inset 0 0 0 1px $color__primary,
+        0 3px 6px 0 $color__shadows;
+    }
+  }
+}
+
+
+@media (pointer: coarse) {
+  .carousel__toggle {
+    display: none;
+  }
+}
+
+
+@media not all and (pointer: coarse) {
+  .carousel__toggle-icon {
+    display: block;
+    width: $space*1.5;
+    height: $space*1.5;
+    stroke-width: 2px;
+    stroke: currentColor;
+    fill: none;
+  }
 }

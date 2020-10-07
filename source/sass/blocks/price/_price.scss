@@ -4,11 +4,10 @@
   letter-spacing: -0.02em;
   color: $color-font__title;
   white-space: nowrap;
-}
 
-.price__current--big {
-  font-size: 200%;
-  line-height: 3rem;
+  &--discount {
+    color: $color-font__sale;
+  }
 }
 
 .price__old {
@@ -17,6 +16,7 @@
   white-space: nowrap;
 }
 
-.price__current--discount {
-  color: $color-font__sale;
-}
+// .price__current--big {
+//   font-size: 200%;
+//   line-height: 3rem;
+// }

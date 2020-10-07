@@ -1,0 +1,45 @@
+.bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullets__link {
+  display: flex;
+  width: $space*2;
+  height: $space*2;
+  color: $color__additional-3;
+  cursor: default;
+
+  &::before {
+    content: "";
+    width: $space*0.5;
+    height: $space*0.5;
+    margin: auto;
+    border-radius: 50%;
+    background-color: $color__additional-3;
+  }
+}
+
+.bullets__link:not(.bullets__link--active) {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scale(1.8);
+      transition: 0.3s;
+    }
+  }
+}
+
+.bullets__link--active {
+  &::before {
+    width: $space;
+    height: $space;
+    background-color: $color__primary;
+  }
+}
