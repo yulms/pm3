@@ -8,7 +8,7 @@
 @import "blocks/admin-content/admin-content";
 @import "blocks/button/button";
 @import "blocks/icon/icon";
-@import "blocks/image-container/image-container";  // рефакторить
+@import "blocks/image-container/image-container";
 @import "blocks/link/link";
 @import "blocks/dropdown-menu/dropdown-menu";
 @import "blocks/quantity-input/quantity-input";
@@ -32,7 +32,9 @@
 // @import "blocks/footer/footer";
 @import "blocks/category/category";
 @import "blocks/carousel/carousel";
+@import "blocks/popular-goods/popular-goods";
 @import "blocks/catalog/catalog";
 @import "blocks/minicard/minicard";
+@import "blocks/brands/brands";
 @import "blocks/cart-list/cart-list";
 @import "blocks/price/price";
