@@ -30,16 +30,15 @@
 
 
 .footer__benefits {
+  margin-bottom: -1px;
   padding-left: var(--page-paddings);
   padding-right: var(--page-paddings);
-  border-bottom: 1px solid $color-font__base-inverted;
 }
 
 .footer__benefits-list {
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow-y: hidden;
 
   @include media-tablet-portrait-up {
     display: grid;
@@ -64,8 +63,7 @@
   align-items: center;
   min-height: $space*3;
   padding: $space*0.5 0;
-  border-top: 1px dashed $color-font__base-inverted;
-  transform: translateY(-1px);
+  border-bottom: 1px dashed $color-font__base-inverted;
 }
 
 .footer__benefits-icon {
@@ -79,6 +77,7 @@
 .footer__subscribe {
   margin-bottom: $space*2;
   padding: $space*2 var(--page-paddings);
+  border-top: 1px solid $color-font__base-inverted;
   border-bottom: 1px solid $color-font__base-inverted;
 
   @include media-tablet-landscape-up {
