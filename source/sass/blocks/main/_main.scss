@@ -1,6 +1,7 @@
 .main {
   position: relative;
   z-index: 0;
+  margin-bottom: $space*6;
 }
 
 .main__promo {
@@ -50,5 +51,4 @@
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: $space*4;
 }

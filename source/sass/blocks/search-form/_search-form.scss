@@ -18,11 +18,6 @@
     0 -5px 15px 5px rgba(255, 255, 255, 0.1);
 }
 
-.search-form__input:focus,
-.footer__subscribe-input:focus {
-  box-shadow: inset 0 0 0 2px $color__secondary;
-}
-
 .search-form__button {
   flex-shrink: 0;
   padding: $space*0.5 $space;

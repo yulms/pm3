@@ -2,6 +2,11 @@
   display: flex;
   padding-bottom: $space;
 
+  & *:focus {
+    outline: 2px dashed #ffffff;
+    outline-offset: 1px;
+  }
+
   @include media-tablet-portrait-down {
     flex-wrap: wrap;
   }

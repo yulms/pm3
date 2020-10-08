@@ -24,6 +24,11 @@
     font-size: 92.857%;
     font-weight: 600;
     letter-spacing: 0.03em;
+
+    & *:focus {
+      outline: 2px dashed #ffffff;
+      outline-offset: 1px;
+    }
   }
 }
 
