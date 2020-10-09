@@ -101,6 +101,7 @@
   &::after {
     content: "\00A0\00BB";
     margin-left: $space*0.5;
+    font-size: 1.1rem;
   }
 
   @include media-mobile-only {
@@ -130,8 +131,8 @@
     justify-content: space-between;
 
     &::after {
-      content: "\1F852";
-      margin-left: $space*0.5;
+      content: "›";
+      width: $space*2;
       color: $color__additional-4;
       font-size: 1.5rem;
     }

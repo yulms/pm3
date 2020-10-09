@@ -51,7 +51,7 @@
     border: 1px solid $color__additional-2;
 
     &::after {
-      content: "\1F852";
+      content: "»";
       width: $space*3;
       margin-left: auto;
       flex-shrink: 0;
