@@ -2,6 +2,7 @@ import Modal from './_modal.js';
 import HeaderTopMenu from './_header__top-menu.js';
 import * as quantityInput from './_quantity-input.js';
 import initTooltips from './_tooltip.js';
+import initTextfields from './_textfield.js';
 
 
 function initModals() {
@@ -40,3 +41,4 @@ initHeaderTopMenu();
 initModals();
 quantityInput.init();
 initTooltips();
+initTextfields();

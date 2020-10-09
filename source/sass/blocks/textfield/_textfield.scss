@@ -1,162 +1,59 @@
 .textfield {
+  --vertical-padding: #{$space*0.5};
+  --line-height: #{$space*2};
+
   position: relative;
   display: block;
-  padding-top: 6px;
-  font-size: 16px;
-  line-height: 1.5;
-  overflow: hidden;
+  font-size: 1rem;
+  line-height: var(--line-height);
 }
 
-textarea.textfield__element {
-  resize: vertical;
+.textfield__input {
   display: block;
-  overflow: auto;
-}
-
-/* Input, Textarea */
-.textfield__element {
   width: 100%;
-  height: inherit;
   margin: 0;
-  padding: 11px 13px 11px;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  color: rgba(0, 0, 0, 0.9);
-  background-color: white;
-  box-shadow: none; /* Firefox */
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-top-color: transparent;
-  border-radius: 2px;
-  transition: border 0.2s, box-shadow 0.2s;
-}
+  padding: var(--vertical-padding) 1rem;
+  font: inherit;
+  color: $color-font__input;
+  background-color: transparent;
+  border: 1px solid $color__additional-2;
+  border-radius: $controls__border-radius;
+  outline: 0;
+  appearance: none;
 
-/* Span */
-.textfield__placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  max-height: 100%;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.01em;
-  color: rgba(0, 0, 0, 0.6);
-  border-color: rgba(0, 0, 0, 0.12);
-  cursor: text;
-  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
-}
-
-/* Corners */
-.textfield__placeholder::before,
-.textfield__placeholder::after {
-  content: "";
-  display: block;
-  margin-top: 6px;
-  min-width: 10px;
-  height: 8px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: inset 0 1px transparent;
-  pointer-events: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.textfield__placeholder::before {
-  margin-right: 4px;
-  border-left: solid 1px transparent;
-  border-radius: 4px 0;
-}
-
-.textfield__placeholder::after {
-  flex-grow: 1;
-  margin-left: 4px;
-  border-right: solid 1px transparent;
-  border-radius: 0 4px;
-}
-
-.textfield:hover > .textfield__element {
-  border-color: #01768b;
-  border-top-color: transparent;
-}
-
-.textfield:hover > .textfield__placeholder::before,
-.textfield:hover > .textfield__placeholder::after {
-  border-top-color: #01768b;
-}
-
-.textfield:hover > .textfield__element:not(:focus):placeholder-shown {
-  border-top-color: #01768b;
-}
-
-/* Placeholder-shown */
-.textfield__element:not(:focus):placeholder-shown {
-  border-top-color: rgba(0, 0, 0, 0.12);
-}
-
-.textfield__element:not(:focus):placeholder-shown + .textfield__placeholder {
-  font-size: inherit;
-  line-height: 64px;
-}
-
-.textfield__element:not(:focus):placeholder-shown + .textfield__placeholder::before,
-.textfield__element:not(:focus):placeholder-shown + .textfield__placeholder::after {
-  border-top-color: transparent;
-}
-
-/* Focus */
-.textfield__element:focus {
-  border-color: #01768b;
-  border-top-color: transparent;
-  box-shadow: inset 1px 0 #01768b, inset -1px 0 #01768b, inset 0 -1px #01768b;
-  outline: none;
-}
-
-.textfield__element:focus + .textfield__placeholder {
-  color: #01768b;
-}
-
-.textfield > input:focus + span::before,
-.textfield > input:focus + span::after,
-.textfield > textarea:focus + span::before,
-.textfield > textarea:focus + span::after {
-  border-top-color: #01768b;
-  box-shadow: inset 0 1px #01768b;
-}
-
-/* Disabled */
-.textfield__element:disabled,
-.textfield__element:disabled + .textfield__placeholder {
-  color: rgba(0, 0, 0, 0.38);
-  border-color: rgba(0, 0, 0, 0.1) !important;
-  border-top-color: transparent !important;
-  pointer-events: none;
-}
-
-.textfield__element:disabled + .textfield__placeholder::before,
-.textfield__element:disabled + .textfield__placeholder::after {
-  border-top-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-.textfield__element:disabled:placeholder-shown,
-.textfield__element:disabled:placeholder-shown + .textfield__placeholder {
-  border-top-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-.textfield__element:disabled:placeholder-shown + .textfield__placeholder::before,
-.textfield__element:disabled:placeholder-shown + .textfield__placeholder::after {
-  border-top-color: transparent !important;
-}
-
-/* Faster transition in Safari for less noticable fractional font-size issue */
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .textfield__element,
-    .textfield__placeholder,
-    .textfield__placeholder::before,
-    .textfield__placeholder::after {
-      transition-duration: 0.1s;
-    }
+  &:hover {
+    border-color: $color__primary;
   }
+
+  &:focus {
+    border-color: $color__primary;
+    box-shadow: inset 0 0 0 1px $color__primary;
+  }
+}
+
+.textfield__label {
+  position: absolute;
+  top: var(--vertical-padding);
+  left: $space;
+  color: $color-font__placeholder;
+  pointer-events: none;
+  transform-origin: left;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textfield__input--focused + .textfield__label,
+.textfield__label--top {
+  padding: 0 $space*0.25;
+  max-width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #ffffff;
+  transform:
+    translateX(-2px)
+    translateY(calc(-1 * (var(--line-height) * 0.5 + var(--vertical-padding))))
+    scale(0.75);
+}
+
+.textfield__input:focus + .textfield__label {
+  color: $color__primary;
 }
