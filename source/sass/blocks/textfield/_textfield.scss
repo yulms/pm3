@@ -21,7 +21,7 @@
   outline: 0;
   appearance: none;
 
-  &:hover {
+  &:hover:not(:disabled) {
     border-color: $color__primary;
   }
 
@@ -56,4 +56,13 @@
 
 .textfield__input:focus + .textfield__label {
   color: $color__primary;
+}
+
+
+.textfield__input:disabled {
+  background-color: $color-font__input-disabled;
+}
+
+.textfield__input:disabled + .textfield__label {
+  color: $color-font__disable;
 }
