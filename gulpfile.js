@@ -24,13 +24,6 @@ const build = gulp.parallel(
   makeJs
 );
 
-const quickBuild = gulp.parallel(
-  copyData,
-  minifyHTML,
-  makeCSS,
-  makeJs
-);
-
 function clean() {
   return del('build');
 }
@@ -61,7 +54,6 @@ function reloadServer(cb) {
 
 module.exports.server = server;
 module.exports.default = server;
-module.exports.build = gulp.series(clean, build);
-module.exports.start = gulp.series(clean, build, server);
-module.exports.quickstart = gulp.series(quickBuild, server);
+module.exports.build = gulp.series(clean, build, deploy);
+module.exports.start = gulp.series(clean, build, deploy, server);
 module.exports.deploy = deploy;
