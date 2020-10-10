@@ -11,6 +11,8 @@ const makeRasterImages = require('./gulp_tasks/make-raster-images');
 const createSvgSprite = require('./gulp_tasks/create-svg-sprite');
 const makeSvgBackground = require('./gulp_tasks/make-svg-background');
 const makeJs = require('./gulp_tasks/make-js');
+const deploy = require('./gulp_tasks/deploy-to-github');
+
 
 const build = gulp.parallel(
   copyData,
@@ -62,3 +64,4 @@ module.exports.default = server;
 module.exports.build = gulp.series(clean, build);
 module.exports.start = gulp.series(clean, build, server);
 module.exports.quickstart = gulp.series(quickBuild, server);
+module.exports.deploy = deploy;
