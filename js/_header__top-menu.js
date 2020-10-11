@@ -1,6 +1,7 @@
 import { isEscapePressEvent } from './util.js';
 
 const OVERLAY_SELECTOR = 'overlay';
+const DISABLE_SCROLLING_CLASS = 'header__top-menu-disable-scrolling';
 
 
 class HeaderTopMenu {
@@ -36,11 +37,16 @@ class HeaderTopMenu {
       document.addEventListener('keydown', this._onDocumentKeydown);
     };
 
+    const blockPageScrolling = () => {
+      document.body.classList.add(DISABLE_SCROLLING_CLASS);
+    };
+
 
     evt.preventDefault();
     addOverlay();
     addOpenClass();
     addHandlers();
+    blockPageScrolling();
   }
 
   _hideMenu() {
@@ -53,9 +59,15 @@ class HeaderTopMenu {
       document.removeEventListener('keydown', this._onDocumentKeydown);
     };
 
+    const unblockPageScrolling = () => {
+      document.body.classList.remove(DISABLE_SCROLLING_CLASS);
+    };
+
+
     removeOverlay();
     removeOpenClass();
     removeHandlers();
+    unblockPageScrolling();
   }
 }
 
