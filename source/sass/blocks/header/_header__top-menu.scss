@@ -10,10 +10,13 @@
     padding-top: $space * 0.5;
     padding-bottom: $space * 0.5;
     border-radius: $controls__border-radius;
-    background-color: $color__background;
+    background-color: #ffffff;
     box-shadow: 0 3px 6px 0 $color__shadows;
+    overflow-y: auto; //полоса прокрутки при переполнении
+    -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
     transform-origin: top right;
-    transform: skewX(-45deg) translateX(-100%);
+    will-change: transform;
+    transform: skewX(-45deg) translateX(-100%) scale(0.1);
     transition: transform 0.15s ease;
   }
 
@@ -37,9 +40,17 @@
 .header__top-menu--isopened {
   @include media-tablet-portrait-down {
     left: 0;
-    transform: skewX(0) translateX(0);
+    transform: skewX(0) translateX(0) scale(1);
   }
 }
+
+.header__top-menu-disable-scrolling {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+
 
 .header__top-menu-list {
   @include media-tablet-landscape-up {
