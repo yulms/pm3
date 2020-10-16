@@ -1,0 +1,44 @@
+@keyframes showCustomSelectList {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select__list {
+  position: absolute;
+  z-index: 2;
+  top: $space*3;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: $color__background;
+  border: 1px solid $color__additional-2;
+  border-radius: 0 0 $controls__border-radius $controls__border-radius;
+  box-shadow: 0 3px 6px 0 $color__shadows;
+  cursor: pointer;
+  animation: showCustomSelectList 300ms ease-in-out both;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.custom-select__item {
+  padding: $space*0.5 $space;
+
+  &:hover,
+  &:focus {
+    background-color: $color__primary-light;
+  }
+}

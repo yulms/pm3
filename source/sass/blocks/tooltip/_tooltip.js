@@ -61,41 +61,13 @@ class Tooltip {
       this.element.classList.add(topTooltipClassName);
     }
   }
-
-
-
-
-  // * Старое исполнение - выравнивание тултипа строго transform + position (в текущем флекс)
-  // Сохранено до полной удовлетворенности флексами
-
-  // _positionTooltip() {
-  //   let tooltipCoords = this.tooltipCardElem.getBoundingClientRect();
-  //   // проверка выхода за пределы слева
-  //   if (tooltipCoords.left < 0) {
-  //     let shift = Math.floor(tooltipCoords.left) * -1;
-  //     this.tooltipCardElem.style.transform = `translateX(-50%) translateX(${shift}px)`;
-  //   }
-  //   // проверка выхода за пределы справа
-  //   if (tooltipCoords.right > document.documentElement.clientWidth) {
-  //     let diff = tooltipCoords.right - document.documentElement.clientWidth;
-  //     this.tooltipCardElem.style.transform = `translateX(-50%) translateX(${-diff}px)`;
-  //   }
-
-  //   // показ снизу, если тултип выходит за верхнюю часть вьюпорта
-  //   if (tooltipCoords.top < 0) {
-  //     this.tooltipCardElem.style.bottom = 'auto';
-  //     this.tooltipCardElem.style.top = `calc(100% + ${offset}px)`;
-  //     this.tooltipCardElem.classList.add('tooltip--bottom');
-  //   }
-  // }
 }
 
 
 function initTooltips() {
-  let tooltipCardElements = document.querySelectorAll(tooltipSelector);
-  tooltipCardElements.forEach((elem) => {
-    new Tooltip(elem);
-  });
+  const tooltipCardElements = document.querySelectorAll(tooltipSelector);
+  const toolTips = [].map.call(tooltipCardElements, (elem) => new Tooltip(elem));
+  return toolTips;
 }
 
 export default initTooltips;

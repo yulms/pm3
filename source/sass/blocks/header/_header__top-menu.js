@@ -1,5 +1,6 @@
 import { isEscapePressEvent } from './util.js';
 
+
 const OVERLAY_SELECTOR = 'overlay';
 const DISABLE_SCROLLING_CLASS = 'header__top-menu-disable-scrolling';
 
@@ -71,4 +72,16 @@ class HeaderTopMenu {
   }
 }
 
-export default HeaderTopMenu;
+
+
+function initHeaderTopMenu() {
+  const headerTopMenuArgs = {
+    menuOpenSelector: '.header__burger',
+    menuSelector: '.header__top-menu',
+    openedMenuClass: 'header__top-menu--isopened'
+  };
+
+  return new HeaderTopMenu(headerTopMenuArgs);
+}
+
+export default initHeaderTopMenu;

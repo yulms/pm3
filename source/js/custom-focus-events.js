@@ -21,11 +21,13 @@ function appendCustomFocusEvents(containerElement) {
     }
   }
 
-
-  containerElement.addEventListener('focusin', _onContainerFocusIn);
-  containerElement.addEventListener('focusout', () => {
-    setTimeout(_onContainerFocusOut, 0);
-  });
+  if (!containerElement.customFocusEventsIsAdded) {
+    containerElement.addEventListener('focusin', _onContainerFocusIn);
+    containerElement.addEventListener('focusout', () => {
+      setTimeout(_onContainerFocusOut, 0);
+    });
+    containerElement.customFocusEventsIsAdded = true;
+  }
 }
 
 

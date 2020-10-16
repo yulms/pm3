@@ -1,6 +1,5 @@
 .textfield {
   position: relative;
-  display: block;
 }
 
 .textfield__input-container {
@@ -124,33 +123,4 @@
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   color: $color-font__secondary;
-}
-
-
-.textfield__options-list {
-  position: absolute;
-  z-index: 2;
-  top: $space*3;
-  width: 100%;
-  margin: 0;
-  padding: $space*0.5 0;
-  list-style: none;
-  background-color: $color__background;
-  border: 1px solid $color__additional-2;
-  border-radius: 0 0 $controls__border-radius $controls__border-radius;
-  box-shadow: 0 3px 6px 0 $color__shadows;
-  cursor: pointer;
-
-  &--closed {
-    display: none;
-  }
-}
-
-.textfield__options-item {
-  padding: $space*0.5 $space;
-
-  &:hover,
-  &:focus {
-    background-color: $color__primary-light;
-  }
 }

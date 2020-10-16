@@ -1,30 +1,32 @@
-import { Textfield } from './_textfield.js';
+import appendCustomFocusEvents from './custom-focus-events.js';
 
 
-const mainSelector = '.js-custom-select';
-const listSelector = '.textfield__options-list';
-const listCloseClass = 'textfield__options-list--closed';
-const itemSelector = '.textfield__options-item';
-const statusSelector = '[aria-live="polite"]';
-const inputContainerSelector = '.textfield__input-container';
-const optionTitleSelector = '.textfield__option-title';
-const filteredStatusPrefix = 'Доступно вариантов : ';
+class CustomSelect {
+  constructor(element, overrides) {
+
+    const defaults = {
+      mainSelector : '.custom-select',
+      inputSelector : 'input',
+      listSelector : '.custom-select__list',
+      listCloseClass : 'custom-select__list--closed',
+      itemSelector : '.custom-select__item',
+      statusSelector : '[aria-live="polite"]',
+      itemTitleSelector : '.custom-select__item-title',
+      filteredStatusPrefix : 'Доступно вариантов : '
+    };
+
+    Object.assign(this, defaults, overrides);
 
 
-const State = {
-  isOpened: false
-};
-
-
-class CustomSelect extends Textfield {
-  constructor(element) {
-    super(element);
-    this.state = State;
-    this.listElement = this.element.querySelector(listSelector);
-    this.itemElements = this.element.querySelectorAll(itemSelector);
+    this.element = element;
+    this.inputElement = this.element.querySelector(this.inputSelector);
+    this.state = {
+      isOpened: false
+    };
+    this.listElement = this.element.querySelector(this.listSelector);
+    this.itemElements = this.element.querySelectorAll(this.itemSelector);
     this.items = Array.from(this.itemElements);
-    this.statusElement = this.element.querySelector(statusSelector);
-    this.inputContainer = this.element.querySelector(inputContainerSelector);
+    this.statusElement = this.element.querySelector(this.statusSelector);
 
 
     // * setting Aria attributes
@@ -34,6 +36,7 @@ class CustomSelect extends Textfield {
     this.inputElement.setAttribute('aria-controls', this.listElement.id);
     this.inputElement.setAttribute('aria-autocomplete', 'both');
     this.listElement.setAttribute('role', 'listbox');
+    this.listElement.setAttribute('aria-expanded', 'false');
     this.itemElements.forEach(function(item) {
       item.setAttribute('role', 'option');
       item.setAttribute('tabindex', '-1');
@@ -60,13 +63,16 @@ class CustomSelect extends Textfield {
     });
 
 
+    appendCustomFocusEvents(this.element);
     this.element.addEventListener('focusLeave', () => {
-      this._toggleList('shut');
+      if (this.state.isOpened) {
+        this._toggleList('shut');
+      }
     });
 
 
     document.addEventListener('click', (evt) => {
-      if (!evt.target.closest(mainSelector) && this.state.isOpened) {
+      if (!evt.target.closest(this.mainSelector) && this.state.isOpened) {
         this._toggleList('shut');
       }
     });
@@ -76,14 +82,14 @@ class CustomSelect extends Textfield {
   _toggleList(action = 'toggle') {
 
     let _openList  = () => {
-      this.listElement.classList.remove(listCloseClass);
-      this.inputContainer.setAttribute('aria-expanded', 'true');
+      this.listElement.classList.remove(this.listCloseClass);
+      this.listElement.setAttribute('aria-expanded', 'true');
       this.state.isOpened = true;
     };
 
     let _closeList  = () => {
-      this.listElement.classList.add(listCloseClass);
-      this.inputContainer.setAttribute('aria-expanded', 'false');
+      this.listElement.classList.add(this.listCloseClass);
+      this.listElement.setAttribute('aria-expanded', 'false');
       this.state.isOpened = false;
     };
 
@@ -109,8 +115,8 @@ class CustomSelect extends Textfield {
 
 
   _makeChoice(focusedItem) {
-    const optionTitle = focusedItem.querySelector(optionTitleSelector);
-    this.inputElement.value = optionTitle.textContent;
+    const itemTitle = focusedItem.querySelector(this.itemTitleSelector);
+    this.inputElement.value = itemTitle.textContent;
     this.inputElement.focus();
   }
 
@@ -225,18 +231,20 @@ class CustomSelect extends Textfield {
 
 
   _updateStatus(itemsQuantity) {
-    this.statusElement.textContent = filteredStatusPrefix + itemsQuantity;
+    this.statusElement.textContent = this.filteredStatusPrefix + itemsQuantity;
   }
 
 }
 
 
 
+
+const mainSelector = '.custom-select';
+
 function initCustomSelects() {
-  let customSelectElements = document.querySelectorAll(mainSelector);
-  customSelectElements.forEach((elem) => {
-    new CustomSelect(elem);
-  });
+  const customSelectElements = document.querySelectorAll(mainSelector);
+  const customSelects = [].map.call(customSelectElements, (elem) => new CustomSelect(elem));
+  return customSelects;
 }
 
-export { initCustomSelects };
+export default initCustomSelects;

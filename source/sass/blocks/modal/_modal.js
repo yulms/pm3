@@ -1,23 +1,30 @@
 import { isEscapePressEvent } from './util.js';
 
-const CLOSE_MODAL_CLASS = 'modal--closed';
-const CLOSE_BUTTON_SELECTOR = '.modal__js-close-button';
-const OVERLAY_SELECTOR = 'overlay';
-const SHOW_DELAY = 200;
-const CLOSE_DELAY = 200;
-
-
 
 class Modal {
-  constructor({openButtonSelector, modalSelector}) {
+  constructor(overrides) {
+
+    const defaults = {
+      openButtonSelector: undefined,
+      modalSelector: undefined,
+      closeModalClass : 'modal--closed',
+      closeButtonSelector : '.modal__js-close-button',
+      overlaySelector : 'overlay',
+      showDelay : 200,
+      closeDelay : 200
+    };
+
+    Object.assign(this, defaults, overrides);
+
+
     this._isOpened = false;
-    this._buttonElement = document.querySelector(openButtonSelector);
+    this._buttonElement = document.querySelector(this.openButtonSelector);
     this._buttonElement.addEventListener('click', this._showModal.bind(this));
     this._buttonElement.addEventListener('mouseenter', (evt) => {
-      this._timerOpenId = setTimeout(() => this._showModal(evt), SHOW_DELAY);
+      this._timerOpenId = setTimeout(() => this._showModal(evt), this.showDelay);
     });
     this._buttonElement.addEventListener('mouseleave', () => clearTimeout(this._timerOpenId));
-    this._modalSelector = modalSelector;
+    this._modalSelector = this.modalSelector;
   }
 
 
@@ -28,18 +35,18 @@ class Modal {
         this._modalElement = document.querySelector(this._modalSelector);
       }
       if (!this._closeButtonElement) {
-        this._closeButtonElement = this._modalElement.querySelector(CLOSE_BUTTON_SELECTOR);
+        this._closeButtonElement = this._modalElement.querySelector(this.closeButtonSelector);
       }
     };
 
     const addOverlay = () => {
       this._overlayElement = document.createElement('div');
-      this._overlayElement.classList.add(OVERLAY_SELECTOR);
+      this._overlayElement.classList.add(this.overlaySelector);
       this._modalElement.before(this._overlayElement);
     };
 
     const removeCloseClass = () => {
-      this._modalElement.classList.remove(CLOSE_MODAL_CLASS);
+      this._modalElement.classList.remove(this.closeModalClass);
     };
 
     const addHandlers = () => {
@@ -57,7 +64,7 @@ class Modal {
       };
 
       this._onModalMouseLeave = () => {
-        this._timerCloseId = setTimeout(() => this._closeModal(), CLOSE_DELAY);
+        this._timerCloseId = setTimeout(() => this._closeModal(), this.closeDelay);
       };
 
       this._onModalMouseEnter = () => {
@@ -90,7 +97,7 @@ class Modal {
     };
 
     const addCloseClass = () => {
-      this._modalElement.classList.add(CLOSE_MODAL_CLASS);
+      this._modalElement.classList.add(this.closeModalClass);
     };
 
     const removeHandlers = () => {
@@ -110,4 +117,32 @@ class Modal {
   }
 }
 
-export default Modal;
+
+
+function initModals() {
+  let modals = [];
+
+  const modalContactsArgs = {
+    openButtonSelector: '.header__contacts-button',
+    modalSelector: '.header__contacts'
+  };
+
+  const modalUserArgs = {
+    openButtonSelector: '.header__user .header__link',
+    modalSelector: '.header__user'
+  };
+
+  const modalCartArgs = {
+    openButtonSelector: '.header__cart .header__link',
+    modalSelector: '.header__cart'
+  };
+
+  modals.push(new Modal(modalContactsArgs));
+  modals.push(new Modal(modalUserArgs));
+  modals.push(new Modal(modalCartArgs));
+
+  return modals;
+}
+
+
+export default initModals;

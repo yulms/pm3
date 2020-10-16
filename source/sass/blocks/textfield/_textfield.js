@@ -1,24 +1,40 @@
 import appendCustomFocusEvents from './custom-focus-events.js';
 
 
-const textfieldSelector = '.js-textfield';
-const inputSelector = '.textfield__input';
-const labelSelector = '.textfield__label';
-const textfieldActiveClass = 'textfield--active';
-const labelOnTopClass = 'textfield__label--top';
-
 
 class Textfield {
-  constructor(element) {
-    this.element = element;
-    this.inputElement = this.element.querySelector(inputSelector);
-    this.labelElement = this.element.querySelector(labelSelector);
+  constructor(element, overrides) {
 
+    const defaults = {
+      inputSelector : '.textfield__input'
+    };
+
+    Object.assign(this, defaults, overrides);
+
+    this.element = element;
+    this.inputElement = this.element.querySelector(this.inputSelector);
+  }
+}
+
+
+class TextfieldOutlined extends Textfield {
+  constructor(element, overrides) {
+
+    super(element);
+
+    const defaults = {
+      labelSelector : '.textfield__label',
+      textfieldActiveClass : 'textfield--active',
+      labelOnTopClass : 'textfield__label--top'
+    };
+
+    Object.assign(this, defaults, overrides);
+
+    this.labelElement = this.element.querySelector(this.labelSelector);
     appendCustomFocusEvents(this.element);
     this.element.addEventListener('focusEnter', this._onTextfieldFocusEnter.bind(this));
     this.element.addEventListener('focusLeave', this._onTextfieldFocusLeave.bind(this));
   }
-
 
 
   _onTextfieldFocusEnter() {
@@ -31,28 +47,31 @@ class Textfield {
 
 
   _activateTextfield() {
-    this.element.classList.add(textfieldActiveClass);
-    this.labelElement.classList.add(labelOnTopClass);
+    this.element.classList.add(this.textfieldActiveClass);
+    this.labelElement.classList.add(this.labelOnTopClass);
   }
 
   _deactivateTextfield() {
-    this.element.classList.remove(textfieldActiveClass);
+    this.element.classList.remove(this.textfieldActiveClass);
     if (!this.inputElement.value) {
-      this.labelElement.classList.remove(labelOnTopClass);
+      this.labelElement.classList.remove(this.labelOnTopClass);
     }
   }
-
 }
 
+
+
+
+const textfieldSelector = '.textfield';
 
 function initTextfields() {
-  let textfieldElements = document.querySelectorAll(textfieldSelector);
-  textfieldElements.forEach((elem) => {
-    new Textfield(elem);
-  });
+  const textfieldElements = document.querySelectorAll(textfieldSelector);
+  const textfields = [].map.call(textfieldElements, (elem) => new TextfieldOutlined(elem));
+  return textfields;
 }
 
-export {Textfield, initTextfields};
+
+export default initTextfields;
 
 
 
