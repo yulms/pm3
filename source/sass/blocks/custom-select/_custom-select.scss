@@ -1,12 +1,13 @@
 @keyframes showCustomSelectList {
   0% {
     opacity: 0;
-    transform: scale(0);
+    transform-origin: top left;
+    transform: translateY(-100px) scaleY(0);
   }
 
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scaleY(1);
   }
 }
 
@@ -27,7 +28,7 @@
   border-radius: 0 0 $controls__border-radius $controls__border-radius;
   box-shadow: 0 3px 6px 0 $color__shadows;
   cursor: pointer;
-  animation: showCustomSelectList 300ms ease-in-out both;
+  animation: showCustomSelectList 200ms ease-in-out both;
 
   &--closed {
     display: none;

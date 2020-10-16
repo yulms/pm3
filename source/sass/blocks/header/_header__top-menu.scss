@@ -44,13 +44,6 @@
   }
 }
 
-.header__top-menu-disable-scrolling {
-  position: fixed;
-  right: 0;
-  left: 0;
-  overflow: hidden;
-}
-
 
 .header__top-menu-list {
   @include media-tablet-landscape-up {

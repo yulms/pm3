@@ -1,4 +1,4 @@
-import { isEscapePressEvent } from './util.js';
+import { isEscapePressEvent, scrollLock } from './util.js';
 
 
 class Modal {
@@ -87,6 +87,7 @@ class Modal {
     addOverlay();
     removeCloseClass();
     addHandlers();
+    scrollLock({lock: true});
     this._isOpened = true;
   }
 
@@ -113,6 +114,7 @@ class Modal {
     removeOverlay();
     addCloseClass();
     removeHandlers();
+    scrollLock({lock: false});
     this._isOpened = false;
   }
 }

@@ -45,6 +45,8 @@
 }
 
 .modal--centered .modal__inner {
+  position: relative;
+  z-index: 2;
   max-width: 100%;
   margin: auto;
   animation: showModal 0.15s ease-out both;
