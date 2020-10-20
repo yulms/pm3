@@ -1,12 +1,19 @@
 'use strict';
 
+const RIPPLE_CLASSNAME = 'ripple';
+const RIPPLE_BEFORE_MOD_CLASSNAME = 'ripple--before';
+const RIPPLE_AFTER_MOD_CLASSNAME = 'ripple--after';
+
 
 class Ripple {
 
   constructor(overrides) {
 
     let defaults = {
-      rippleClassName: 'ripple',
+      // rippleClassName: 'ripple',
+      // rippleBeforeModClassName: 'ripple--before',
+      // rippleAfterModClassName: 'ripple--after',
+      // rippleActiveModClassName: 'ripple--after',
       selectors: ['button'],
       activationEventTypes: ['mousedown', 'keydown'],
       startScale: 0.6, // начальный размер ripple от максимальной стороны контейнера -> используется для расчета rippleSize
@@ -17,11 +24,17 @@ class Ripple {
 
     Object.assign(this, defaults, overrides);
 
+    this.rippleClassName = RIPPLE_CLASSNAME,
+    this.rippleBeforeModClassName = RIPPLE_BEFORE_MOD_CLASSNAME,
+    this.rippleAfterModClassName = RIPPLE_AFTER_MOD_CLASSNAME,
+    this.rippleActiveModClassName = this.rippleAfterModClassName,
+
     this.activationEventTypes.forEach((eventType) => {
       document.addEventListener(eventType, (evt) => {
         switch (evt.type) {
           case 'mousedown':
             if (evt.which === 1) {
+              console.log(evt);
               this._activateHandler(evt);
             }
             break;
@@ -41,16 +54,25 @@ class Ripple {
   _activateHandler(evt) {
 
     this.selectors.some((selector) => {
+      // debugger;
       let target = evt.target.closest(selector);
       if (!target) return false;
 
-      // если у элемента есть after, не трогаем его
+      // если у элемента есть after, проверяем существует ли before, если да - отменяем запуск
       let targetCoputedStyle = getComputedStyle(target, '::after');
-      if (targetCoputedStyle.content !== 'none') return false;
+      if (targetCoputedStyle.content !== 'none') {
+        targetCoputedStyle = getComputedStyle(target, '::before');
+        if (targetCoputedStyle.content === 'none') {
+          this.rippleActiveModClassName = this.rippleBeforeModClassName;
+        } else {
+          return false;
+        }
+      }
 
       // если предыдущая анимация не закончилась, принудительно завершим
       if (target.classList.contains(this.rippleClassName)) {
         target.classList.remove(this.rippleClassName);
+        target.classList.remove(this.rippleActiveModClassName);
       }
 
 
@@ -71,10 +93,12 @@ class Ripple {
 
 
       target.classList.add(this.rippleClassName);
+      target.classList.add(this.rippleActiveModClassName);
 
       target.addEventListener('animationend', (evt) => {
         if (evt.animationName !== this.lastAnimationName) return;
         target.classList.remove(this.rippleClassName);
+        target.classList.remove(this.rippleActiveModClassName);
       });
 
       return true;
@@ -123,7 +147,8 @@ class Ripple {
 
 function initRipple() {
   const rippleConfig = {
-    selectors: ['button', 'a']
+    // selectors: ['button', 'a']
+    selectors: ['a', 'button']
   };
 
   return new Ripple(rippleConfig);
