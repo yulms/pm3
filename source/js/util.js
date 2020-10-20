@@ -1,14 +1,23 @@
-export function isEscapePressEvent (evt, callback) {
+export function isEscapePressEvent(evt, callback) {
   if (evt.code === 'Escape') {
     callback();
   }
 }
 
-export function isEnterPressEvent (evt, callback) {
+export function isEnterPressEvent(evt, callback) {
   if (evt.code === 'Enter') {
     callback();
   }
 }
+
+export function isLeftButtonMouseDown(evt, callback) {
+  if (evt.which === 1) {
+    callback();
+  }
+}
+
+
+
 
 
 let scrollPosition;
