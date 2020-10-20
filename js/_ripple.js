@@ -1,22 +1,16 @@
 'use strict';
 
-<<<<<<< HEAD
+
 const RIPPLE_CLASSNAME = 'ripple';
 const RIPPLE_BEFORE_MOD_CLASSNAME = 'ripple--before';
 const RIPPLE_AFTER_MOD_CLASSNAME = 'ripple--after';
 
-=======
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
 
 class Ripple {
 
   constructor(overrides) {
 
     let defaults = {
-<<<<<<< HEAD
-=======
-      rippleClassName: 'ripple',
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
       selectors: ['button'],
       activationEventTypes: ['mousedown', 'keydown'],
       startScale: 0.6, // начальный размер ripple от максимальной стороны контейнера -> используется для расчета rippleSize
@@ -27,11 +21,8 @@ class Ripple {
 
     Object.assign(this, defaults, overrides);
 
-<<<<<<< HEAD
     this.rippleActiveModClassName = RIPPLE_AFTER_MOD_CLASSNAME;
 
-=======
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
     this.activationEventTypes.forEach((eventType) => {
       document.addEventListener(eventType, (evt) => {
         switch (evt.type) {
@@ -47,12 +38,9 @@ class Ripple {
               this._activateHandler(evt);
             }
             break;
-<<<<<<< HEAD
 
           default:
             this._activateHandler(evt);
-=======
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
         }
       });
     });
@@ -62,7 +50,6 @@ class Ripple {
   _activateHandler(evt) {
 
     this.selectors.some((selector) => {
-<<<<<<< HEAD
 
       let target = evt.target.closest(selector);
       if (!target) return false;
@@ -81,18 +68,6 @@ class Ripple {
         } else {
           return false;
         }
-=======
-      let target = evt.target.closest(selector);
-      if (!target) return false;
-
-      // если у элемента есть after, не трогаем его
-      let targetCoputedStyle = getComputedStyle(target, '::after');
-      if (targetCoputedStyle.content !== 'none') return false;
-
-      // если предыдущая анимация не закончилась, принудительно завершим
-      if (target.classList.contains(this.rippleClassName)) {
-        target.classList.remove(this.rippleClassName);
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
       }
 
 
@@ -100,10 +75,6 @@ class Ripple {
       let translationCoordinates = this._getTranslationCoordinates(evt, target, rippleSize);
       let scale = this._getScale(target, rippleSize);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
       target.style.setProperty('--size', rippleSize + 'px');
       target.style.setProperty('--startTranslate',
         `${translationCoordinates.startPointX}px,
@@ -115,20 +86,12 @@ class Ripple {
       target.style.setProperty('--opacity', this.opacity);
 
 
-<<<<<<< HEAD
       target.classList.add(RIPPLE_CLASSNAME);
       target.classList.add(this.rippleActiveModClassName);
 
       target.addEventListener('animationend', (evt) => {
         if (evt.animationName !== this.lastAnimationName) return;
         this._endExecution(target);
-=======
-      target.classList.add(this.rippleClassName);
-
-      target.addEventListener('animationend', (evt) => {
-        if (evt.animationName !== this.lastAnimationName) return;
-        target.classList.remove(this.rippleClassName);
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
       });
 
       return true;
@@ -136,14 +99,11 @@ class Ripple {
 
   }
 
-<<<<<<< HEAD
   _endExecution(rippleElement) {
     rippleElement.classList.remove(RIPPLE_CLASSNAME);
     rippleElement.classList.remove(this.rippleActiveModClassName);
   }
 
-=======
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
   _getSize(target) {
     return Math.floor(this.startScale * Math.max(target.clientWidth, target.clientHeight));
   }
@@ -185,12 +145,8 @@ class Ripple {
 
 function initRipple() {
   const rippleConfig = {
-<<<<<<< HEAD
     // selectors: ['button', 'a']
     selectors: ['a', 'button']
-=======
-    selectors: ['button', 'a']
->>>>>>> 07f6510798b0c10da3c1872e32ebb6a968a27ca5
   };
 
   return new Ripple(rippleConfig);
