@@ -95,21 +95,21 @@ class CustomSelect {
 
 
     switch (action) {
-    case 'toggle':
-      if (this.state.isOpened) {
-        _closeList();
-      } else {
+      case 'toggle':
+        if (this.state.isOpened) {
+          _closeList();
+        } else {
+          _openList();
+        }
+        break;
+
+      case 'open':
         _openList();
-      }
-      break;
+        break;
 
-    case 'open':
-      _openList();
-      break;
-
-    case 'shut':
-      _closeList();
-      break;
+      case 'shut':
+        _closeList();
+        break;
     }
   }
 
@@ -130,36 +130,36 @@ class CustomSelect {
     let _moveFocusUp = () => {
       switch (true) {
 
-      case (currentFocus === this.inputElement):
-        visibleItems[visibleItems.length - 1].focus();
-        break;
+        case (currentFocus === this.inputElement):
+          visibleItems[visibleItems.length - 1].focus();
+          break;
 
-      case (currentFocus.tagName === 'LI'):
-        currentIndex = visibleItems.indexOf(currentFocus);
-        if (currentIndex === 0) {
-          this.inputElement.focus();
-        } else {
-          visibleItems[currentIndex - 1].focus();
-        }
-        break;
+        case (currentFocus.tagName === 'LI'):
+          currentIndex = visibleItems.indexOf(currentFocus);
+          if (currentIndex === 0) {
+            this.inputElement.focus();
+          } else {
+            visibleItems[currentIndex - 1].focus();
+          }
+          break;
       }
     };
 
     let _moveFocusDown = () => {
       switch (true) {
 
-      case (currentFocus === this.inputElement):
-        visibleItems[0].focus();
-        break;
-
-      case (currentFocus.tagName === 'LI'):
-        currentIndex = visibleItems.indexOf(currentFocus);
-        if (currentIndex !== visibleItems.length - 1) {
-          visibleItems[currentIndex + 1].focus();
-        } else {
+        case (currentFocus === this.inputElement):
           visibleItems[0].focus();
-        }
-        break;
+          break;
+
+        case (currentFocus.tagName === 'LI'):
+          currentIndex = visibleItems.indexOf(currentFocus);
+          if (currentIndex !== visibleItems.length - 1) {
+            visibleItems[currentIndex + 1].focus();
+          } else {
+            visibleItems[0].focus();
+          }
+          break;
       }
     };
 
@@ -178,39 +178,39 @@ class CustomSelect {
 
     switch(key) {
 
-    case 'Enter':
-      if (this.state.isOpened && currentFocus.tagName === 'LI') {
-        this._makeChoice(currentFocus);
-      }
-      this._toggleList();
-      break;
-
-    case 'Escape':
-      if (this.state.isOpened) {
+      case 'Enter':
+        if (this.state.isOpened && currentFocus.tagName === 'LI') {
+          this._makeChoice(currentFocus);
+        }
         this._toggleList();
-      }
-      break;
+        break;
 
-    case 'ArrowDown':
-      if (!this.state.isOpened) {
-        this._toggleList();
-      }
-      this._moveFocus({moveDirection: 'down'});
-      break;
+      case 'Escape':
+        if (this.state.isOpened) {
+          this._toggleList();
+        }
+        break;
 
-    case 'ArrowUp':
-      if (!this.state.isOpened) {
-        this._toggleList();
-      }
-      this._moveFocus({moveDirection: 'up'});
-      break;
+      case 'ArrowDown':
+        if (!this.state.isOpened) {
+          this._toggleList();
+        }
+        this._moveFocus({moveDirection: 'down'});
+        break;
 
-    default:
-      if (!this.state.isOpened) {
-        this._toggleList();
-      }
-      this._doFilter();
-      break;
+      case 'ArrowUp':
+        if (!this.state.isOpened) {
+          this._toggleList();
+        }
+        this._moveFocus({moveDirection: 'up'});
+        break;
+
+      default:
+        if (!this.state.isOpened) {
+          this._toggleList();
+        }
+        this._doFilter();
+        break;
     }
 
   }
