@@ -11,6 +11,7 @@ class HeaderTopMenu {
     this._menuOpenButtonElement = document.querySelector(menuOpenSelector);
     this._menuElement = document.querySelector(menuSelector);
     this._menuOpenButtonElement.addEventListener('click', this._showMenu.bind(this));
+    this._stateIsOpened = false;
   }
 
   _showMenu(evt) {
@@ -39,8 +40,10 @@ class HeaderTopMenu {
 
 
     evt.preventDefault();
+    this._stateIsOpened = true;
     addOverlay();
     addOpenClass();
+    this._toggleAriaAttributes();
     addHandlers();
     scrollLock({lock: true});
   }
@@ -56,11 +59,19 @@ class HeaderTopMenu {
     };
 
 
+    this._stateIsOpened = false;
     removeOverlay();
     removeOpenClass();
+    this._toggleAriaAttributes();
     removeHandlers();
     scrollLock({lock: false});
   }
+
+
+  _toggleAriaAttributes() {
+    this._menuOpenButtonElement.setAttribute('aria-expanded', this._stateIsOpened);
+  }
+
 }
 
 
