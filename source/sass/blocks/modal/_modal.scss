@@ -32,7 +32,7 @@
 }
 
 .modal__inner {
-  --vertical-paddings: #{$space * 1.5};
+  --vertical-paddings: #{$space * 2};
   --horizontal-paddings: #{$space * 2};
 
   width: 500px;
@@ -87,6 +87,11 @@
 
 .modal__p {
   margin: 0 0 $space*0.5;
+}
+
+.modal__button {
+  width: 100%;
+  margin-top: $space*1.5;
 }
 
 
