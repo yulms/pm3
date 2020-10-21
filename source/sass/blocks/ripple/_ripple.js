@@ -70,6 +70,14 @@ class Ripple {
         }
       }
 
+      // если у элемента уже установлено абсолютное или фиксированное позиционирование,
+      // продублируем его разметке, что бы он не переопределился на relative
+      targetCoputedStyle = getComputedStyle(target);
+      let currentPosition = targetCoputedStyle.position;
+      if (currentPosition === 'absolute' || currentPosition === 'fixed') {
+        target.style.position = currentPosition;
+      }
+
 
       let rippleSize = this._getSize(target);
       let translationCoordinates = this._getTranslationCoordinates(evt, target, rippleSize);
@@ -145,7 +153,6 @@ class Ripple {
 
 function initRipple() {
   const rippleConfig = {
-    // selectors: ['button', 'a']
     selectors: ['a', 'button']
   };
 
