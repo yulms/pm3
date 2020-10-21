@@ -10,10 +10,19 @@
   }
 }
 
+.modal {
+
+}
+
 
 .modal--closed .modal__inner {
   display: none;
 }
+
+// .modal--closed {
+//   display: none;
+// }
+
 
 .modal--centered {
   position: fixed;
@@ -42,6 +51,8 @@
   border-radius: $controls__border-radius;
   box-shadow: 0 3px 6px 0 $color__shadows;
   overflow: visible;
+  overflow-y: auto; //полоса прокрутки при переполнении
+  -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
 }
 
 .modal--centered .modal__inner {
