@@ -11,7 +11,7 @@
 }
 
 
-.modal-bounded:not(.modal-bounded--closed) {
+.modal-bounded__parent-bound {
   position: relative;
   z-index: 2;
 
@@ -50,7 +50,7 @@
   -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
 }
 
-.modal-bounded--closed .modal-bounded__inner {
+.modal-bounded--closed {
   display: none;
 }
 
