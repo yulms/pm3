@@ -1,5 +1,5 @@
 import initHeaderTopMenu from './_header__top-menu.js';
-import initModals from './_modal.js';
+import initBoundedModals from './_modal-bounded.js';
 import initQuantityInput from './_quantity-input.js';
 import initTooltips from './_tooltip.js';
 import initTextfields from './_textfield.js';
@@ -9,7 +9,7 @@ import initRipple from './_ripple.js';
 
 const projectObjects = { // eslint-disable-line
   headerTopMenu: initHeaderTopMenu(),
-  modals: initModals(),
+  modalsBounded: initBoundedModals(),
   quantityInput: initQuantityInput(),
   toolTips: initTooltips(),
   textfields: initTextfields(),

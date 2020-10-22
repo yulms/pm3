@@ -1,13 +1,13 @@
 import { isEscapePressEvent, scrollLock } from './util.js';
 
 
-class Modal {
+class ModalBounded {
   constructor(overrides) {
 
     const defaults = {
       openButtonSelector: undefined,
       modalSelector: undefined,
-      closeModalClass : 'modal--closed',
+      closeModalClass : 'modal-bounded--closed',
       closeButtonSelector : '.modal__js-close-button',
       overlaySelector : 'overlay',
       showDelay : 200,
@@ -121,7 +121,7 @@ class Modal {
 
 
 
-function initModals() {
+function initBoundedModals() {
   let modals = [];
 
   const modalContactsArgs = {
@@ -139,12 +139,12 @@ function initModals() {
     modalSelector: '.header__cart'
   };
 
-  modals.push(new Modal(modalContactsArgs));
-  modals.push(new Modal(modalUserArgs));
-  modals.push(new Modal(modalCartArgs));
+  modals.push(new ModalBounded(modalContactsArgs));
+  modals.push(new ModalBounded(modalUserArgs));
+  modals.push(new ModalBounded(modalCartArgs));
 
   return modals;
 }
 
 
-export default initModals;
+export default initBoundedModals;

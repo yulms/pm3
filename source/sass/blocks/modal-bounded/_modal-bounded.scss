@@ -1,0 +1,81 @@
+@keyframes showModalBounded {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.modal-bounded:not(.modal-bounded--closed) {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 9px solid $color__background;
+  }
+}
+
+
+.modal-bounded__inner {
+  --vertical-paddings: #{$space * 2};
+  --horizontal-paddings: #{$space * 2};
+
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+  max-width: 100vw;
+  width: 500px;
+  padding: var(--vertical-paddings) var(--horizontal-paddings);
+  color: $color-font__base;
+  background-color: $color__background;
+  border-radius: $controls__border-radius;
+  box-shadow: 0 3px 6px 0 $color__shadows;
+  overflow: visible;
+  overflow-y: auto; //полоса прокрутки при переполнении
+  -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
+}
+
+.modal-bounded--closed .modal-bounded__inner {
+  display: none;
+}
+
+.modal-bounded__header {
+  margin: 0 $space * 3 $space 0;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+
+// .modal--show {
+//   display: block;
+//   animation-name: bounce;
+//   animation-duration: 0.4s;
+// }
+
+
+// .modal--centered {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }

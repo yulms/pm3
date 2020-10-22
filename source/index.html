@@ -134,7 +134,7 @@
       </form>
 
       <!-- Контакты -->
-      <div class="header__contacts modal modal--parent-bounded modal--closed">
+      <div class="header__contacts modal-bounded modal-bounded--closed">
         <button class="button header__contacts-button" type="button">
           <svg class="icon icon--stroked header__icon header__icon--tel" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/svg/_sprite.svg#icon-tel"></use>
@@ -146,7 +146,7 @@
           </svg>
         </button>
 
-        <div class="modal__inner header__contacts-modal" aria-label="Дополнительные контакты">
+        <div class="modal-bounded__inner header__contacts-modal" aria-label="Дополнительные контакты">
           <ul class="header__contacts-list header__contacts-list--tel">
             <li class="header__contacts-item">
               <a class="header__contacts-link" href="tel:+375336810507">
@@ -223,7 +223,7 @@
       </div>
 
       <!-- User -->
-      <div class="header__user modal modal--parent-bounded modal--closed">
+      <div class="header__user modal-bounded modal-bounded--closed">
         <a class="header__link" href="#">
           <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
@@ -231,7 +231,7 @@
           <span class="header__link-caption header__user-caption">Мой аккаунт</span>
         </a>
 
-        <div class="modal__inner header__user-modal" aria-label="Меню пользователя">
+        <div class="modal-bounded__inner header__user-modal" aria-label="Меню пользователя">
           <h2 class="visually-hidden">Меню пользователя</h2>
           <p class="header__user-entry-text">Добро пожаловать</p>
           <a class="button button--options-primary header__user-login-button" href="#">Войти</a>
@@ -291,7 +291,7 @@
       </div>
 
       <!-- Корзина -->
-      <div class="header__cart modal modal--parent-bounded modal--closed">
+      <div class="header__cart modal-bounded modal-bounded--closed">
         <a class="header__link header__cart-link" href="#">
           <div class="header__cart-quantity-positioner">
             <svg class="icon icon--stroked header__icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -303,8 +303,8 @@
           <span class="header__link-caption">Корзина</span>
         </a>
 
-        <div class="modal__inner header__cart-modal" aria-label="Корзина покупателя">
-          <h2 class="modal__header">Корзина товаров</h2>
+        <div class="modal-bounded__inner header__cart-modal" aria-label="Корзина покупателя">
+          <h2 class="modal-bounded__header">Корзина товаров</h2>
 
           <ul class="cart-list">
             <li class="cart-list__item">
