@@ -16,7 +16,7 @@
 }
 
 .button--action-primary {
-  padding: $space * 0.5 $space;
+  padding: $space * 0.75 $space;
   color: $color-font__button;
   background-color: $color__secondary;
   border-radius: $controls__border-radius;
@@ -29,7 +29,7 @@
 
 
 .button--action-secondary {
-  padding: calc(#{$space} * 0.5 - 2px) $space*2;
+  padding: calc(#{$space} * 0.75 - 2px) $space*2;
   color: $color-font__button;
   background-color: transparent;
   border: 2px solid $color__secondary;

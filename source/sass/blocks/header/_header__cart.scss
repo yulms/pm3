@@ -24,6 +24,10 @@
 .header__cart-modal {
   right: 0;
   width: $space * 28;
+
+  @include media-mobile-only {
+    --horizontal-paddings: #{$space};
+  }
 }
 
 .header__cart-quantity-positioner {
@@ -78,9 +82,9 @@
 
 .header__cart-modal-buttons {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.modal--cart__button {
-  width: calc(50% - #{$space * 0.5});
+.header__cart-modal-buttons .button--action-primary {
+  margin-bottom: $space;
 }
