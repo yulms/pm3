@@ -17,8 +17,7 @@
   }
 }
 
-
-.modal-bounded__inner {
+.modal-bounded {
   --vertical-paddings: #{$space * 2};
   --horizontal-paddings: #{$space * 2};
 
@@ -32,9 +31,6 @@
   background-color: $color__background;
   border-radius: $controls__border-radius;
   box-shadow: 0 3px 6px 0 $color__shadows;
-  overflow: visible;
-  overflow-y: auto; //полоса прокрутки при переполнении
-  -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
 }
 
 .modal-bounded--closed {
@@ -42,7 +38,7 @@
 }
 
 .modal-bounded__header {
-  margin: 0 $space * 3 $space 0;
+  margin: 0 0 $space 0;
   font-size: 1.7rem;
   line-height: 2rem;
   font-weight: 600;

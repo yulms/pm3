@@ -93,7 +93,7 @@ class ModalBounded {
     addOverlay();
     configClasses();
     addHandlers();
-    scrollLock({lock: true});
+    // scrollLock({lock: true});
     this._isOpened = true;
   }
 
@@ -121,7 +121,7 @@ class ModalBounded {
     removeOverlay();
     configClasses();
     removeHandlers();
-    scrollLock({lock: false});
+    // scrollLock({lock: false});
     this._isOpened = false;
   }
 }
