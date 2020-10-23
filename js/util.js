@@ -17,9 +17,7 @@ export function isLeftButtonMouseDown(evt, callback) {
 }
 
 
-
-
-
+// функция, отключающая нежелательные эффекты при position: fixed
 let scrollPosition;
 export function scrollLock({lock = true} = {}) {
   const html = document.documentElement;
@@ -49,4 +47,25 @@ export function scrollLock({lock = true} = {}) {
     htmlStyle.marginRight = '';
     window.scrollTo(0, scrollPosition);
   }
+}
+
+
+
+//  Функция
+//  Добавляет класс анимации на элемент.
+//  Класс должнен иметь свойство с описанием анимации в CSS
+//  Ожидает выполнения анимации, после чего выполняет колбэк и подчищает за собой
+
+export function executeAfterAnimationEnd({element, animationClass, animationName, callback}) {
+  function execute(evt) {
+    if (evt.animationName === animationName) {
+      element.classList.remove(animationClass);
+      callback();
+      if (element) {
+        element.removeEventListener('animationend', execute);
+      }
+    }
+  }
+  element.addEventListener('animationend', execute);
+  element.classList.add(animationClass);
 }
