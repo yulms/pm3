@@ -1,8 +1,41 @@
+@keyframes header__top-menu-scales {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes header__top-menu-opacity-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-header__top-menu {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+
 .header__top-menu {
   @include media-tablet-portrait-down {
+    display: none;
     position: fixed;
     z-index: 2;
-    left: -100%;
     bottom: auto;
     width: 84%;
     max-width: 400px;
@@ -14,10 +47,10 @@
     box-shadow: 0 3px 6px 0 $color__shadows;
     overflow-y: auto; //полоса прокрутки при переполнении
     -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
-    transform-origin: top right;
-    will-change: transform;
-    transform: skewX(-45deg) translateX(-100%) scale(0.1);
-    transition: transform 0.15s ease;
+    transform-origin: left top;
+    animation:
+      header__top-menu-scales 150ms cubic-bezier(0, 0, 0.2, 1) both,
+      header__top-menu-opacity-in 40ms linear both;
   }
 
   @include media-tablet-landscape-up {
@@ -30,17 +63,32 @@
     font-weight: 600;
     letter-spacing: 0.03em;
 
-    & *:focus {
+    & a:focus {
       outline: 2px dashed #ffffff;
       outline-offset: 1px;
     }
   }
 }
 
+
+// нижележащий класс добавляется родителю, что бы была
+// возможность анимировать исчезновение overlay
+.header__top-menu--animation-on-close .header__top-menu {
+  @include media-tablet-portrait-down {
+    animation: hide-header__top-menu 75ms linear both;
+  }
+}
+
+.header__top-menu--animation-on-close .header__top-menu-overlay {
+  @include media-tablet-portrait-down {
+    animation: hideOverlay 75ms linear both;
+  }
+}
+
+
 .header__top-menu--isopened {
   @include media-tablet-portrait-down {
-    left: 0;
-    transform: skewX(0) translateX(0) scale(1);
+    display: block;
   }
 }
 

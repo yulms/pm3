@@ -16,7 +16,7 @@ function makeCSS (server) {
     .pipe(sass())
     // .pipe(autoprefixer())
     // .pipe(shorthand())
-    .pipe(csso())
+    // .pipe(csso())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/css'))

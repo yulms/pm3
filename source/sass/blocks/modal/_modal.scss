@@ -1,17 +1,55 @@
+@keyframes showModal {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes showModal-opacity-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hideModal {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+
 .modal {
   position: fixed;
   z-index: 2;
   top: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  padding: $space*4 0; // Чтобы окно не прилипало к границе браузера
+  left: 0;
+  padding: $space*2 0 $space*12; // Чтобы окно не прилипало к границе браузера
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+}
+
+
+.modal--closed {
+  display: none;
 }
 
 .modal__inner {
@@ -20,18 +58,55 @@
 
   position: relative;
   z-index: 2;
+  width: 500px;
   max-width: 100%;
   margin: auto;
-  animation: showModalBounded 0.15s ease-out both;
-  width: 500px;
   padding: var(--vertical-paddings) var(--horizontal-paddings);
   color: $color-font__base;
   background-color: $color__background;
   border-radius: $controls__border-radius;
   box-shadow: 0 3px 6px 0 $color__shadows;
-  overflow: visible;
-  overflow-y: auto; //полоса прокрутки при переполнении
-  -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
+  animation:
+    showModal 150ms cubic-bezier(0, 0, 0.2, 1) both,
+    showModal-opacity-in 40ms linear both;
+}
+
+
+.modal--animation-on-close .modal__inner {
+  animation: hideModal 75ms linear both;
+}
+
+.modal--animation-on-close .modal__overlay {
+  animation: hideOverlay 75ms linear both;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 0;
+
+  @include media-tablet-portrait-down {
+    right: 0;
+    color: $color__additional-4;
+
+    &:hover,
+    &:focus {
+      color: $color__primary;
+    }
+  }
+
+  @include media-tablet-landscape-up {
+    right: $space * - 5.25;
+    color: #ffffff;
+    border: 2px dashed #d6d6d6;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: $controls__border-radius;
+
+    &:hover,
+    &:focus {
+      border-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
 }
 
 

@@ -10,9 +10,9 @@ class ModalBounded {
       parentSelector: undefined,
       parentBoundSelector: 'modal-bounded__parent-bound',
       closeModalClass : 'modal-bounded--closed',
-      closeButtonSelector : '.modal__js-close-button',
+      closeButtonSelector : '.modal__close-button',
       overlaySelector : 'overlay',
-      showDelay : 200,
+      showDelay : 150,
       closeDelay : 200
     };
 
@@ -29,7 +29,6 @@ class ModalBounded {
     });
     this._buttonElement.addEventListener('mouseleave', () => clearTimeout(this._timerOpenId));
 
-
   }
 
 
@@ -37,7 +36,6 @@ class ModalBounded {
 
     const createElements = () => {
       if (!this._parentElement || !this._modalElement) {
-
         this._parentElement = document.querySelector(this.parentSelector);
         this._modalElement = this._parentElement.querySelector(this.modalSelector);
       }
@@ -116,8 +114,6 @@ class ModalBounded {
       if (this._closeButtonElement) {
         this._closeButtonElement.removeEventListener('click', this._onCloseButtonClick);
       }
-      // this._modalElement.removeEventListener('mouseleave', this._onModalMouseLeave);
-      // this._modalElement.removeEventListener('mouseenter', this._onModalMouseEnter);
       this._parentElement.removeEventListener('mouseleave', this._onModalMouseLeave);
       this._parentElement.removeEventListener('mouseenter', this._onModalMouseEnter);
     };
@@ -133,7 +129,6 @@ class ModalBounded {
 
 
 function initBoundedModals() {
-  let modals = [];
 
   const modalContactsArgs = {
     openButtonSelector: '.header__contacts-button',
@@ -153,9 +148,12 @@ function initBoundedModals() {
     parentSelector: '.header__cart'
   };
 
-  modals.push(new ModalBounded(modalContactsArgs));
-  modals.push(new ModalBounded(modalUserArgs));
-  modals.push(new ModalBounded(modalCartArgs));
+
+  let modals = [
+    new ModalBounded(modalContactsArgs),
+    new ModalBounded(modalUserArgs),
+    new ModalBounded(modalCartArgs)
+  ];
 
   return modals;
 }

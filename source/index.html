@@ -24,7 +24,7 @@
       <nav class="header__top-menu" aria-label="Дополнительная навигация">
         <ul class="dropdown-menu header__top-menu-list">
           <li class="header__top-menu-item">
-            <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#">
+            <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#" data-modal="#modalChooseCity">
               <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
               <div class="city-choose__city-container header__city-container">
                 <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -408,11 +408,6 @@
               </div>
             </div>
 
-            <button class="button button--modal-close modal__js-close-button" type="button">
-              <svg class="button__icon" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -683,7 +678,7 @@
         <div class="main-nav__close-container">
           <button class="button button--modal-close main-nav__close-button" type="button">
             <span class="link link--nounderline">Закрыть</span>
-            <svg class="button__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <svg class="button__close-icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
             </svg>
           </button>
@@ -1599,14 +1594,13 @@
 
 
   <!-- выбор города -->
-  <!-- <section class="modal modal--centered modal--closed" aria-hidden="true">
-    <div class="overlay"></div>
+  <section class="modal modal--closed" id="modalChooseCity" aria-hidden="true">
+
     <div class="modal__inner" role="dialog" aria-modal="true">
 
       <h2 class="modal__header">Выберите город</h2>
       <p class="modal__p">Стоимость и срок доставки заказов зависят от вашего местоположения.</p>
       <p class="modal__p">Укажите город (населенный пункт):</p>
-
       <form>
         <div class="textfield custom-select">
           <div class="visually-hidden" id="custom-select-status" aria-live="polite"></div>
@@ -1649,14 +1643,14 @@
         <button class="button button--options-primary modal__button" type="submit">Применить</button>
       </form>
 
-      <button class="button button--modal-close modal__js-close-button" type="button">
-        <svg class="button__icon" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+      <button class="button button--modal-close modal__close-button" type="button">
+        <svg class="button__close-icon" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
         </svg>
       </button>
 
     </div>
-  </section> -->
+  </section>
 
 
 

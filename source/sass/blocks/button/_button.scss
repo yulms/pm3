@@ -63,28 +63,19 @@
 }
 
 .button--modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
   min-width: $space * 5;
   min-height: $space * 5;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  border-radius: 50%;
 }
 
-.button--modal-close .button__icon {
+.button__close-icon {
   width: $space * 3;
   height: $space * 3;
-  stroke: $color__additional-4;
+  stroke: currentColor;
   stroke-width: 2px;
-}
-
-.button--modal-close:hover .button__icon,
-.button--modal-close:focus .button__icon {
-  stroke: $color__primary;
 }
 
 .button--modal-close:active {
