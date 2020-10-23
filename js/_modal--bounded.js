@@ -1,4 +1,4 @@
-import { isEscapePressEvent, scrollLock } from './util.js';
+import { isEscapePressEvent } from './util.js';
 
 
 class ModalBounded {
@@ -8,9 +8,9 @@ class ModalBounded {
       openButtonSelector: undefined,
       modalSelector: undefined,
       parentSelector: undefined,
-      parentBoundSelector: 'modal-bounded__parent-bound',
-      closeModalClass : 'modal-bounded--closed',
-      closeButtonSelector : '.modal__close-button',
+      parentBoundSelector: 'modal__parent-bound',
+      closeModalClass : 'modal--closed',
+      // closeButtonSelector : '.modal__close-button',
       overlaySelector : 'overlay',
       showDelay : 150,
       closeDelay : 200
@@ -39,9 +39,9 @@ class ModalBounded {
         this._parentElement = document.querySelector(this.parentSelector);
         this._modalElement = this._parentElement.querySelector(this.modalSelector);
       }
-      if (!this._closeButtonElement) {
-        this._closeButtonElement = this._modalElement.querySelector(this.closeButtonSelector);
-      }
+      // if (!this._closeButtonElement) {
+      //   this._closeButtonElement = this._modalElement.querySelector(this.closeButtonSelector);
+      // }
     };
 
     const addOverlay = () => {
@@ -79,9 +79,9 @@ class ModalBounded {
 
       this._overlayElement.addEventListener('click', this._onOverlayClick);
       document.addEventListener('keydown', this._onDocumentKeydown);
-      if (this._closeButtonElement) {
-        this._closeButtonElement.addEventListener('click', this._onCloseButtonClick);
-      }
+      // if (this._closeButtonElement) {
+      //   this._closeButtonElement.addEventListener('click', this._onCloseButtonClick);
+      // }
       this._parentElement.addEventListener('mouseleave', this._onModalMouseLeave);
       this._parentElement.addEventListener('mouseenter', this._onModalMouseEnter);
     };
@@ -93,7 +93,7 @@ class ModalBounded {
     addOverlay();
     configClasses();
     addHandlers();
-    scrollLock({lock: true});
+    // scrollLock({lock: true});
     this._isOpened = true;
   }
 
@@ -111,9 +111,9 @@ class ModalBounded {
     const removeHandlers = () => {
       this._overlayElement.removeEventListener('click', this._onOverlayClick);
       document.removeEventListener('keydown', this._onDocumentKeydown);
-      if (this._closeButtonElement) {
-        this._closeButtonElement.removeEventListener('click', this._onCloseButtonClick);
-      }
+      // if (this._closeButtonElement) {
+      //   this._closeButtonElement.removeEventListener('click', this._onCloseButtonClick);
+      // }
       this._parentElement.removeEventListener('mouseleave', this._onModalMouseLeave);
       this._parentElement.removeEventListener('mouseenter', this._onModalMouseEnter);
     };
@@ -121,7 +121,7 @@ class ModalBounded {
     removeOverlay();
     configClasses();
     removeHandlers();
-    scrollLock({lock: false});
+    // scrollLock({lock: false});
     this._isOpened = false;
   }
 }
@@ -132,19 +132,19 @@ function initBoundedModals() {
 
   const modalContactsArgs = {
     openButtonSelector: '.header__contacts-button',
-    modalSelector: '.header__contacts .modal-bounded',
+    modalSelector: '.header__contacts .modal',
     parentSelector: '.header__contacts'
   };
 
   const modalUserArgs = {
     openButtonSelector: '.header__user .header__link',
-    modalSelector: '.header__user .modal-bounded',
+    modalSelector: '.header__user .modal',
     parentSelector: '.header__user'
   };
 
   const modalCartArgs = {
     openButtonSelector: '.header__cart .header__link',
-    modalSelector: '.header__cart .modal-bounded',
+    modalSelector: '.header__cart .modal',
     parentSelector: '.header__cart'
   };
 

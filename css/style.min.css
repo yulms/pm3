@@ -176,7 +176,7 @@ sub {
   transition: all 0.15s; }
 
 .button--action-primary {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   color: #191919;
   background-color: #ffd343;
   border-radius: 2px; }
@@ -184,7 +184,7 @@ sub {
     background-color: #f4b606; }
 
 .button--action-secondary {
-  padding: calc(1rem * 0.5 - 2px) 2rem;
+  padding: calc(1rem * 0.75 - 2px) 2rem;
   color: #191919;
   background-color: transparent;
   border: 2px solid #ffd343;
@@ -395,9 +395,6 @@ sub {
 .quantity-input__button:focus .quantity-input__icon {
   stroke: #01768b; }
 
-.quantity-input__button:active {
-  background-color: #e0e0e0; }
-
 .quantity-input__input-field {
   width: 100%;
   height: 2rem;
@@ -577,48 +574,6 @@ sub {
 .socials-login__icon--ok {
   background-color: #eb722e; }
 
-.modal-bounded__parent-bound {
-  position: relative;
-  z-index: 2; }
-  .modal-bounded__parent-bound::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    width: 0;
-    height: 0;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
-    border-bottom: 9px solid #ffffff; }
-
-.modal-bounded__inner {
-  --vertical-paddings: 2rem;
-  --horizontal-paddings: 2rem;
-  position: absolute;
-  top: 100%;
-  z-index: 2;
-  max-width: 100vw;
-  width: 500px;
-  padding: var(--vertical-paddings) var(--horizontal-paddings);
-  color: #505050;
-  background-color: #ffffff;
-  border-radius: 2px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-  overflow: visible;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
-
-.modal-bounded--closed {
-  display: none; }
-
-.modal-bounded__header {
-  margin: 0 3rem 1rem 0;
-  font-size: 1.7rem;
-  line-height: 2rem;
-  font-weight: 600; }
-
 @keyframes showModal {
   from {
     transform: scale(0.8); }
@@ -640,8 +595,16 @@ sub {
     transform: scale(0.9); } }
 
 .modal {
+  --vertical-paddings: 2rem;
+  --horizontal-paddings: 2rem;
   position: fixed;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #505050; }
+
+.modal:not(.modal--bounded) {
   top: 0;
   right: 0;
   bottom: 0;
@@ -649,24 +612,28 @@ sub {
   padding: 2rem 0 12rem;
   overflow: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; }
+  -webkit-overflow-scrolling: touch; }
+
+.modal--bounded {
+  position: absolute;
+  top: 100%;
+  max-width: 100vw;
+  width: 500px;
+  padding: var(--vertical-paddings) var(--horizontal-paddings);
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
 
 .modal--closed {
   display: none; }
 
 .modal__inner {
-  --vertical-paddings: 2rem;
-  --horizontal-paddings: 2rem;
   position: relative;
   z-index: 2;
   width: 500px;
   max-width: 100%;
   margin: auto;
   padding: var(--vertical-paddings) var(--horizontal-paddings);
-  color: #505050;
   background-color: #ffffff;
   border-radius: 2px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
@@ -699,7 +666,7 @@ sub {
         background-color: rgba(255, 255, 255, 0.3); } }
 
 .modal__header {
-  margin: 0 3rem 1rem 0;
+  margin: 0 0 1rem 0;
   font-size: 1.7rem;
   line-height: 2rem;
   font-weight: 600; }
@@ -710,6 +677,22 @@ sub {
 .modal__button {
   width: 100%;
   margin-top: 1.5rem; }
+
+.modal__parent-bound {
+  position: relative;
+  z-index: 2; }
+  .modal__parent-bound::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 9px solid #ffffff; }
 
 @keyframes showOverlay {
   from {
@@ -1367,6 +1350,9 @@ sub {
 .header__cart-modal {
   right: 0;
   width: 28rem; }
+  @media (max-width: 607px) {
+    .header__cart-modal {
+      --horizontal-paddings: 1rem; } }
 
 .header__cart-quantity-positioner {
   position: relative;
@@ -1412,10 +1398,10 @@ sub {
 
 .header__cart-modal-buttons {
   display: flex;
-  justify-content: space-between; }
+  flex-direction: column; }
 
-.modal--cart__button {
-  width: calc(50% - 0.5rem); }
+.header__cart-modal-buttons .button--action-primary {
+  margin-bottom: 1rem; }
 
 @media (max-width: 979px) {
   .header__search-form {

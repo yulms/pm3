@@ -1,5 +1,5 @@
 import initHeaderTopMenu from './_header__top-menu.js';
-import initBoundedModals from './_modal-bounded.js';
+import initBoundedModals from './_modal--bounded.js';
 import initModal from './_modal.js';
 import initQuantityInput from './_quantity-input.js';
 import initTooltips from './_tooltip.js';
