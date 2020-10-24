@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-@@include('./!head/_head.html')
+@@include("./!head/_head.html")
 
-<body>
+<body class="page page--catalog">
 
-  @@include('./header/_header.html')
+  @@include("./header/_header.html", {"class": "page__header"})
 
-  <main class="main">
+  <main class="main page__main">
 
-    @@include('./breadcrumbs/_breadcrumbs.html', {"class": "main__breadcrumbs"})
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs"})
 
-    <h1 class="title title--1 main__title">Кухонная посуда</h1>
+    <h1 class="title title--1 page__title">Кухонная посуда</h1>
 
-    @@include('./category/_category.html', {"class": "main__category", "page": "category-lvl1"})
+    @@include("./category/_category.html", {"class": "page__category", "page": "category-lvl1"})
 
-    @@include('./brands/_brands.html', {"class": "main__brands", "title": "Кухонная посуда по брендам"})
+    @@include("./brands/_brands.html", {"class": "page__brands", "title": "Кухонная посуда по брендам"})
 
   </main>
 
-  @@include('./footer/_footer.html')
+  @@include("./footer/_footer.html")
 
 
-  @@include('./modal/_modal--choose-city.html')
+  @@include("./modal/_modal--choose-city.html")
 
   <script src="js/script.js" type="module"></script>
   <!-- <script src="js/controls.js"></script> -->

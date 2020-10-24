@@ -1,19 +1,42 @@
-<!-- Черновик блока характеристики в миникарточке товара -->
-<div class="minicard__features">
-  <button type="button">
-    Характеристики
-    <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-      <use xlink:href="svg/sprite.svg#icon-arrow"></use>
-    </svg>
-  </button>
-  <ul>
-    <li>Материал: нержавеющая сталь</li>
-    <li>Количество предметов: 12</li>
-    <li>Ручки: съемные</li>
-    <li>Тип комфорок: любые, включая индукционные</li>
-    <li>Сталь: AISI 304</li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
 
-<!-- Черновик блока инфо о доставке -->
-<p class="minicard__delivery secondary-text">Доставка: сегодня после 18-00, бесплатно</p>
+@@include("./!head/_head.html")
+
+<body class="page page--catalog">
+
+  @@include("./header/_header.html", {"class": "page__header"})
+
+  <main class="main page__main">
+
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs"})
+
+
+
+
+    @@include("./promo2/_promo2.html", {"class": "page__promo2"})
+
+
+
+
+
+
+
+    <h1 class="title title--2 page__title">Наборы посуды</h1>
+
+    @@include("./category/_category.html", {"class": "page__category", "page": "category-lvl2"})
+
+
+
+  </main>
+
+  @@include("./footer/_footer.html")
+
+
+  @@include("./modal/_modal--choose-city.html")
+
+  <script src="js/script.js" type="module"></script>
+  <!-- <script src="js/controls.js"></script> -->
+</body>
+
+</html>

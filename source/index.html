@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-@@include('./!head/_head.html')
+@@include("./!head/_head.html")
 
-<body>
+<body class="page page--index">
 
-  @@include('./header/_header.html')
+  @@include("./header/_header.html", {"class": "page__header"})
 
-  <main class="main">
+  <main class="main page__main">
     <h1 class="visually-hidden">Интернет-магазин посуды</h1>
 
-    @@include('./promo/_promo.html', {"class": "main__promo"})
+    @@include("./promo/_promo.html", {"class": "page__promo"})
 
-    @@include('./category/_category.html', {"class": "main__category", "page": "index"})
+    @@include("./category/_category.html", {"class": "page__category", "page": "index"})
 
-    @@include('./popular-goods/_popular-goods.html', {"class": "main__popular-goods"})
+    @@include("./popular-goods/_popular-goods.html", {"class": "page__popular-goods"})
 
-    @@include('./catalog/_catalog.html', {"class": "main__catalog"})
+    @@include("./catalog/_catalog.html", {"class": "page__catalog"})
 
-    @@include('./admin-content/_admin-content.html', {"class": "main__admin-content"})
+    @@include("./admin-content/_admin-content.html", {"class": "page__admin-content"})
 
-    @@include('./brands/_brands.html', {"class": "main__brands"})
+    @@include("./brands/_brands.html", {"class": "page__brands", "title": "Наши бренды"})
 
   </main>
 
-  @@include('./footer/_footer.html')
+  @@include("./footer/_footer.html")
 
 
-  @@include('./modal/_modal--choose-city.html')
+  @@include("./modal/_modal--choose-city.html")
 
   <script src="js/script.js" type="module"></script>
   <!-- <script src="js/controls.js"></script> -->

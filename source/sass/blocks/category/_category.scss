@@ -19,10 +19,24 @@
     column-gap: $space;
   }
 
+  // @include media-tablet-landscape-up {
+  //   grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+  //   row-gap: $space*2;
+  //   column-gap: $space;
+  // }
+
   @include media-tablet-landscape-up {
-    grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
-    row-gap: $space*2;
-    column-gap: $space;
+    display: flex;
+    flex-wrap: wrap;
+    margin: $space*-0.25 0 0 $space*-0.25;
+  }
+}
+
+.category__item {
+  @include media-tablet-landscape-up {
+    flex-basis: 186px;
+    flex-grow: 1;
+    margin: $space*0.25 0 0 $space*0.25;
   }
 }
 
