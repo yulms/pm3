@@ -2,26 +2,37 @@
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 0 var(--page-paddings);
   list-style: none;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
+
 
 .breadcrumbs__item {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  padding-right: $space*0.5;
 
-  &:not(:last-child) {
-    margin-right: $space*0.5;
-
-    &::after {
+  &:not(:first-child) {
+    &::before {
       content: "/";
-      margin-left: $space*0.5;
+      margin-right: $space*0.5;
     }
   }
 }
 
 
 .breadcrumbs__link {
+  flex-shrink: 0;
   font-size: 0.75rem;
   text-decoration: none;
 }
