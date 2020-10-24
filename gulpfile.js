@@ -5,7 +5,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 
 const copyData = require('./gulp_tasks/copy-data');
-const minifyHTML = require('./gulp_tasks/minify-html');
+const makeHTML = require('./gulp_tasks/make-html');
 const makeCSS = require('./gulp_tasks/make-css').bind(null, browserSync);
 const makeRasterImages = require('./gulp_tasks/make-raster-images');
 const createSvgSprite = require('./gulp_tasks/create-svg-sprite');
@@ -16,7 +16,7 @@ const deploy = require('./gulp_tasks/deploy-to-github');
 
 const build = gulp.parallel(
   copyData,
-  minifyHTML,
+  makeHTML,
   makeCSS,
   makeRasterImages,
   createSvgSprite,
@@ -42,7 +42,7 @@ function server() {
   gulp.watch('source/img/svg/sprited/**/*.svg', gulp.series(createSvgSprite, reloadServer));
   gulp.watch('source/img/svg/others/**/*.svg', gulp.series(makeSvgBackground, reloadServer));
   gulp.watch('source/img/favicon/**', gulp.series(copyData, reloadServer));
-  gulp.watch('source/*.html', gulp.series(minifyHTML, reloadServer));
+  gulp.watch('source/**/*.html', gulp.series(makeHTML, reloadServer));
   gulp.watch('source/**/*.js', gulp.series(makeJs, reloadServer));
 }
 
@@ -54,6 +54,6 @@ function reloadServer(cb) {
 
 module.exports.server = server;
 module.exports.default = server;
-module.exports.build = gulp.series(clean, build, deploy);
+module.exports.build = gulp.series(clean, build);
 module.exports.start = gulp.series(clean, build, server);
 module.exports.deploy = deploy;

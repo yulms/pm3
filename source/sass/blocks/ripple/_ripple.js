@@ -154,7 +154,7 @@ class Ripple {
 function initRipple() {
   const rippleConfig = {
     selectors: [
-      'a',
+      'a[href]',
       'button:not(.button--modal-close)'
     ]
   };

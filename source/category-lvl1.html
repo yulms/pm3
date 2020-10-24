@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('./!head/_head.html')
+
+<body>
+
+  @@include('./header/_header.html')
+
+  <main class="main">
+
+    @@include('./breadcrumbs/_breadcrumbs.html', {"class": "main__breadcrumbs"})
+
+    <h1 class="title title--1 main__title">Кухонная посуда</h1>
+
+    @@include('./category/_category.html', {"class": "main__category"})
+
+
+
+  </main>
+
+  @@include('./footer/_footer.html')
+
+
+  @@include('./modal/_modal--choose-city.html')
+
+  <script src="js/script.js" type="module"></script>
+  <!-- <script src="js/controls.js"></script> -->
+</body>
+
+</html>
