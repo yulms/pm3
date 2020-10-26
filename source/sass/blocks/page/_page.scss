@@ -13,13 +13,6 @@
   margin-bottom: $space*4;
 }
 
-.page__promo-catalog {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $space*4;
-}
-
 .page__category {
   max-width: $max-width;
   margin-left: auto;
@@ -77,4 +70,12 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: $space*2;
+}
+
+.page__goods {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings);
 }
