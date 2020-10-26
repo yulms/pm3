@@ -1,68 +1,44 @@
 .banner {
+  // высота изображения,
+  // подразумевается, что она будет меняться миксом (block__another-block)
+  --image-height: auto;
+
+  position: relative;
+  display: block;
   color: $color-font__base;
   text-decoration: none;
-
-  @include media-tablet-portrait-down {
-    display: block;
-  }
-
-  @include media-tablet-landscape-up {
-    display: grid;
-    overflow: hidden;
-  }
+  overflow: hidden;
 }
+
 
 .banner__image-container {
   margin: 0;
-
-  @include media-tablet-landscape-up {
-    grid-row-start: 1;
-    grid-column-start: 1;
-  }
-
-  /* для предотвращения вываливания большого изображения за грид */
-  // min-height: 0; ???
+  height: var(--image-height);
 }
+
 
 .banner__image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  // max-height: 100%; ???
 }
 
-.banner__offer-container {
-  @include media-mobile-only {
-    text-align: center;
-  }
-
-  @include media-tablet-portrait-down {
-    padding: $space $space*0.5;
-  }
-
-  @include media-tablet-landscape-up {
-    /* на ширине более 608 блок с текстом баннера вкладывается в изображение */
-    grid-row-start: 1;
-    grid-column-start: 1;
-    z-index: 1;
-    align-self: start;
-    width: 60%;
-    min-width: 300px;
-    max-width: 420px;
-    max-height: 100%;
-    padding: $space*1.5;
-    background-color: $color__banner-offer;
-    overflow: hidden;
-  }
+.banner__offer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // width: 60%;
+  min-width: 300px;
+  max-width: 420px;
+  max-height: 100%;
+  padding: $space*1.5;
+  background-color: $color__banner-offer;
+  overflow: hidden;
 
   &--center {
-    align-self: center;
-  }
-
-  &--bottom {
-    align-self: end;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
