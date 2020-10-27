@@ -1,0 +1,176 @@
+<div class="carousel @@class">
+
+  <button class="button carousel__toggle carousel__toggle--left" type="button">
+    <span class="visually-hidden">Предыдущий слайд</span>
+    <svg class="carousel__toggle-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+    </svg>
+  </button>
+
+  <ul class="carousel__list">
+
+    @@if (carouselType === "minicard") {
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Набор кухонной посуды Peterhof PH-18256",
+      "filename": "img/raster/minicard-1.jpg",
+      "stickerModClass": "minicard__sticker--new",
+      "stickerCaption": "Новинка",
+      "brand": "BergHOFF"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Ножи Peterhof PH-18256",
+      "filename": "img/raster/minicard-2.jpg",
+      "stickerModClass": "minicard__sticker--hit",
+      "stickerCaption": "Хит",
+      "brand": "Peterhof"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Набор кухонной посуды Peterhof PH-18256",
+      "filename": "img/raster/minicard-3.jpg",
+      "stickerModClass": "minicard__sticker--new",
+      "stickerCaption": "Новинка",
+      "brand": "BergHOFF"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Набор кухонной посуды Peterhof PH-18256",
+      "filename": "img/raster/minicard-4.jpg",
+      "stickerModClass": "minicard__sticker--new",
+      "stickerCaption": "Новинка",
+      "brand": "BergHOFF"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Ножи Peterhof PH-18256",
+      "filename": "img/raster/minicard-5.jpg",
+      "stickerModClass": "minicard__sticker--hit",
+      "stickerCaption": "Хит",
+      "brand": "Peterhof"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Набор кухонной посуды Peterhof PH-18256",
+      "filename": "img/raster/minicard-6.jpg",
+      "stickerModClass": "minicard__sticker--new",
+      "stickerCaption": "Новинка",
+      "brand": "BergHOFF"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Набор кухонной посуды Peterhof PH-18256",
+      "filename": "img/raster/minicard-4.jpg",
+      "stickerModClass": "minicard__sticker--new",
+      "stickerCaption": "Новинка",
+      "brand": "BergHOFF"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Ножи Peterhof PH-18256",
+      "filename": "img/raster/minicard-5.jpg",
+      "stickerModClass": "minicard__sticker--hit",
+      "stickerCaption": "Хит",
+      "brand": "Peterhof"
+      })
+    </li>
+    <li class="carousel__item">
+      @@include("./minicard/_minicard.html", {
+      "class": "minicard--carousel",
+      "title": "Набор кухонной посуды Peterhof PH-18256",
+      "filename": "img/raster/minicard-6.jpg",
+      "stickerModClass": "minicard__sticker--new",
+      "stickerCaption": "Новинка",
+      "brand": "BergHOFF"
+      })
+    </li>
+    }
+
+
+    @@if (carouselType === "brands") {
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-1.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-2.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-3.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-4.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-5.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-6.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-7.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-8.png" alt="Bekker">
+      </a>
+    </li>
+    <li class="carousel__item">
+      <a class="image-container image-container--ratio-1-2" href="#">
+        <img class="image-container__image image-container__image--big-paddings" width="170" src="img/raster/brand-1.png" alt="Bekker">
+      </a>
+    </li>
+    }
+
+
+  </ul>
+
+  <button class="button carousel__toggle carousel__toggle--right" type="button">
+    <span class="visually-hidden">Следующий слайд</span>
+    <svg class="carousel__toggle-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+    </svg>
+  </button>
+
+  <ul class="bullets carousel__bullets">
+    <li>
+      <a class="bullets__link bullets__link--active" href="#"><span class="visually-hidden">Перейти к слайду 1</span></a>
+    </li>
+    <li>
+      <a class="bullets__link" href="#"><span class="visually-hidden">Перейти к слайду 2</span></a>
+    </li>
+    <li>
+      <a class="bullets__link" href="#"><span class="visually-hidden">Перейти к слайду 3</span></a>
+    </li>
+  </ul>
+
+</div>

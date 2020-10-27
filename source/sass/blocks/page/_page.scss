@@ -6,54 +6,38 @@
   margin-bottom: $space*8;
 }
 
-.page__promo-index {
+.page__section {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: $space*4;
-}
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings);
 
-.page__category {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $space*4;
-}
-
-.page__popular-goods {
-  margin-left: auto;
-  margin-bottom: $space*4;
-
-  @include media-tablet-landscape-down {
-    max-width: $max-width;
-    margin-right: auto;
+  &:not(:last-child) {
+    margin-bottom: $space*4;
   }
+}
 
+.page__section--carousel {
   @include media-desktop-up {
     max-width: calc((#{$max-width} + 100%) / 2);
     margin-right: 0;
   }
 }
 
-.page__catalog {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $space*4;
+// компенсация paddings отриц. margin для каруселей
+.page__carousel {
+  @include media-tablet-landscape-down {
+    margin-left: calc(var(--page-paddings) * -1);
+    margin-right: calc(var(--page-paddings) * -1);
+  }
 }
 
-.page__admin-content {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $space*4;
+
+.page__section-title {
+  margin: 0 0 $space*2;
 }
 
-.page__brands {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .page__title {
   max-width: $max-width;

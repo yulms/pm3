@@ -1,0 +1,30 @@
+<div class="minicard @@class">
+  <a class="minicard__link" href="#">
+    <h3 class="minicard__title">@@title</h3>
+    <p class="image-container minicard__image-container">
+      <img class="image-container__image" src="@@filename" alt="Открыть страницу покупки @@title">
+    </p>
+  </a>
+  <div class="minicard__stickers">
+    <strong class="minicard__sticker @@stickerModClass">@@stickerCaption</strong>
+  </div>
+  <p class="minicard__text-brand">
+    <span>Бренд:</span>
+    <span>@@brand</span>
+  </p>
+  <p class="price minicard__price">
+    <span class="price__current price__current--discount" aria-label="Текущая цена: ">
+      156<sup>80</sup> р.
+    </span>
+    <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+  </p>
+
+  @@include("./stars/_stars.html")
+
+  <button class="button minicard__love-button minicard__love-button--active" type="button">
+    <span class="visually-hidden">Добавить в избранные товары</span>
+    <svg class="minicard__love-icon icon icon--stroked" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="img/svg/_sprite.svg#icon-love"></use>
+    </svg>
+  </button>
+</div>

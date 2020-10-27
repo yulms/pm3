@@ -13,9 +13,25 @@
 
     <h1 class="title title--1 page__title">Кухонная посуда</h1>
 
-    @@include("./category/_category.html", {"class": "page__category", "page": "category-lvl1"})
+    <section class="page__section">
+      <h2 class="title title--2 page__section-title">Наборы посуды</h2>
+      @@include("./category-list/_category-list.html", {"itemsNumber": "15"})
+    </section>
 
-    @@include("./brands/_brands.html", {"class": "page__brands", "title": "Кухонная посуда по брендам"})
+    <section class="page__section">
+      <h2 class="title title--2 page__section-title">Посуда для сервировки</h2>
+      @@include("./category-list/_category-list.html", {"itemsNumber": "12"})
+    </section>
+
+    <section class="page__section">
+      <h2 class="title title--2 page__section-title">Посуда для чая</h2>
+      @@include("./category-list/_category-list.html", {"itemsNumber": "9"})
+    </section>
+
+    <section class="page__section page__section--carousel">
+      <h2 class="title title--2 page__section-title">Кухонная посуда по брендам</h2>
+      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "brands"})
+    </section>
 
   </main>
 

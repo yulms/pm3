@@ -10,17 +10,33 @@
   <main class="main page__main">
     <h1 class="visually-hidden">Интернет-магазин посуды</h1>
 
-    @@include("./promo-index/_promo-index.html", {"class": "page__promo-index"})
+    <section class="page__section promo-index page__promo-index">
+      @@include("./promo-index/_promo-index.html")
+    </section>
 
-    @@include("./category/_category.html", {"class": "page__category", "page": "index"})
+    <section class="page__section">
+      <h2 class="title title--2 page__section-title">Популярные категории</h2>
+      @@include("./category-list/_category-list.html", {"itemsNumber": "12"})
+    </section>
 
-    @@include("./popular-goods/_popular-goods.html", {"class": "page__popular-goods"})
+    <section class="page__section page__section--carousel">
+      <h2 class="title title--2 page__section-title">Популярные товары</h2>
+      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "minicard"})
+    </section>
 
-    @@include("./catalog/_catalog.html", {"class": "page__catalog"})
+    <section class="page__section">
+      <h2 class="title title--2 page__section-title">Каталог</h2>
+      @@include("./catalog1lvl/_catalog1lvl.html")
+    </section>
 
-    @@include("./admin-content/_admin-content.html", {"class": "page__admin-content"})
+    <article class="page__section admin-content">
+      @@include("./admin-content/_admin-content.html")
+    </article>
 
-    @@include("./brands/_brands.html", {"class": "page__brands", "title": "Наши бренды"})
+    <section class="page__section page__section--carousel">
+      <h2 class="title title--2 page__section-title">Наши бренды</h2>
+      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "brands"})
+    </section>
 
   </main>
 

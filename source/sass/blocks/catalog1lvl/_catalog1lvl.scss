@@ -1,13 +1,4 @@
-.catalog {
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings);
-}
-
-.catalog__title {
-  margin: 0 0 $space*2;
-}
-
-.catalog__list {
+.catalog1lvl {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   row-gap: $space;
@@ -24,7 +15,7 @@
   }
 }
 
-.catalog__link {
+.catalog1lvl__link {
   display: block;
   height: 100%;
   text-decoration: none;
@@ -39,22 +30,22 @@
   }
 }
 
-.catalog__figure {
+.catalog1lvl__figure {
   margin: 0;
 }
 
-.catalog__caption {
+.catalog1lvl__caption {
   word-break: break-word;
 }
 
-.catalog__image-container {
+.catalog1lvl__image-container {
   position: relative;
   z-index: -1;  // для outline
   padding-top: 100%;
   margin-bottom: $space*0.25;
 }
 
-.catalog__image {
+.catalog1lvl__image {
   display: block;
   position: absolute;
   top: 50%;

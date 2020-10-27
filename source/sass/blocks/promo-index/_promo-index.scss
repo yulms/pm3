@@ -4,9 +4,9 @@
     gap: $space*0.5;
   }
 
-  @include media-tablet-landscape-up {
-    padding-left: var(--page-paddings);
-    padding-right: var(--page-paddings);
+  @include media-tablet-portrait-down {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @include media-tablet-portrait-only {
