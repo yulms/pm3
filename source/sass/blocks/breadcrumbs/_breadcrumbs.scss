@@ -1,18 +1,18 @@
 .breadcrumbs__list {
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0 var(--page-paddings);
+  margin: 0 0 $space*-0.5;
+  padding: 0 var(--page-paddings) $space*0.5;
   list-style: none;
 
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 0;
+  //   height: 0;
+  // }
 }
 
 

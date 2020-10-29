@@ -36,6 +36,7 @@ $color__image-overlay: rgba(0, 0, 0, 0.04);
 $color__modal-overlay: rgba(34, 25, 36, 0.5);
 $color__banner-offer: hsla(0, 0%, 100%, 0.7);
 $color__error: #df000f;
+$color__disabled: rgba(0, 0, 0, 0.12);
 
 $color-font__base: #505050;
 $color-font__base-inverted: #cccccc;
@@ -62,7 +63,7 @@ $color-font__sale: #c91f24;
 $color-font__disable: rgba(0, 0, 0, 0.38);
 
 
-$controls__border-radius: 2px;
+$controls__border-radius: 4px;
 
 
 :root {

@@ -22,20 +22,25 @@
 @import "blocks/tooltip/tooltip";
 @import "blocks/city-choose/city-choose";
 @import "blocks/page/page";
+@import "blocks/chip-set/chip-set";
+//
+@import "blocks/breadcrumbs/breadcrumbs";
+@import "blocks/search-form/search-form";
+@import "blocks/category-list/category-list";
+@import "blocks/catalog1lvl/catalog1lvl";
+@import "blocks/carousel/carousel";
+@import "blocks/minicard/minicard";
+@import "blocks/price/price";
+@import "blocks/switch-view/switch-view";
 //
 @import "blocks/main/main";
 @import "blocks/banner/banner";
 @import "blocks/header/header";
-@import "blocks/breadcrumbs/breadcrumbs";
-@import "blocks/search-form/search-form";
 @import "blocks/main-nav/main-nav";
 @import "blocks/promo-index/promo-index";
 @import "blocks/promo-catalog/promo-catalog";
 @import "blocks/footer/footer";
-@import "blocks/category-list/category-list";
-@import "blocks/carousel/carousel";
-@import "blocks/catalog1lvl/catalog1lvl";
-@import "blocks/minicard/minicard";
+@import "blocks/content-goods/content-goods";
 @import "blocks/cart-list/cart-list";
-@import "blocks/price/price";
-@import "blocks/often-looking/often_looking";
+@import "blocks/often-looking/often-looking";
+@import "blocks/product-control/product-control";

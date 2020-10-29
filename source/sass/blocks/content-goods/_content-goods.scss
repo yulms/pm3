@@ -1,0 +1,17 @@
+.content-goods__breadcrumbs {
+  margin-left: calc(var(--page-paddings) * -1);
+  margin-right: calc(var(--page-paddings) * -1);
+  margin-bottom: $space*1.5;
+}
+
+.content-goods__title {
+  margin: 0 0 $space*1.5;
+}
+
+.content-goods__category-list {
+  margin-bottom: $space*1.5;
+}
+
+.content-goods__often-looking {
+  margin-bottom: $space*1.5;
+}

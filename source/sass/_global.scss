@@ -82,7 +82,7 @@ sub {
   margin: 0;
 }
 
-// :focus {
-//   outline: 2px dashed $color__primary;
-//   outline-offset: -2px;
-// }
+:focus {
+  outline: 2px dashed $color__primary;
+  outline-offset: -2px;
+}

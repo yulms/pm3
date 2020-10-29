@@ -3,7 +3,7 @@
 
 @@include("./!head/_head.html")
 
-<body class="page page--catalog">
+<body class="page">
 
   @@include("./header/_header.html", {"class": "page__header"})
 
@@ -32,6 +32,15 @@
       <h2 class="title title--2 page__section-title">Кухонная посуда по брендам</h2>
       @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "brands"})
     </section>
+
+    <section class="page__section page__section--carousel">
+      <h2 class="title title--2 page__section-title">Популярные товары</h2>
+      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "minicard"})
+    </section>
+
+    <article class="page__section admin-content">
+      @@include("./admin-content/_admin-content.html")
+    </article>
 
   </main>
 

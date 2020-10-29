@@ -9,17 +9,15 @@
 }
 
 .often-looking__list {
+  display: contents;
   flex-shrink: 1;
-  display: flex;
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-
 .often-looking__item {
   &:not(:last-child) {
-    // margin-right: $space;
+    margin-right: $space;
   }
 }

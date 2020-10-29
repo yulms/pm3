@@ -10,12 +10,6 @@
     column-gap: $space;
   }
 
-  // @include media-tablet-landscape-up {
-  //   grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
-  //   row-gap: $space*2;
-  //   column-gap: $space;
-  // }
-
   @include media-tablet-landscape-up {
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +42,8 @@
   align-items: center;
   height: 100%;
   margin: 0;
-  border-radius: 2px;
+  border-radius: $controls__border-radius;
+  overflow: hidden;
 
   @include media-tablet-portrait-down {
     padding: $space*0.25 0 $space*0.25 $space*0.5;

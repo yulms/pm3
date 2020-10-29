@@ -3,71 +3,64 @@
 
 @@include("./!head/_head.html")
 
-<body class="page page--catalog">
+<body class="page">
 
   @@include("./header/_header.html", {"class": "page__header"})
 
-  <main class="main page__main goods page__goods">
-    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs"})
+  <main class="main page__main content-goods page__content-goods">
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "content-goods__breadcrumbs"})
 
-    <header class="goods__header">
-      <h1 class="title title--2">Наборы посуды</h1>
+    <header class="content-goods__header">
 
-      <!-- @@include("./category-list/_category-list.html", {"page": "category-lvl2"}) -->
+      <h1 class="title title--2 content-goods__title">Наборы посуды</h1>
 
-      <div class="often-looking">
-        <span class="often-looking__label">Часто ищут:</span>
-        <ul class="often-looking__list">
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              для индукционной плиты
-            </a>
-          </li>
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              качественная
-            </a>
-          </li>
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              цена / качество
-            </a>
-          </li>
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              из нержавеющей стали
-            </a>
-          </li>
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              толстые стенки
-            </a>
-          </li>
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              лидеры продаж
-            </a>
-          </li>
-          <li class="often-looking__item">
-            <a class="link" href="#">
-              металлические ручки
-            </a>
-          </li>
-        </ul>
+      @@include("./category-list/_category-list.html", {
+      "itemsNumber": "12",
+      "class": "content-goods__category-list"
+      })
+
+      @@include("./often-looking/_often-looking.html", {"class": "content-goods__often-looking"})
+
+      <div class="product-control">
+
+        <div class="product-control__element product-control__switch-view switch-view">
+          @@include("./switch-view/_switch-view.html")
+        </div>
+
+        <div class="product-control__element product-control__quantity chip-set">
+          @@include("./chip-set/_chip-set.html", {"type": "goodsQuantity"})
+        </div>
+
+        <button class="product-control__element button button--options-primary product-control__filter-button" type="button">
+          Фильтр
+          <svg class="button__icon" width="24" height="24">
+            <use xlink:href="img/svg/_sprite.svg#icon-filter"></use>
+          </svg>
+        </button>
+
+        <div class="product-control__element">
+          <div class="product-control__sort chip-set">
+            @@include("./chip-set/_chip-set.html", {"type": "goodsSort"})
+          </div>
+        </div>
+
+        <div class="product-control__element">
+          <div class="product-control__filter-chips chip-set">
+            @@include("./chip-set/_chip-set.html", {"type": "filterChips"})
+          </div>
+        </div>
 
 
       </div>
 
 
 
-      <div class="product-control"></div>
-      <div class="filter-chips"></div>
-
 
     </header>
 
 
     <!-- Баннер - на мобильных вынести в конец -->
+    <!-- рефакторить css -->
     <!-- @@include("./promo-catalog/_promo-catalog.html", {"class": "page__promo-catalog"}) -->
 
     <!-- <aside class="page__aside">
