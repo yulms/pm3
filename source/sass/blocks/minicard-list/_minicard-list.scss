@@ -1,0 +1,20 @@
+.minicard-list {
+  --card-min-width: 160px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+  gap: $space;
+  margin: 0;
+  padding: $space 0;
+  list-style: none;
+  border-top: 1px solid $color__additional-2;
+
+  @include media-mobile-only {
+    column-gap: $space*0.5;
+  }
+
+  @include media-tablet-portrait-up {
+    --card-min-width: 250px;
+    column-gap: $space;
+  }
+}

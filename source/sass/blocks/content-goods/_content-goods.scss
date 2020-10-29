@@ -4,9 +4,26 @@
   margin-bottom: $space*1.5;
 }
 
-.content-goods__title {
-  margin: 0 0 $space*1.5;
+.content-goods__header {
+  margin-bottom: $space*2;
 }
+
+.content-goods__title-container {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0 0 $space*1.5 $space*-1;
+}
+
+.content-goods__title {
+  margin: 0 0 0 $space;
+}
+
+.content-goods__subtitle {
+  margin-left: $space;
+  color: $color-font__secondary;
+}
+
 
 .content-goods__category-list {
   margin-bottom: $space*1.5;
