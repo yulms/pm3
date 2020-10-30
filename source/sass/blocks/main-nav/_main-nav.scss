@@ -204,17 +204,21 @@
   }
 
   @include media-tablet-landscape-up {
-    max-width: 33%;
+    width: 33.33333%;
     margin: $space*-1.5 $space*-2 $space*-1.5 $space*2;
   }
 }
 
+.main-nav__banner-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .main-nav__banner-offer {
-  max-width: none;
-  // padding: var(--page-paddings);
-  // text-align: center;
-  position: static;
-  // transform: none;
+  width: 60%;
 }
 
 
