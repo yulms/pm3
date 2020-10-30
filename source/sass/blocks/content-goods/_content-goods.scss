@@ -5,7 +5,9 @@
 }
 
 .content-goods__header {
-  margin-bottom: $space*2;
+  margin-bottom: $space;
+  padding-bottom: $space*1.5;
+  border-bottom: 1px solid $color__additional-2;
 }
 
 .content-goods__title-container {

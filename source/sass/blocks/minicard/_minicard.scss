@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: $space*0.5 $space*0.5 $space;
 }
 
 .minicard__link {
@@ -12,7 +13,13 @@
 
 .minicard__image-container {
   order: -1;
-  margin-bottom: $space*0.5;
+  margin: 0 0 $space*0.5;
+}
+
+.minicard__image-container--full-width {
+  margin-top: $space*-0.5;
+  margin-left: $space*-0.5;
+  margin-right: $space*-0.5;
 }
 
 .minicard__title {
@@ -20,12 +27,6 @@
   font-size: 100%;
   font-weight: 500;
   color: $color-font__subtitle2;
-}
-
-.minicard--carousel .minicard__image-container {
-  margin-top: $space*-0.5;
-  margin-left: $space*-0.5;
-  margin-right: $space*-0.5;
 }
 
 .minicard--carousel .minicard__title {
@@ -127,6 +128,11 @@
   fill: $color__secondary-bright;
 }
 
-.carousel__bullets {
-  margin-top: $space;
+.minicard__delivery-info {
+  margin: $space*0.5 0 0;
+  color: $color-font__secondary;
+}
+
+.minicard--carousel .minicard__delivery-info {
+  display: none;
 }

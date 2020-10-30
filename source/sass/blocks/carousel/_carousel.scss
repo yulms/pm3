@@ -5,8 +5,8 @@
 
   @include media-mobile-only {
     --carousel-spacing: #{$space*0.5};
-    --items-number: 2.5;
-    --space-between: #{$space*2};
+    --items-number: 1.8;
+    --space-between: #{$space*1};
   }
 
   @include media-tablet-portrait-up {
@@ -52,7 +52,6 @@
 .carousel__item {
   flex-shrink: 0;
   max-width: $space*15;
-  padding: $space*0.5;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -133,4 +132,8 @@
     stroke: currentColor;
     fill: none;
   }
+}
+
+.carousel__bullets {
+  margin-top: $space;
 }

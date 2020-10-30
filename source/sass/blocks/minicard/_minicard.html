@@ -1,7 +1,7 @@
 <div class="minicard @@class">
   <a class="minicard__link" href="#">
     <h3 class="minicard__title">@@title</h3>
-    <p class="image-container minicard__image-container">
+    <p class="image-container minicard__image-container @@class2">
       <img class="image-container__image" src="@@filename" alt="Открыть страницу покупки @@title">
     </p>
   </a>
@@ -20,6 +20,10 @@
   </p>
 
   @@include("./stars/_stars.html")
+
+  <p class="minicard__delivery-info">
+    Доставка: сегодня после 18-00, бесплатно
+  </p>
 
   <button class="button minicard__love-button" type="button">
     <span class="visually-hidden">Добавить в избранные товары</span>
