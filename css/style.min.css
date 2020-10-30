@@ -880,56 +880,6 @@ sub {
   text-decoration: underline;
   text-underline-position: under; }
 
-.page__header {
-  margin-bottom: 1rem; }
-
-.page__main {
-  margin-bottom: 8rem; }
-
-.page__section {
-  max-width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings); }
-  .page__section:not(:last-child) {
-    margin-bottom: 4rem; }
-
-@media (min-width: 1280px) {
-  .page__section--carousel {
-    max-width: calc((1450px + 100%) / 2);
-    margin-right: 0; } }
-
-@media (max-width: 1279px) {
-  .page__carousel {
-    margin-left: calc(var(--page-paddings) * -1);
-    margin-right: calc(var(--page-paddings) * -1); } }
-
-.page__section-title {
-  margin: 0 0 2rem; }
-
-.page__title {
-  max-width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings); }
-
-.page__breadcrumbs {
-  max-width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem; }
-
-.page__content-goods {
-  max-width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings); }
-
 .chip-set {
   flex-shrink: 0;
   display: flex;
@@ -1217,13 +1167,16 @@ sub {
   width: 100%; }
 
 .carousel {
-  --carousel-spacing: 1rem;
-  position: relative;
-  overflow: hidden; }
+  --carousel-extra-space: 16px;
+  position: relative; }
   @media (max-width: 607px) {
     .carousel {
+      --carousel-spacing: 0.5rem;
       --items-number: 2.5;
       --space-between: 2rem; } }
+  @media (min-width: 608px) {
+    .carousel {
+      --carousel-spacing: 1rem; } }
   @media (min-width: 608px) and (max-width: 979px) {
     .carousel {
       --items-number: 3.5;
@@ -1239,26 +1192,26 @@ sub {
 
 .carousel__list {
   display: flex;
-  margin: 0;
+  padding: 3rem var(--carousel-extra-space);
+  margin: -3rem calc(var(--carousel-extra-space) * -1);
   list-style: none;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth; }
-  @media (max-width: 1279px) {
-    .carousel__list {
-      padding: 0 var(--page-paddings); } }
-  @media (min-width: 1280px) {
-    .carousel__list {
-      padding: 0; } }
+  -webkit-overflow-scrolling: touch; }
   .carousel__list::-webkit-scrollbar {
     width: 0;
     height: 0; }
 
 .carousel__item {
   flex-shrink: 0;
-  scroll-snap-align: start;
-  scroll-margin-left: var(--page-paddings);
-  max-width: 15rem; }
+  max-width: 15rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; }
+  .carousel__item:hover, .carousel__item:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
   .carousel__item:not(:last-child) {
     margin-right: var(--carousel-spacing); }
   @media (max-width: 1279px) {
@@ -1304,8 +1257,7 @@ sub {
 .minicard {
   position: relative;
   display: flex;
-  flex-direction: column;
-  padding-bottom: 1rem; }
+  flex-direction: column; }
 
 .minicard__link {
   display: flex;
@@ -1321,6 +1273,11 @@ sub {
   font-size: 100%;
   font-weight: 500;
   color: #191919; }
+
+.minicard--carousel .minicard__image-container {
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem; }
 
 .minicard--carousel .minicard__title {
   /* ограничение высоты 2 строки */
@@ -1344,15 +1301,20 @@ sub {
   position: absolute;
   top: 0;
   left: 0;
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.25rem 0 0;
   pointer-events: none; }
 
 .minicard__sticker {
-  padding: 0.25rem 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px; }
+  .minicard__sticker:not(:last-child) {
+    margin-right: 0.25rem; }
   .minicard__sticker--hit {
     color: #191919;
     background-color: #ffd343; }
@@ -1395,6 +1357,9 @@ sub {
 .carousel__bullets {
   margin-top: 1rem; }
 
+.price {
+  word-break: break-word; }
+
 .price__current {
   font-size: 171.4285%;
   line-height: 2rem;
@@ -1431,6 +1396,54 @@ sub {
 .switch-view__input:hover + .switch-view__icon,
 .switch-view__input:focus + .switch-view__icon {
   background-color: #faf9f7; }
+
+.page__header {
+  margin-bottom: 1rem; }
+
+.page__main {
+  margin-bottom: 8rem; }
+
+.page__section {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings); }
+  .page__section:not(:last-child) {
+    margin-bottom: 4rem; }
+
+@media (min-width: 1280px) {
+  .page__section--carousel {
+    max-width: calc((1450px + 100%) / 2);
+    margin-right: 0; } }
+
+.page__carousel {
+  --carousel-extra-space: var(--page-paddings); }
+
+.page__section-title {
+  margin: 0 0 2rem; }
+
+.page__title {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings); }
+
+.page__breadcrumbs {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem; }
+
+.page__content-goods {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings); }
 
 .main {
   position: relative;
@@ -2129,8 +2142,18 @@ sub {
 
 @media (min-width: 980px) {
   .main-nav__banner {
-    max-width: 33%;
+    width: 33.33333%;
     margin: -1.5rem -2rem -1.5rem 2rem; } }
+
+.main-nav__banner-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.main-nav__banner-offer {
+  width: 60%; }
 
 .main-nav__close-container {
   display: none; }
@@ -2669,17 +2692,13 @@ sub {
   --card-min-width: 160px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-  gap: 1rem;
+  row-gap: 1rem;
   margin: 0;
   padding: 1rem 0;
   list-style: none;
   border-top: 1px solid #e0e0e0; }
-  @media (max-width: 607px) {
-    .minicard-list {
-      column-gap: 0.5rem; } }
   @media (min-width: 608px) {
     .minicard-list {
-      --card-min-width: 250px;
-      column-gap: 1rem; } }
+      --card-min-width: 250px; } }
 
 /*# sourceMappingURL=style.min.css.map */
