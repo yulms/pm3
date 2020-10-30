@@ -2698,7 +2698,6 @@ sub {
     flex-wrap: wrap; } }
 
 .minicard-list {
-  --card-min-width: 160px;
   --row-gap: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
@@ -2706,6 +2705,9 @@ sub {
   margin: 0 -0.5rem;
   padding: 0;
   list-style: none; }
+  @media (max-width: 607px) {
+    .minicard-list {
+      --card-min-width: 160px; } }
   @media (min-width: 608px) {
     .minicard-list {
       --card-min-width: 250px; } }
