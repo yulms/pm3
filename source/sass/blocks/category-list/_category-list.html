@@ -56,3 +56,17 @@
   ])
 </ul>
 }
+
+
+@@if (itemsNumber === "6") {
+<ul class="category-list @@class">
+  @@loop('./category-list/_category-list__item.html', [
+  {"name": "Наборы посуды", "filename": "popular-cat-1.jpg"},
+  {"name": "Наборы тарелок", "filename": "popular-cat-2.jpg"},
+  {"name": "Чайники", "filename": "popular-cat-3.jpg"},
+  {"name": "Сковороды", "filename": "popular-cat-4.jpg"},
+  {"name": "Наборы ножей", "filename": "popular-cat-5.jpg"},
+  {"name": "Френч-прессы", "filename": "popular-cat-6.jpg"},
+  ])
+</ul>
+}
