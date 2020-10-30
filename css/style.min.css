@@ -1172,8 +1172,8 @@ sub {
   @media (max-width: 607px) {
     .carousel {
       --carousel-spacing: 0.5rem;
-      --items-number: 2.5;
-      --space-between: 2rem; } }
+      --items-number: 1.8;
+      --space-between: 1rem; } }
   @media (min-width: 608px) {
     .carousel {
       --carousel-spacing: 1rem; } }
@@ -1204,7 +1204,6 @@ sub {
 .carousel__item {
   flex-shrink: 0;
   max-width: 15rem;
-  padding: 0.5rem;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1254,10 +1253,14 @@ sub {
     stroke: currentColor;
     fill: none; } }
 
+.carousel__bullets {
+  margin-top: 1rem; }
+
 .minicard {
   position: relative;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 1rem; }
 
 .minicard__link {
   display: flex;
@@ -1266,18 +1269,18 @@ sub {
 
 .minicard__image-container {
   order: -1;
-  margin-bottom: 0.5rem; }
+  margin: 0 0 0.5rem; }
+
+.minicard__image-container--full-width {
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem; }
 
 .minicard__title {
   margin: 0;
   font-size: 100%;
   font-weight: 500;
   color: #191919; }
-
-.minicard--carousel .minicard__image-container {
-  margin-top: -0.5rem;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem; }
 
 .minicard--carousel .minicard__title {
   /* ограничение высоты 2 строки */
@@ -1354,8 +1357,12 @@ sub {
 .minicard__love-button--active .minicard__love-icon {
   fill: #f4b606; }
 
-.carousel__bullets {
-  margin-top: 1rem; }
+.minicard__delivery-info {
+  margin: 0.5rem 0 0;
+  color: #757575; }
+
+.minicard--carousel .minicard__delivery-info {
+  display: none; }
 
 .price {
   word-break: break-word; }
@@ -2531,7 +2538,9 @@ sub {
   margin-bottom: 1.5rem; }
 
 .content-goods__header {
-  margin-bottom: 2rem; }
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0; }
 
 .content-goods__title-container {
   display: flex;
@@ -2690,15 +2699,34 @@ sub {
 
 .minicard-list {
   --card-min-width: 160px;
+  --row-gap: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-  row-gap: 1rem;
-  margin: 0;
-  padding: 1rem 0;
-  list-style: none;
-  border-top: 1px solid #e0e0e0; }
+  row-gap: var(--row-gap);
+  margin: 0 -0.5rem;
+  padding: 0;
+  list-style: none; }
   @media (min-width: 608px) {
     .minicard-list {
       --card-min-width: 250px; } }
+
+.minicard-list__item {
+  position: relative; }
+  .minicard-list__item::after {
+    content: "";
+    position: absolute;
+    bottom: calc(var(--row-gap) / -2);
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 1px;
+    border: 1px dashed #e0e0e0; }
+
+.minicard-list__item-inner {
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
+  .minicard-list__item-inner:hover, .minicard-list__item-inner:focus-within {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 /*# sourceMappingURL=style.min.css.map */
