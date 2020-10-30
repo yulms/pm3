@@ -27,10 +27,7 @@
 
 // компенсация paddings отриц. margin для каруселей
 .page__carousel {
-  @include media-tablet-landscape-down {
-    margin-left: calc(var(--page-paddings) * -1);
-    margin-right: calc(var(--page-paddings) * -1);
-  }
+  --carousel-extra-space: var(--page-paddings);
 }
 
 

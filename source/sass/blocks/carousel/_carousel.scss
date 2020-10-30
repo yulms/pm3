@@ -1,9 +1,16 @@
 .carousel {
-  --carousel-spacing: #{$space};
+  --carousel-extra-space: 16px;
+
+  position: relative;
 
   @include media-mobile-only {
+    --carousel-spacing: #{$space*0.5};
     --items-number: 2.5;
     --space-between: #{$space*2};
+  }
+
+  @include media-tablet-portrait-up {
+    --carousel-spacing: #{$space};
   }
 
   @include media-tablet-portrait-only {
@@ -20,29 +27,20 @@
     --items-number: 7;
     --space-between: #{$space*6};
   }
-
-  position: relative;
-  overflow: hidden;
 }
 
 
 .carousel__list {
   display: flex;
-  margin: 0;
+  padding: 3rem var(--carousel-extra-space);
+  margin: -3rem calc(var(--carousel-extra-space) * -1);
   list-style: none;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   // scroll-snap-type: x mandatory;
   // scroll-snap-type: x proximity;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 
-  @include media-tablet-landscape-down {
-    padding: 0 var(--page-paddings);
-  }
-
-  @include media-desktop-up {
-    padding: 0;
-  }
 
   &::-webkit-scrollbar {
     width: 0;
@@ -53,9 +51,21 @@
 
 .carousel__item {
   flex-shrink: 0;
-  scroll-snap-align: start;
-  scroll-margin-left: var(--page-paddings);
   max-width: $space*15;
+  padding: $space*0.5;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  // scroll-snap-align: start;
+  // scroll-margin-left: var(--page-paddings);
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-5px);
+    // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 
   &:not(:last-child) {
     margin-right: var(--carousel-spacing);

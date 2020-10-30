@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom: $space;
 }
 
 .minicard__link {
@@ -21,6 +20,12 @@
   font-size: 100%;
   font-weight: 500;
   color: $color-font__subtitle2;
+}
+
+.minicard--carousel .minicard__image-container {
+  margin-top: $space*-0.5;
+  margin-left: $space*-0.5;
+  margin-right: $space*-0.5;
 }
 
 .minicard--carousel .minicard__title {
@@ -48,16 +53,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: $space*-0.25 0 0;
   pointer-events: none;
 }
 
 .minicard__sticker {
-  padding: $space*0.25 $space*0.5;
+  margin-top: $space*0.25;
+  padding: 0 $space*0.5;
   font-size: 0.75rem;
   font-weight: 500;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+
+  &:not(:last-child) {
+    margin-right: $space*0.25;
+  }
 
   &--hit {
     color: $color-font__subtitle2;
