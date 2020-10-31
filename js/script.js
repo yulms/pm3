@@ -1,4 +1,5 @@
 import initHeaderTopMenu from './_header__top-menu.js';
+import initMainNav from './_main-nav.js';
 import initBoundedModals from './_modal--bounded.js';
 import initModal from './_modal.js';
 import initQuantityInput from './_quantity-input.js';
@@ -11,6 +12,7 @@ import initSwitchView from './_switch-view.js';
 
 const projectObjects = { // eslint-disable-line
   headerTopMenu: initHeaderTopMenu(),
+  mainNav: initMainNav(),
   modalsBounded: initBoundedModals(),
   modal: initModal(),
   quantityInput: initQuantityInput(),

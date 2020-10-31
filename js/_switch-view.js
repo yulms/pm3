@@ -14,8 +14,9 @@ class SwitchView {
 
 
     this.gridTriggerElement = document.querySelector(this.gridTriggerSelector);
-    this.listTriggerElement = document.querySelector(this.listTriggerSelector);
+    if (!this.gridTriggerElement) return;
 
+    this.listTriggerElement = document.querySelector(this.listTriggerSelector);
     this._addHandlers();
   }
 
