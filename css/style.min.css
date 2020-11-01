@@ -1404,6 +1404,99 @@ sub {
 .switch-view__input:focus + .switch-view__icon {
   background-color: #faf9f7; }
 
+.pagination {
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0; }
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.pagination__item:first-child {
+  margin-right: 1.5rem; }
+
+.pagination__item:last-child {
+  margin-left: 1.5rem; }
+
+.pagination__link {
+  display: block;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #757575;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-skip-ink: none; }
+  .pagination__link:hover:not(.pagination__link--active), .pagination__link:focus:not(.pagination__link--active) {
+    color: #01768b; }
+
+.pagination__link--active {
+  color: #191919;
+  text-decoration: none;
+  cursor: default; }
+
+.pagination__link-arrow {
+  display: block;
+  padding: calc(1rem * 0.5 - 2px);
+  color: #888888;
+  border: 2px solid #01768b;
+  border-radius: 4px; }
+  .pagination__link-arrow:hover:not(.pagination__link-arrow--disabled), .pagination__link-arrow:focus:not(.pagination__link-arrow--disabled) {
+    background-color: rgba(1, 118, 139, 0.07);
+    color: #01768b; }
+  .pagination__link-arrow--disabled {
+    background-color: #faf9f7;
+    border-color: #e0e0e0;
+    cursor: default; }
+
+.pagination__icon-arrow {
+  display: block; }
+
+.pagination__link-arrow--previous-page .pagination__icon-arrow {
+  transform: rotate(90deg) translateY(-1px); }
+
+.pagination__link-arrow--next-page .pagination__icon-arrow {
+  transform: rotate(-90deg) translateY(-1px); }
+
+.minicard-list {
+  --row-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+  row-gap: var(--row-gap);
+  margin: 0 -0.5rem;
+  padding: 0 0 calc((var(--row-gap) / 2) - 1px);
+  list-style: none;
+  border-bottom: 1px solid #ffffff; }
+  @media (max-width: 607px) {
+    .minicard-list {
+      --card-min-width: 160px; } }
+  @media (min-width: 608px) {
+    .minicard-list {
+      --card-min-width: 250px; } }
+
+.minicard-list__item {
+  position: relative; }
+  .minicard-list__item::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: calc(var(--row-gap) / -2);
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 1px;
+    border-bottom: 1px dashed #e0e0e0; }
+
+.minicard-list__item-inner {
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
+  .minicard-list__item-inner:hover, .minicard-list__item-inner:focus-within {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
 .page__header {
   margin-bottom: 1rem; }
 
@@ -2561,6 +2654,9 @@ sub {
 .content-goods__often-looking {
   margin-bottom: 1.5rem; }
 
+.content-goods__minicard-list {
+  margin-bottom: 1rem; }
+
 .cart-list {
   margin: 0;
   padding: 0;
@@ -2696,39 +2792,5 @@ sub {
   .product-control__sort,
   .product-control__filter-chips {
     flex-wrap: wrap; } }
-
-.minicard-list {
-  --row-gap: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-  row-gap: var(--row-gap);
-  margin: 0 -0.5rem;
-  padding: 0;
-  list-style: none; }
-  @media (max-width: 607px) {
-    .minicard-list {
-      --card-min-width: 160px; } }
-  @media (min-width: 608px) {
-    .minicard-list {
-      --card-min-width: 250px; } }
-
-.minicard-list__item {
-  position: relative; }
-  .minicard-list__item::after {
-    content: "";
-    position: absolute;
-    bottom: calc(var(--row-gap) / -2);
-    left: 0.5rem;
-    right: 0.5rem;
-    height: 1px;
-    border: 1px dashed #e0e0e0; }
-
-.minicard-list__item-inner {
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
-  .minicard-list__item-inner:hover, .minicard-list__item-inner:focus-within {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 /*# sourceMappingURL=style.min.css.map */
