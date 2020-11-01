@@ -1,9 +1,3 @@
 .promo-catalog {
-  @include media-tablet-portrait-down {
-    display: none;
-  }
-}
 
-.promo-catalog__banner {
-  --image-height: 240px;
 }

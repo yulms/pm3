@@ -1,4 +1,8 @@
 .minicard-list {
+
+}
+
+.minicard-list__list {
   --row-gap: #{$space*2};
 
   @include media-mobile-only {
@@ -38,7 +42,7 @@
 
 .minicard-list__item-inner {
   height: 100%;
-  border-radius: 8px;
+  border-radius: $cards__border-radius;
   overflow: hidden;
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 

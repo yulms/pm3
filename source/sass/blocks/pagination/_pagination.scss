@@ -1,4 +1,12 @@
 .pagination {
+  @media (max-width: 399px) {
+    --arrow-margin: #{$space};
+  }
+
+  @media (min-width: 400px) {
+    --arrow-margin: #{$space*1.5};
+  }
+
   padding-top: $space;
   border-top: 1px solid $color__additional-2;
 }
@@ -8,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -15,11 +24,11 @@
 
 .pagination__item {
   &:first-child {
-    margin-right: $space*1.5;
+    margin-right: var(--arrow-margin);
   }
 
   &:last-child {
-    margin-left: $space*1.5;
+    margin-left: var(--arrow-margin);
   }
 }
 
@@ -68,6 +77,11 @@
 
 .pagination__icon-arrow {
   display: block;
+  width: $space * 2;
+  height: $space * 2;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
 }
 
 

@@ -22,7 +22,10 @@
       "class": "content-goods__category-list"
       })
 
-      @@include("./often-looking/_often-looking.html", {"class": "content-goods__often-looking"})
+
+      <div class="often-looking content-goods__often-looking">
+        @@include("./often-looking/_often-looking.html", {"position": "top"})
+      </div>
 
       <div class="product-control">
 
@@ -58,234 +61,269 @@
 
     </header>
 
-    <ul class="minicard-list content-goods__minicard-list">
+    <section class="minicard-list content-goods__minicard-list">
+      <ul class="minicard-list__list">
 
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-1.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Ножи Peterhof PH-18256",
-          "filename": "img/raster/minicard-2.jpg",
-          "stickerModClass": "minicard__sticker--hit",
-          "stickerCaption": "Хит",
-          "brand": "Peterhof"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды на 159 персон для больших компаний Peterhof PH-18256",
-          "filename": "img/raster/minicard-3.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-4.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Ножи Peterhof PH-18256",
-          "filename": "img/raster/minicard-5.jpg",
-          "stickerModClass": "minicard__sticker--hit",
-          "stickerCaption": "Хит",
-          "brand": "Peterhof"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-6.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-4.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-1.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Ножи Peterhof PH-18256",
-          "filename": "img/raster/minicard-2.jpg",
-          "stickerModClass": "minicard__sticker--hit",
-          "stickerCaption": "Хит",
-          "brand": "Peterhof"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-3.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-4.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Ножи Peterhof PH-18256",
-          "filename": "img/raster/minicard-5.jpg",
-          "stickerModClass": "minicard__sticker--hit",
-          "stickerCaption": "Хит",
-          "brand": "Peterhof"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-6.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-4.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-4.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Ножи Peterhof PH-18256",
-          "filename": "img/raster/minicard-5.jpg",
-          "stickerModClass": "minicard__sticker--hit",
-          "stickerCaption": "Хит",
-          "brand": "Peterhof"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-6.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
-      <li class="minicard-list__item">
-        <div class="minicard-list__item-inner">
-          @@include("./minicard/_minicard.html", {
-          "class": "",
-          "title": "Набор кухонной посуды Peterhof PH-18256",
-          "filename": "img/raster/minicard-4.jpg",
-          "stickerModClass": "minicard__sticker--new",
-          "stickerCaption": "Новинка",
-          "brand": "BergHOFF"
-          })
-        </div>
-      </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-1.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Ножи Peterhof PH-18256",
+            "filename": "img/raster/minicard-2.jpg",
+            "stickerModClass": "minicard__sticker--hit",
+            "stickerCaption": "Хит",
+            "brand": "Peterhof"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды на 159 персон для больших компаний Peterhof PH-18256",
+            "filename": "img/raster/minicard-3.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-4.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Ножи Peterhof PH-18256",
+            "filename": "img/raster/minicard-5.jpg",
+            "stickerModClass": "minicard__sticker--hit",
+            "stickerCaption": "Хит",
+            "brand": "Peterhof"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-6.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-4.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-1.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Ножи Peterhof PH-18256",
+            "filename": "img/raster/minicard-2.jpg",
+            "stickerModClass": "minicard__sticker--hit",
+            "stickerCaption": "Хит",
+            "brand": "Peterhof"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-3.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-4.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Ножи Peterhof PH-18256",
+            "filename": "img/raster/minicard-5.jpg",
+            "stickerModClass": "minicard__sticker--hit",
+            "stickerCaption": "Хит",
+            "brand": "Peterhof"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-6.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-4.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-4.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Ножи Peterhof PH-18256",
+            "filename": "img/raster/minicard-5.jpg",
+            "stickerModClass": "minicard__sticker--hit",
+            "stickerCaption": "Хит",
+            "brand": "Peterhof"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-6.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
+        <li class="minicard-list__item">
+          <div class="minicard-list__item-inner">
+            @@include("./minicard/_minicard.html", {
+            "class": "",
+            "title": "Набор кухонной посуды Peterhof PH-18256",
+            "filename": "img/raster/minicard-4.jpg",
+            "stickerModClass": "minicard__sticker--new",
+            "stickerCaption": "Новинка",
+            "brand": "BergHOFF"
+            })
+          </div>
+        </li>
 
-    </ul>
+      </ul>
 
+      @@include("./pagination/_pagination.html")
+    </section>
 
-    @@include("./pagination/_pagination.html")
+    <div class="often-looking content-goods__often-looking-bottom">
+      @@include("./often-looking/_often-looking.html", {"position": "bottom"})
+    </div>
 
+    <section class="content-goods__brands">
+      <h2 class="title title--2 page__section-title">Наборы посуды по брендам</h2>
+      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "brands"})
+    </section>
+
+    <article class="admin-content content-goods__admin-content">
+      @@include("./admin-content/_admin-content.html", {"page": "other"})
+    </article>
 
     <!-- Баннер - на мобильных вынести в конец -->
-    <!-- рефакторить css -->
-    <!-- @@include("./promo-catalog/_promo-catalog.html", {"class": "page__promo-catalog"}) -->
+    <section class="content-goods__promo">
+      <h2 class="visually-hidden">Акции и специальные предложения</h2>
+
+      <a class="banner content-goods__banner" href="#">
+
+        <h3 class="visually-hidden">Специальное предложение к дню Святого Валентина!</h3>
+
+        <p class="banner__image-container">
+          <img class="banner__image" src="img/raster/banner-6.webp" width="320" alt="Перейти к предложению">
+        </p>
+
+        <div class="banner__offer content-goods__banner-offer">
+          <p class="title title--3 banner__title">Специальное предложение</p>
+          <p class="banner__text">Только к празнику всех влюбленных кастрюльки для вашей половинки по сниженной цене</p>
+          <p class="banner__text">
+            <strong class="banner__call2action-text">Скидки до 40%</strong>
+          </p>
+          <span class="button button--action-secondary">Подробнее</span>
+        </div>
+      </a>
+
+    </section>
+
+
 
     <!-- <aside class="page__aside">
       <section class="filter">Здесь будет фильтр</section>
