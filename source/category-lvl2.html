@@ -8,6 +8,9 @@
   @@include("./header/_header.html", {"class": "page__header"})
 
   <main class="main page__main content-goods page__content-goods">
+    <!-- TODO пересмотреть семантику - теги, заголовки -->
+
+
     @@include("./breadcrumbs/_breadcrumbs.html", {"class": "content-goods__breadcrumbs"})
 
     <header class="content-goods__header">
@@ -62,7 +65,7 @@
     </header>
 
     <section class="minicard-list content-goods__minicard-list">
-      <ul class="minicard-list__list">
+      <ul class="minicard-list__list minicard-list__list--grid">
 
         <li class="minicard-list__item">
           <div class="minicard-list__item-inner">
@@ -299,7 +302,6 @@
       @@include("./admin-content/_admin-content.html", {"page": "other"})
     </article>
 
-    <!-- Баннер - на мобильных вынести в конец -->
     <section class="content-goods__promo">
       <h2 class="visually-hidden">Акции и специальные предложения</h2>
 

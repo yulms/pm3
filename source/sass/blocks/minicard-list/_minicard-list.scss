@@ -2,9 +2,22 @@
 
 }
 
+
 .minicard-list__list {
   --row-gap: #{$space*2};
 
+  display: grid;
+  row-gap: var(--row-gap);
+  margin: 0 $space*-0.5;
+  padding: 0;
+  list-style: none;
+  // перекрытие border-bottom в нижем ряду items
+  padding-bottom: calc((var(--row-gap) / 2) - 1px);
+  border-bottom: 1px solid $color__background;
+}
+
+
+.minicard-list__list--grid {
   @include media-mobile-only {
     --card-min-width: 160px;
   }
@@ -13,14 +26,12 @@
     --card-min-width: 250px;
   }
 
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-  row-gap: var(--row-gap);
-  margin: 0 $space*-0.5;
-  padding: 0 0 calc((var(--row-gap) / 2) - 1px);
-  list-style: none;
-  // перекрытие border-bottom в нижем ряду items
-  border-bottom: 1px solid $color__background;
+}
+
+
+.minicard-list__list--list {
+  grid-template-columns: 100%;
 }
 
 
