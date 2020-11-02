@@ -16,7 +16,7 @@ class MainNav {
     this._firstClickedElement = null;
 
 
-    if (this._detectTouchSupport()) {
+    if (this._isTouchDevice()) {
       this._init();
       this._enableFirstClickPrevention();
     }
@@ -26,7 +26,7 @@ class MainNav {
     this._mainElement = document.querySelector(this.mainSelector);
   }
 
-  _detectTouchSupport() {
+  _isTouchDevice() {
     let isTouchSupport = true;
     try {
       document.createEvent('TouchEvent');
@@ -42,8 +42,18 @@ class MainNav {
       let target = evt.target.closest(this.firstLevelLinkSelector);
       if (!target) return;
 
+      // если по элементу кликнули первый раз
       if (this._firstClickedElement !== target) {
+        //отменяем переход по ссылке
         evt.preventDefault();
+        // При клике за пределами меню (закрытие меню)
+        // обнулить _firstClickedElement и удалить обработчик
+        document.addEventListener('click', (evt) => {
+          let target = evt.target.closest(this.mainListSelector);
+          if (!target) {
+            this._firstClickedElement = null;
+          }
+        }, {capture: true, once: true});
       }
 
       this._firstClickedElement = target;
