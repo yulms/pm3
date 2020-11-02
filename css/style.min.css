@@ -1258,18 +1258,38 @@ sub {
 
 .minicard {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid; }
+
+.minicard--grid {
   padding: 0.5rem 0.5rem 1rem; }
 
+.minicard--list {
+  grid-template-columns: minmax(5rem, 18rem) auto;
+  grid-template-rows: repeat(8, auto);
+  column-gap: var(--column-gap);
+  padding: var(--padding); }
+  @media (max-width: 607px) {
+    .minicard--list {
+      --column-gap: 0.5rem;
+      --padding: 0.5rem; } }
+  @media (min-width: 608px) {
+    .minicard--list {
+      --column-gap: 1rem;
+      --padding: 1rem; } }
+
 .minicard__link {
-  display: flex;
-  flex-direction: column;
+  display: contents;
   text-decoration: none; }
 
 .minicard__image-container {
-  order: -1;
+  order: -1; }
+
+.minicard--grid .minicard__image-container {
   margin: 0 0 0.5rem; }
+
+.minicard--list .minicard__image-container {
+  grid-row: 1/-1;
+  margin: 0; }
 
 .minicard__image-container--full-width {
   margin-top: -0.5rem;
@@ -1277,19 +1297,24 @@ sub {
   margin-right: -0.5rem; }
 
 .minicard__title {
-  margin: 0;
   font-size: 100%;
   font-weight: 500;
   color: #191919; }
 
+.minicard--grid .minicard__title {
+  margin: 0; }
+
+.minicard--list .minicard__title {
+  margin: 0 0 0.5rem; }
+
 .minicard--carousel .minicard__title {
   /* ограничение высоты 2 строки */
-  /* stylelint-disable-next-line */
   display: -webkit-box;
+  /* stylelint-disable-line */
   height: 3rem;
   -webkit-line-clamp: 2;
-  /* stylelint-disable-next-line */
   -webkit-box-orient: vertical;
+  /* stylelint-disable-line */
   text-overflow: ellipsis;
   overflow: hidden; }
 
@@ -1299,6 +1324,43 @@ sub {
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-skip-ink: none; }
+
+.minicard__brand {
+  margin: 0;
+  color: #757575; }
+
+.minicard-carousel {
+  display: none; }
+
+.minicard--grid .minicard__options {
+  display: none; }
+
+.minicard__options {
+  margin: 0 0 0.5rem;
+  color: #757575; }
+
+.minicard__options-dt {
+  float: left;
+  margin-right: 0.5rem; }
+  .minicard__options-dt::after {
+    content: ":"; }
+
+.minicard__options-dd {
+  margin: 0; }
+
+.minicard__price {
+  margin: 0 0 0.5rem;
+  padding-top: 0.5rem; }
+
+.minicard__stars {
+  margin-bottom: 0.5rem; }
+
+.minicard__delivery-info {
+  margin: 0;
+  color: #757575; }
+
+.minicard--carousel .minicard__delivery-info {
+  display: none; }
 
 .minicard__stickers {
   position: absolute;
@@ -1328,17 +1390,8 @@ sub {
     color: #ffffff;
     background-color: #c91f24; }
 
-.minicard__text-brand {
-  margin: 0 0 1rem;
-  color: #757575; }
-
-.minicard__price {
-  margin: 0 0 0.5rem; }
-
 .minicard__love-button {
   position: absolute;
-  top: 4px;
-  right: 4px;
   padding: 0.5rem;
   color: #f4b606;
   border-radius: 50%;
@@ -1347,7 +1400,16 @@ sub {
   .minicard__love-button:hover, .minicard__love-button:focus {
     box-shadow: inset 0 0 0 2px #ffd343, 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
 
-.minicard__love-button:hover .minicard__love-icon {
+.minicard--grid .minicard__love-button {
+  top: 0.25rem;
+  right: 0.25rem; }
+
+.minicard--list .minicard__love-button {
+  top: 0.5rem;
+  right: 0.5rem; }
+
+.minicard__love-button:hover .minicard__love-icon,
+.minicard__love-button:focus .minicard__love-icon {
   transform: scale(1.1); }
 
 .minicard__love-icon {
@@ -1356,13 +1418,6 @@ sub {
 
 .minicard__love-button--active .minicard__love-icon {
   fill: #f4b606; }
-
-.minicard__delivery-info {
-  margin: 0.5rem 0 0;
-  color: #757575; }
-
-.minicard--carousel .minicard__delivery-info {
-  display: none; }
 
 .price {
   word-break: break-word; }
@@ -1476,28 +1531,34 @@ sub {
 .minicard-list__list {
   --row-gap: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
   row-gap: var(--row-gap);
   margin: 0 -0.5rem;
-  padding: 0 0 calc((var(--row-gap) / 2) - 1px);
+  padding: 0;
   list-style: none;
+  padding-bottom: calc((var(--row-gap) / 2) - 1px);
   border-bottom: 1px solid #ffffff; }
+
+.minicard-list__list--grid {
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)); }
   @media (max-width: 607px) {
-    .minicard-list__list {
+    .minicard-list__list--grid {
       --card-min-width: 160px; } }
   @media (min-width: 608px) {
-    .minicard-list__list {
+    .minicard-list__list--grid {
       --card-min-width: 250px; } }
+
+.minicard-list__list--list {
+  grid-template-columns: 100%; }
 
 .minicard-list__item {
   position: relative; }
   .minicard-list__item::after {
     content: "";
     position: absolute;
-    z-index: -1;
-    bottom: calc(var(--row-gap) / -2);
     left: 0.5rem;
     right: 0.5rem;
+    z-index: -1;
+    bottom: calc(var(--row-gap) / -2);
     height: 1px;
     border-bottom: 1px dashed #e0e0e0; }
 
