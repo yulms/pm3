@@ -893,6 +893,7 @@ sub {
 
 .chip-set__element {
   margin-top: 0.5rem;
+  flex-shrink: 0;
   white-space: nowrap; }
   .chip-set__element:not(:last-child) {
     margin-right: 0.5rem; }
@@ -2884,6 +2885,14 @@ sub {
       margin-right: calc(var(--page-paddings) * -1);
       padding-left: var(--page-paddings);
       padding-right: var(--page-paddings); } }
+
+@media (pointer: coarse) {
+    .product-control__sort::after,
+    .product-control__filter-chips::after {
+      content: "";
+      flex-shrink: 0;
+      width: var(--page-paddings);
+      height: 1px; } }
 
 @media not all and (pointer: coarse) {
   .product-control__sort,
