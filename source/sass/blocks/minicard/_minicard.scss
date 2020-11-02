@@ -1,19 +1,47 @@
 .minicard {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+}
+
+.minicard--grid {
   padding: $space*0.5 $space*0.5 $space;
 }
 
+
+.minicard--list {
+  @include media-mobile-only {
+    --column-gap: #{$space*0.5};
+    --padding: #{$space*0.5};
+  }
+
+  @include media-tablet-portrait-up {
+    --column-gap: #{$space};
+    --padding: #{$space};
+  }
+
+  grid-template-columns: minmax($space*5, $space*18) auto;
+  grid-template-rows: repeat(8, auto);
+  column-gap: var(--column-gap);
+  padding: var(--padding);
+}
+
+
 .minicard__link {
-  display: flex;
-  flex-direction: column;
+  display: contents;
   text-decoration: none;
 }
 
 .minicard__image-container {
   order: -1;
+}
+
+.minicard--grid .minicard__image-container {
   margin: 0 0 $space*0.5;
+}
+
+.minicard--list .minicard__image-container {
+  grid-row: 1/-1;
+  margin: 0;
 }
 
 .minicard__image-container--full-width {
@@ -23,23 +51,30 @@
 }
 
 .minicard__title {
-  margin: 0;
   font-size: 100%;
   font-weight: 500;
   color: $color-font__subtitle2;
 }
 
+.minicard--grid .minicard__title {
+  margin: 0;
+}
+
+.minicard--list .minicard__title {
+  margin: 0 0 $space*0.5;
+}
+
+
 .minicard--carousel .minicard__title {
   /* ограничение высоты 2 строки */
-  /* stylelint-disable-next-line */
-  display: -webkit-box;
+  display: -webkit-box; /* stylelint-disable-line */
   height: $space*3;
   -webkit-line-clamp: 2;
-  /* stylelint-disable-next-line */
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical; /* stylelint-disable-line */
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 
 .minicard__link:hover .minicard__title,
 .minicard__link:focus .minicard__title {
@@ -50,6 +85,61 @@
 }
 
 
+.minicard__brand {
+  margin: 0;
+  color: $color-font__secondary;
+}
+
+
+.minicard-carousel {
+  display: none;
+}
+
+.minicard--grid .minicard__options {
+  display: none;
+}
+
+.minicard__options {
+  margin: 0 0 $space*0.5;
+  color: $color-font__secondary;
+}
+
+.minicard__options-dt {
+  float: left;
+  margin-right: 0.5rem;
+
+  &::after {
+    content: ":";
+  }
+}
+
+.minicard__options-dd {
+  margin: 0;
+}
+
+
+.minicard__price {
+  margin: 0 0 $space*0.5;
+  padding-top: $space*0.5;
+}
+
+
+.minicard__stars {
+  margin-bottom: $space*0.5;
+}
+
+.minicard__delivery-info {
+  margin: 0;
+  color: $color-font__secondary;
+}
+
+.minicard--carousel .minicard__delivery-info {
+  display: none;
+}
+
+
+//
+// * второстепенное
 .minicard__stickers {
   position: absolute;
   top: 0;
@@ -88,19 +178,9 @@
   }
 }
 
-.minicard__text-brand {
-  margin: 0 0 $space;
-  color: $color-font__secondary;
-}
-
-.minicard__price {
-  margin: 0 0 $space*0.5;
-}
 
 .minicard__love-button {
   position: absolute;
-  top: 4px;
-  right: 4px;
   padding: $space*0.5;
   color: $color__secondary-bright;
   border-radius: 50%;
@@ -115,7 +195,18 @@
   }
 }
 
-.minicard__love-button:hover .minicard__love-icon {
+.minicard--grid .minicard__love-button {
+  top: $space*0.25;
+  right: $space*0.25;
+}
+
+.minicard--list .minicard__love-button {
+  top: $space*0.5;
+  right: $space*0.5;
+}
+
+.minicard__love-button:hover .minicard__love-icon,
+.minicard__love-button:focus .minicard__love-icon {
   transform: scale(1.1);
 }
 
@@ -126,13 +217,4 @@
 
 .minicard__love-button--active .minicard__love-icon {
   fill: $color__secondary-bright;
-}
-
-.minicard__delivery-info {
-  margin: $space*0.5 0 0;
-  color: $color-font__secondary;
-}
-
-.minicard--carousel .minicard__delivery-info {
-  display: none;
 }

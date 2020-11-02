@@ -1,17 +1,33 @@
-<div class="minicard @@class">
+<div class="minicard @@class1">
+
   <a class="minicard__link" href="#">
     <h3 class="minicard__title">@@title</h3>
     <p class="image-container minicard__image-container @@class2">
       <img class="image-container__image" src="@@filename" alt="Открыть страницу покупки @@title">
     </p>
   </a>
+
   <div class="minicard__stickers">
     <strong class="minicard__sticker @@stickerModClass">@@stickerCaption</strong>
   </div>
-  <p class="minicard__text-brand">
+
+  <p class="minicard__brand">
     <span>Бренд:</span>
     <span>@@brand</span>
   </p>
+
+  <dl class="minicard__options">
+    <dt class="minicard__options-dt">Материал</dt>
+    <dd class="minicard__options-dd">Нержавеющая сталь</dd>
+    <dt class="minicard__options-dt">Количество предметов</dt>
+    <dd class="minicard__options-dd">12</dd>
+    <dt class="minicard__options-dt">Ручки</dt>
+    <dd class="minicard__options-dd">Съемные</dd>
+    <dt class="minicard__options-dt">Тип комфорок</dt>
+    <dd class="minicard__options-dd">Любые</dd>
+  </dl>
+
+
   <p class="price minicard__price">
     <span class="price__current" aria-label="Текущая цена: ">
       156<sup>80</sup> р.
@@ -19,7 +35,7 @@
     <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
   </p>
 
-  @@include("./stars/_stars.html")
+  @@include("./stars/_stars.html", {"class": "minicard__stars"})
 
   <p class="minicard__delivery-info">
     Доставка: сегодня после 18-00, бесплатно
