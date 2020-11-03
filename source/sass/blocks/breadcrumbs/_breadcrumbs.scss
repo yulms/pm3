@@ -9,6 +9,13 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: var(--page-paddings);
+    height: 1px;
+  }
+
   // &::-webkit-scrollbar {
   //   width: 0;
   //   height: 0;
@@ -20,7 +27,10 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  padding-right: $space*0.5;
+
+  &:not(:last-child) {
+    padding-right: $space*0.5;
+  }
 
   &:not(:first-child) {
     &::before {

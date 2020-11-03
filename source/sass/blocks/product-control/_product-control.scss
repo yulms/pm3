@@ -58,6 +58,13 @@
       padding-left: var(--page-paddings);
       padding-right: var(--page-paddings);
     }
+
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      width: var(--page-paddings);
+      height: 1px;
+    }
   }
 }
 
