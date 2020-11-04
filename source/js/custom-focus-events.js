@@ -9,7 +9,7 @@ function appendCustomFocusEvents(containerElement) {
 
   function _onContainerFocusIn() {
     if (!focusInside) {
-      containerElement.dispatchEvent(new CustomEvent('focusEnter', {bubbles: true}));
+      containerElement.dispatchEvent(new CustomEvent('focusEnter'));
       focusInside = true;
     }
   }
@@ -17,7 +17,7 @@ function appendCustomFocusEvents(containerElement) {
   function _onContainerFocusOut(evt) {
     if (!containerElement.contains(evt.relatedTarget)) {
       containerElement.dispatchEvent(new CustomEvent('focusLeave', {
-        bubbles: true,
+        // bubbles: true,
         detail: {
           relatedTarget: evt.relatedTarget
         }

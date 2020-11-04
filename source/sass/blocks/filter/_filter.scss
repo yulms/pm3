@@ -1,0 +1,9 @@
+.modal--opened {
+  display: block;
+}
+
+.filter {
+  @include media-tablet-landscape-down {
+    display: none;
+  }
+}

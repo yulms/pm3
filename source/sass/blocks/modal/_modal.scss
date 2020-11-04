@@ -1,10 +1,22 @@
-@keyframes showModal {
+@keyframes showModal--center {
   from {
     transform: scale(0.8);
   }
 
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes showModal--left {
+  from {
+    transform: translateX(-100%) scale(0.8);
+    // transform: scale(0.8);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    // transform: scale(1);
   }
 }
 
@@ -48,7 +60,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: $space*2 0 $space*12; // Чтобы окно не прилипало к границе браузера
+  padding: $space*5 0 $space*5; // Чтобы окно не прилипало к границе браузера
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -66,23 +78,40 @@
   box-shadow: 0 3px 6px 0 $color__shadows;
 }
 
-
+// TODO проверить необходимость с свете .modal__content--closed
+// upd - используется в modal--bounded
 .modal--closed {
   display: none;
 }
+
 
 .modal__inner {
   position: relative;
   z-index: 2;
   width: 500px;
-  max-width: 100%;
-  margin: auto;
-  padding: var(--vertical-paddings) var(--horizontal-paddings);
+  margin-right: auto;
   background-color: $color__background;
   border-radius: $controls__border-radius;
   box-shadow: 0 3px 6px 0 $color__shadows;
+}
+
+
+.modal__inner--center {
+  max-width: 100%;
+  // margin: auto; при желании выравнивания во вертикали
+  margin-left: auto;
   animation:
-    showModal 150ms cubic-bezier(0, 0, 0.2, 1) both,
+    showModal--center 150ms cubic-bezier(0, 0, 0.2, 1) both,
+    showModal-opacity-in 40ms linear both;
+}
+
+
+.modal__inner--left {
+  // $space*4 - ширина кнопки
+  max-width: calc(100% - #{$space*4});
+  transform-origin: left top;
+  animation:
+    showModal--left 150ms cubic-bezier(0, 0, 0.2, 1) both,
     showModal-opacity-in 40ms linear both;
 }
 
@@ -95,35 +124,53 @@
   animation: hideOverlay 75ms linear both;
 }
 
+
+.modal__content {
+  padding: var(--vertical-paddings) var(--horizontal-paddings);
+}
+
+.modal__content--closed {
+  display: none;
+}
+
+
 .modal__close-button {
   position: absolute;
-  top: 0;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #d6d6d6;
+  border-radius: $controls__border-radius;
 
-  @include media-tablet-portrait-down {
-    right: 0;
-    color: $color__additional-4;
-
-    &:hover,
-    &:focus {
-      color: $color__primary;
-    }
-  }
-
-  @include media-tablet-landscape-up {
-    right: $space * - 5.25;
-    color: #ffffff;
-    border: 2px dashed #d6d6d6;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: $controls__border-radius;
-
-    &:hover,
-    &:focus {
-      border-color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.3);
-    }
+  &:hover,
+  &:focus {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 }
 
+.modal__inner--center .modal__close-button {
+  @include media-mobile-only {
+    top: $space * -4.25;
+    right: 0;
+  }
+
+  @include media-tablet-portrait-up {
+    top: 0;
+    right: $space * -4.25;
+  }
+}
+
+.modal__inner--left .modal__close-button {
+  top: 0;
+
+  @include media-mobile-only {
+    right: $space*-4;
+  }
+
+  @include media-tablet-portrait-up {
+    right: $space*-4.25;
+  }
+}
 
 .modal__header {
   margin: 0 0 $space 0;
@@ -159,4 +206,8 @@
     border-right: 11px solid transparent;
     border-bottom: 9px solid $color__background;
   }
+}
+
+.modal__blur > *:not(.modal) {
+  filter: blur(1px);
 }

@@ -8,6 +8,55 @@
   @@include("./header/_header.html", {"class": "page__header"})
 
   <main class="main page__main content-goods page__content-goods">
+
+    <aside class="page__aside">
+      <section class="filter" id="modalFilter">
+
+        <label class="radiocheck">
+          <input class="radiocheck__input visually-hidden" type="checkbox" name="Белый" checked>
+          <span class="radiocheck__box radiocheck__box--check"></span>
+          <span class="radiocheck__caption">Белый</span>
+        </label>
+
+        <label class="radiocheck">
+          <input class="radiocheck__input visually-hidden" type="checkbox" name="Серый" checked>
+          <span class="radiocheck__box radiocheck__box--check"></span>
+          <span class="radiocheck__caption">Серый</span>
+        </label>
+
+        <label class="radiocheck">
+          <input class="radiocheck__input visually-hidden" type="checkbox" name="Черный">
+          <span class="radiocheck__box radiocheck__box--check"></span>
+          <span class="radiocheck__caption">Черный</span>
+        </label>
+
+
+        <label class="radiocheck">
+          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="1" checked>
+          <span class="radiocheck__box radiocheck__box--radio"></span>
+          <span class="radiocheck__caption">Металлическая</span>
+        </label>
+
+        <label class="radiocheck">
+          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="2">
+          <span class="radiocheck__box radiocheck__box--radio"></span>
+          <span class="radiocheck__caption">Пластиковая</span>
+        </label>
+
+        <label class="radiocheck">
+          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="3">
+          <span class="radiocheck__box radiocheck__box--radio"></span>
+          <span class="radiocheck__caption">Деревянная</span>
+        </label>
+
+
+      </section>
+      <section class="aside-reviews">Здесь боковые отзывы</section>
+      <section class="aside-articles">Здесь боковые статьи</section>
+    </aside>
+
+
+
     <!-- TODO пересмотреть семантику - теги, заголовки -->
 
 
@@ -20,10 +69,10 @@
         <span class="content-goods__subtitle">235 товаров</span>
       </div>
 
-      @@include("./category-list/_category-list.html", {
+      <!-- @@include("./category-list/_category-list.html", {
       "itemsNumber": "6",
       "class": "content-goods__category-list"
-      })
+      }) -->
 
 
       <div class="often-looking content-goods__often-looking">
@@ -40,7 +89,7 @@
           @@include("./chip-set/_chip-set.html", {"type": "goodsQuantity"})
         </div>
 
-        <button class="product-control__element button button--options-primary product-control__filter-button" type="button">
+        <button class="product-control__element button button--options-primary product-control__filter-button" type="button" data-modal="#modalFilter" data-modal-position="left">
           Фильтр
           <svg class="button__icon" width="24" height="24">
             <use xlink:href="img/svg/_sprite.svg#icon-filter"></use>
@@ -303,7 +352,7 @@
       @@include("./admin-content/_admin-content.html", {"page": "other"})
     </article>
 
-    <section class="content-goods__promo">
+    <!-- <section class="content-goods__promo">
       <h2 class="visually-hidden">Акции и специальные предложения</h2>
 
       <a class="banner content-goods__banner" href="#">
@@ -324,58 +373,11 @@
         </div>
       </a>
 
-    </section>
-
-
-
-    <aside class="page__aside">
-      <section class="filter">
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="checkbox" name="Белый" checked>
-          <span class="radiocheck__box radiocheck__box--check"></span>
-          <span class="radiocheck__caption">Белый</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="checkbox" name="Серый" checked>
-          <span class="radiocheck__box radiocheck__box--check"></span>
-          <span class="radiocheck__caption">Серый</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="checkbox" name="Черный">
-          <span class="radiocheck__box radiocheck__box--check"></span>
-          <span class="radiocheck__caption">Черный</span>
-        </label>
-
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="1" checked>
-          <span class="radiocheck__box radiocheck__box--radio"></span>
-          <span class="radiocheck__caption">Металлическая</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="2">
-          <span class="radiocheck__box radiocheck__box--radio"></span>
-          <span class="radiocheck__caption">Пластиковая</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="3">
-          <span class="radiocheck__box radiocheck__box--radio"></span>
-          <span class="radiocheck__caption">Деревянная</span>
-        </label>
+    </section> -->
 
 
 
 
-
-      </section>
-      <section class="aside-reviews">Здесь боковые отзывы</section>
-      <section class="aside-articles">Здесь боковые статьи</section>
-    </aside>
 
 
 
@@ -384,6 +386,7 @@
   @@include("./footer/_footer.html")
 
 
+  @@include("./modal/_modal-template.html")
   @@include("./modal/_modal--choose-city.html")
 
   <script src="js/script.js" type="module"></script>
