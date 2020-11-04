@@ -603,17 +603,11 @@ sub {
 .socials-login__icon--ok {
   background-color: #eb722e; }
 
-@keyframes showModal--center {
+@keyframes showModal {
   from {
     transform: scale(0.8); }
   to {
     transform: scale(1); } }
-
-@keyframes showModal--left {
-  from {
-    transform: translateX(-100%) scale(0.8); }
-  to {
-    transform: translateX(0) scale(1); } }
 
 @keyframes showModal-opacity-in {
   from {
@@ -669,17 +663,16 @@ sub {
   margin-right: auto;
   background-color: #ffffff;
   border-radius: 4px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  animation: showModal 150ms cubic-bezier(0, 0, 0.2, 1) both, showModal-opacity-in 40ms linear both; }
 
 .modal__inner--center {
   max-width: 100%;
-  margin-left: auto;
-  animation: showModal--center 150ms cubic-bezier(0, 0, 0.2, 1) both, showModal-opacity-in 40ms linear both; }
+  margin-left: auto; }
 
 .modal__inner--left {
   max-width: calc(100% - 4rem);
-  transform-origin: left top;
-  animation: showModal--left 150ms cubic-bezier(0, 0, 0.2, 1) both, showModal-opacity-in 40ms linear both; }
+  transform-origin: left top; }
 
 .modal--animation-on-close .modal__inner {
   animation: hideModal 75ms linear both; }
@@ -750,9 +743,6 @@ sub {
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
     border-bottom: 9px solid #ffffff; }
-
-.modal__blur > *:not(.modal) {
-  filter: blur(1px); }
 
 @keyframes showOverlay {
   from {

@@ -181,17 +181,17 @@ class Modal {
 
   _toggleOverlay() {
     if (!this._isOpened) {
-      if (this.blurClassName) {
-        document.body.classList.add(this.blurClassName);
-      }
+      // if (this.blurClassName) {
+      //   document.body.classList.add(this.blurClassName);
+      // }
       this._overlayElement = document.createElement('div');
       this._overlayElement.classList.add(this.overlaySelector);
       this._overlayElement.classList.add(this.modalOverlaySelector);
       this._modalElement.append(this._overlayElement);
     } else {
-      if (this.blurClassName) {
-        document.body.classList.remove(this.blurClassName);
-      }
+      // if (this.blurClassName) {
+      //   document.body.classList.remove(this.blurClassName);
+      // }
       this._overlayElement.remove();
     }
   }
