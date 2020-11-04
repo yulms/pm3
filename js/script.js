@@ -12,7 +12,9 @@ import initRipple from './_ripple.js';
 
 const projectObjects = { // eslint-disable-line
   switchView: initSwitchView(),
-  headerTopMenu: initHeaderTopMenu(),
+  // используется функционал модального окна
+  // после тестирования удалить
+  // headerTopMenu: initHeaderTopMenu(),
   mainNav: initMainNav(),
   modalsBounded: initBoundedModals(),
   modal: initModal(),
