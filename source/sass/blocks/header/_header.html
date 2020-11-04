@@ -3,7 +3,7 @@
   <div class="header__top-panel">
     <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
 
-    <nav class="header__top-menu" aria-label="Дополнительная навигация">
+    <nav class="header__top-menu" id="headerTopMenu" aria-label="Дополнительная навигация">
       <ul class="dropdown-menu header__top-menu-list">
         <li class="header__top-menu-item">
           <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#" data-modal="#modalChooseCity">
@@ -83,7 +83,7 @@
 
   <div class="header__main-panel">
     <!-- Бургер -->
-    <button class="button header__burger" type="button" aria-expanded="false">
+    <button class="button header__burger" type="button" data-modal="#headerTopMenu" data-modal-position="left">
       <span class="visually-hidden">Дополнительное меню</span>
       <svg class="icon icon--2x header__burger-icon" width="24" height="24">
         <use xlink:href="img/svg/_sprite.svg#icon-burger"></use>
