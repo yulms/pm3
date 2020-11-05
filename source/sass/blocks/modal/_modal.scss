@@ -48,10 +48,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: $space*5 0 $space*5; // Чтобы окно не прилипало к границе браузера
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.modal--center {
+  padding: $space*5 0 $space*5; // Чтобы окно не прилипало к границе браузера
 }
 
 
@@ -72,7 +75,6 @@
   display: none;
 }
 
-
 .modal__inner {
   position: relative;
   z-index: 2;
@@ -86,17 +88,17 @@
     showModal-opacity-in 40ms linear both;
 }
 
-
-.modal__inner--center {
+.modal--center .modal__inner {
   max-width: 100%;
   // margin: auto; при желании выравнивания во вертикали
   margin-left: auto;
 }
 
-
-.modal__inner--left {
+.modal--left .modal__inner {
   // $space*4 - ширина кнопки
   max-width: calc(100% - #{$space*4});
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   transform-origin: left top;
 }
 
@@ -122,19 +124,15 @@
 .modal__close-button {
   position: absolute;
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.3);
-  // border: 2px dashed #d6d6d6;
-  border: 2px dashed #ffffff;
   border-radius: $controls__border-radius;
 
   &:hover,
   &:focus {
-    border-color: #ffffff;
     background-color: rgba(255, 255, 255, 0.3);
   }
 }
 
-.modal__inner--center .modal__close-button {
+.modal--center .modal__close-button {
   @include media-mobile-only {
     top: $space * -4.25;
     right: 0;
@@ -146,7 +144,7 @@
   }
 }
 
-.modal__inner--left .modal__close-button {
+.modal--left .modal__close-button {
   top: 0;
 
   @include media-mobile-only {
@@ -157,6 +155,7 @@
     right: $space*-4.25;
   }
 }
+
 
 .modal__header {
   margin: 0 0 $space 0;
