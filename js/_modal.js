@@ -28,8 +28,8 @@ class Modal {
       modalOverlaySelector: 'modal__overlay',
       closeButtonSelector : '.modal__close-button',
       focusElements: [
-        'a[href]',
-        'area[href]',
+        // 'a[href]',
+        // 'area[href]',
         'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
         'select:not([disabled]):not([aria-hidden])',
         'textarea:not([disabled]):not([aria-hidden])',

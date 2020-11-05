@@ -31,6 +31,11 @@ class TextfieldOutlined extends Textfield {
     Object.assign(this, defaults, overrides);
 
     this.labelElement = this.element.querySelector(this.labelSelector);
+
+    if (this.inputElement.value !== '') {
+      this.labelElement.classList.add(this.labelOnTopClass);
+    }
+
     appendCustomFocusEvents(this.element);
     this.element.addEventListener('focusEnter', this._onTextfieldFocusEnter.bind(this));
     this.element.addEventListener('focusLeave', this._onTextfieldFocusLeave.bind(this));
@@ -41,6 +46,7 @@ class TextfieldOutlined extends Textfield {
     this._activateTextfield();
   }
 
+
   _onTextfieldFocusLeave() {
     this._deactivateTextfield();
   }
@@ -50,6 +56,7 @@ class TextfieldOutlined extends Textfield {
     this.element.classList.add(this.textfieldActiveClass);
     this.labelElement.classList.add(this.labelOnTopClass);
   }
+
 
   _deactivateTextfield() {
     this.element.classList.remove(this.textfieldActiveClass);
