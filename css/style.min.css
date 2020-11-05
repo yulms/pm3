@@ -2786,6 +2786,10 @@ sub {
     padding: 1rem 0;
     text-align: center; } }
 
+@media (max-width: 1279px) {
+  .content-goods__filter {
+    display: none; } }
+
 .cart-list {
   margin: 0;
   padding: 0;
@@ -2976,11 +2980,20 @@ sub {
 
 .filter__range-inputs-between {
   flex-grow: 0.6;
-  padding: 0 8px; }
+  padding: 0 8px;
+  text-align: center; }
 
 .filter__range-textfield {
   flex-basis: 6rem;
   flex-grow: 1; }
+
+.filter__button-submit {
+  width: 100%;
+  margin: 1.5rem 0 1rem 0; }
+
+.filter__button-clear {
+  display: block;
+  margin: 0 auto; }
 
 @keyframes ripple-radius-in {
   from {
