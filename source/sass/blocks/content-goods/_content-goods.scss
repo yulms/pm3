@@ -82,6 +82,6 @@
 
 .content-goods__filter {
   @include media-tablet-landscape-down {
-    // display: none;
+    display: none;
   }
 }

@@ -39,7 +39,7 @@
 
 
 .filter__list {
-  margin: 0 0 $space $space;
+  margin: 0 0 $space*2 $space;
   padding: 0;
   list-style: none;
 }
@@ -48,4 +48,33 @@
   &:not(:last-child) {
     margin-bottom: $space*0.75;
   }
+}
+
+.filter__range-inputs {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: $space;
+}
+
+.filter__range-inputs-between {
+  flex-grow: 0.6;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.filter__range-textfield {
+  flex-basis: $space*6;
+  flex-grow: 1;
+}
+
+.filter__button-submit {
+  width: 100%;
+  margin: $space*1.5 0 $space 0;
+}
+
+.filter__button-clear {
+  display: block;
+  margin: 0 auto;
 }

@@ -33,9 +33,6 @@
   </ul>
 </section>
 
-
-
-
 <section class="filter__single-filter">
   <h3 class="title title--4 filter__single-filter-title accordion" data-accordion-open="500">
     Цена
@@ -84,9 +81,27 @@
         <span class="radiocheck__caption">свыше 300 руб.</span>
       </label>
     </li>
-  </ul>
-</section>
+    <li class="filter__item">
+      <div class="filter__range-inputs">
+        <div class="textfield filter__range-textfield">
+          <label class="textfield__input-container">
+            <input class="textfield__input" type="number" value="1" min="1" max="1000" placeholder=" ">
+            <span class="textfield__label">Минимум</span>
+          </label>
+        </div>
+        <span class="filter__range-inputs-between">до</span>
+        <div class="textfield filter__range-textfield">
+          <label class="textfield__input-container">
+            <input class="textfield__input" type="number" value="10000" min="1" max="1000" placeholder=" ">
+            <span class="textfield__label">Максимум</span>
+          </label>
+        </div>
+      </div>
+    </li>
 
+  </ul>
+
+</section>
 
 <section class="filter__single-filter">
   <h3 class="title title--4 filter__single-filter-title accordion" data-accordion-open="500">
@@ -98,21 +113,121 @@
       <label class="radiocheck">
         <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="1" checked>
         <span class="radiocheck__box radiocheck__box--radio"></span>
-        <span class="radiocheck__caption">Металлическая</span>
+        <span class="radiocheck__caption">Металл</span>
       </label>
     </li>
     <li class="filter__item">
       <label class="radiocheck">
         <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="2">
         <span class="radiocheck__box radiocheck__box--radio"></span>
-        <span class="radiocheck__caption">Пластиковая</span>
+        <span class="radiocheck__caption">Пластик</span>
       </label>
     </li>
     <li class="filter__item">
       <label class="radiocheck">
         <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="3">
         <span class="radiocheck__box radiocheck__box--radio"></span>
-        <span class="radiocheck__caption">Деревянная</span>
+        <span class="radiocheck__caption">Дерево</span>
       </label>
     </li>
+  </ul>
 </section>
+
+<section class="filter__single-filter">
+  <h3 class="title title--4 filter__single-filter-title accordion" data-accordion-open="500">
+    Тип комфорок
+  </h3>
+
+  <ul class="filter__list">
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="radio" name="radio3" value="1" checked>
+        <span class="radiocheck__box radiocheck__box--radio"></span>
+        <span class="radiocheck__caption">Электрическая</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="radio" name="radio3" value="2">
+        <span class="radiocheck__box radiocheck__box--radio"></span>
+        <span class="radiocheck__caption">Индукционная</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="radio" name="radio3" value="3">
+        <span class="radiocheck__box radiocheck__box--radio"></span>
+        <span class="radiocheck__caption">Газовая</span>
+      </label>
+    </li>
+  </ul>
+</section>
+
+<section class="filter__single-filter">
+  <h3 class="title title--4 filter__single-filter-title accordion" data-accordion-open="500">
+    Ручки
+  </h3>
+
+  <ul class="filter__list">
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="radio" name="radio4" value="1" checked>
+        <span class="radiocheck__box radiocheck__box--radio"></span>
+        <span class="radiocheck__caption">Съемные</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="radio" name="radio4" value="2">
+        <span class="radiocheck__box radiocheck__box--radio"></span>
+        <span class="radiocheck__caption">Стационарные</span>
+      </label>
+    </li>
+  </ul>
+</section>
+
+<section class="filter__single-filter">
+  <h3 class="title title--4 filter__single-filter-title accordion" data-accordion-open="500">
+    Количество предметов
+  </h3>
+  <ul class="filter__list">
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="checkq1">
+        <span class="radiocheck__box radiocheck__box--check"></span>
+        <span class="radiocheck__caption">до 4</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="checkq2">
+        <span class="radiocheck__box radiocheck__box--check"></span>
+        <span class="radiocheck__caption">от 4 до 6</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="checkq3">
+        <span class="radiocheck__box radiocheck__box--check"></span>
+        <span class="radiocheck__caption">от 6 до 10</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="checkq4">
+        <span class="radiocheck__box radiocheck__box--check"></span>
+        <span class="radiocheck__caption">от 10 до 12</span>
+      </label>
+    </li>
+    <li class="filter__item">
+      <label class="radiocheck">
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="checkq5">
+        <span class="radiocheck__box radiocheck__box--check"></span>
+        <span class="radiocheck__caption">от 12 и выше</span>
+      </label>
+    </li>
+  </ul>
+</section>
+
+<button class="button button--options-primary filter__button-submit" type="button">Применить</button>
+<button class="link filter__button-clear">Очистить фильтр</button>
