@@ -594,10 +594,12 @@ sub {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 5rem 0 5rem;
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
+
+.modal--center {
+  padding: 5rem 0 5rem; }
 
 .modal--bounded {
   position: absolute;
@@ -622,12 +624,14 @@ sub {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   animation: showModal 150ms cubic-bezier(0, 0, 0.2, 1) both, showModal-opacity-in 40ms linear both; }
 
-.modal__inner--center {
+.modal--center .modal__inner {
   max-width: 100%;
   margin-left: auto; }
 
-.modal__inner--left {
+.modal--left .modal__inner {
   max-width: calc(100% - 4rem);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   transform-origin: left top; }
 
 .modal--animation-on-close .modal__inner {
@@ -645,30 +649,27 @@ sub {
 .modal__close-button {
   position: absolute;
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 2px dashed #ffffff;
   border-radius: 4px; }
   .modal__close-button:hover, .modal__close-button:focus {
-    border-color: #ffffff;
     background-color: rgba(255, 255, 255, 0.3); }
 
 @media (max-width: 607px) {
-  .modal__inner--center .modal__close-button {
+  .modal--center .modal__close-button {
     top: -4.25rem;
     right: 0; } }
 
 @media (min-width: 608px) {
-  .modal__inner--center .modal__close-button {
+  .modal--center .modal__close-button {
     top: 0;
     right: -4.25rem; } }
 
-.modal__inner--left .modal__close-button {
+.modal--left .modal__close-button {
   top: 0; }
   @media (max-width: 607px) {
-    .modal__inner--left .modal__close-button {
+    .modal--left .modal__close-button {
       right: -4rem; } }
   @media (min-width: 608px) {
-    .modal__inner--left .modal__close-button {
+    .modal--left .modal__close-button {
       right: -4.25rem; } }
 
 .modal__header {

@@ -8,8 +8,8 @@ const ModalPosition = {
 };
 
 const ModalPositionClasses = {
-  [ModalPosition.CENTER]: 'modal__inner--center',
-  [ModalPosition.LEFT]: 'modal__inner--left'
+  [ModalPosition.CENTER]: 'modal--center',
+  [ModalPosition.LEFT]: 'modal--left'
 };
 
 
@@ -33,7 +33,7 @@ class Modal {
         'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
         'select:not([disabled]):not([aria-hidden])',
         'textarea:not([disabled]):not([aria-hidden])',
-        'button:not([disabled]):not([aria-hidden])',
+        'button:not([disabled]):not([aria-hidden]):not(.button--modal-close)',
         'iframe',
         '[tabindex]:not([tabindex^="-"])'
       ],
@@ -74,7 +74,7 @@ class Modal {
 
     const _addPositionClass = () => {
       let modalPosition = _readPositionAttribute();
-      this._modalElement.children[0].classList.add(ModalPositionClasses[modalPosition]);
+      this._modalElement.classList.add(ModalPositionClasses[modalPosition]);
     };
 
     const _saveHomelandPosition = () => {
