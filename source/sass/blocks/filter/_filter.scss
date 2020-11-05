@@ -1,9 +1,51 @@
-.modal--opened {
-  display: block;
-}
-
 .filter {
   @include media-tablet-landscape-down {
-    display: none;
+    padding: $space var(--page-paddings) var(--page-paddings);
+  }
+}
+
+.filter__header {
+  border-bottom: 1px solid $color__additional-2;
+
+  @include media-tablet-landscape-down {
+    padding-bottom: $space*0.5;
+    text-align: center;
+  }
+}
+
+.filter__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+
+  @include media-desktop-up {
+    font-size: 1.5rem; // ?
+  }
+}
+
+.filter__header-subtitle {
+  color: $color-font__secondary;
+}
+
+
+.filter__single-filter {
+  border-bottom: 1px solid $color__additional-2;
+}
+
+
+.filter__single-filter-title {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+
+.filter__list {
+  margin: 0 0 $space $space;
+  padding: 0;
+  list-style: none;
+}
+
+.filter__item {
+  &:not(:last-child) {
+    margin-bottom: $space*0.75;
   }
 }

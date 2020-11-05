@@ -28,8 +28,8 @@ class Modal {
       modalOverlaySelector: 'modal__overlay',
       closeButtonSelector : '.modal__close-button',
       focusElements: [
-        'a[href]',
-        'area[href]',
+        // 'a[href]',
+        // 'area[href]',
         'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
         'select:not([disabled]):not([aria-hidden])',
         'textarea:not([disabled]):not([aria-hidden])',
@@ -181,17 +181,17 @@ class Modal {
 
   _toggleOverlay() {
     if (!this._isOpened) {
-      if (this.blurClassName) {
-        document.body.classList.add(this.blurClassName);
-      }
+      // if (this.blurClassName) {
+      //   document.body.classList.add(this.blurClassName);
+      // }
       this._overlayElement = document.createElement('div');
       this._overlayElement.classList.add(this.overlaySelector);
       this._overlayElement.classList.add(this.modalOverlaySelector);
       this._modalElement.append(this._overlayElement);
     } else {
-      if (this.blurClassName) {
-        document.body.classList.remove(this.blurClassName);
-      }
+      // if (this.blurClassName) {
+      //   document.body.classList.remove(this.blurClassName);
+      // }
       this._overlayElement.remove();
     }
   }

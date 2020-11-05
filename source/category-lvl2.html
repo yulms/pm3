@@ -327,49 +327,14 @@
 
     </section>
 
-    <aside class="page__aside">
-      <section class="filter" id="modalFilter">
-        <h2>Подбор товаров</h2>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="checkbox" name="Белый" checked>
-          <span class="radiocheck__box radiocheck__box--check"></span>
-          <span class="radiocheck__caption">Белый</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="checkbox" name="Серый" checked>
-          <span class="radiocheck__box radiocheck__box--check"></span>
-          <span class="radiocheck__caption">Серый</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="checkbox" name="Черный">
-          <span class="radiocheck__box radiocheck__box--check"></span>
-          <span class="radiocheck__caption">Черный</span>
-        </label>
 
 
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="1" checked>
-          <span class="radiocheck__box radiocheck__box--radio"></span>
-          <span class="radiocheck__caption">Металлическая</span>
-        </label>
+    <aside class="content-goods__aside">
 
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="2">
-          <span class="radiocheck__box radiocheck__box--radio"></span>
-          <span class="radiocheck__caption">Пластиковая</span>
-        </label>
-
-        <label class="radiocheck">
-          <input class="radiocheck__input visually-hidden" type="radio" name="radio1" value="3">
-          <span class="radiocheck__box radiocheck__box--radio"></span>
-          <span class="radiocheck__caption">Деревянная</span>
-        </label>
-
-
+      <section class="filter content-goods__filter" id="modalFilter">
+        @@include("./filter/_filter.html")
       </section>
+
       <section class="aside-reviews">Здесь боковые отзывы</section>
       <section class="aside-articles">Здесь боковые статьи</section>
     </aside>

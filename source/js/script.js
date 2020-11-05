@@ -8,6 +8,7 @@ import initTooltips from './_tooltip.js';
 import initTextfields from './_textfield.js';
 import initCustomSelects from './_custom-select.js';
 import initRipple from './_ripple.js';
+import initAccordion from './_accordion.js';
 
 
 const projectObjects = { // eslint-disable-line
@@ -22,7 +23,8 @@ const projectObjects = { // eslint-disable-line
   toolTips: initTooltips(),
   textfields: initTextfields(),
   customSelects: initCustomSelects(),
-  ripple: initRipple()
+  ripple: initRipple(),
+  accordion: initAccordion()
 };
 
 console.log(projectObjects);
