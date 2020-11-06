@@ -56,32 +56,31 @@ class Accordion {
 
       if (targetStateIsOpen) {
       // поведение при открытии
+
         wrapper.style.height = 0;
         wrapper.hidden = false;
         let fullHeight =  wrapper.scrollHeight;
-        wrapper.addEventListener('transitionend', () => {
-          wrapper.style.height = 'auto';
-        }, {once: true});
+        // wrapper.addEventListener('transitionend', () => {
+        //   wrapper.style.height = 'auto';
+        // }, {once: true});
         wrapper.style.height = fullHeight + 'px';
-
-        // parent.style.marginTop = '16px';
-        // parent.style.marginBottom = '16px';
       } else {
-        let fullHeight =  wrapper.scrollHeight;
-        wrapper.style.height = fullHeight + 'px';
+        // закрытие
+        // let fullHeight =  wrapper.scrollHeight;
+        // wrapper.style.height = fullHeight + 'px';
         wrapper.addEventListener('transitionend', () => {
           wrapper.style.height = 'auto';
           wrapper.hidden = true;
           wrapper.style.transitionDuration = '';
         }, {once: true});
 
-        setTimeout(() => {
-          wrapper.style.transitionDuration = '70ms';
-          // parent.style.transitionDuration = '70ms';
-          wrapper.style.height = 0;
-          // parent.style.marginTop = '';
-          // parent.style.marginBottom = '';
-        }, 0);
+        wrapper.style.transitionDuration = '70ms';
+        wrapper.style.height = 0;
+
+        // setTimeout(() => {
+        //   wrapper.style.transitionDuration = '70ms';
+        //   wrapper.style.height = 0;
+        // }, 0);
       }
     });
 
