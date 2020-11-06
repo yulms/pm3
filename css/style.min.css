@@ -1001,7 +1001,8 @@ sub {
   justify-content: space-between;
   width: 100%;
   padding: 0.75rem 0;
-  border: 0; }
+  border: 0;
+  cursor: pointer; }
 
 .accordion__button-icon {
   display: block;
