@@ -10,8 +10,8 @@
     max-width: $max-width;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--page-paddings);
-    padding-right: var(--page-paddings);
+    // padding-left: var(--page-paddings);
+    // padding-right: var(--page-paddings);
   }
 }
 
@@ -30,14 +30,15 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 0;
+  //   height: 0;
+  // }
 
   @include media-tablet-portrait-up {
-    padding-left: $space*0.5;
-    padding-right: $space*0.5;
+    // padding-left: $space*0.5;
+    // padding-right: $space*0.5;
+    margin-left: calc(var(--page-paddings) - 1rem);
   }
 }
 

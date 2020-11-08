@@ -19,7 +19,7 @@
 
 .category-list__item {
   @include media-tablet-landscape-up {
-    flex-basis: 186px;
+    flex-basis: $space*9;
     flex-grow: 1;
     margin: $space*0.25 0 0 $space*0.25;
   }
@@ -114,5 +114,6 @@
 
   @include media-tablet-landscape-up {
     margin-top: auto;
+    text-align: center;
   }
 }

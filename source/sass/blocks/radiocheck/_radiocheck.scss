@@ -25,12 +25,21 @@
 
 .radiocheck__box {
   position: relative;
-  width: $space*1.5;
-  height: $space*1.5;
   margin-right: $space*0.5;
   flex-shrink: 0;
   background-color: transparent;
   border: 2px solid $color__additional-3;
+
+  @include media-tablet-landscape-down {
+    width: $space*1.5;
+    height: $space*1.5;
+  }
+
+  @include media-desktop-up {
+    width: $space*1.25;
+    height: $space*1.25;
+    transform: translateY(1px);
+  }
 
   &--radio {
     border-radius: 50%;
@@ -74,6 +83,11 @@
   border-radius: 50%;
   background-color: $color__primary;
   animation: radio 0.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+  @include media-desktop-up {
+    width: $space*0.625;
+    height: $space*0.625;
+  }
 }
 
 .radiocheck__input:checked + .radiocheck__box--check::after {

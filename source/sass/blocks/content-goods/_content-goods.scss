@@ -1,6 +1,74 @@
 .content-goods {
-  display: grid;
-  grid-template-columns: 100%;
+  @include media-tablet-landscape-up {
+    display: grid;
+  }
+
+  @include media-tablet-landscape-only {
+    grid-template-columns: 100%;
+
+    &__promo {
+      grid-row: 2;
+    }
+  }
+
+  @include media-desktop-up {
+    grid-template-columns: $space*19 1fr;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      "breadcrumbs breadcrumbs"
+      "promo promo"
+      "filter header"
+      "filter minicardList"
+      ". often-looking"
+      "brands brands"
+      "admin-content admin-content";
+
+
+    column-gap: $space*2;
+    align-items: start;
+
+
+    // только свойства, относящиеся к grid
+
+    // для новых появляющихся блоков высота больше 1й строки, что бы блок не
+    // позиционировался в пустоты
+    // & > * {
+    //   grid-row: span 2;
+    // }
+
+    &__breadcrumbs {
+      grid-area: breadcrumbs;
+    }
+
+    &__header {
+      grid-area: header;
+    }
+
+    &__minicard-list {
+      grid-area: minicardList;
+    }
+
+    &__often-looking-bottom {
+      grid-area: often-looking;
+    }
+
+    &__brands {
+      grid-area: brands;
+    }
+
+    &__admin-content {
+      grid-area: admin-content;
+    }
+
+    &__promo {
+      grid-area: promo;
+    }
+
+    &__filter {
+      grid-area: filter;
+    }
+  }
 }
 
 
@@ -9,6 +77,7 @@
   margin-right: calc(var(--page-paddings) * -1);
   margin-bottom: $space*1.5;
 }
+
 
 .content-goods__header {
   margin-bottom: $space;
@@ -37,13 +106,16 @@
   margin-bottom: $space*1.5;
 }
 
+
 .content-goods__often-looking {
   margin-bottom: $space*1.5;
 }
 
+
 .content-goods__minicard-list {
   margin-bottom: $space*3;
 }
+
 
 .content-goods__often-looking-bottom {
   margin-bottom: $space*3;
@@ -61,8 +133,7 @@
 
 .content-goods__promo {
   @include media-tablet-portrait-up {
-    grid-row: 2;
-    margin-bottom: $space*2;
+    margin-bottom: $space*4;
   }
 }
 

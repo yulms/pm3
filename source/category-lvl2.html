@@ -9,10 +9,7 @@
 
   <main class="main page__main content-goods page__content-goods">
 
-    <!-- TODO пересмотреть семантику - теги, заголовки -->
-
-
-    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "content-goods__breadcrumbs"})
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs content-goods__breadcrumbs"})
 
     <header class="content-goods__header">
 
@@ -37,8 +34,10 @@
           @@include("./switch-view/_switch-view.html")
         </div>
 
-        <div class="product-control__element product-control__quantity chip-set">
-          @@include("./chip-set/_chip-set.html", {"type": "goodsQuantity"})
+        <div class="product-control__element product-control__quantity">
+          <div class="chip-set">
+            @@include("./chip-set/_chip-set.html", {"type": "goodsQuantity"})
+          </div>
         </div>
 
         <button class="product-control__element button button--options-primary product-control__filter-button" type="button" data-modal="#modalFilter" data-modal-position="left">
@@ -327,23 +326,11 @@
 
     </section>
 
+    <section class="filter content-goods__filter" id="modalFilter">
+      @@include("./filter/_filter.html")
+    </section>
 
-
-    <aside class="content-goods__aside">
-
-      <section class="filter content-goods__filter" id="modalFilter">
-        @@include("./filter/_filter.html")
-      </section>
-
-      <section class="aside-reviews">Здесь боковые отзывы</section>
-      <section class="aside-articles">Здесь боковые статьи</section>
-    </aside>
-
-
-
-
-
-
+    <div>хрень</div>
 
   </main>
 

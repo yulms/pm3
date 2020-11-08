@@ -18,6 +18,10 @@
   }
 }
 
+.page__promo-index {
+  margin-top: $space;
+}
+
 .page__section--carousel {
   @include media-desktop-up {
     max-width: calc((#{$max-width} + 100%) / 2);
@@ -49,9 +53,7 @@
 
 .page__breadcrumbs {
   max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $space*2;
+  margin: 0 auto $space*2;
 }
 
 
@@ -61,4 +63,10 @@
   margin-right: auto;
   padding-left: var(--page-paddings);
   padding-right: var(--page-paddings);
+
+  // @include media-tablet-landscape-down {
+  //   max-width: $max-width;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }

@@ -2,6 +2,7 @@
   <h2 class="title title--4 filter__title">Подбор товаров</h2>
   <span class="filter__header-subtitle">Найдено: </span>
   <span class="filter__header-subtitle">235</span>
+  <span class="filter__header-subtitle">товаров</span>
 </header>
 
 <section class="filter__single-filter">
@@ -11,14 +12,14 @@
   <ul class="filter__list">
     <li class="filter__item">
       <label class="radiocheck">
-        <input class="radiocheck__input visually-hidden" type="checkbox" name="BergHOFF" checked>
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="BergHOFF">
         <span class="radiocheck__box radiocheck__box--check"></span>
         <span class="radiocheck__caption">BergHOFF</span>
       </label>
     </li>
     <li class="filter__item">
       <label class="radiocheck">
-        <input class="radiocheck__input visually-hidden" type="checkbox" name="Peterhoff" checked>
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="Peterhoff">
         <span class="radiocheck__box radiocheck__box--check"></span>
         <span class="radiocheck__caption">Peterhoff</span>
       </label>
@@ -48,7 +49,7 @@
     </li>
     <li class="filter__item">
       <label class="radiocheck">
-        <input class="radiocheck__input visually-hidden" type="checkbox" name="price2" checked>
+        <input class="radiocheck__input visually-hidden" type="checkbox" name="price2">
         <span class="radiocheck__box radiocheck__box--check"></span>
         <span class="radiocheck__caption">от 50 до 100 руб.</span>
       </label>
@@ -229,5 +230,7 @@
   </ul>
 </section>
 
-<button class="button button--options-primary filter__button-submit" type="button">Применить</button>
-<button class="link filter__button-clear">Очистить фильтр</button>
+<div class="filter__footer">
+  <button class="link filter__button-clear">Очистить</button>
+  <button class="button button--options-primary filter__button-submit" type="button">Применить</button>
+</div>

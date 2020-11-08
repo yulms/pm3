@@ -100,7 +100,7 @@
   letter-spacing: 0.04em;
   white-space: nowrap;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--textfield-bg, #ffffff);
   transform:
     translateX(-2px)
     translateY(calc(-1 * (var(--line-height) * 0.5 + var(--vertical-padding))))

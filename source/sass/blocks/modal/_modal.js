@@ -44,7 +44,6 @@ class Modal {
 
     Object.assign(this, defaults, overrides);
 
-    // this._init();
     this._modals = [];
     this._documentKeydownHandlerWasAdded = false;
 
@@ -215,7 +214,6 @@ class Modal {
   _getLastModalIndex() {
     return this._modals.length - 1;
   }
-
 
 
   _focus(currentModal, {shouldBeInside}) {
