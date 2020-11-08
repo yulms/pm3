@@ -44,7 +44,6 @@ class Modal {
 
     Object.assign(this, defaults, overrides);
 
-    // this._init();
     this._modals = [];
     this._documentKeydownHandlerWasAdded = false;
 
