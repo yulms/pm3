@@ -8,7 +8,7 @@ class Accordion {
       accordionClassName: 'accordion',
       buttonSelector: '.accordion__button',
       contentWrapperClassName: 'accordion__content-wrapper',
-      initStateDataAttribute: 'data-accordion-open'
+      initStateDataAttribute: 'accordionOpen'
     };
 
     Object.assign(this, defaults, overrides);
@@ -26,6 +26,15 @@ class Accordion {
       // Create a wrapper element for `contents` and hide it
       let wrapper = document.createElement('div');
       wrapper.classList.add(this.contentWrapperClassName);
+
+
+
+      // ! найти решение получше
+      // setTimeout(() => {wrapper.style.height = wrapper.scrollHeight + 'px';}, 0);
+
+
+
+
 
       if (!initStateIsOpened) {
         wrapper.hidden = true;
@@ -69,6 +78,7 @@ class Accordion {
         // let fullHeight =  wrapper.scrollHeight;
         // wrapper.style.height = fullHeight + 'px';
         wrapper.addEventListener('transitionend', () => {
+
           wrapper.style.height = 'auto';
           wrapper.hidden = true;
           wrapper.style.transitionDuration = '';
@@ -88,7 +98,7 @@ class Accordion {
 
   _getInitState(heading) {
     let initStateIsOpened;
-    let widthOpened = heading.dataset.accordionOpen;
+    let widthOpened = heading.dataset[this.initStateDataAttribute];
 
     switch (widthOpened) {
       case undefined:

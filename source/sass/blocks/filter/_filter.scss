@@ -35,19 +35,21 @@
 
 
 .filter__footer {
-
   display: flex;
   align-items: baseline;
-  margin: 0 calc(var(--page-paddings) * -1);
-  padding: 1rem;
-
 
   @include media-tablet-landscape-down {
     position: sticky;
     bottom: 0;
     z-index: 1;
+    margin: 0 calc(var(--page-paddings) * -1);
+    padding: 1rem;
     background-color: inherit;
     box-shadow: 0 -1px 4px 0 $color__shadows;
+  }
+
+  @include media-desktop-up {
+    margin-top: $space;
   }
 }
 

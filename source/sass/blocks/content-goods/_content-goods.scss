@@ -12,37 +12,46 @@
   }
 
   @include media-desktop-up {
-    grid-template-columns: $space*19 1fr;
-    // grid-template-columns: 1fr;
-    // grid-template-rows: auto auto auto 1fr;
-    grid-template-areas:
+    // в этом варианте (grid-template) есть возможность
+    // установить высоту row именованной области
+    // этот код grid-template-rows: repeat(6, auto) 1fr; такой возможности не дает
+    grid-template:
       "breadcrumbs breadcrumbs"
       "promo promo"
-      "filter header"
-      "filter minicardList"
-      ". often-looking"
+      "header header"
+      "filter category-list"
+      "filter often-looking-top"
+      "filter minicardList" 1fr
+      ". often-looking-bottom"
       "brands brands"
-      "admin-content admin-content";
-
+      "admin-content admin-content"
+      / #{$space*19} 1fr;
 
     column-gap: $space*2;
     align-items: start;
 
 
-    // только свойства, относящиеся к grid
-
-    // для новых появляющихся блоков высота больше 1й строки, что бы блок не
+    // ! только свойства, относящиеся к grid
+    // для новых появляющихся блоков, что бы блок не
     // позиционировался в пустоты
     // & > * {
-    //   grid-row: span 2;
+    //   grid-column: 1/-1;
     // }
 
     &__breadcrumbs {
       grid-area: breadcrumbs;
     }
 
-    &__header {
+    &__title-container {
       grid-area: header;
+    }
+
+    &__category-list {
+      grid-area: category-list;
+    }
+
+    &__often-looking {
+      grid-area: often-looking-top;
     }
 
     &__minicard-list {
@@ -50,7 +59,7 @@
     }
 
     &__often-looking-bottom {
-      grid-area: often-looking;
+      grid-area: often-looking-bottom;
     }
 
     &__brands {
@@ -79,17 +88,15 @@
 }
 
 
-.content-goods__header {
-  margin-bottom: $space;
-  padding-bottom: $space*1.5;
-  border-bottom: 1px solid $color__additional-2;
-}
-
 .content-goods__title-container {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  margin: 0 0 $space*1.5 $space*-1;
+  margin: 0 0 $space*2 $space*-1;
+
+  @include media-mobile-only {
+    margin-bottom: $space*1.5;
+  }
 }
 
 .content-goods__title {
@@ -132,8 +139,9 @@
 }
 
 .content-goods__promo {
-  @include media-tablet-portrait-up {
-    margin-bottom: $space*4;
+  @include media-tablet-landscape-up {
+    margin-top: $space;
+    margin-bottom: $space*3;
   }
 }
 

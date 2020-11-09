@@ -9,26 +9,36 @@
 
   <main class="main page__main content-goods page__content-goods">
 
-    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs content-goods__breadcrumbs"})
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "content-goods__breadcrumbs"})
 
-    <header class="content-goods__header">
+    <header class="content-goods__title-container">
+      <h1 class="title title--2 content-goods__title">Наборы посуды</h1>
+      <span class="content-goods__subtitle">235 товаров</span>
+    </header>
 
-      <div class="content-goods__title-container">
-        <h1 class="title title--2 content-goods__title">Наборы посуды</h1>
-        <span class="content-goods__subtitle">235 товаров</span>
-      </div>
-
+    <section class="content-goods__category-list">
+      <h2 class="visually-hidden">Подкатегории товаров</h2>
       @@include("./category-list/_category-list.html", {
-      "itemsNumber": "6",
-      "class": "content-goods__category-list"
+      "itemsNumber": "6"
       })
+    </section>
 
 
-      <div class="often-looking content-goods__often-looking">
-        @@include("./often-looking/_often-looking.html", {"position": "top"})
-      </div>
+    <section class="often-looking content-goods__often-looking">
+      <h2 class="visually-hidden">Популярные подборки товаров</h2>
+      @@include("./often-looking/_often-looking.html", {"position": "top"})
+    </section>
 
-      <div class="product-control">
+    <section class="filter content-goods__filter" id="modalFilter">
+      @@include("./filter/_filter.html")
+    </section>
+
+    <article class="minicard-list content-goods__minicard-list">
+      <h2 class="visually-hidden">Наборы посуды - предложения товаров</h2>
+
+      <section class="product-control minicard-list__product-control">
+
+        <h3 class="visually-hidden">Настройки показа предложений</h3>
 
         <div class="product-control__element product-control__switch-view switch-view">
           @@include("./switch-view/_switch-view.html")
@@ -59,13 +69,9 @@
           </div>
         </div>
 
+      </section>
 
-      </div>
 
-    </header>
-
-    <section class="minicard-list content-goods__minicard-list">
-      <h2 class="visually-hidden">Наборы посуды - предложения товаров</h2>
       <ul class="minicard-list__list minicard-list__list--grid">
 
         <li class="minicard-list__item">
@@ -288,11 +294,12 @@
       </ul>
 
       @@include("./pagination/_pagination.html")
-    </section>
+    </article>
 
-    <div class="often-looking content-goods__often-looking-bottom">
+    <section class="often-looking content-goods__often-looking-bottom">
+      <h2 class="visually-hidden">Возможно вас заинтересует</h2>
       @@include("./often-looking/_often-looking.html", {"position": "bottom"})
-    </div>
+    </section>
 
     <section class="content-goods__brands">
       <h2 class="title title--2 page__section-title">Наборы посуды по брендам</h2>
@@ -303,7 +310,7 @@
       @@include("./admin-content/_admin-content.html", {"page": "other"})
     </article>
 
-    <section class="content-goods__promo">
+    <article class="content-goods__promo">
       <h2 class="visually-hidden">Акции и специальные предложения</h2>
 
       <a class="banner content-goods__banner" href="#">
@@ -324,13 +331,7 @@
         </div>
       </a>
 
-    </section>
-
-    <section class="filter content-goods__filter" id="modalFilter">
-      @@include("./filter/_filter.html")
-    </section>
-
-    <div>хрень</div>
+    </article>
 
   </main>
 
