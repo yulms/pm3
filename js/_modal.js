@@ -125,7 +125,6 @@ class Modal {
 
       // обработчик на закрытие по Esc - один на все открытые окна
       if (!this._documentKeydownHandlerWasAdded) {
-        console.log('добавляем обработчик закрытия');
         document.addEventListener('keydown', this);  // см this.handleEvent
         this._documentKeydownHandlerWasAdded = true;
       }
