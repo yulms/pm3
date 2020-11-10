@@ -7,32 +7,13 @@
   :root {
     --page-paddings: 2rem; } }
 
-/* raleway-regular - latin_cyrillic */
-@font-face {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
-
 /* raleway-500 - latin_cyrillic */
 @font-face {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-500.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
-
-/* raleway-700 - latin_cyrillic */
-@font-face {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-700.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-500.woff") format("woff"); }
 
 /* raleway-600 - latin_cyrillic */
 @font-face {
@@ -40,8 +21,15 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-600.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-600.woff") format("woff"); }
+
+/* raleway-700 - latin_cyrillic */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""), url("../fonts/raleway-v18-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/raleway-v18-latin_cyrillic-700.woff") format("woff"); }
 
 html {
   box-sizing: border-box; }
@@ -61,7 +49,8 @@ body {
   font-weight: 500;
   color: #505050;
   background-color: #ffffff;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden; }
 
 img,
 frame {
@@ -104,11 +93,19 @@ sub {
   border: 0;
   clip: rect(0 0 0 0); }
 
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw; }
+
 .title {
-  font-weight: 600;
   color: #4c4c4c; }
 
 .title--1 {
+  font-weight: 600;
   letter-spacing: -0.04em; }
   @media (max-width: 607px) {
     .title--1 {
@@ -122,19 +119,23 @@ sub {
 .title--2 {
   font-size: 2.25rem;
   line-height: 3rem;
+  font-weight: 600;
   letter-spacing: -0.04em; }
 
 .title--3 {
   font-size: 1.5rem;
   line-height: 2rem;
+  font-weight: 600;
   letter-spacing: -0.02em; }
 
 .title--4 {
   font-size: 1rem;
+  font-weight: 700;
   line-height: 1.5rem; }
 
 .title--5 {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
   line-height: 1rem; }
 
 .admin-content h1,
@@ -1317,8 +1318,8 @@ sub {
 
 .carousel__list {
   display: flex;
-  padding: 3rem var(--carousel-extra-space);
-  margin: -3rem calc(var(--carousel-extra-space) * -1);
+  padding: 3rem var(--carousel-extra-space) 3rem;
+  margin: -3rem calc(var(--carousel-extra-space) * -1) -3rem;
   list-style: none;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; }
@@ -1704,54 +1705,35 @@ sub {
   .minicard-list__item-inner:hover, .minicard-list__item-inner:focus-within {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
-.page__header {
-  margin-bottom: 1rem; }
-
-.page__main {
-  margin-bottom: 8rem; }
-
-.page__section {
+.page__wrapper {
   max-width: 1450px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings); }
-  .page__section:not(:last-child) {
-    margin-bottom: 4rem; }
+  padding: 1rem var(--page-paddings) 8rem; }
 
-.page__promo-index {
-  margin-top: 1rem; }
-
-@media (min-width: 1280px) {
-  .page__section--carousel {
-    max-width: calc((1450px + 100%) / 2);
-    margin-right: 0; } }
+.page__section:not(:last-child) {
+  margin-bottom: 4rem; }
 
 .page__carousel {
-  --carousel-extra-space: var(--page-paddings); }
+  --carousel-extra-space: var(--page-paddings);
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings); }
+  @media (min-width: 1280px) {
+    .page__carousel {
+      max-width: calc((1450px + 100%) / 2);
+      margin-left: auto;
+      margin-right: 0; } }
 
 .page__section-title {
   margin: 0 0 2rem; }
 
 .page__title {
-  max-width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings); }
+  margin: 0 0 2rem; }
 
 .page__breadcrumbs {
-  max-width: 1450px;
-  margin: 0 auto 2rem; }
-
-.page__content-goods {
-  max-width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings); }
+  margin-left: calc(var(--page-paddings) * -1);
+  margin-right: calc(var(--page-paddings) * -1);
+  margin-bottom: 1.5rem; }
 
 .main {
   position: relative;
@@ -1805,7 +1787,7 @@ sub {
   z-index: 1;
   color: #cccccc;
   background-color: #233240;
-  background-image: url("/img/svg/background.svg");
+  background-image: url("../img/svg/background.svg");
   transition: all 0.4s ease-in; }
   @media (max-width: 979px) {
     .header {
@@ -2460,7 +2442,13 @@ sub {
 @media (max-width: 979px) {
   .promo-index {
     padding-left: 0;
-    padding-right: 0; } }
+    padding-right: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw; } }
 
 @media (min-width: 608px) and (max-width: 979px) {
   .promo-index {
@@ -2543,7 +2531,7 @@ sub {
   padding-bottom: 1rem;
   color: #cccccc;
   background-color: #233240;
-  background-image: url("/img/svg/background.svg");
+  background-image: url("../img/svg/background.svg");
   transition: all 0.4s ease-in; }
   .footer *:focus {
     outline: 2px dashed #ffffff;
@@ -2810,11 +2798,6 @@ sub {
       grid-area: promo; }
     .content-goods__filter {
       grid-area: filter; } }
-
-.content-goods__breadcrumbs {
-  margin-left: calc(var(--page-paddings) * -1);
-  margin-right: calc(var(--page-paddings) * -1);
-  margin-bottom: 1.5rem; }
 
 .content-goods__title-container {
   display: flex;
