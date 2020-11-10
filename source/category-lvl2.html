@@ -5,11 +5,11 @@
 
 <body class="page">
 
-  @@include("./header/_header.html", {"class": "page__header"})
+  @@include("./header/_header.html")
 
-  <main class="main page__main content-goods page__content-goods">
+  <main class="main page__wrapper content-goods">
 
-    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "content-goods__breadcrumbs"})
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs content-goods__breadcrumbs"})
 
     <header class="content-goods__title-container">
       <h1 class="title title--1 content-goods__title">Наборы посуды</h1>
@@ -301,10 +301,12 @@
       @@include("./often-looking/_often-looking.html", {"position": "bottom"})
     </section>
 
-    <section class="content-goods__brands">
-      <h2 class="title title--2 page__section-title">Наборы посуды по брендам</h2>
-      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "brands"})
-    </section>
+    <div class="content-goods__brands page__section full-width">
+      <section class="page__carousel">
+        <h2 class="title title--2 page__section-title">Наборы посуды по брендам</h2>
+        @@include("./carousel/_carousel.html", {"carouselType": "brands"})
+      </section>
+    </div>
 
     <article class="admin-content content-goods__admin-content">
       @@include("./admin-content/_admin-content.html", {"page": "other"})

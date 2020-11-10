@@ -81,13 +81,6 @@
 }
 
 
-.content-goods__breadcrumbs {
-  margin-left: calc(var(--page-paddings) * -1);
-  margin-right: calc(var(--page-paddings) * -1);
-  margin-bottom: $space*1.5;
-}
-
-
 .content-goods__title-container {
   display: flex;
   align-items: baseline;

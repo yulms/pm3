@@ -32,8 +32,8 @@
 
 .carousel__list {
   display: flex;
-  padding: 3rem var(--carousel-extra-space);
-  margin: -3rem calc(var(--carousel-extra-space) * -1);
+  padding: 3rem var(--carousel-extra-space) 3rem;
+  margin: -3rem calc(var(--carousel-extra-space) * -1) -3rem;
   list-style: none;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -53,6 +53,34 @@
     width: 0;
     height: 0;
   }
+
+  // &::-webkit-scrollbar {
+  //   width: $space*0.75;
+  //   height: $space*0.75;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   background: rgba(0, 0, 0, 0.08);
+  //   border-radius: $space*0.75;
+  //   box-shadow:
+  //     inset 2px 2px 4px rgba(255, 255, 255, 0.25),
+  //     inset -2px -2px 4px rgba(0, 0, 0, 0.25);
+  // }
+
+  // &::-webkit-scrollbar-track {
+  //   background: rgba(0, 0, 0, 0.04);
+  //   width: 50%;
+  // }
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   right: 100%;
+  //   bottom: 0;
+  //   width: var(--page-paddings);
+  //   height: $space;
+  //   background-color: #ffffff;
+  // }
 }
 
 

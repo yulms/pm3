@@ -1,37 +1,36 @@
-.page__header {
-  margin-bottom: $space;
-}
+// блок page содержит общие свойства по умолчанию
+// в случае, если свойство отличается используется другой микс
+// пример
+// .page__breadcrumbs { margin-bottom: 1.5rem }
+// на странице товара, если надо другой отступ, вместо .page__breadcrumbs использовать
+// .product__breadcrumbs { margin-bottom: 2rem }
 
-.page__main {
-  margin-bottom: $space*8;
-}
-
-.page__section {
+.page__wrapper {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings);
+  padding: $space var(--page-paddings) $space*8;
+}
 
+.page__section {
   &:not(:last-child) {
     margin-bottom: $space*4;
   }
 }
 
-.page__promo-index {
-  margin-top: $space;
-}
 
-.page__section--carousel {
+.page__carousel {
+  // компенсация paddings отриц. margin для каруселей
+  --carousel-extra-space: var(--page-paddings);
+
+  padding-left: var(--page-paddings);
+  padding-right: var(--page-paddings);
+
   @include media-desktop-up {
     max-width: calc((#{$max-width} + 100%) / 2);
+    margin-left: auto;
     margin-right: 0;
   }
-}
-
-// компенсация paddings отриц. margin для каруселей
-.page__carousel {
-  --carousel-extra-space: var(--page-paddings);
 }
 
 
@@ -41,26 +40,12 @@
 
 
 .page__title {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: $space*2;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings);
+  margin: 0 0 $space*2;
 }
 
 
 .page__breadcrumbs {
-  max-width: $max-width;
-  margin: 0 auto $space*2;
-}
-
-
-.page__content-goods {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-paddings);
-  padding-right: var(--page-paddings);
+  margin-left: calc(var(--page-paddings) * -1);
+  margin-right: calc(var(--page-paddings) * -1);
+  margin-bottom: $space*1.5;
 }

@@ -3,14 +3,14 @@
 
 @@include("./!head/_head.html")
 
-<body class="page page--index">
+<body class="page">
 
-  @@include("./header/_header.html", {"class": "page__header"})
+  @@include("./header/_header.html")
 
-  <main class="main page__main">
+  <main class="main page__wrapper">
     <h1 class="visually-hidden">Интернет-магазин посуды</h1>
 
-    <section class="page__section promo-index page__promo-index">
+    <section class="page__section promo-index">
       @@include("./promo-index/_promo-index.html")
     </section>
 
@@ -19,10 +19,14 @@
       @@include("./category-list/_category-list.html", {"itemsNumber": "12"})
     </section>
 
-    <section class="page__section page__section--carousel">
-      <h2 class="title title--2 page__section-title">Популярные товары</h2>
-      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "minicard"})
-    </section>
+    <div class="page__section full-width">
+      <section class="page__carousel">
+
+        <h2 class="title title--2 page__section-title">Популярные товары</h2>
+        @@include("./carousel/_carousel.html", {"carouselType": "minicard"})
+
+      </section>
+    </div>
 
     <section class="page__section">
       <h2 class="title title--2 page__section-title">Каталог</h2>
@@ -33,10 +37,13 @@
       @@include("./admin-content/_admin-content.html", {"page": "homepage"})
     </article>
 
-    <section class="page__section page__section--carousel">
-      <h2 class="title title--2 page__section-title">Наши бренды</h2>
-      @@include("./carousel/_carousel.html", {"class": "page__carousel", "carouselType": "brands"})
-    </section>
+
+    <div class="page__section full-width">
+      <section class="page__carousel">
+        <h2 class="title title--2 page__section-title">Наши бренды</h2>
+        @@include("./carousel/_carousel.html", {"carouselType": "brands"})
+      </section>
+    </div>
 
   </main>
 

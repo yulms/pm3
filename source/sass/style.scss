@@ -2,7 +2,8 @@
 @import "variables";
 @import "mixins";
 @import "global";
-@import "blocks/visually-hidden/visually-hidden";
+@import "service"; // служебные блоки (visually-hidden и т.д.)
+//
 @import "blocks/title/title";
 @import "blocks/admin-content/admin-content";
 @import "blocks/button/button";
