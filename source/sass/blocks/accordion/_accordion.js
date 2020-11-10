@@ -28,14 +28,6 @@ class Accordion {
       wrapper.classList.add(this.contentWrapperClassName);
 
 
-
-      // ! найти решение получше
-      // setTimeout(() => {wrapper.style.height = wrapper.scrollHeight + 'px';}, 0);
-
-
-
-
-
       if (!initStateIsOpened) {
         wrapper.hidden = true;
       }
@@ -74,23 +66,23 @@ class Accordion {
         // }, {once: true});
         wrapper.style.height = fullHeight + 'px';
       } else {
+        // debugger;
         // закрытие
-        // let fullHeight =  wrapper.scrollHeight;
-        // wrapper.style.height = fullHeight + 'px';
+        let fullHeight =  wrapper.scrollHeight;
+        wrapper.style.height = fullHeight + 'px';
         wrapper.addEventListener('transitionend', () => {
-
           wrapper.style.height = 'auto';
           wrapper.hidden = true;
           wrapper.style.transitionDuration = '';
         }, {once: true});
 
-        wrapper.style.transitionDuration = '70ms';
-        wrapper.style.height = 0;
+        // wrapper.style.transitionDuration = '70ms';
+        // wrapper.style.height = 0;
 
-        // setTimeout(() => {
-        //   wrapper.style.transitionDuration = '70ms';
-        //   wrapper.style.height = 0;
-        // }, 0);
+        setTimeout(() => {
+          wrapper.style.transitionDuration = '70ms';
+          wrapper.style.height = 0;
+        }, 0);
       }
     });
 

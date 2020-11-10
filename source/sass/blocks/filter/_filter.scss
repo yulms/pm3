@@ -9,8 +9,8 @@
     --textfield-bg: #{$color__additional-1-1};
 
     padding: 2rem; // ! ?
+    border-radius: $controls__border-radius;
     background-color: $color__additional-1-1;
-    // border: 1px solid $color__additional-2;
   }
 }
 
