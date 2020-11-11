@@ -21,7 +21,6 @@
 // }
 
 
-/* raleway-500 - latin_cyrillic */
 @font-face {
   font-family: "Raleway";
   font-style: normal;
@@ -31,7 +30,7 @@
     url("../fonts/raleway-v18-latin_cyrillic-500.woff2") format("woff2"),
     url("../fonts/raleway-v18-latin_cyrillic-500.woff") format("woff");
 }
-/* raleway-600 - latin_cyrillic */
+
 @font-face {
   font-family: "Raleway";
   font-style: normal;
@@ -41,7 +40,7 @@
     url("../fonts/raleway-v18-latin_cyrillic-600.woff2") format("woff2"),
     url("../fonts/raleway-v18-latin_cyrillic-600.woff") format("woff");
 }
-/* raleway-700 - latin_cyrillic */
+
 @font-face {
   font-family: "Raleway";
   font-style: normal;
@@ -80,7 +79,6 @@ body {
   color: $color-font__base;
   background-color: $color__background;
   -webkit-tap-highlight-color: transparent;
-  // temp
   overflow-x: hidden;
 }
 

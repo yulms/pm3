@@ -33,6 +33,21 @@ $stars-height: $space*0.875;
   background-repeat: space;
 }
 
+.stars__average-rating {
+  padding-left: $space*0.5;
+
+  &::after {
+    content: "|";
+    padding-left: $space*0.5;
+  }
+}
+
 .stars__review-link {
   margin-left: $space*0.5;
+}
+
+.stars--short {
+  & .stars__quantity-caption {
+    display: none;
+  }
 }

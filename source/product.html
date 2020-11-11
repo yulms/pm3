@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./!head/_head.html")
+
+<body class="page">
+
+  @@include("./header/_header.html")
+
+  <main class="main page__wrapper page-product">
+
+    @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs"})
+
+    <header class="page-product__header">
+      <h1 class="title title--2 page-product__title">Набор посуды BergHOFF 128513 на 12 персон</h1>
+      @@include("./stars/_stars.html")
+      <div>
+        <span class="product__code-caption">Код:</span>
+        <span class="product__code">456-451</span>
+      </div>
+    </header>
+
+
+
+
+
+    <section class="page-product__gallery">
+      <h2 class="visually-hidden">Изображения товара</h2>
+      <div class="slider">
+        <ul class="slider__list">
+          <li class="slider__item" id="slider__item-1">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-1.jpg" alt="Изображение 1">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-2">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-2.jpg" alt="Изображение 2">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-3">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-3.jpg" alt="Изображение 3">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-4">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-4.jpg" alt="Изображение 4">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-5">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-5.jpg" alt="Изображение 5">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-6">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-6.jpg" alt="Изображение 6">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-7">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-7.jpg" alt="Изображение 7">
+            </div>
+          </li>
+          <li class="slider__item" id="slider__item-8">
+            <div class="slider__image-container">
+              <img class="slider__image" src="img/raster/product-8.jpg" alt="Изображение 8">
+            </div>
+          </li>
+        </ul>
+
+
+        <ul class="slider__nav-list">
+          <li class="slider__nav-item">
+            <a class="slider__nav-link slider__nav-link--active" href="#slider__item-1">
+              <span class="visually-hidden">Перейти к изображению 1</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-2">
+              <span class="visually-hidden">Перейти к изображению 2</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-3">
+              <span class="visually-hidden">Перейти к изображению 3</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-4">
+              <span class="visually-hidden">Перейти к изображению 4</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-5">
+              <span class="visually-hidden">Перейти к изображению 5</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-6">
+              <span class="visually-hidden">Перейти к изображению 6</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-7">
+              <span class="visually-hidden">Перейти к изображению 7</span>
+            </a>
+          </li>
+          <li class="slider__nav-item">
+            <a class="slider__nav-link" href="#slider__item-8">
+              <span class="visually-hidden">Перейти к изображению 8</span>
+            </a>
+          </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </section>
+
+
+
+  </main>
+
+  @@include("./footer/_footer.html")
+
+
+  @@include("./modal/_modal-template.html")
+  @@include("./modal/_modal--choose-city.html")
+
+  <script src="js/script.js" type="module"></script>
+</body>
+
+</html>

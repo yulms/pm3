@@ -1,0 +1,14 @@
+.page-product {
+
+}
+
+.page-product__header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.page-product__title {
+  margin: 0 0 $space;
+  width: 100%;
+}

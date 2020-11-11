@@ -1,9 +1,10 @@
+// Базовые стили
 @import "media";
 @import "variables";
 @import "mixins";
 @import "global";
 @import "service"; // служебные блоки (visually-hidden и т.д.)
-//
+// Компоненты
 @import "blocks/title/title";
 @import "blocks/admin-content/admin-content";
 @import "blocks/button/button";
@@ -24,7 +25,8 @@
 @import "blocks/chip-set/chip-set";
 @import "blocks/radiocheck/radiocheck";
 @import "blocks/accordion/accordion";
-//
+@import "blocks/slider/slider";
+// Крупные компоненты
 @import "blocks/breadcrumbs/breadcrumbs";
 @import "blocks/search-form/search-form";
 @import "blocks/category-list/category-list";
@@ -35,7 +37,7 @@
 @import "blocks/switch-view/switch-view";
 @import "blocks/pagination/pagination";
 @import "blocks/minicard-list/minicard-list";
-//
+// Модули
 @import "blocks/page/page";
 @import "blocks/main/main";
 @import "blocks/banner/banner";
@@ -43,7 +45,8 @@
 @import "blocks/main-nav/main-nav";
 @import "blocks/promo-index/promo-index";
 @import "blocks/footer/footer";
-@import "blocks/content-goods/content-goods";
+@import "blocks/page-goods/page-goods";
+@import "blocks/page-product/page-product";
 @import "blocks/cart-list/cart-list";
 @import "blocks/often-looking/often-looking";
 @import "blocks/product-control/product-control";

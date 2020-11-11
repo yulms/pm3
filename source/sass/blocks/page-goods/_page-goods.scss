@@ -1,4 +1,4 @@
-.content-goods {
+.page-goods {
   @include media-tablet-landscape-up {
     display: grid;
   }
@@ -81,7 +81,7 @@
 }
 
 
-.content-goods__title-container {
+.page-goods__title-container {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -92,57 +92,57 @@
   }
 }
 
-.content-goods__title {
+.page-goods__title {
   margin: 0 0 0 $space;
 }
 
-.content-goods__subtitle {
+.page-goods__subtitle {
   margin-left: $space;
   color: $color-font__secondary;
 }
 
 
-.content-goods__category-list {
+.page-goods__category-list {
   margin-bottom: $space*1.5;
 }
 
 
-.content-goods__often-looking {
+.page-goods__often-looking {
   margin-bottom: $space*1.5;
 }
 
 
-.content-goods__minicard-list {
+.page-goods__minicard-list {
   margin-bottom: $space*3;
 }
 
 
-.content-goods__often-looking-bottom {
+.page-goods__often-looking-bottom {
   margin-bottom: $space*3;
 }
 
-.content-goods__brands {
+.page-goods__brands {
   margin-bottom: $space*3;
 }
 
-.content-goods__admin-content {
+.page-goods__admin-content {
   @include media-mobile-only {
     margin-bottom: $space*3;
   }
 }
 
-.content-goods__promo {
+.page-goods__promo {
   @include media-tablet-landscape-up {
     margin-top: $space;
     margin-bottom: $space*3;
   }
 }
 
-.content-goods__banner {
+.page-goods__banner {
   --image-height: 240px;
 }
 
-.content-goods__banner-offer {
+.page-goods__banner-offer {
   @include media-mobile-only {
     position: static;
     transform: none;
@@ -152,7 +152,7 @@
   }
 }
 
-.content-goods__filter {
+.page-goods__filter {
   @include media-tablet-landscape-down {
     display: none;
   }

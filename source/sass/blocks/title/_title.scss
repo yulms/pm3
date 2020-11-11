@@ -18,10 +18,18 @@
 }
 
 .title--2 {
-  font-size: 2.25rem;
-  line-height: 3rem;
   font-weight: 600;
   letter-spacing: -0.04em;
+
+  @include media-mobile-only {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  @include media-tablet-portrait-up {
+    font-size: 2.25rem;
+    line-height: 3rem;
+  }
 }
 
 .title--3 {
