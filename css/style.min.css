@@ -1089,6 +1089,9 @@ sub {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: auto; }
+  .slider__list::-webkit-scrollbar {
+    width: 0;
+    height: 0; }
   @media (max-width: 979px) {
     .slider__list {
       margin: 0 calc(var(--page-paddings) * -1) 1rem; } }
@@ -1135,7 +1138,9 @@ sub {
   display: block;
   width: 1rem;
   height: 1rem;
-  padding: 0.25rem; }
+  padding: 0.25rem;
+  outline: none;
+  transition: padding 150ms cubic-bezier(0.4, 0, 0.2, 1); }
   .slider__nav-link::before {
     content: "";
     display: block;
@@ -2363,10 +2368,9 @@ sub {
 
 .main-nav__link--lvl1 {
   padding: 0.5rem 1rem;
-  color: #191919;
-  white-space: nowrap;
   color: rgba(0, 0, 0, 0.7);
-  font-weight: 600; }
+  font-weight: 600;
+  white-space: nowrap; }
 
 .main-nav__item-lvl1:focus-within .main-nav__link--lvl1,
 .main-nav__item-lvl1:hover .main-nav__link--lvl1 {

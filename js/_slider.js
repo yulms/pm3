@@ -7,8 +7,8 @@ class Slider {
       sliderSelector: '.slider',
       listSelector: '.slider__list',
       itemSelector: '.slider__item',
-      linkSelector: '.slider__nav-link',
       navItemSelector: '.slider__nav-item',
+      navLinkSelector: '.slider__nav-link',
       navLinkActiveClass: 'slider__nav-link--active'
     };
 
@@ -22,15 +22,16 @@ class Slider {
 
 
     this.element.addEventListener('click', (evt) => {
-      let target = evt.target.closest(this.linkSelector);
+      // вылавливаем клик по навигационной ссылке => перелистываем
+      let target = evt.target.closest(this.navItemSelector);
       if (!target) return;
       evt.preventDefault();
 
-      // добавить функцию перелистывания
-      this.listElement.scrollLeft += 420;
-
+      // 1. Определяем индекс clicked item
+      let navItemElements = Array.from(this.navItemElements);
+      let targetIndex = navItemElements.indexOf(target);
+      this._scrollSlide(targetIndex);
     });
-
 
 
     this._createIntersectionObserver({
@@ -38,16 +39,14 @@ class Slider {
       targetElements: this.itemElements
     });
 
+
     this.element.addEventListener('slideIn', (evt) => {
-      // менять активную ссылку
-      // 1. Определить номер активного слайда (ol Number?)
+      // замена активной ссылки
+      // Определяем номер активного слайда
       let items = Array.from(this.itemElements);
-      let currentIndex = items.indexOf(evt.detail.targetElement);
-      // очистить активный класс
-      this.navItemElements[this.lastIndex].firstElementChild.classList.remove(this.navLinkActiveClass);
-      // 3. Установить в навигацию по установленному номеру активный класс
-      this.navItemElements[currentIndex].firstElementChild.classList.add(this.navLinkActiveClass);
-      this.lastIndex = currentIndex;
+      let targetIndex = items.indexOf(evt.detail.targetElement);
+      this._updateNavItems(targetIndex);
+      this.lastIndex = targetIndex;
     });
 
   }
@@ -90,6 +89,22 @@ class Slider {
     targetElements.forEach((elem) => {
       observer.observe(elem);
     });
+  }
+
+
+  _scrollSlide(targetIndex) {
+    // на сколько элементов надо подвинуться? Положительное знач - вперед, отрицательное - назад
+    let indexDiff = targetIndex - this.lastIndex;
+    let itemWidth = this.itemElements[0].offsetWidth;
+    this.listElement.scrollLeft += itemWidth * indexDiff;
+  }
+
+
+  _updateNavItems(targetIndex) {
+    // очистить активный класс
+    this.navItemElements[this.lastIndex].firstElementChild.classList.remove(this.navLinkActiveClass);
+    // 3. Установить в навигацию по установленному номеру активный класс
+    this.navItemElements[targetIndex].firstElementChild.classList.add(this.navLinkActiveClass);
   }
 
 
