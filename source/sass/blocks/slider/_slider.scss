@@ -7,6 +7,11 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: auto;
 
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
   @include media-tablet-portrait-down {
     margin: 0 calc(var(--page-paddings) * -1) $space;
   }
@@ -69,6 +74,8 @@
   width: $space;
   height: $space;
   padding: $space*0.25;
+  outline: none;
+  transition: padding 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &::before {
     content: "";

@@ -75,12 +75,9 @@
 
 .main-nav__link--lvl1 {
   padding: $space*0.5 $space;
-  color: $color-font__subtitle2;
-  white-space: nowrap;
-
-
   color: $color-font__subtitle1;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .main-nav__item-lvl1:focus-within .main-nav__link--lvl1,
