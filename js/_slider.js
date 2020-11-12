@@ -1,36 +1,58 @@
 'use strict';
+import { isTouchDevice } from  './util.js';
 
 
 class Slider {
-  constructor() {
+  constructor(overrides) {
     const defaults = {
       sliderSelector: '.slider',
+      firstSlideModificator: 'slider--first-slide',
+      lastSlideModificator: 'slider--last-slide',
       listSelector: '.slider__list',
       itemSelector: '.slider__item',
       navItemSelector: '.slider__nav-item',
+      navItemActiveClass: 'slider__nav-item--active',
       navLinkSelector: '.slider__nav-link',
-      navLinkActiveClass: 'slider__nav-link--active'
+      buttonToggleSelector: '.slider__toggle',
+      buttonToggleLeftClass: 'slider__toggle--left',
+      buttonToggleRightClass: 'slider__toggle--right'
     };
 
-    Object.assign(this, defaults);
+    Object.assign(this, defaults, overrides);
 
     this.element = document.querySelector(this.sliderSelector);
     this.listElement = this.element.querySelector(this.listSelector);
     this.itemElements = this.element.querySelectorAll(this.itemSelector);
     this.navItemElements = this.element.querySelectorAll(this.navItemSelector);
     this.lastIndex = 0; // индекс первого элемента
+    this.maxIndex = this.navItemElements.length - 1;
 
 
     this.element.addEventListener('click', (evt) => {
-      // вылавливаем клик по навигационной ссылке => перелистываем
-      let target = evt.target.closest(this.navItemSelector);
-      if (!target) return;
-      evt.preventDefault();
 
-      // 1. Определяем индекс clicked item
-      let navItemElements = Array.from(this.navItemElements);
-      let targetIndex = navItemElements.indexOf(target);
-      this._scrollSlide(targetIndex);
+      const isClickWasOnNavItem = () => {
+        // вылавливаем клик по навигационной ссылке => перелистываем
+        let target = evt.target.closest(this.navItemSelector);
+        if (!target) return false;
+        // отменяем переход по ссылке
+        evt.preventDefault();
+        // 1. Определяем индекс clicked item и скроллим
+        this._scrollSlide(+target.dataset.index);
+        return true;
+      };
+
+      const isClickWasOnToggleButton = () => {
+        let target = evt.target.closest(this.buttonToggleSelector);
+        if (!target) return false;
+        let targetIndex = this.lastIndex;
+        target.classList.contains(this.buttonToggleLeftClass) ?  targetIndex += -1 : targetIndex += 1;
+        this._scrollSlide(targetIndex);
+      };
+
+
+      if (isClickWasOnNavItem()) return;
+      isClickWasOnToggleButton();
+
     });
 
 
@@ -43,9 +65,12 @@ class Slider {
     this.element.addEventListener('slideIn', (evt) => {
       // замена активной ссылки
       // Определяем номер активного слайда
-      let items = Array.from(this.itemElements);
-      let targetIndex = items.indexOf(evt.detail.targetElement);
+      let targetIndex = +evt.detail.targetElement.dataset.index;
       this._updateNavItems(targetIndex);
+      // кнопки видны тлько на не тач устройствах
+      if (!isTouchDevice()) {
+        this._updateToggleButtons(targetIndex);
+      }
       this.lastIndex = targetIndex;
     });
 
@@ -102,9 +127,38 @@ class Slider {
 
   _updateNavItems(targetIndex) {
     // очистить активный класс
-    this.navItemElements[this.lastIndex].firstElementChild.classList.remove(this.navLinkActiveClass);
+    this.navItemElements[this.lastIndex].classList.remove(this.navItemActiveClass);
     // 3. Установить в навигацию по установленному номеру активный класс
-    this.navItemElements[targetIndex].firstElementChild.classList.add(this.navLinkActiveClass);
+    this.navItemElements[targetIndex].classList.add(this.navItemActiveClass);
+  }
+
+
+  _updateToggleButtons(targetIndex) {
+    const showLeftToggle = () => this.element.classList.remove(this.firstSlideModificator);
+    const hideLeftToggle = () => this.element.classList.add(this.firstSlideModificator);
+    const showRightToggle = () => this.element.classList.remove(this.lastSlideModificator);
+    const hideRightToggle = () => this.element.classList.add(this.lastSlideModificator);
+
+    // left - hide
+    if (targetIndex === 0) {
+      hideLeftToggle();
+    }
+
+    // left - show
+    if (targetIndex !== 0 && this.lastIndex === 0) {
+      showLeftToggle();
+    }
+
+    // right - hide
+    if (targetIndex === this.maxIndex) {
+      hideRightToggle();
+    }
+
+    // right - show
+    if (this.lastIndex === this.maxIndex && targetIndex !== this.maxIndex) {
+      showRightToggle();
+    }
+
   }
 
 
