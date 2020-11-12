@@ -2,6 +2,29 @@
 import { isTouchDevice } from  './util.js';
 
 
+const Button = {
+  LEFT: 'Назад',
+  RIGHT: 'Вперед'
+};
+
+const ButtonModClasses = {
+  [Button.LEFT]: 'slider__toggle--left',
+  [Button.RIGHT]: 'slider__toggle--right'
+};
+
+function getButtonHTML(buttonText) {
+  let buttonModClass = ButtonModClasses[buttonText];
+
+  return `<button class="button slider__toggle ${buttonModClass}" type="button">
+            <span class="visually-hidden">${buttonText}</span>
+            <svg class="slider__toggle-icon" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+            </svg>
+          </button>`;
+}
+
+
+
 class Slider {
   constructor(overrides) {
     const defaults = {
@@ -10,22 +33,34 @@ class Slider {
       lastSlideModificator: 'slider--last-slide',
       listSelector: '.slider__list',
       itemSelector: '.slider__item',
+      mainNavSelector: '.slider__nav',
       navItemSelector: '.slider__nav-item',
       navItemActiveClass: 'slider__nav-item--active',
       navLinkSelector: '.slider__nav-link',
       buttonToggleSelector: '.slider__toggle',
       buttonToggleLeftClass: 'slider__toggle--left',
-      buttonToggleRightClass: 'slider__toggle--right'
+      buttonToggleRightClass: 'slider__toggle--right',
+      createToggtleButtons: true
     };
 
     Object.assign(this, defaults, overrides);
 
     this.element = document.querySelector(this.sliderSelector);
+    if (!this.element) return;
     this.listElement = this.element.querySelector(this.listSelector);
     this.itemElements = this.element.querySelectorAll(this.itemSelector);
-    this.navItemElements = this.element.querySelectorAll(this.navItemSelector);
+
+    this.mainNavElement = this.element.querySelector(this.mainNavSelector);
+    if (this.mainNavElement) {
+      this.navItemElements = this.element.querySelectorAll(this.navItemSelector);
+    }
+
     this.lastIndex = 0; // индекс первого элемента
-    this.maxIndex = this.navItemElements.length - 1;
+    // this.maxIndex = this.navItemElements.length - 1;
+    this.maxIndex = this.itemElements.length - 1;
+
+
+    if (this.createToggtleButtons) this._createToggleButtons();
 
 
     this.element.addEventListener('click', (evt) => {
@@ -51,7 +86,9 @@ class Slider {
 
 
       if (isClickWasOnNavItem()) return;
-      isClickWasOnToggleButton();
+      if (this.createToggtleButtons) {
+        isClickWasOnToggleButton();
+      }
 
     });
 
@@ -68,12 +105,21 @@ class Slider {
       let targetIndex = +evt.detail.targetElement.dataset.index;
       this._updateNavItems(targetIndex);
       // кнопки видны тлько на не тач устройствах
-      if (!isTouchDevice()) {
+      if (this.createToggtleButtons && !isTouchDevice()) {
         this._updateToggleButtons(targetIndex);
       }
       this.lastIndex = targetIndex;
     });
 
+  }
+
+
+  _createToggleButtons() {
+    let setOfButtonsHTML = getButtonHTML(Button.LEFT) + getButtonHTML(Button.RIGHT);
+    this.element.firstElementChild.insertAdjacentHTML('beforeend', setOfButtonsHTML);
+    if (this.mainNavElement) {
+      this.mainNavElement.insertAdjacentHTML('afterbegin', setOfButtonsHTML);
+    }
   }
 
 
