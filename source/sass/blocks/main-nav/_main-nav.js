@@ -1,3 +1,4 @@
+import { isTouchDevice } from  './util.js';
 // Определить поддержку hover
 // Если поддержки нет - блокировать первый клик по меню первого уровня
 
@@ -16,7 +17,7 @@ class MainNav {
     this._firstClickedElement = null;
 
 
-    if (this._isTouchDevice()) {
+    if (isTouchDevice()) {
       this._init();
       this._enableFirstClickPrevention();
     }
@@ -24,17 +25,6 @@ class MainNav {
 
   _init() {
     this._mainElement = document.querySelector(this.mainSelector);
-  }
-
-  _isTouchDevice() {
-    let isTouchSupport = true;
-    try {
-      document.createEvent('TouchEvent');
-    }
-    catch (err) {
-      isTouchSupport = false;
-    }
-    return isTouchSupport;
   }
 
   _enableFirstClickPrevention() {

@@ -69,3 +69,18 @@ export function executeAfterAnimationEnd({element, animationClass, animationName
   element.addEventListener('animationend', execute, {once: true});
   element.classList.add(animationClass);
 }
+
+
+let isTouchSupport;
+export function isTouchDevice() {
+  if (isTouchSupport !== undefined) return isTouchSupport;
+
+  isTouchSupport = true;
+  try {
+    document.createEvent('TouchEvent');
+  }
+  catch (err) {
+    isTouchSupport = false;
+  }
+  return isTouchSupport;
+}

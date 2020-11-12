@@ -28,101 +28,133 @@
       <h2 class="visually-hidden">Изображения товара</h2>
 
       <div class="slider">
-        <ul class="slider__list">
-          <li class="slider__item" id="slider__item-1">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-1.jpg" alt="Изображение 1">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-2">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-2.jpg" alt="Изображение 2">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-3">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-3.jpg" alt="Изображение 3">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-4">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-4.jpg" alt="Изображение 4">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-5">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-5.jpg" alt="Изображение 5">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-6">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-6.jpg" alt="Изображение 6">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-7">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-7.jpg" alt="Изображение 7">
-            </div>
-          </li>
-          <li class="slider__item" id="slider__item-8">
-            <div class="slider__image-container">
-              <img class="slider__image" src="img/raster/product-8.jpg" alt="Изображение 8">
-            </div>
-          </li>
-        </ul>
 
+        <div class="slider__list-container">
+          <ul class="slider__list">
+            <li class="slider__item" id="slider__item-1" data-index="0">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-1.jpg" alt="Изображение 1" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-2" data-index="1">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-2.jpg" alt="Изображение 2" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-3" data-index="2">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-3.jpg" alt="Изображение 3" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-4" data-index="3">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-4.jpg" alt="Изображение 4" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-5" data-index="4">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-5.jpg" alt="Изображение 5" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-6" data-index="5">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-6.jpg" alt="Изображение 6" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-7" data-index="6">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-7.jpg" alt="Изображение 7" width="360">
+              </div>
+            </li>
+            <li class="slider__item" id="slider__item-8" data-index="7">
+              <div class="slider__image-container">
+                <img class="slider__image" src="img/raster/product-8.jpg" alt="Изображение 8" width="360">
+              </div>
+            </li>
+          </ul>
 
-        <ul class="slider__nav-list">
-          <li class="slider__nav-item">
-            <a class="slider__nav-link slider__nav-link--active" href="#slider__item-1">
-              <span class="visually-hidden">Перейти к изображению 1</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-2">
-              <span class="visually-hidden">Перейти к изображению 2</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-3">
-              <span class="visually-hidden">Перейти к изображению 3</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-4">
-              <span class="visually-hidden">Перейти к изображению 4</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-5">
-              <span class="visually-hidden">Перейти к изображению 5</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-6">
-              <span class="visually-hidden">Перейти к изображению 6</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-7">
-              <span class="visually-hidden">Перейти к изображению 7</span>
-            </a>
-          </li>
-          <li class="slider__nav-item">
-            <a class="slider__nav-link" href="#slider__item-8">
-              <span class="visually-hidden">Перейти к изображению 8</span>
-            </a>
-          </li>
-        </ul>
+          <button class="button slider__toggle slider__toggle--left" type="button">
+            <span class="visually-hidden">Предыдущий слайд</span>
+            <svg class="slider__toggle-icon" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+            </svg>
+          </button>
 
+          <button class="button slider__toggle slider__toggle--right" type="button">
+            <span class="visually-hidden">Следующий слайд</span>
+            <svg class="slider__toggle-icon" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+            </svg>
+          </button>
 
+        </div>
 
+        <div class="slider__nav">
+          <button class="button slider__toggle slider__toggle--left" type="button">
+            <span class="visually-hidden">Предыдущий слайд</span>
+            <svg class="slider__toggle-icon" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+            </svg>
+          </button>
 
+          <ul class="slider__nav-list">
+            <li class="slider__nav-item slider__nav-item--active" data-index="0">
+              <a class="slider__nav-link" href="#slider__item-1">
+                <span class="visually-hidden">Перейти к изображению 1</span>
+                <img class="slider__nav-image" src="img/raster/product-1_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="1">
+              <a class="slider__nav-link" href="#slider__item-2">
+                <span class="visually-hidden">Перейти к изображению 2</span>
+                <img class="slider__nav-image" src="img/raster/product-2_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="2">
+              <a class="slider__nav-link" href="#slider__item-3">
+                <span class="visually-hidden">Перейти к изображению 3</span>
+                <img class="slider__nav-image" src="img/raster/product-3_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="3">
+              <a class="slider__nav-link" href="#slider__item-4">
+                <span class="visually-hidden">Перейти к изображению 4</span>
+                <img class="slider__nav-image" src="img/raster/product-4_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="4">
+              <a class="slider__nav-link" href="#slider__item-5">
+                <span class="visually-hidden">Перейти к изображению 5</span>
+                <img class="slider__nav-image" src="img/raster/product-5_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="5">
+              <a class="slider__nav-link" href="#slider__item-6">
+                <span class="visually-hidden">Перейти к изображению 6</span>
+                <img class="slider__nav-image" src="img/raster/product-6_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="6">
+              <a class="slider__nav-link" href="#slider__item-7">
+                <span class="visually-hidden">Перейти к изображению 7</span>
+                <img class="slider__nav-image" src="img/raster/product-7_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+            <li class="slider__nav-item" data-index="7">
+              <a class="slider__nav-link" href="#slider__item-8">
+                <span class="visually-hidden">Перейти к изображению 8</span>
+                <img class="slider__nav-image" src="img/raster/product-8_thumb.jpg" alt="Иконка" width="56">
+              </a>
+            </li>
+          </ul>
 
-
-
-
-
+          <button class="button slider__toggle slider__toggle--right" type="button">
+            <span class="visually-hidden">Следующий слайд</span>
+            <svg class="slider__toggle-icon" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+            </svg>
+          </button>
+        </div>
 
       </div>
 
