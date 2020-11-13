@@ -1,14 +1,40 @@
-.slider__list-container {
-  position: relative;
+.slider {
+  --items-margin: #{$space*0.5};
+}
 
-  @include media-tablet-portrait-down {
-    margin: 0 calc(var(--page-paddings) * -1) $space;
-  }
 
-  @include media-tablet-landscape-up {
-    margin: 0 0 $space;
+// * Модификаторы:
+
+// * .slider--holy-albatros
+// установка ширины в зависимости от width контейнера
+// https://heydonworks.com/article/the-flexbox-holy-albatross/
+
+// * .slider--minicards
+// карусели карточек товаров, брендов и тд
+
+// * .slider--snapped-items
+// прокрутка слайдов с привязкой к определённым точкам
+
+
+.slider--holy-albatros {
+  // переменные менять миксом (product__slider напр.)
+  // breakpoint -ширина контейнера, до - одна колонка, после - значение --columns
+  --breakpoint: 32rem;
+  --columns: 2;
+}
+
+
+.slider--minicards {
+  @include media-tablet-portrait-up {
+    --items-margin: #{$space};
   }
 }
+
+
+.slider__list-container {
+  position: relative;
+}
+
 
 .slider__list {
   display: flex;
@@ -17,7 +43,6 @@
   list-style: none;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: auto;
   will-change: scroll-position;
 
@@ -25,23 +50,82 @@
     width: 0;
     height: 0;
   }
+
+  @include media-tablet-portrait-down {
+    // здесь растягиваем до края viewport, если надо
+    margin: 0 calc(var(--page-paddings) * -1);
+  }
 }
 
-.slider__item {
-  // установка ширины в зависимости от width контейнера
-  // https://heydonworks.com/article/the-flexbox-holy-albatross/
-  --breakpoint: 32rem;
-  --multiplier: calc(var(--breakpoint) - 100%);
 
-  min-width: 50%;
-  max-width: 100%;
-  flex-grow: 1;
+.slider--snapped-items .slider__list {
+  scroll-snap-type: x mandatory;
+
+  &::before,
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 5rem;
+    height: 1px;
+  }
+}
+
+
+.slider--minicards .slider__list {
+  margin: -3rem calc(var(--page-paddings) * -1);
+  padding: 3rem var(--page-paddings);
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: var(--page-paddings);
+    height: 1px;
+  }
+}
+
+
+.slider__item {
   flex-shrink: 0;
-  flex-basis: calc(var(--multiplier) * 999);
-  scroll-snap-align: start;
 
   &:not(:last-child) {
-    margin-right: $space*0.5;
+    margin-right: var(--items-margin);
+  }
+}
+
+
+.slider--holy-albatros .slider__item {
+  --multiplier: calc(var(--breakpoint) - 100%);
+  --min-width: calc(((100% + var(--items-margin))/ var(--columns)) - var(--items-margin));
+
+  min-width: var(--min-width);
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: calc(var(--multiplier) * 999);
+}
+
+
+.slider--snapped-items .slider__item {
+  &:not(:last-child) {
+    scroll-snap-align: start;
+  }
+
+  &:last-child {
+    scroll-snap-align: end;
+  }
+}
+
+
+.slider--minicards .slider__item {
+  flex-basis: $space*14;
+  border-radius: $cards__border-radius;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-5px);
+    // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 }
 
@@ -64,6 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: $space;
 }
 
 
@@ -142,6 +227,17 @@
 // Показываем на устройствах без тача
 
 @media not all and (pointer: coarse) {
+  @keyframes showButton {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+
   .slider__toggle {
     width: $space*3;
     height: $space*3;
@@ -151,6 +247,8 @@
     box-shadow: 0 3px 6px 0 $color__shadows;
     background-color: rgba(255, 255, 255, 0.8);
     transition: opacity 150ms linear;
+    // костыль для предотвращения моргания, если items > 1
+    animation: showButton 1ms linear backwards;
 
     &--left {
       & .slider__toggle-icon {
