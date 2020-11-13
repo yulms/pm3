@@ -59,6 +59,11 @@ class Slider {
     // this.maxIndex = this.navItemElements.length - 1;
     this.maxIndex = this.itemElements.length - 1;
 
+    // если один слайд - удаляем навигационную панель и выходим
+    if (this.maxIndex === 0) {
+      this.mainNavElement.remove();
+      return;
+    }
 
     if (this.createToggtleButtons) this._createToggleButtons();
     this._createDataAttrIndex();
