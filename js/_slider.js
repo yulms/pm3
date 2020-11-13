@@ -58,10 +58,23 @@ class Slider {
     this.lastIndex = 0; // индекс первого элемента
     // this.maxIndex = this.navItemElements.length - 1;
     this.maxIndex = this.itemElements.length - 1;
+    let itemsMarginWithPx = getComputedStyle(this.itemElements[0]).getPropertyValue('margin-right');
+    this.itemsMargin = +itemsMarginWithPx.slice(0, itemsMarginWithPx.length - 2);
 
+    // если один слайд - удаляем навигационную панель и выходим
+    if (this.maxIndex === 0) {
+      this.mainNavElement.remove();
+      return;
+    }
 
-    if (this.createToggtleButtons) this._createToggleButtons();
+    if (this.createToggtleButtons && (!isTouchDevice())) this._createToggleButtons();
     this._createDataAttrIndex();
+
+
+    this._createIntersectionObserver({
+      rootElement: this.listElement,
+      targetElements: this.itemElements
+    });
 
 
     this.element.addEventListener('click', (evt) => {
@@ -94,12 +107,6 @@ class Slider {
     });
 
 
-    this._createIntersectionObserver({
-      rootElement: this.listElement,
-      targetElements: this.itemElements
-    });
-
-
     this.element.addEventListener('slideIn', (evt) => {
       // замена активной ссылки
       // Определяем номер активного слайда
@@ -108,12 +115,16 @@ class Slider {
         this._updateNavItems(targetIndex);
       }
       // кнопки видны тлько на не тач устройствах
-      if (this.createToggtleButtons && !isTouchDevice()) {
-        this._updateToggleButtons(targetIndex);
-      }
+      // if (this.createToggtleButtons && !isTouchDevice()) {
+      //   this._updateToggleButtons(targetIndex);
+      // }
       this.lastIndex = targetIndex;
     });
 
+    this.element.addEventListener('firstSlideIn', this._updateToggleButtons.bind(this, 'hideLeftToggle'));
+    this.element.addEventListener('firstSlideOut', this._updateToggleButtons.bind(this, 'showLeftToggle'));
+    this.element.addEventListener('lastSlideIn', this._updateToggleButtons.bind(this, 'hideRightToggle'));
+    this.element.addEventListener('lastSlideOut', this._updateToggleButtons.bind(this, 'showRightToggle'));
   }
 
 
@@ -153,18 +164,27 @@ class Slider {
             }
           });
           this.element.dispatchEvent(slideIn);
-        }
 
-        // событие выхода, если понадобится
-        // } else {
-        //   console.time();
-        //   let slideOut = new CustomEvent('slideOut', {
-        //     detail: {
-        //       targetElement: elem.target
-        //     }
-        //   });
-        //   this.element.dispatchEvent(slideOut);
-        // }
+          if (elem.target.dataset.index === '0') {
+            let firstSlideIn = new CustomEvent('firstSlideIn');
+            this.element.dispatchEvent(firstSlideIn);
+          }
+
+          if (+elem.target.dataset.index === this.maxIndex) {
+            let lastSlideIn = new CustomEvent('lastSlideIn');
+            this.element.dispatchEvent(lastSlideIn);
+          }
+        } else {
+          if (elem.target.dataset.index === '0') {
+            let firstSlideOut = new CustomEvent('firstSlideOut');
+            this.element.dispatchEvent(firstSlideOut);
+          }
+
+          if (+elem.target.dataset.index === this.maxIndex) {
+            let lastSlideOut = new CustomEvent('lastSlideOut');
+            this.element.dispatchEvent(lastSlideOut);
+          }
+        }
       });
     };
 
@@ -180,7 +200,7 @@ class Slider {
     // на сколько элементов надо подвинуться? Положительное знач - вперед, отрицательное - назад
     let indexDiff = targetIndex - this.lastIndex;
     let itemWidth = this.itemElements[0].offsetWidth;
-    this.listElement.scrollLeft += itemWidth * indexDiff;
+    this.listElement.scrollLeft += (itemWidth + this.itemsMargin) * indexDiff;
   }
 
 
@@ -192,35 +212,15 @@ class Slider {
   }
 
 
-  _updateToggleButtons(targetIndex) {
-    const showLeftToggle = () => this.element.classList.remove(this.firstSlideModificator);
-    const hideLeftToggle = () => this.element.classList.add(this.firstSlideModificator);
-    const showRightToggle = () => this.element.classList.remove(this.lastSlideModificator);
-    const hideRightToggle = () => this.element.classList.add(this.lastSlideModificator);
+  _updateToggleButtons(action) {
+    let operations = {};
+    operations['showLeftToggle'] = () => this.element.classList.remove(this.firstSlideModificator);
+    operations['hideLeftToggle'] = () => this.element.classList.add(this.firstSlideModificator);
+    operations['showRightToggle'] = () => this.element.classList.remove(this.lastSlideModificator);
+    operations['hideRightToggle'] = () => this.element.classList.add(this.lastSlideModificator);
 
-    // left - hide
-    if (targetIndex === 0) {
-      hideLeftToggle();
-    }
-
-    // left - show
-    if (targetIndex !== 0 && this.lastIndex === 0) {
-      showLeftToggle();
-    }
-
-    // right - hide
-    if (targetIndex === this.maxIndex) {
-      hideRightToggle();
-    }
-
-    // right - show
-    if (this.lastIndex === this.maxIndex && targetIndex !== this.maxIndex) {
-      showRightToggle();
-    }
-
+    operations[action]();
   }
-
-
 
 }
 
