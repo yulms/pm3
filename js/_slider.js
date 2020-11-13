@@ -61,18 +61,19 @@ class Slider {
 
 
     if (this.createToggtleButtons) this._createToggleButtons();
+    this._createDataAttrIndex();
 
 
     this.element.addEventListener('click', (evt) => {
 
       const isClickWasOnNavItem = () => {
         // вылавливаем клик по навигационной ссылке => перелистываем
-        let target = evt.target.closest(this.navItemSelector);
-        if (!target) return false;
+        let navItemElement = evt.target.closest(this.navItemSelector);
+        if (!navItemElement) return false;
         // отменяем переход по ссылке
         evt.preventDefault();
         // 1. Определяем индекс clicked item и скроллим
-        this._scrollSlide(+target.dataset.index);
+        this._scrollSlide(+navItemElement.dataset.index);
         return true;
       };
 
@@ -103,7 +104,9 @@ class Slider {
       // замена активной ссылки
       // Определяем номер активного слайда
       let targetIndex = +evt.detail.targetElement.dataset.index;
-      this._updateNavItems(targetIndex);
+      if (this.mainNavElement) {
+        this._updateNavItems(targetIndex);
+      }
       // кнопки видны тлько на не тач устройствах
       if (this.createToggtleButtons && !isTouchDevice()) {
         this._updateToggleButtons(targetIndex);
@@ -119,6 +122,16 @@ class Slider {
     this.element.firstElementChild.insertAdjacentHTML('beforeend', setOfButtonsHTML);
     if (this.mainNavElement) {
       this.mainNavElement.insertAdjacentHTML('afterbegin', setOfButtonsHTML);
+    }
+  }
+
+
+  _createDataAttrIndex() {
+    for (let i = 0; i < this.itemElements.length; i++) {
+      this.itemElements[i].dataset.index = i;
+      if (this.mainNavElement) {
+        this.navItemElements[i].dataset.index = i;
+      }
     }
   }
 
