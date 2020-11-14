@@ -1949,6 +1949,37 @@ sub {
   margin-right: calc(var(--page-paddings) * -1);
   margin-bottom: 1.5rem; }
 
+.page__carousel {
+  --gap: 2rem;
+  display: grid;
+  grid-template-columns: var(--header-width) calc(100% - var(--header-width) - var(--gap));
+  column-gap: var(--gap); }
+  @media (max-width: 979px) {
+    .page__carousel {
+      --header-width: 7rem; } }
+  @media (min-width: 980px) {
+    .page__carousel {
+      --header-width: 14rem; } }
+
+.page__carousel-header {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: -1rem 0;
+  padding: 1rem;
+  background: linear-gradient(to right bottom, rgba(1, 118, 139, 0.82), #006475);
+  border-radius: 4px; }
+  @media (max-width: 979px) {
+    .page__carousel-header {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg); } }
+
+.page__carousel-title {
+  font-size: 2rem;
+  color: #ffffff;
+  word-break: break-word; }
+
 .main {
   position: relative;
   z-index: 0; }
