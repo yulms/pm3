@@ -45,9 +45,7 @@ class Slider {
 
     Object.assign(this, defaults, overrides);
 
-    // this.element = document.querySelector(this.sliderSelector);
     this.element = element;
-    // if (!this.element) return;
     this.listElement = this.element.querySelector(this.listSelector);
     this.itemElements = this.element.querySelectorAll(this.itemSelector);
 
@@ -57,7 +55,6 @@ class Slider {
     }
 
     this.lastIndex = 0; // индекс первого элемента
-    // this.maxIndex = this.navItemElements.length - 1;
     this.maxIndex = this.itemElements.length - 1;
     let itemsMarginWithPx = getComputedStyle(this.itemElements[0]).getPropertyValue('margin-right');
     this.itemsMargin = +itemsMarginWithPx.slice(0, itemsMarginWithPx.length - 2);
@@ -68,9 +65,11 @@ class Slider {
       return;
     }
 
-    if (this.createToggtleButtons && (!isTouchDevice())) this._createToggleButtons();
+    if (this.createToggtleButtons && (!isTouchDevice())) {
+      this.element.classList.add(this.firstSlideModificator);
+      this._createToggleButtons();
+    }
     this._createDataAttrIndex();
-
 
     this._createIntersectionObserver({
       rootElement: this.listElement,
@@ -100,7 +99,9 @@ class Slider {
       };
 
 
-      if (isClickWasOnNavItem()) return;
+      if (this.mainNavElement) {
+        if (isClickWasOnNavItem()) return;
+      }
       if (this.createToggtleButtons) {
         isClickWasOnToggleButton();
       }

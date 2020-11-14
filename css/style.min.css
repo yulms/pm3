@@ -1230,11 +1230,6 @@ sub {
       display: none; } }
 
 @media not all and (pointer: coarse) {
-  @keyframes showButton {
-    from {
-      opacity: 0; }
-    to {
-      opacity: 1; } }
   .slider__toggle {
     width: 3rem;
     height: 3rem;
@@ -1243,8 +1238,7 @@ sub {
     border: 1px solid #e0e0e0;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-color: rgba(255, 255, 255, 0.8);
-    transition: opacity 150ms linear;
-    animation: showButton 1ms linear backwards; }
+    transition: opacity 150ms linear; }
     .slider__toggle--left .slider__toggle-icon {
       transform: rotate(90deg); }
     .slider__toggle--right .slider__toggle-icon {

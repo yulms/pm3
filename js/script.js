@@ -10,7 +10,6 @@ import initRipple from './_ripple.js';
 import initAccordion from './_accordion.js';
 import initSliders from './_slider.js';
 
-
 const projectObjects = { // eslint-disable-line
   switchView: initSwitchView(),
   mainNav: initMainNav(),
