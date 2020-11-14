@@ -8,7 +8,7 @@ import initTextfields from './_textfield.js';
 import initCustomSelects from './_custom-select.js';
 import initRipple from './_ripple.js';
 import initAccordion from './_accordion.js';
-import initSlider from './_slider.js';
+import initSliders from './_slider.js';
 
 
 const projectObjects = { // eslint-disable-line
@@ -22,7 +22,7 @@ const projectObjects = { // eslint-disable-line
   customSelects: initCustomSelects(),
   ripple: initRipple(),
   accordion: initAccordion(),
-  slider: initSlider()
+  sliders: initSliders()
 };
 
 console.log(projectObjects);

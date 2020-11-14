@@ -26,7 +26,7 @@ function getButtonHTML(buttonText) {
 
 
 class Slider {
-  constructor(overrides) {
+  constructor(element, overrides) {
     const defaults = {
       sliderSelector: '.slider',
       firstSlideModificator: 'slider--first-slide',
@@ -45,8 +45,9 @@ class Slider {
 
     Object.assign(this, defaults, overrides);
 
-    this.element = document.querySelector(this.sliderSelector);
-    if (!this.element) return;
+    // this.element = document.querySelector(this.sliderSelector);
+    this.element = element;
+    // if (!this.element) return;
     this.listElement = this.element.querySelector(this.listSelector);
     this.itemElements = this.element.querySelectorAll(this.itemSelector);
 
@@ -225,8 +226,11 @@ class Slider {
 }
 
 
-function initSlider() {
-  return new Slider();
+const SLIDER_SELECTOR = '.slider';
+function initSliders() {
+  const sliderElements = Array.from(document.querySelectorAll(SLIDER_SELECTOR));
+  const sliders = sliderElements.map((elem) => new Slider(elem));
+  return sliders;
 }
 
-export default initSlider;
+export default initSliders;
