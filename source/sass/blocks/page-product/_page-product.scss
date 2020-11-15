@@ -6,7 +6,14 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: $space;
+
+  @include media-tablet-portrait-down {
+    margin-bottom: $space*0.5;
+  }
+
+  @include media-tablet-landscape-up {
+    margin-bottom: $space;
+  }
 }
 
 .page-product__title {
