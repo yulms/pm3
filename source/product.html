@@ -25,15 +25,184 @@
       @@include("./slider/_slider--product.html")
     </section>
 
-    <section class="product__offer">
+    <section class="page-product__offer">
       <h2 class="visually-hidden">Уловия продажи</h2>
 
-      <p class="price minicard__price">
-        <span class="price__current" aria-label="Текущая цена: ">
+      <p class="price page-product__price">
+        <span class="price__current price__current--discount price__current--big" aria-label="Текущая цена: ">
           156<sup>80</sup> р.
         </span>
         <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+        <strong class="price__discount-info">
+          <span>скидка</span>
+          <span>20%</span>
+        </strong>
       </p>
+
+      <div class="page-product__short-info">
+        <div class="page-product__short-info-item">
+          <span class="page-product__short-info-term">Бренд:</span>
+          <span class="page-product__short-info-value">BergHOFF</span>
+        </div>
+
+        <div class="page-product__short-info-item">
+          <span class="page-product__short-info-term">Наличие:</span>
+          <span class="page-product__short-info-value page-product__short-info-value--instock">в наличии на складе</span>
+        </div>
+      </div>
+
+      <div class="alert alert--info page-product__offer-alert">
+        Этот товар можно купить с дополнительной скидкой 10% после регистрации.
+        <br>
+        <a class="link" href="#">Зарегистрироваться</a>
+        или
+        <a class="link" href="#">Войти</a>
+      </div>
+
+
+
+
+
+
+
+      <section class="delivery-info">
+
+        <div class="city-choose delivery-info__city-choose">
+          <span class="city-choose__caption">Доставка в город: </span>
+          <button class="link city-choose__button" data-modal="#modalChooseCity">
+            <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
+            </svg>
+            <span class="visually-hidden">Текущий выбор: </span>
+            <span class="city-choose__current-city">г.&nbspМинск</span>
+            <svg class="icon icon--stroked" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+            </svg>
+          </button>
+        </div>
+
+
+        <ul class="list delivery-info__list" data-showmore data-showmore-action="hideNodes" data-showmore-nodes="3" data-showmore-showtext="Показать все варианты" data-showmore-hidetext="Скрыть лишние варианты" data-showmore-button-class="showmore__additional-button">
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Курьером</span>
+            <span>сегодня после 18-00 -</span>
+            <strong class="delivery-info__price">5 руб.</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Спортивная сегодня после 18-00 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Восток завтра -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>торговый центр Шик 02.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Восток 08.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>торговый центр Шик 08.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+        </ul>
+
+
+
+        <ul class="list delivery-info__list" data-showmore data-showmore-action="hideNodes" style="margin-top: 50px;">
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Курьером</span>
+            <span>сегодня после 18-00 -</span>
+            <strong class="delivery-info__price">5 руб.</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Спортивная сегодня после 18-00 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Восток завтра -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>торговый центр Шик 02.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Восток 08.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>торговый центр Шик 08.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+        </ul>
+
+        <ul class="list delivery-info__list" data-showmore data-showmore-action="hideNodes" style="margin-top: 50px;">
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Курьером</span>
+            <span>сегодня после 18-00 -</span>
+            <strong class="delivery-info__price">5 руб.</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Спортивная сегодня после 18-00 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Восток завтра -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>торговый центр Шик 02.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>метро Восток 08.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+          <li class="list__item delivery-info__item">
+            <span class="delivery-info__type">Самовывоз</span>
+            <span>торговый центр Шик 08.11.19 -</span>
+            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+          </li>
+        </ul>
+
+
+
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </section>
 

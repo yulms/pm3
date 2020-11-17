@@ -1,0 +1,24 @@
+.list {
+  margin: 0;
+  padding: 0 0 0 $space*2;
+  list-style: none;
+}
+
+.list__item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $space*0.5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.64em;
+    left: $space*-1;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color__primary;
+  }
+}

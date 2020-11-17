@@ -1,17 +1,10 @@
 .city-choose {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .city-choose__caption {
   margin-right: $space*0.5;
-}
-
-.city-choose__city-container {
-  display: flex;
-  align-items: center;
-  color: $color__primary;
 }
 
 .city-choose__pin-icon {
@@ -23,4 +16,9 @@
   text-align: center;
   text-decoration: underline;
   text-underline-position: under;
+}
+
+.city-choose__button {
+  display: flex;
+  align-items: center;
 }

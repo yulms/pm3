@@ -57,16 +57,11 @@ class Accordion {
 
       if (targetStateIsOpen) {
       // поведение при открытии
-
         wrapper.style.height = 0;
         wrapper.hidden = false;
         let fullHeight =  wrapper.scrollHeight;
-        // wrapper.addEventListener('transitionend', () => {
-        //   wrapper.style.height = 'auto';
-        // }, {once: true});
         wrapper.style.height = fullHeight + 'px';
       } else {
-        // debugger;
         // закрытие
         let fullHeight =  wrapper.scrollHeight;
         wrapper.style.height = fullHeight + 'px';
@@ -75,9 +70,6 @@ class Accordion {
           wrapper.hidden = true;
           wrapper.style.transitionDuration = '';
         }, {once: true});
-
-        // wrapper.style.transitionDuration = '70ms';
-        // wrapper.style.height = 0;
 
         setTimeout(() => {
           wrapper.style.transitionDuration = '70ms';
@@ -110,7 +102,7 @@ class Accordion {
 
 
   _addButton(heading, initStateIsOpened) {
-    heading.innerHTML = `<button class="accordion__button" aria-expanded="${initStateIsOpened}">
+    heading.innerHTML = `<button class="accordion__button" aria-expanded="${initStateIsOpened}" type="button">
                             ${heading.textContent}
                             <svg class="accordion__button-icon" width="32" height="32">
                               <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>

@@ -4,23 +4,22 @@
     <p class="header__top-banner">До 20 июля скидка 30% на посуду BergHOFF по промокоду BERG</p>
 
     <nav class="header__top-menu" id="headerTopMenu" aria-label="Дополнительная навигация">
-      <ul class="dropdown-menu header__top-menu-list">
-        <li class="header__top-menu-item">
-          <a class="header__top-menu-link dropdown-menu__link city-choose header__city-choose" href="#" data-modal="#modalChooseCity">
-            <span class="city-choose__caption header__city-choose-caption">Доставка в город: </span>
-            <div class="city-choose__city-container header__city-container">
-              <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24">
-                <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
-              </svg>
-              <span class="visually-hidden">Текущий выбор: </span>
-              <span class="city-choose__current-city">г.&nbspМинск</span>
-              <svg class="icon icon--stroked" width="24" height="24">
-                <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
-              </svg>
-            </div>
-          </a>
-        </li>
-      </ul>
+
+      <div class="city-choose header__city-choose">
+        <span class="city-choose__caption">Доставка в город: </span>
+        <button class="link city-choose__button header__city-button" data-modal="#modalChooseCity">
+          <!-- <div class="city-choose__city-container header__city-container"> -->
+          <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24">
+            <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
+          </svg>
+          <span class="visually-hidden">Текущий выбор: </span>
+          <span class="city-choose__current-city">г.&nbspМинск</span>
+          <svg class="icon icon--stroked" width="24" height="24">
+            <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </div>
+
       <ul class="dropdown-menu header__top-menu-list">
 
         <li class="header__top-menu-item">
@@ -31,6 +30,7 @@
           <a class="header__top-menu-link dropdown-menu__link" href="#">Самовывоз</a>
         </li>
       </ul>
+
       <ul class="dropdown-menu header__top-menu-list header__top-menu-list--secondary">
         <li class="header__top-menu-item">
           <a class="header__top-menu-link dropdown-menu__link" href="#">Гарантии</a>

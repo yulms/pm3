@@ -11,3 +11,22 @@
 Текст внутри заголовка оборачивается в <button class="accordion__button">.
 2. Элементы, следующие за главным, оборачиваются в <div class="accordion__content-wrapper">
 3. Обработчик висит на document, при клике меняются aria атрибуты, атрибут hidden и высота обертки.
+
+
+Пример:
+<h3 class="accordion">
+    Заголовок
+</h3>
+<p>Параграф</p>
+<p>Параграф</p>
+
+Преобразуется в
+<h3 class="accordion">
+  <button class="accordion__button" aria-expanded="true">
+    Заголовок
+  </button>
+</h3>
+<div class="accordion__content-wrapper">
+  <p>Параграф</p>
+  <p>Параграф</p>
+</div>

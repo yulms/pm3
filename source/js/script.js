@@ -9,6 +9,7 @@ import initCustomSelects from './_custom-select.js';
 import initRipple from './_ripple.js';
 import initAccordion from './_accordion.js';
 import initSliders from './_slider.js';
+import initShowmores from './_showmore.js';
 
 const projectObjects = { // eslint-disable-line
   switchView: initSwitchView(),
@@ -21,7 +22,8 @@ const projectObjects = { // eslint-disable-line
   customSelects: initCustomSelects(),
   ripple: initRipple(),
   accordion: initAccordion(),
-  sliders: initSliders()
+  sliders: initSliders(),
+  showMores: initShowmores()
 };
 
 console.log(projectObjects);

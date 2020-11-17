@@ -1,56 +1,6 @@
-// @keyframes header__top-menu-scales {
-//   from {
-//     transform: scale(0.8);
-//   }
-
-//   to {
-//     transform: scale(1);
-//   }
-// }
-
-// @keyframes header__top-menu-opacity-in {
-//   from {
-//     opacity: 0;
-//   }
-
-//   to {
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes hide-header__top-menu {
-//   from {
-//     opacity: 1;
-//     transform: scale(1);
-//   }
-
-//   to {
-//     opacity: 0;
-//     transform: scale(0.9);
-//   }
-// }
-
-
 .header__top-menu {
   @include media-tablet-portrait-down {
     display: none;
-    //   position: fixed;
-    //   z-index: 2;
-    //   bottom: auto;
-    //   width: 84%;
-    //   max-width: 400px;
-    //   max-height: 100%;
-    //   padding-top: $space * 0.5;
-    //   padding-bottom: $space * 0.5;
-    //   border-radius: $controls__border-radius;
-    //   background-color: #ffffff;
-    //   box-shadow: 0 3px 6px 0 $color__shadows;
-    //   overflow-y: auto; //полоса прокрутки при переполнении
-    //   -webkit-overflow-scrolling: touch; //чтобы сенсорная прокрутка работала именно на этом блоке а не на странице
-    //   transform-origin: left top;
-    //   animation:
-    //     header__top-menu-scales 150ms cubic-bezier(0, 0, 0.2, 1) both,
-    //     header__top-menu-opacity-in 40ms linear both;
   }
 
   @include media-tablet-landscape-up {
@@ -58,7 +8,6 @@
     justify-content: flex-end;
     align-items: flex-start;
     margin-top: $space*0.25;
-    margin-left: $space*-3;
     font-size: 92.857%;
     font-weight: 600;
     letter-spacing: 0.03em;
@@ -68,28 +17,6 @@
       outline-offset: 1px;
     }
   }
-}
-
-
-// нижележащий класс добавляется родителю, что бы была
-// возможность анимировать исчезновение overlay
-.header__top-menu--animation-on-close .header__top-menu {
-  // @include media-tablet-portrait-down {
-  //   animation: hide-header__top-menu 75ms linear both;
-  // }
-}
-
-.header__top-menu--animation-on-close .header__top-menu-overlay {
-  // @include media-tablet-portrait-down {
-  //   animation: hideOverlay 75ms linear both;
-  // }
-}
-
-
-.header__top-menu--isopened {
-  // @include media-tablet-portrait-down {
-  //   display: block;
-  // }
 }
 
 
@@ -131,8 +58,21 @@
   }
 }
 
-.header__city-container {
+.header__city-choose {
+  @include media-tablet-portrait-down {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid $color__additional-2;
+  }
+}
+
+.header__city-button {
   @include media-tablet-landscape-up {
     color: #ffffff;
+
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      opacity: 0.8;
+    }
   }
 }
