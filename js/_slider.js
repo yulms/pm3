@@ -116,17 +116,16 @@ class Slider {
       if (this.mainNavElement) {
         this._updateNavItems(targetIndex);
       }
-      // кнопки видны тлько на не тач устройствах
-      // if (this.createToggtleButtons && !isTouchDevice()) {
-      //   this._updateToggleButtons(targetIndex);
-      // }
       this.lastIndex = targetIndex;
     });
 
-    this.element.addEventListener('firstSlideIn', this._updateToggleButtons.bind(this, 'hideLeftToggle'));
-    this.element.addEventListener('firstSlideOut', this._updateToggleButtons.bind(this, 'showLeftToggle'));
-    this.element.addEventListener('lastSlideIn', this._updateToggleButtons.bind(this, 'hideRightToggle'));
-    this.element.addEventListener('lastSlideOut', this._updateToggleButtons.bind(this, 'showRightToggle'));
+    // кнопки видны тлько на не тач устройствах
+    if (this.createToggtleButtons && !isTouchDevice()) {
+      this.element.addEventListener('firstSlideIn', this._updateToggleButtons.bind(this, 'hideLeftToggle'));
+      this.element.addEventListener('firstSlideOut', this._updateToggleButtons.bind(this, 'showLeftToggle'));
+      this.element.addEventListener('lastSlideIn', this._updateToggleButtons.bind(this, 'hideRightToggle'));
+      this.element.addEventListener('lastSlideOut', this._updateToggleButtons.bind(this, 'showRightToggle'));
+    }
   }
 
 
