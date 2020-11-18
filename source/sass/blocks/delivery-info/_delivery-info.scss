@@ -10,3 +10,11 @@
 .delivery-info__price--free {
   color: $color__stock;
 }
+
+.delivery-info__showmore-button {
+  margin-left: $space*2;
+}
+
+.delivery-info__showmore-button[aria-expanded="true"] {
+  margin-top: $space*0.5;
+}

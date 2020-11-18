@@ -4,8 +4,9 @@ import { scrollLock } from './util.js';
 const SHOW_TEXT_DATA_ATTR = 'showmoreShowtext';
 const HIDE_TEXT_DATA_ATTR = 'showmoreHidetext';
 const NODES_QUANTITY_DATA_ATTR = 'showmoreNodes';
+const COLLAPSED_HEIGHT_DATA_ATTR = 'showmoreHeight';
 const BUTTON_CLASS_DATA_ATTR = 'showmoreButtonClass';
-const BUTTON_HTML = `<button class="link showmore__button" aria-expanded="false" type="button">
+const BUTTON_HTML = `<button class="showmore__button link" aria-expanded="false" type="button">
                       <svg class="showmore__button-icon" width="32" height="32">
                         <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
                       </svg>
@@ -16,7 +17,7 @@ const BUTTON_HTML = `<button class="link showmore__button" aria-expanded="false"
 class ShowmoreButton {
   constructor (mainElement) {
     let defaults = {
-      buttonTextClass: 'showmore__button-text',
+      // buttonTextClass: 'showmore__button-text',
       showText: mainElement.dataset[SHOW_TEXT_DATA_ATTR]  || 'Показать больше',
       hideText: mainElement.dataset[HIDE_TEXT_DATA_ATTR] || 'Скрыть',
       additionalClass: mainElement.dataset[BUTTON_CLASS_DATA_ATTR]
@@ -29,14 +30,24 @@ class ShowmoreButton {
     let buttonContainerElement = document.createElement('div');
     buttonContainerElement.innerHTML = BUTTON_HTML;
     this.element = buttonContainerElement.firstChild;
+
     if (this.additionalClass) {
-      this.element.classList.add(this.additionalClass);
+      this._addAdditionalClasses();
     }
 
     this.caption = document.createElement('span');
-    this.caption.classList.add(this.buttonTextClass);
+    // this.caption.classList.add(this.buttonTextClass);
     this.caption.innerText = this.showText;
     this.element.prepend(this.caption);
+  }
+
+  _addAdditionalClasses() {
+    let additionalClasses = this.additionalClass.split(' ');
+    if (Array.isArray(additionalClasses)) {
+      additionalClasses.forEach(elem => {
+        this.element.classList.add(elem);
+      });
+    }
   }
 
   changeState({isExpanded}) {
@@ -95,11 +106,7 @@ class ShowmoreNodes extends Showmore {
 
 
   _onButtonClick() {
-    if (!this.stateIsExpanded) {
-      this._showNodes();
-    } else {
-      this._hideNodes();
-    }
+    this.stateIsExpanded ? this._hideNodes() : this._showNodes();
   }
 
 
@@ -131,29 +138,70 @@ class ShowmoreNodes extends Showmore {
     this.element.style.height = this.element.scrollHeight + 'px';
     setTimeout(() => {
       scrollLock({lock: true});
-      this.element.style.transitionDuration = '70ms';
+      this.element.style.transitionDuration = '75ms';
       this.element.style.height = this.collapsedHeight + 'px';
     }, 0);
     this.button.changeState({isExpanded: false});
     this.stateIsExpanded = false;
   }
 
-
-
 }
-
-
-
 
 
 class ShowmoreHeight extends Showmore {
   constructor(element) {
     super(element);
-    console.log('ShowmoreHeight');
+    const defaults = {
+      collapsedHeight: element.dataset[COLLAPSED_HEIGHT_DATA_ATTR] || 226
+    };
+    Object.assign(this, defaults);
 
+
+    if (this.element.scrollHeight > this.collapsedHeight) {
+      // установливаем мин высоту
+      this.element.style.height = this.collapsedHeight + 'px';
+
+      super._createButton();
+      super._insertButton();
+      this.button.element.addEventListener('click', () => {
+        this.stateIsExpanded ? this._collapse() : this._show();
+      });
+    }
+  }
+
+
+  _show() {
+    this.element.addEventListener('transitionend', () => {
+      scrollLock({lock: false});
+      this.element.style.height = 'auto';
+    }, {once: true});
+
+    scrollLock({lock: true});
+    this.element.style.height = this.element.scrollHeight + 'px';
+    this.button.changeState({isExpanded: true});
+    this.stateIsExpanded = true;
+  }
+
+
+  _collapse() {
+    this.element.addEventListener('transitionend', () => {
+      scrollLock({lock: false});
+      this.element.style.transitionDuration = '';
+    }, {once: true});
+
+    this.element.style.height = this.element.scrollHeight + 'px';
+    setTimeout(() => {
+      scrollLock({lock: true});
+      this.element.style.transitionDuration = '75ms';
+      this.element.style.height = this.collapsedHeight + 'px';
+    }, 0);
+    this.button.changeState({isExpanded: false});
+    this.stateIsExpanded = false;
   }
 
 }
+
+
 
 
 
