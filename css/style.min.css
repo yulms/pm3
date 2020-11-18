@@ -1097,9 +1097,6 @@ sub {
 .showmore__button[aria-expanded="true"] .showmore__button-icon {
   transform: rotate(180deg); }
 
-.showmore__additional-button {
-  padding-left: 32px; }
-
 .slider {
   --items-margin: 0.5rem; }
 
@@ -3348,6 +3345,12 @@ sub {
 
 .delivery-info__price--free {
   color: #005a09; }
+
+.delivery-info__showmore-button {
+  margin-left: 2rem; }
+
+.delivery-info__showmore-button[aria-expanded="true"] {
+  margin-top: 0.5rem; }
 
 @keyframes ripple-radius-in {
   from {

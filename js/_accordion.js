@@ -72,7 +72,7 @@ class Accordion {
         }, {once: true});
 
         setTimeout(() => {
-          wrapper.style.transitionDuration = '70ms';
+          wrapper.style.transitionDuration = '75ms';
           wrapper.style.height = 0;
         }, 0);
       }
