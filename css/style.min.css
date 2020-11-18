@@ -196,6 +196,7 @@ sub {
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 0.75rem 1rem;
   appearance: button;
   font: inherit;
   text-align: center;
@@ -207,12 +208,11 @@ sub {
   border: none;
   cursor: pointer;
   outline: none;
-  transition-property: color, border-color, box-shadow, opacity;
+  transition-property: color, border-color, box-shadow, opacity, background-color;
   transition-duration: 150ms;
   transition-timing-function: linear; }
 
 .button--action-primary {
-  padding: 0.75rem 1rem;
   color: #191919;
   background-color: #ffd343;
   border-radius: 4px; }
@@ -220,7 +220,6 @@ sub {
     background-color: #f4b606; }
 
 .button--action-secondary {
-  padding: 0.75rem 2rem;
   color: #191919;
   background-color: transparent;
   box-shadow: inset 0 0 0 2px #ffd343;
@@ -231,7 +230,6 @@ sub {
     box-shadow: inset 0 0 0 2px #d19c05; }
 
 .button--options-primary {
-  padding: 0.75rem 1rem;
   background-color: #01768b;
   color: #ffffff;
   border-radius: 4px; }
@@ -241,7 +239,6 @@ sub {
     background-color: #004e5c; }
 
 .button--options-secondary {
-  padding: 0.75rem 1rem;
   background-color: transparent;
   color: #01768b;
   border-radius: 4px;
@@ -251,10 +248,6 @@ sub {
   .button--options-secondary:active {
     background-color: #d3cab8; }
 
-.button__icon {
-  width: auto;
-  padding: 0 0.5rem; }
-
 .button--modal-close {
   min-width: 4rem;
   min-height: 4rem;
@@ -262,6 +255,29 @@ sub {
   justify-content: center;
   align-items: center;
   padding: 0; }
+
+.button__icon {
+  box-sizing: content-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0; }
+
+.button__icon--love {
+  fill: none;
+  stroke-width: 2px;
+  stroke: #ffd343;
+  transition: 150ms linear; }
+
+.button__caption + .button__icon {
+  margin-left: 0.5rem; }
+
+.button__icon + .button__caption {
+  margin-left: 0.5rem; }
+
+.button:hover .button__icon--love,
+.button:focus .button__icon--love {
+  stroke: #f4b606;
+  fill: #f4b606; }
 
 .button__close-icon {
   width: 3rem;
@@ -3060,31 +3076,75 @@ sub {
     padding-bottom: 4rem;
     border-bottom: 1px solid #e0e0e0; } }
 
-.page-product__price {
+.offer__price {
   margin: 0; }
 
-.page-product__short-info {
+.offer__short-info {
   margin-bottom: 1rem; }
 
-.page-product__short-info-term {
+.offer__short-info-term {
   color: #757575; }
 
-.page-product__short-info-value {
+.offer__short-info-value {
   font-weight: 600; }
 
-.page-product__short-info-value--instock {
+.offer__short-info-value--instock {
   color: #005a09; }
 
-.page-product__offer-alert {
+.offer__alert {
   margin-bottom: 1rem; }
   @media (max-width: 979px) {
-    .page-product__offer-alert {
+    .offer__alert {
       width: 100vw;
       position: relative;
       left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw; } }
+
+.offer__delivery-info {
+  margin-bottom: 1rem; }
+
+.offer__options {
+  margin-bottom: 1.5rem; }
+
+.offer__buy {
+  --gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--gap) * -1) 0 0 calc(var(--gap) * -1); }
+  .offer__buy-elem {
+    margin-top: var(--gap);
+    margin-left: var(--gap); }
+  .offer__buy-elem--quantity {
+    flex-grow: 1; }
+  .offer__buy-elem--love {
+    flex-basis: 20%;
+    flex-grow: 1; }
+  .offer__buy-elem--buy {
+    flex-basis: 40%;
+    flex-grow: 3; }
+  @media (max-width: 607px) {
+    .offer__buy-elem--quantity {
+      flex-basis: 70%; } }
+  @media (min-width: 608px) {
+    .offer__buy-elem--quantity {
+      flex-basis: 20%; } }
+
+.offer__button-love {
+  white-space: nowrap; }
+  @media (max-width: 607px) {
+    .offer__button-love .button__caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0); }
+    .offer__button-love .button__icon {
+      padding: 0; } }
 
 .cart-list {
   margin: 0;
@@ -3348,9 +3408,8 @@ sub {
 
 .delivery-info__showmore-button {
   margin-left: 2rem; }
-
-.delivery-info__showmore-button[aria-expanded="true"] {
-  margin-top: 0.5rem; }
+  .delivery-info__showmore-button[aria-expanded="true"] {
+    margin-top: 0.5rem; }
 
 @keyframes ripple-radius-in {
   from {
