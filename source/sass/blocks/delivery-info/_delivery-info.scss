@@ -2,7 +2,6 @@
   margin-bottom: $space*0.5;
 }
 
-
 .delivery-info__type {
   font-weight: 600;
 }
@@ -11,10 +10,11 @@
   color: $color__stock;
 }
 
+
 .delivery-info__showmore-button {
   margin-left: $space*2;
-}
 
-.delivery-info__showmore-button[aria-expanded="true"] {
-  margin-top: $space*0.5;
+  &[aria-expanded="true"] {
+    margin-top: $space*0.5;
+  }
 }

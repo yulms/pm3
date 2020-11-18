@@ -33,34 +33,3 @@
     border-bottom: 1px solid $color__additional-2;
   }
 }
-
-
-.page-product__price {
-  margin: 0;
-}
-
-
-.page-product__short-info {
-  margin-bottom: $space;
-}
-
-.page-product__short-info-term {
-  color: $color-font__secondary;
-}
-
-.page-product__short-info-value {
-  font-weight: 600;
-}
-
-.page-product__short-info-value--instock {
-  color: $color__stock;
-}
-
-
-.page-product__offer-alert {
-  margin-bottom: $space;
-
-  @include media-tablet-portrait-down {
-    @include full-width;
-  }
-}

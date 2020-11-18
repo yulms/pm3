@@ -25,10 +25,10 @@
       @@include("./slider/_slider--product.html")
     </section>
 
-    <section class="page-product__offer">
+    <section class="offer page-product__offer">
       <h2 class="visually-hidden">Уловия продажи</h2>
 
-      <p class="price page-product__price">
+      <p class="price offer__price">
         <span class="price__current price__current--discount price__current--big" aria-label="Текущая цена: ">
           156<sup>80</sup> р.
         </span>
@@ -39,19 +39,19 @@
         </strong>
       </p>
 
-      <div class="page-product__short-info">
+      <div class="offer__short-info">
         <div class="page-product__short-info-item">
-          <span class="page-product__short-info-term">Бренд:</span>
-          <span class="page-product__short-info-value">BergHOFF</span>
+          <span class="offer__short-info-term">Бренд:</span>
+          <span class="offer__short-info-value">BergHOFF</span>
         </div>
 
-        <div class="page-product__short-info-item">
-          <span class="page-product__short-info-term">Наличие:</span>
-          <span class="page-product__short-info-value page-product__short-info-value--instock">в наличии на складе</span>
+        <div class="offer__short-info-item">
+          <span class="offer__short-info-term">Наличие:</span>
+          <span class="offer__short-info-value offer__short-info-value--instock">в наличии на складе</span>
         </div>
       </div>
 
-      <div class="alert alert--info page-product__offer-alert">
+      <div class="alert alert--info offer__alert">
         Этот товар можно купить с дополнительной скидкой 10% после регистрации.
         <br>
         <a class="link" href="#">Зарегистрироваться</a>
@@ -59,14 +59,8 @@
         <a class="link" href="#">Войти</a>
       </div>
 
-
-
-
-
-
-
-      <section class="delivery-info">
-
+      <section class="delivery-info offer__delivery-info">
+        <h3 class="visually-hidden">Выбор населенного пункта</h3>
         <div class="city-choose delivery-info__city-choose">
           <span class="city-choose__caption">Доставка в город: </span>
           <button class="link city-choose__button" data-modal="#modalChooseCity">
@@ -80,45 +74,97 @@
             </svg>
           </button>
         </div>
-
-
-        <ul class="list delivery-info__list" data-showmore data-showmore-action="hideNodes" data-showmore-nodes="3" data-showmore-showtext="Показать все варианты доставки" data-showmore-hidetext="Скрыть дополнительные варианты" data-showmore-button-class="delivery-info__showmore-button">
-          <li class="list__item delivery-info__item">
-            <span class="delivery-info__type">Курьером</span>
-            <span>сегодня после 18-00 -</span>
-            <strong class="delivery-info__price">5 руб.</strong>
-          </li>
-          <li class="list__item delivery-info__item">
-            <span class="delivery-info__type">Самовывоз</span>
-            <span>метро Спортивная сегодня после 18-00 -</span>
-            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
-          </li>
-          <li class="list__item delivery-info__item">
-            <span class="delivery-info__type">Самовывоз</span>
-            <span>метро Восток завтра -</span>
-            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
-          </li>
-          <li class="list__item delivery-info__item">
-            <span class="delivery-info__type">Самовывоз</span>
-            <span>торговый центр Шик 02.11.19 -</span>
-            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
-          </li>
-          <li class="list__item delivery-info__item">
-            <span class="delivery-info__type">Самовывоз</span>
-            <span>метро Восток 08.11.19 -</span>
-            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
-          </li>
-          <li class="list__item delivery-info__item">
-            <span class="delivery-info__type">Самовывоз</span>
-            <span>торговый центр Шик 08.11.19 -</span>
-            <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
-          </li>
-        </ul>
-
-
-
-
+        <div class="delivery-info__delivery-list">
+          <ul class="list" data-showmore data-showmore-action="hideNodes" data-showmore-nodes="3" data-showmore-showtext="Показать все варианты доставки" data-showmore-hidetext="Скрыть дополнительные варианты" data-showmore-button-class="delivery-info__showmore-button">
+            <li class="list__item delivery-info__item">
+              <span class="delivery-info__type">Курьером</span>
+              <span>сегодня после 18-00 -</span>
+              <strong class="delivery-info__price">5 руб.</strong>
+            </li>
+            <li class="list__item delivery-info__item">
+              <span class="delivery-info__type">Самовывоз</span>
+              <span>метро Спортивная сегодня после 18-00 -</span>
+              <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+            </li>
+            <li class="list__item delivery-info__item">
+              <span class="delivery-info__type">Самовывоз</span>
+              <span>метро Восток завтра -</span>
+              <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+            </li>
+            <li class="list__item delivery-info__item">
+              <span class="delivery-info__type">Самовывоз</span>
+              <span>торговый центр Шик 02.11.19 -</span>
+              <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+            </li>
+            <li class="list__item delivery-info__item">
+              <span class="delivery-info__type">Самовывоз</span>
+              <span>метро Восток 08.11.19 -</span>
+              <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+            </li>
+            <li class="list__item delivery-info__item">
+              <span class="delivery-info__type">Самовывоз</span>
+              <span>торговый центр Шик 08.11.19 -</span>
+              <strong class="delivery-info__price delivery-info__price--free">бесплатно</strong>
+            </li>
+          </ul>
+        </div>
       </section>
+
+
+      <div class="offer__options chip-set">
+        @@include("./chip-set/_chip-set.html", {"type": "productOptions"})
+      </div>
+
+      <div class="offer__buy">
+
+        <div class="offer__buy-elem offer__buy-elem--quantity textfield custom-select">
+          <div class="visually-hidden" id="custom-select-status" aria-live="polite"></div>
+          <label class="textfield__input-container">
+            <span class="textfield__trailing-icon textfield__trailing-icon--dropdown"></span>
+            <input class="textfield__input" type="text" aria-describedby="custom-select-info" autocomplete="off" value="1" readonly>
+            <span class="textfield__label">Количество</span>
+          </label>
+
+          <ul class="custom-select__list custom-select__list--closed">
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">1</strong>
+            </li>
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">2</strong>
+            </li>
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">3</strong>
+            </li>
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">4</strong>
+            </li>
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">5</strong>
+            </li>
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">6</strong>
+            </li>
+            <li class="custom-select__item">
+              <strong class="custom-select__item-title">7</strong>
+            </li>
+          </ul>
+
+        </div>
+
+        <button class="offer__buy-elem offer__buy-elem--love button button--action-secondary offer__button-love" type="button">
+          <svg class="button__icon button__icon--love" width="24" height="24">
+            <use xlink:href="img/svg/_sprite.svg#icon-love"></use>
+          </svg>
+          <span class="button__caption">Сохранить</span>
+          <span class="visually-hidden">в избранное</span>
+        </button>
+
+        <button class="offer__buy-elem offer__buy-elem--buy button button--action-primary" type="button">Купить</button>
+
+      </div>
+
+
+
 
 
 

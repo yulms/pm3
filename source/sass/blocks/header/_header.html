@@ -302,23 +302,7 @@
             </dl>
 
             <div class="quantity-input cart-list__quantity-input">
-              <label class="visually-hidden" for="quantity-1">Количество: </label>
-              <div class="quantity-input__container">
-                <button class="quantity-input__button quantity-input__button--less" type="button">
-                  <span class="visually-hidden">Уменьшить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
-                  </svg>
-                </button>
-                <input class="quantity-input__input-field" type="number" name="quantity-1" id="quantity-1" pattern="[0-9]+" value="1" autocomplete="off">
-                <button class="quantity-input__button quantity-input__button--more" type="button">
-                  <span class="visually-hidden">Увеличить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
-                    <line x1="12" y1="4" x2="12" y2="20" stroke-linecap="round"></line>
-                  </svg>
-                </button>
-              </div>
+              @@include("./quantity-input/_quantity-input.html")
             </div>
 
             <div class="price cart-list__price">
@@ -341,23 +325,7 @@
             <a class="cart-list__title" href="#">Набор кухонной посуды Peterhof PH-18256 на 12 персон</a>
 
             <div class="quantity-input cart-list__quantity-input">
-              <label class="visually-hidden" for="quantity-2">Количество: </label>
-              <div class="quantity-input__container">
-                <button class="quantity-input__button quantity-input__button--less" type="button">
-                  <span class="visually-hidden">Уменьшить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
-                  </svg>
-                </button>
-                <input class="quantity-input__input-field" type="number" name="quantity-2" id="quantity-2" pattern="[0-9]+" value="1" autocomplete="off">
-                <button class="quantity-input__button quantity-input__button--more" type="button">
-                  <span class="visually-hidden">Увеличить</span>
-                  <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
-                    <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
-                    <line x1="12" y1="4" x2="12" y2="20" stroke-linecap="round"></line>
-                  </svg>
-                </button>
-              </div>
+              @@include("./quantity-input/_quantity-input.html")
             </div>
 
             <div class="price cart-list__price">

@@ -31,7 +31,7 @@ data-showmore-button-class (string): дополнительные классы (
   <li hidden>Элемент 3</li>
   <li hidden>Элемент 4</li>
 </ul>
-<button class="" aria-expanded="true" type="button">Readmore</button>
+<button class="" aria-expanded="false" type="button">Readmore</button>
 Необходимо показать первых два элемента списка, остальные скрыть. Добавить кнопку показа.
 
 
@@ -52,21 +52,4 @@ data-showmore-button-class (string): дополнительные классы (
   <li>Элемент 3</li>
   <li>Элемент 4</li>
 </ul>
-<button class="" aria-expanded="true" type="button">Readmore</button>
-
-
-
-
-
-
-Сотояние - скрыто.
-При нажатии:
-Записать min высоту в стиль heigth
-Удалить hidden - обновить DOM.
-Дождаться раскрытия. - setTimeout, считать max высоту и поменять ее. После transition установить auto
-
-
-Состояние - открыто
-Записана макс высота.
-Добавить hidden - обновить DOM.
-Дождаться скрытия. - setTimeout, считать min высоту и поменять ее.
+<button class="" aria-expanded="false" type="button">Readmore</button>
