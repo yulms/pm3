@@ -3112,7 +3112,7 @@ sub {
   --gap: 1rem;
   display: flex;
   flex-wrap: wrap;
-  margin: calc(var(--gap) * -1) 0 0 calc(var(--gap) * -1); }
+  margin: calc(var(--gap) * -1) 0 1rem calc(var(--gap) * -1); }
   .offer__buy-elem {
     margin-top: var(--gap);
     margin-left: var(--gap); }
@@ -3145,6 +3145,41 @@ sub {
       clip: rect(0 0 0 0); }
     .offer__button-love .button__icon {
       padding: 0; } }
+
+.offer__price-notification {
+  margin-bottom: 1rem; }
+
+.offer__refund {
+  margin: 0 0 1rem 0; }
+
+.offer__refund-dt {
+  float: left;
+  margin-right: 0.5rem; }
+
+.offer__refund-dd {
+  font-weight: 700; }
+
+.offer__share {
+  display: flex;
+  align-items: center; }
+
+.offer__share-caption {
+  margin: 0 1rem 0 0;
+  font: inherit; }
+
+.offer__share-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+  padding: 0;
+  list-style: none; }
+
+.offer__share-link {
+  display: block;
+  padding: 0.5rem; }
+
+.offer__share-svg {
+  display: block; }
 
 .cart-list {
   margin: 0;
