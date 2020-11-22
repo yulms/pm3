@@ -1,0 +1,39 @@
+.review-write {
+  padding-top: $space*2;
+}
+
+.review-write__title {
+  margin: 0 0 $space;
+}
+
+.review-write__elem {
+  margin-bottom: $space;
+
+  &:last-of-type {
+    margin-bottom: $space*2;
+  }
+}
+
+.review-write__row {
+  @include media-tablet-portrait-up {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+.review-write__row-elem {
+  @include media-mobile-only {
+    margin-bottom: $space;
+  }
+
+  @include media-tablet-portrait-up {
+    width: calc((100% - #{$space}) / 2);
+  }
+}
+
+
+.review-write__submit-button {
+  width: 100%;
+  max-width: $space*30;
+}

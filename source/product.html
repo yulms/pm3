@@ -377,11 +377,55 @@
 
 
 
-        <section>
-          <h4 class="title title--4">Оставьте свой отзыв</h4>
-          <!-- <div> -->
-          @@include("./stars/_stars--rate.html")
-          <!-- </div> -->
+        <section class="review-write">
+          <h4 class="title title--3 review-write__title">Оставьте свой отзыв</h4>
+
+          <form action="#" method="post">
+            @@include("./stars/_stars--rate.html", {"class": "review-write__elem"})
+
+            <div class="textfield review-write__elem">
+              <label class="textfield__input-container">
+                <textarea class="textfield__input" name="review-text" rows="6" cols="60" required autocomplete="off"></textarea>
+                <span class="textfield__label">Ваш отзыв</span>
+              </label>
+              <div class="textfield__help">Опишите свой опыт использования товара</div>
+            </div>
+
+            <div class="textfield review-write__elem">
+              <label class="textfield__input-container">
+                <textarea class="textfield__input" name="review-advantages" rows="3" cols="60" required autocomplete="off"></textarea>
+                <span class="textfield__label">Достоинства</span>
+              </label>
+              <div class="textfield__help">Коротко опишите, что понравилось в товаре</div>
+            </div>
+
+            <div class="textfield review-write__elem">
+              <label class="textfield__input-container">
+                <textarea class="textfield__input" name="review-disadvantages" rows="3" cols="60" required autocomplete="off"></textarea>
+                <span class="textfield__label">Недостатки</span>
+              </label>
+              <div class="textfield__help">Что не понравилось?</div>
+            </div>
+
+            <div class="review-write__row review-write__elem">
+              <div class="textfield review-write__row-elem">
+                <label class="textfield__input-container">
+                  <input class="textfield__input" type="text" required autocomplete="off">
+                  <span class="textfield__label">Ваше имя</span>
+                </label>
+              </div>
+
+              <div class="textfield review-write__row-elem">
+                <label class="textfield__input-container">
+                  <input class="textfield__input" type="text" required autocomplete="off">
+                  <span class="textfield__label">Ваш город</span>
+                </label>
+              </div>
+            </div>
+
+            <button class="button button--options-primary review-write__submit-button" type="submit">Оставить отзыв</button>
+          </form>
+
 
         </section>
 
