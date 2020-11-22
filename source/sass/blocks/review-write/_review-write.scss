@@ -2,9 +2,20 @@
   padding-top: $space*2;
 }
 
+
 .review-write__title {
   margin: 0 0 $space;
 }
+
+
+.review-wrire__form {
+  @include media-tablet-portrait-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $space;
+  }
+}
+
 
 .review-write__elem {
   margin-bottom: $space;
@@ -12,23 +23,13 @@
   &:last-of-type {
     margin-bottom: $space*2;
   }
-}
-
-.review-write__row {
-  @include media-tablet-portrait-up {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-
-.review-write__row-elem {
-  @include media-mobile-only {
-    margin-bottom: $space;
-  }
 
   @include media-tablet-portrait-up {
-    width: calc((100% - #{$space}) / 2);
+    grid-column: span 2;
+
+    &--half {
+      grid-column: span 1;
+    }
   }
 }
 
