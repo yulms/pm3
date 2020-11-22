@@ -27,7 +27,6 @@ class Accordion {
       let wrapper = document.createElement('div');
       wrapper.classList.add(this.contentWrapperClassName);
 
-
       if (!initStateIsOpened) {
         wrapper.hidden = true;
       }
