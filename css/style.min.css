@@ -3644,6 +3644,34 @@ sub {
   height: 18px;
   fill: currentColor; }
 
+.review-write {
+  padding-top: 2rem; }
+
+.review-write__title {
+  margin: 0 0 1rem; }
+
+.review-write__elem {
+  margin-bottom: 1rem; }
+  .review-write__elem:last-of-type {
+    margin-bottom: 2rem; }
+
+@media (min-width: 608px) {
+  .review-write__row {
+    display: flex;
+    justify-content: space-between; } }
+
+@media (max-width: 607px) {
+  .review-write__row-elem {
+    margin-bottom: 1rem; } }
+
+@media (min-width: 608px) {
+  .review-write__row-elem {
+    width: calc((100% - 1rem) / 2); } }
+
+.review-write__submit-button {
+  width: 100%;
+  max-width: 30rem; }
+
 @keyframes ripple-radius-in {
   from {
     transform: translate(var(--startTranslate)) scale(1); }
