@@ -39,16 +39,14 @@
   transition: all 0.15s;
 }
 
-.chip-set__box-caption {
-  color: $color-font__base;
-}
-
-
 .chip-set__box--base {
   background-color: transparent;
   box-shadow: inset 0 0 0 1px $color__additional-2;
 }
 
+.chip-set__box-caption {
+  color: $color-font__base;
+}
 
 .chip-set__box--filter {
   padding-right: $space*0.5;

@@ -75,7 +75,7 @@
           </button>
         </div>
         <div class="delivery-info__delivery-list">
-          <ul class="list" data-showmore data-showmore-action="hideNodes" data-showmore-nodes="3" data-showmore-showtext="Показать все варианты доставки" data-showmore-hidetext="Скрыть дополнительные варианты" data-showmore-button-class="delivery-info__showmore-button">
+          <ul class="list" data-showmore data-showmore-action="hideNodes" data-showmore-nodes="2" data-showmore-showtext="Показать все варианты доставки" data-showmore-hidetext="Скрыть дополнительные варианты" data-showmore-button-class="delivery-info__showmore-button">
             <li class="list__item delivery-info__item">
               <span class="delivery-info__type">Курьером</span>
               <span>сегодня после 18-00 -</span>
@@ -109,7 +109,6 @@
           </ul>
         </div>
       </section>
-
 
       <div class="offer__options chip-set">
         @@include("./chip-set/_chip-set.html", {"type": "productOptions"})
@@ -168,7 +167,6 @@
         <button class="link">Следить за ценой</button>
       </div>
 
-
       <dl class="offer__refund">
         <dt class="offer__refund-dt">Гарантия:</dt>
         <dd class="offer__refund-dd">12 месяцев</dd>
@@ -176,7 +174,6 @@
         <dt class="offer__refund-dt">Возврат товара:</dt>
         <dd class="offer__refund-dd">в течение 14 дней</dd>
       </dl>
-
 
       <aside class="offer__share">
         <h3 class="offer__share-caption">Рассказать друзьям</h3>
@@ -229,20 +226,169 @@
         </ul>
       </aside>
 
+    </section>
+
+
+    <section class="page-product__details details">
+      <h2 class="title title--2 details__title">Сведения о товаре</h2>
+
+      <section class="details__section">
+        <h3 class="title title--3 accordion details__section-title" data-accordion-open>Описание</h3>
+        <div class="admin-content">
+          <p>Набор посуды изготовлен из высококачественной нержавеющей стали 18\10 с зеркальной полировкой, материала износостойкого, не подверженного коррозии на протяжении долгих лет.</p>
+          <p>Дно 3-х слойное капсульное.</p>
+          <p>Ручки посуды выполнены из бакелита. Крышки – из термостойкого стекла с отверстием для выхода пара, что позволяет контролировать процесс приготовления блюд.</p>
+          <p>Подходит для всех типов плит.</p>
+          <p>Подходит для посудомоечной машины.</p>
+        </div>
+      </section>
+
+      <section class="details__section">
+        <h3 class="title title--3 accordion details__section-title" data-accordion-open>Характеристики</h3>
+        <div class="details__content admin-content">
+          <table class="table details__table">
+            <caption class="table__cation">Общая информация</caption>
+            <tr>
+              <th class="table__cell table__cell--th">Тип</th>
+              <td class="table__cell">Набор посуды</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Количество предметов</th>
+              <td class="table__cell">12</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Прямой привод</th>
+              <td class="table__cell">Есть</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Серия</th>
+              <td class="table__cell">Essencials</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Материал</th>
+              <td class="table__cell">Нержавеющая сталь</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Материал крышки</th>
+              <td class="table__cell">Стекло</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Внутренняя отделка</th>
+              <td class="table__cell">Стекло</td>
+            </tr>
+          </table>
+          <table class="table details__table">
+            <caption class="table__cation">Размеры</caption>
+            <tr>
+              <th class="table__cell table__cell--th">Ширина</th>
+              <td class="table__cell">960 мм.</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Высота</th>
+              <td class="table__cell">500 мм.</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Длина</th>
+              <td class="table__cell">1500 мм.</td>
+            </tr>
+            <tr>
+              <th class="table__cell table__cell--th">Объем</th>
+              <td class="table__cell">18 л.</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="details__section reviews">
+        <h3 class="title title--3 accordion details__section-title" data-accordion-open>Отзывы (12)</h3>
+        <div class="reviews__subheader">
+          <div class="reviews__stars">
+            @@include("./stars/_stars--product-reviews.html")
+          </div>
+          <button class="link reviews__write-button">Написать свой отзыв</button>
+        </div>
+
+        <h4 class="visually-hidden">Список отзывов</h4>
+        <ul class="reviews__list">
+
+          <li class="reviews__item">
+            <blockquote class="reviews__one-review">
+              <cite class="reviews__author">
+                <svg class="reviews__user-icon" width="24" height="24">
+                  <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
+                </svg>
+                <span class="reviews__author-name">Екатерина, г.Осиповичи</span>
+                <span class="reviews__review-date">04.07.2020</span>
+              </cite>
+
+              @@include("./stars/_stars--review.html", {"class": "reviews__one-review-stars"})
+
+              <div class="reviews__text">
+                Купила этот набор кастрюль по дурости и вы знаете - я сама не ожидала, но мне понравилось. Готовить в такой посуде - истинное удовольствие, ни с чем не сравнимое, хотя нет - сравнимое, но мы сейчас не об этом.<br>
+                Категорически рекомендую не отжалеть лишних 300 рублей и купить это набор.
+              </div>
+              <div class="reviews__text">
+                <strong>Недостатки:</strong>
+                <div>цена высоковата, но мы же знаем, что за качество надо платить</div>
+              </div>
+              <div class="reviews__text">
+                <strong>Достоинства:</strong>
+                <div>качество</div>
+              </div>
+            </blockquote>
+
+            <button class="button reviews__button-usefull">
+              <svg class="button__icon reviews__button-icon" width="18" height="18">
+                <use xlink:href="img/svg/_sprite.svg#icon-like"></use>
+              </svg>
+              <span class="button__caption">Полезный отзыв (12)</span>
+            </button>
+          </li>
+
+          <li class="reviews__item">
+            <blockquote class="reviews__one-review">
+              <cite class="reviews__author">
+                <svg class="reviews__user-icon" width="24" height="24">
+                  <use xlink:href="img/svg/_sprite.svg#icon-user"></use>
+                </svg>
+                <span class="reviews__author-name">Иван, г.Минск</span>
+                <span class="reviews__review-date">04.08.2020</span>
+              </cite>
+              @@include("./stars/_stars--review.html", {"class": "reviews__one-review-stars"})
+              <div class="reviews__text">
+                Офигительный набор, рекомендую! Жене тоже понравился.
+              </div>
+              <div class="reviews__text">
+                <strong>Недостатки:</strong>
+                <div>не замечено</div>
+              </div>
+            </blockquote>
+            <button class="button reviews__button-usefull">
+              <svg class="button__icon reviews__button-icon" width="18" height="18">
+                <use xlink:href="img/svg/_sprite.svg#icon-like"></use>
+              </svg>
+              <span class="button__caption">Полезный отзыв</span>
+            </button>
+          </li>
+
+        </ul>
 
 
 
 
 
+        <section>
+          <h4 class="title title--4">Оставьте свой отзыв</h4>
+          <!-- <div> -->
+          @@include("./stars/_stars--rate.html")
+          <!-- </div> -->
+
+        </section>
 
 
 
 
-
-
-
-
-
+      </section>
 
 
 

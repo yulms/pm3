@@ -17,7 +17,7 @@
   cursor: pointer;
   outline: none;
   transition-property: color, border-color, box-shadow, opacity, background-color;
-  transition-duration: 150ms;
+  transition-duration: 120ms;
   transition-timing-function: linear;
 }
 
@@ -109,6 +109,7 @@
 .button__caption + .button__icon {
   margin-left: $space*0.5;
 }
+
 
 .button__icon + .button__caption {
   margin-left: $space*0.5;

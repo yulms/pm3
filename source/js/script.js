@@ -10,6 +10,7 @@ import initRipple from './_ripple.js';
 import initAccordion from './_accordion.js';
 import initSliders from './_slider.js';
 import initShowmores from './_showmore.js';
+import initStars from './_stars.js';
 
 const projectObjects = { // eslint-disable-line
   switchView: initSwitchView(),
@@ -23,7 +24,8 @@ const projectObjects = { // eslint-disable-line
   ripple: initRipple(),
   accordion: initAccordion(),
   sliders: initSliders(),
-  showMores: initShowmores()
+  showMores: initShowmores(),
+  stars: initStars()
 };
 
 console.log(projectObjects);
