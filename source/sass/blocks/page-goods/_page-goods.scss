@@ -14,7 +14,8 @@
   @include media-desktop-up {
     // в этом варианте (grid-template) есть возможность
     // установить высоту row именованной области
-    // этот код grid-template-rows: repeat(6, auto) 1fr; такой возможности не дает
+    // этот код:
+    // grid-template-rows: repeat(6, auto) 1fr; такой возможности не дает
     grid-template:
       "breadcrumbs breadcrumbs"
       "promo promo"

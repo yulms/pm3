@@ -1,6 +1,68 @@
-.page-product {
+@import "details";
 
+
+.page-product {
+  @include media-tablet-landscape-up {
+    display: grid;
+    // в этом варианте (grid-template) есть возможность
+    // установить высоту row именованной области
+    // этот код:
+    // grid-template-rows: repeat(6, auto) 1fr; такой возможности не дает
+    grid-template:
+      "breadcrumbs breadcrumbs"
+      "header offer"
+      "gallery offer" 1fr
+      "details small-card"
+      "similar similar"
+      "viewed viewed"
+      / 2fr 1fr;
+
+    column-gap: $space*3;
+    row-gap: $space;
+    align-items: start;
+
+
+    // ! только свойства, относящиеся к grid
+    // для новых появляющихся блоков, что бы блок не
+    // позиционировался в пустоты
+    // & > * {
+    //   grid-column: 1/-1;
+    // }
+
+    &__breadcrumbs {
+      grid-area: breadcrumbs;
+    }
+
+    &__header {
+      grid-area: header;
+    }
+
+    &__gallery {
+      grid-area: gallery;
+    }
+
+    &__offer {
+      grid-area: offer;
+    }
+
+    &__details {
+      grid-area: details;
+    }
+
+    &__small-card {
+      grid-area: small-card;
+    }
+
+    &__similar {
+      grid-area: similar;
+    }
+
+    &__viewed {
+      grid-area: viewed;
+    }
+  }
 }
+
 
 .page-product__header {
   display: flex;
@@ -30,7 +92,6 @@
 
   @include media-tablet-landscape-up {
     padding-bottom: $space*4;
-    border-bottom: 1px solid $color__additional-2;
   }
 }
 
@@ -44,4 +105,10 @@
   border-top: 1px solid $color__additional-2;
 }
 
-@import "details";
+
+// ? temp
+.page-product__small-card {
+  width: 100%;
+  height: 500px;
+  background-color: tomato;
+}
