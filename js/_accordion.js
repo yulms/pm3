@@ -8,16 +8,16 @@ class Accordion {
       accordionClassName: 'accordion',
       buttonSelector: '.accordion__button',
       contentWrapperClassName: 'accordion__content-wrapper',
-      initStateDataAttribute: 'accordionOpen'
+      initStateDataAttribute: 'accordionOpen',
+      additionalClassDataAttribute: 'accordionClass'
     };
 
     Object.assign(this, defaults, overrides);
 
 
-    this._headingsElements = Array.from(document.querySelectorAll('.' + this.accordionClassName));
+    this._headingElements = Array.from(document.querySelectorAll('.' + this.accordionClassName));
 
-
-    this._headingsElements.forEach((heading) => {
+    this._headingElements.forEach((heading) => {
       let initStateIsOpened = this._getInitState(heading);
 
       this._addButton(heading, initStateIsOpened);
@@ -30,6 +30,16 @@ class Accordion {
       if (!initStateIsOpened) {
         wrapper.hidden = true;
       }
+
+      // adding additional classes
+      let additionalClass = heading.dataset[this.additionalClassDataAttribute];
+      if (additionalClass) {
+        let additionalClasses = additionalClass.split(' ');
+        additionalClasses.forEach((className) => {
+          wrapper.classList.add(className);
+        });
+      }
+
 
       // Add each element of `contents` to `wrapper`
       contents.forEach(node => {
