@@ -12,6 +12,9 @@
 2. Элементы, следующие за главным, оборачиваются в <div class="accordion__content-wrapper">
 3. Обработчик висит на document, при клике меняются aria атрибуты, атрибут hidden и высота обертки.
 
+upd 23.11.20
+Доавлен атрибут data-accordion-class. Значение атрибута - класс, добавляемый для обертки <div class="accordion__content-wrapper">
+
 
 Пример:
 <h3 class="accordion">

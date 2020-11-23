@@ -1,14 +1,9 @@
-.review-write {
-  padding-top: $space*2;
-}
-
-
 .review-write__title {
   margin: 0 0 $space;
 }
 
 
-.review-wrire__form {
+.review-write__form {
   @include media-tablet-portrait-up {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -36,4 +31,11 @@
 
 .review-write__submit-button {
   width: 100%;
+}
+
+// подключаемый через js - accordion класс
+// для дополнительного отступа для outline
+.review-write__extra-space {
+  padding: 8px;
+  margin: -8px;
 }

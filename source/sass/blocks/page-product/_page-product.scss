@@ -1,4 +1,5 @@
 @import "details";
+@import "buy-card";
 
 
 .page-product {
@@ -11,14 +12,24 @@
     grid-template:
       "breadcrumbs breadcrumbs"
       "header offer"
-      "gallery offer" 1fr
-      "details small-card"
+      "gallery offer"
+      "details offer"
+      "details buy-card" 1fr
       "similar similar"
       "viewed viewed"
       / 2fr 1fr;
 
+    // grid-template:
+    //   "breadcrumbs breadcrumbs"
+    //   "header offer"
+    //   "gallery offer"
+    //   "details offer"
+    //   "details small-card" 1fr
+    //   "similar similar"
+    //   "viewed viewed"
+    //   / 2fr 1fr;
+
     column-gap: $space*3;
-    row-gap: $space;
     align-items: start;
 
 
@@ -49,8 +60,8 @@
       grid-area: details;
     }
 
-    &__small-card {
-      grid-area: small-card;
+    &__buy-card {
+      grid-area: buy-card;
     }
 
     &__similar {
@@ -97,18 +108,23 @@
 
 
 .page-product__offer {
-  margin-bottom: $space;
+  @include media-mobile-only {
+    margin-bottom: $space;
+  }
+
+  @include media-tablet-portrait-up {
+    margin-bottom: $space*3;
+  }
 }
 
 .page-product__details {
+  margin-bottom: $space*4;
   padding-top: $space*2;
   border-top: 1px solid $color__additional-2;
 }
 
-
-// ? temp
-.page-product__small-card {
-  width: 100%;
-  height: 500px;
-  background-color: tomato;
+.page-product__buy-card {
+  @include media-tablet-portrait-down {
+    display: none;
+  }
 }

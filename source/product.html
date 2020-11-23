@@ -228,7 +228,7 @@
 
     </section>
 
-    <section class="page-product__details page__section details">
+    <section class="page-product__details details">
       <h2 class="title title--2 details__title">Сведения о товаре</h2>
 
       <section class="details__section">
@@ -307,7 +307,6 @@
           <button class="link reviews__write-button">Написать свой отзыв</button>
         </div>
 
-        <h4 class="visually-hidden">Список отзывов</h4>
         <ul class="reviews__list">
 
           <li class="reviews__item">
@@ -371,56 +370,55 @@
           </li>
 
         </ul>
+      </section>
 
 
-        <section class="review-write">
-          <h4 class="title title--3 review-write__title">Оставьте свой отзыв</h4>
+      <section class="details__section review-write">
+        <h3 class="title title--3 review-write__title accordion" data-accordion-class="review-write__extra-space">Оставить отзыв</h3>
 
-          <form class="review-wrire__form" action="#" method="post">
-            @@include("./stars/_stars--rate.html", {"class": "review-write__elem"})
+        <form class="review-write__form" action="#" method="post">
+          @@include("./stars/_stars--rate.html", {"class": "review-write__elem"})
 
-            <div class="textfield review-write__elem">
-              <label class="textfield__input-container">
-                <textarea class="textfield__input" name="review-text" rows="6" cols="60" required autocomplete="off"></textarea>
-                <span class="textfield__label">Ваш отзыв</span>
-              </label>
-              <div class="textfield__help">Опишите свой опыт использования товара</div>
-            </div>
+          <div class="textfield review-write__elem">
+            <label class="textfield__input-container">
+              <textarea class="textfield__input" name="review-text" rows="6" cols="60" required autocomplete="off"></textarea>
+              <span class="textfield__label">Ваш отзыв</span>
+            </label>
+            <div class="textfield__help">Опишите свой опыт использования товара</div>
+          </div>
 
-            <div class="textfield review-write__elem">
-              <label class="textfield__input-container">
-                <textarea class="textfield__input" name="review-advantages" rows="3" cols="60" autocomplete="off"></textarea>
-                <span class="textfield__label">Достоинства</span>
-              </label>
-              <div class="textfield__help">Коротко опишите, что понравилось в товаре</div>
-            </div>
+          <div class="textfield review-write__elem">
+            <label class="textfield__input-container">
+              <textarea class="textfield__input" name="review-advantages" rows="3" cols="60" autocomplete="off"></textarea>
+              <span class="textfield__label">Достоинства</span>
+            </label>
+            <div class="textfield__help">Коротко опишите, что понравилось в товаре</div>
+          </div>
 
-            <div class="textfield review-write__elem">
-              <label class="textfield__input-container">
-                <textarea class="textfield__input" name="review-disadvantages" rows="3" cols="60" autocomplete="off"></textarea>
-                <span class="textfield__label">Недостатки</span>
-              </label>
-              <div class="textfield__help">Что не понравилось?</div>
-            </div>
+          <div class="textfield review-write__elem">
+            <label class="textfield__input-container">
+              <textarea class="textfield__input" name="review-disadvantages" rows="3" cols="60" autocomplete="off"></textarea>
+              <span class="textfield__label">Недостатки</span>
+            </label>
+            <div class="textfield__help">Что не понравилось?</div>
+          </div>
 
-            <div class="textfield review-write__elem review-write__elem--half">
-              <label class="textfield__input-container">
-                <input class="textfield__input" type="text" autocomplete="off">
-                <span class="textfield__label">Ваше имя</span>
-              </label>
-            </div>
+          <div class="textfield review-write__elem review-write__elem--half">
+            <label class="textfield__input-container">
+              <input class="textfield__input" type="text" autocomplete="off">
+              <span class="textfield__label">Ваше имя</span>
+            </label>
+          </div>
 
-            <div class="textfield review-write__elem review-write__elem--half">
-              <label class="textfield__input-container">
-                <input class="textfield__input" type="text" autocomplete="off">
-                <span class="textfield__label">Ваш город</span>
-              </label>
-            </div>
+          <div class="textfield review-write__elem review-write__elem--half">
+            <label class="textfield__input-container">
+              <input class="textfield__input" type="text" autocomplete="off">
+              <span class="textfield__label">Ваш город</span>
+            </label>
+          </div>
 
-            <button class="button button--options-primary review-write__submit-button" type="submit">Оставить отзыв</button>
-          </form>
-
-        </section>
+          <button class="button button--options-primary review-write__submit-button" type="submit">Оставить отзыв</button>
+        </form>
 
       </section>
 
@@ -446,8 +444,6 @@
 
     </section>
 
-    <section class="page-product__small-card"></section>
-
     <div class="page-product__similar page__section full-width">
       <section class="page__slider">
         <header class="page__slider-header">
@@ -460,11 +456,49 @@
     <div class="page-product__viewed page__section full-width">
       <section class="page__slider">
         <header class="page__slider-header">
-          <h2 class="title title--2 page__section-title page__slider-title">Просмотренные товары</h2>
+          <h2 class="title title--2 page__section-title page__slider-title">Вы смотрели</h2>
         </header>
         @@include("./slider/_slider--minicard--goods.html")
       </section>
     </div>
+
+    <section class="page-product__buy-card buy-card">
+      <h2 class="visually-hidden">Быстрая покупка</h2>
+
+      <div class="buy-card__inner">
+
+        <div class="buy-card__image-container">
+          <img class="buy-card__image" src="img/raster/product-1.jpg" alt="Изображение" width="320">
+        </div>
+
+
+        <div class="price buy-card__price">
+          <span class="price__current price__current--discount price__current--big" aria-label="Текущая цена: ">
+            156<sup>80</sup> р.
+          </span>
+          <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+          <strong class="price__discount-info">
+            <span>скидка</span>
+            <span>20%</span>
+          </strong>
+        </div>
+
+        <div class="buy-card__buttons-container">
+          <button class="button button--action-primary buy-card__button-buy buy-card__buttons-container-elem" type="button">Купить</button>
+
+          <button class="button button--action-secondary buy-card__button-love buy-card__buttons-container-elem" type="button">
+            <svg class="button__icon button__icon--love" width="24" height="24">
+              <use xlink:href="img/svg/_sprite.svg#icon-love"></use>
+            </svg>
+            <span class="button__caption">Сохранить</span>
+            <span class="visually-hidden">в избранное</span>
+          </button>
+        </div>
+
+      </div>
+
+
+    </section>
 
   </main>
 
