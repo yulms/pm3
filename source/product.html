@@ -444,31 +444,31 @@
 
     </section>
 
-    <div class="page-product__similar page__section full-width">
-      <section class="page__slider">
-        <header class="page__slider-header">
-          <h2 class="title title--2 page__section-title page__slider-title">Похожие товары</h2>
-        </header>
-        @@include("./slider/_slider--minicard--goods.html")
-      </section>
-    </div>
-
-    <div class="page-product__viewed page__section full-width">
-      <section class="page__slider">
-        <header class="page__slider-header">
-          <h2 class="title title--2 page__section-title page__slider-title">Вы смотрели</h2>
-        </header>
-        @@include("./slider/_slider--minicard--goods.html")
-      </section>
-    </div>
-
     <section class="page-product__buy-card buy-card">
       <h2 class="visually-hidden">Быстрая покупка</h2>
 
       <div class="buy-card__inner">
 
         <div class="buy-card__image-container">
-          <img class="buy-card__image" src="img/raster/product-1.jpg" alt="Изображение" width="320">
+          <picture>
+            <source sizes="
+                          (min-width: 1456px) 444px,
+                          (min-width: 980px) calc(((100vw - 130px) / 3) - 4px),
+                          (min-width: 512px) calc(50vw - 4px), 100vw" srcset="
+                          img/raster/product-1_400w.webp 400w,
+                          img/raster/product-1_600w.webp 600w,
+                          img/raster/product-1_800w.webp 800w,
+                          img/raster/product-1_1000w.webp 1000w" type="image/webp">
+            <source sizes="
+                          (min-width: 1456px) 444px,
+                          (min-width: 980px) calc(((100vw - 130px) / 3) - 4px),
+                          (min-width: 512px) calc(50vw - 4px),
+                          100vw" srcset="img/raster/product-1_400w.jpg 400w,
+                          img/raster/product-1_600w.jpg 600w,
+                          img/raster/product-1_800w.jpg 800w,
+                          img/raster/product-1_1000w.jpg 1000w">
+            <img class="buy-card__image" src="img/raster/product-1_600w.jpg" width="360" alt="Изображение 1">
+          </picture>
         </div>
 
 
@@ -499,6 +499,24 @@
 
 
     </section>
+
+    <div class="page-product__similar page__section full-width">
+      <section class="page__slider">
+        <header class="page__slider-header">
+          <h2 class="title title--2 page__section-title page__slider-title">Похожие товары</h2>
+        </header>
+        @@include("./slider/_slider--minicard--goods.html")
+      </section>
+    </div>
+
+    <div class="page-product__viewed page__section full-width">
+      <section class="page__slider">
+        <header class="page__slider-header">
+          <h2 class="title title--2 page__section-title page__slider-title">Вы смотрели</h2>
+        </header>
+        @@include("./slider/_slider--minicard--goods.html")
+      </section>
+    </div>
 
   </main>
 

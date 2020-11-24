@@ -238,6 +238,7 @@
   .slider__toggle {
     width: $space*3;
     height: $space*3;
+    flex-shrink: 0;
     padding: 0;
     color: $color__additional-4;
     border-radius: 50%;
