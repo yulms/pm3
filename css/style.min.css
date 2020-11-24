@@ -1344,6 +1344,7 @@ sub {
   .slider__toggle {
     width: 3rem;
     height: 3rem;
+    flex-shrink: 0;
     padding: 0;
     color: #888888;
     border-radius: 50%;
@@ -1930,14 +1931,13 @@ sub {
   padding-bottom: calc((var(--row-gap) / 2) - 1px);
   border-bottom: 1px solid #ffffff; }
 
-.minicard-list__list--grid {
-  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)); }
-  @media (max-width: 607px) {
-    .minicard-list__list--grid {
-      --card-min-width: 160px; } }
-  @media (min-width: 608px) {
-    .minicard-list__list--grid {
-      --card-min-width: 250px; } }
+@media (max-width: 607px) {
+  .minicard-list__list--grid {
+    grid-template-columns: 1fr 1fr; } }
+
+@media (min-width: 608px) {
+  .minicard-list__list--grid {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); } }
 
 .minicard-list__list--list {
   grid-template-columns: 100%; }
@@ -1970,7 +1970,7 @@ sub {
   border-left: 0.5rem solid #ffd343; }
 
 .page__wrapper {
-  max-width: 1450px;
+  max-width: 1456px;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem var(--page-paddings) 8rem; }
@@ -1992,7 +1992,7 @@ sub {
       column-gap: var(--gap); } }
   @media (min-width: 1280px) {
     .page__slider {
-      max-width: calc((1450px + 100%) / 2);
+      max-width: calc((1456px + 100%) / 2);
       margin-left: auto; } }
 
 .page__section-title {
@@ -2116,7 +2116,7 @@ sub {
       display: flex;
       align-items: flex-start;
       padding: 0 var(--page-paddings); } }
-  @media (min-width: 1450px) {
+  @media (min-width: 1456px) {
     .header__top-panel {
       padding: 0 4rem; } }
 
@@ -2226,7 +2226,7 @@ sub {
     .header__main-panel {
       align-items: center;
       padding: 1rem var(--page-paddings); } }
-  @media (min-width: 1450px) {
+  @media (min-width: 1456px) {
     .header__main-panel {
       padding-left: 4rem;
       padding-right: 4rem; } }
@@ -2528,7 +2528,7 @@ sub {
     margin-left: auto;
     margin-right: auto; } }
 
-@media (min-width: 1450px) {
+@media (min-width: 1456px) {
   .header__search-form {
     width: 46%; } }
 
@@ -2540,7 +2540,7 @@ sub {
   position: relative; }
   @media (min-width: 1280px) {
     .main-nav__inner {
-      max-width: 1450px;
+      max-width: 1456px;
       margin-left: auto;
       margin-right: auto; } }
 
@@ -2840,7 +2840,7 @@ sub {
       background-position: 0 -40px; } }
 
 .footer__inner {
-  max-width: 1450px;
+  max-width: 1456px;
   margin-left: auto;
   margin-right: auto; }
 
