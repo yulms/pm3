@@ -121,6 +121,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   overflow: hidden;
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 
   &:hover,
   &:focus-within {
