@@ -3,7 +3,17 @@
   <a class="minicard__link" href="#">
     <h3 class="minicard__title">@@title</h3>
     <p class="image-container minicard__image-container @@class2">
-      <img class="image-container__image" src="@@filename" alt="Открыть страницу покупки @@title">
+      <picture>
+        <source srcset="img/raster/minicard-@@index_244w.webp 1x,
+                        img/raster/minicard-@@index_488w.webp 2x,
+                        img/raster/minicard-@@index_732w.webp 3x" type="image/webp">
+
+        <img class="image-container__image" srcset="
+          img/raster/minicard-@@index_244w.jpg 1x,
+          img/raster/minicard-@@index_488w.jpg 2x,
+          img/raster/minicard-@@index_732w.jpg 3x" src="
+          img/raster/minicard-@@index_244w.jpg" alt="Открыть страницу покупки @@title" width="244">
+      </picture>
     </p>
   </a>
 
