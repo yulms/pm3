@@ -1,4 +1,5 @@
 import appendCustomFocusEvents from './custom-focus-events.js';
+import { generateId } from './util.js';
 
 
 class CustomSelect {
@@ -28,15 +29,18 @@ class CustomSelect {
     this.items = Array.from(this.itemElements);
     this.statusElement = this.element.querySelector(this.statusSelector);
 
+    // generate ID for list
+    let listId = generateId();
+    this.listElement.id = listId;
 
     // * setting Aria attributes
     this.element.setAttribute('role', 'combobox');
     this.element.setAttribute('aria-haspopup', 'listbox');
     this.element.setAttribute('aria-owns', this.listElement.id);
+    this.element.setAttribute('aria-expanded', 'false');
     this.inputElement.setAttribute('aria-controls', this.listElement.id);
     this.inputElement.setAttribute('aria-autocomplete', 'both');
     this.listElement.setAttribute('role', 'listbox');
-    this.listElement.setAttribute('aria-expanded', 'false');
     this.itemElements.forEach(function(item) {
       item.setAttribute('role', 'option');
       item.setAttribute('tabindex', '-1');
@@ -83,13 +87,13 @@ class CustomSelect {
 
     let _openList  = () => {
       this.listElement.classList.remove(this.listCloseClass);
-      this.listElement.setAttribute('aria-expanded', 'true');
+      this.element.setAttribute('aria-expanded', 'true');
       this.state.isOpened = true;
     };
 
     let _closeList  = () => {
       this.listElement.classList.add(this.listCloseClass);
-      this.listElement.setAttribute('aria-expanded', 'false');
+      this.element.setAttribute('aria-expanded', 'false');
       this.state.isOpened = false;
     };
 

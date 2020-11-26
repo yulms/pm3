@@ -172,12 +172,14 @@
 }
 
 .slider__nav-item {
-  margin: $space*0.25;
+  @include media-tablet-portrait-up {
+    margin: $space*0.25;
+  }
 }
 
 .slider__nav-link {
   display: block;
-  padding: $space*0.25;
+  padding: $space*0.75;
   outline: none;
 
   // точки
