@@ -14,7 +14,7 @@
 
 .header__user-caption {
   @include media-tablet-landscape-down {
-    display: none;
+    @include visually-hidden;
   }
 }
 

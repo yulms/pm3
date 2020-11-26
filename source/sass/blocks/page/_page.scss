@@ -40,30 +40,6 @@
   }
 }
 
-
-.page__section-title {
-  margin: 0 0 $space*2;
-}
-
-
-.page__title {
-  margin: 0 0 $space*2;
-}
-
-
-.page__breadcrumbs {
-  margin-left: calc(var(--page-paddings) * -1);
-  margin-right: calc(var(--page-paddings) * -1);
-  margin-bottom: $space*1.5;
-}
-
-
-// * черновик
-
-.page__slider {
-
-}
-
 .page__slider-header {
   @include media-tablet-landscape-up {
     z-index: 1;
@@ -83,4 +59,21 @@
     color: #ffffff;
     word-break: break-word;
   }
+}
+
+
+.page__section-title {
+  margin: 0 0 $space*2;
+}
+
+
+.page__title {
+  margin: 0 0 $space*2;
+}
+
+
+.page__breadcrumbs {
+  margin-left: calc(var(--page-paddings) * -1);
+  margin-right: calc(var(--page-paddings) * -1);
+  margin-bottom: $space*1.5;
 }
