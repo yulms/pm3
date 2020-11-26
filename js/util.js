@@ -84,3 +84,9 @@ export function isTouchDevice() {
   }
   return isTouchSupport;
 }
+
+
+let id = 0;
+export function generateId() {
+  return 'generatedId-' + ++id;
+}
