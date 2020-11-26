@@ -2420,7 +2420,14 @@ sub {
 
 @media (max-width: 1279px) {
   .header__user-caption {
-    display: none; } }
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0); } }
 
 .header__user-entry-text {
   margin: 0 0 1rem;
