@@ -849,6 +849,17 @@ sub {
   border: 0;
   clip: rect(0 0 0 0); }
 
+@media (max-width: 607px) {
+  .stars--product-header .stars__average-rating-caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0); } }
+
 .stars__fieldset {
   display: flex;
   align-items: center;
