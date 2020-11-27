@@ -1302,6 +1302,9 @@ sub {
   .slider__nav-item {
     margin: 0.25rem; } }
 
+img[data-sizes="auto"] {
+  display: block; }
+
 .slider__nav-link {
   display: block;
   padding: 0.75rem;
@@ -1642,6 +1645,7 @@ sub {
   display: grid; }
 
 .minicard--grid {
+  grid-template-columns: minmax(0%, 1fr);
   padding: 0.5rem 0.5rem 1rem; }
 
 .minicard--list {
@@ -1937,7 +1941,7 @@ sub {
 
 @media (max-width: 607px) {
   .minicard-list__list--grid {
-    grid-template-columns: 1fr 1fr; } }
+    grid-template-columns: repeat(2, minmax(0%, 1fr)); } }
 
 @media (min-width: 608px) {
   .minicard-list__list--grid {

@@ -1,3 +1,4 @@
+import initLazyload from './lazyload.js';
 import initSwitchView from './_switch-view.js';
 import initMainNav from './_main-nav.js';
 import initBoundedModals from './_modal--bounded.js';
@@ -13,6 +14,7 @@ import initShowmores from './_showmore.js';
 import initStars from './_stars.js';
 
 const projectObjects = { // eslint-disable-line
+  lazyLoad: initLazyload(),
   switchView: initSwitchView(),
   mainNav: initMainNav(),
   modalsBounded: initBoundedModals(),
