@@ -3248,10 +3248,14 @@ img[data-sizes="auto"] {
     .page-product__viewed {
       grid-area: viewed; } }
 
+.page-product__breadcrumbs {
+  margin-bottom: 1rem; }
+
 .page-product__header {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding-top: 0.5rem; }
   @media (max-width: 979px) {
     .page-product__header {
       margin-bottom: 0.5rem; } }
