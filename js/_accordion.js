@@ -103,7 +103,7 @@ class Accordion {
         break;
 
       default:
-        initStateIsOpened = (document.documentElement.clientWidth >= widthOpened);
+        initStateIsOpened = (window.innerWidth >= widthOpened);
     }
 
     return initStateIsOpened;
