@@ -11,12 +11,13 @@
 
     @@include("./breadcrumbs/_breadcrumbs.html", {"class": "page__breadcrumbs page-product__breadcrumbs"})
 
-    <header class="page-product__header">
+    <header class="page-product__header" data-scroll-on-load data-scroll-maxvw="607">
       <h1 class="title title--2 page-product__title">Набор посуды BergHOFF 128513 на 12 персон</h1>
-      @@include("./stars/_stars.html")
+      @@include("./stars/_stars.html", {"class": "stars--product-header"})
       <div>
-        <span class="product__code-caption">Код:</span>
-        <span class="product__code">456-451</span>
+        <span class="page-product__code-caption page-product__code-caption--short" aria-hidden="true">Код:</span>
+        <span class="page-product__code-caption page-product__code-caption--full">Код товара для заказа:</span>
+        <span class="page-product__code">456-451</span>
       </div>
     </header>
 
@@ -299,12 +300,12 @@
       </section>
 
       <section class="details__section reviews">
-        <h3 class="title title--3 accordion details__section-title" data-accordion-open>Отзывы (12)</h3>
+        <h3 class="title title--3 accordion details__section-title" id="reviews-title" data-accordion-open>Отзывы (12)</h3>
         <div class="reviews__subheader">
           <div class="reviews__stars">
             @@include("./stars/_stars--product-reviews.html")
           </div>
-          <button class="link reviews__write-button">Написать свой отзыв</button>
+          <a class="link reviews__write-button" href="#write-review-title">Написать свой отзыв</a>
         </div>
 
         <ul class="reviews__list">
@@ -374,7 +375,7 @@
 
 
       <section class="details__section review-write">
-        <h3 class="title title--3 review-write__title accordion" data-accordion-class="review-write__extra-space">Оставить отзыв</h3>
+        <h3 class="title title--3 review-write__title accordion" id="write-review-title" data-accordion-class="review-write__extra-space">Оставить отзыв</h3>
 
         <form class="review-write__form" action="#" method="post">
           @@include("./stars/_stars--rate.html", {"class": "review-write__elem"})
@@ -451,23 +452,23 @@
 
         <div class="buy-card__image-container">
           <picture>
-            <source sizes="
-                          (min-width: 1456px) 444px,
+            <source sizes="(min-width: 1456px) 444px,
                           (min-width: 980px) calc(((100vw - 130px) / 3) - 4px),
-                          (min-width: 512px) calc(50vw - 4px), 100vw" srcset="
-                          img/raster/product-1_400w.webp 400w,
+                          (min-width: 512px) calc(50vw - 4px), 100vw"
+                    srcset="img/raster/product-1_400w.webp 400w,
                           img/raster/product-1_600w.webp 600w,
                           img/raster/product-1_800w.webp 800w,
-                          img/raster/product-1_1000w.webp 1000w" type="image/webp">
-            <source sizes="
-                          (min-width: 1456px) 444px,
+                          img/raster/product-1_1000w.webp 1000w"
+                    type="image/webp">
+            <source sizes="(min-width: 1456px) 444px,
                           (min-width: 980px) calc(((100vw - 130px) / 3) - 4px),
                           (min-width: 512px) calc(50vw - 4px),
-                          100vw" srcset="img/raster/product-1_400w.jpg 400w,
+                          100vw"
+                    srcset="img/raster/product-1_400w.jpg 400w,
                           img/raster/product-1_600w.jpg 600w,
                           img/raster/product-1_800w.jpg 800w,
                           img/raster/product-1_1000w.jpg 1000w">
-            <img class="buy-card__image" loading="lazy" src="img/raster/product-1_600w.jpg" width="360" alt="Изображение 1">
+            <img class="buy-card__image" loading="lazy" data-src="img/raster/product-1_600w.jpg" width="360" alt="Изображение 1">
           </picture>
         </div>
 

@@ -3,7 +3,9 @@
   display: grid;
 }
 
+// grid и list - модификаторы сетки товаров
 .minicard--grid {
+  grid-template-columns: minmax(0%, 1fr);
   padding: $space*0.5 $space*0.5 $space;
 }
 

@@ -59,6 +59,14 @@ $stars-height: $space;
   }
 }
 
+.stars--product-header {
+  @include media-mobile-only {
+    & .stars__average-rating-caption {
+      @include visually-hidden;
+    }
+  }
+}
+
 
 .stars__fieldset {
   display: flex;
@@ -68,9 +76,6 @@ $stars-height: $space;
   border: none;
 }
 
-// .stars__fieldset-caption {
-//   padding: 0;
-// }
 
 .stars__input-group {
   --star-width: 24px;

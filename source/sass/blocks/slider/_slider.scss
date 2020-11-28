@@ -177,6 +177,10 @@
   }
 }
 
+img[data-sizes="auto"] {
+  display: block;
+}
+
 .slider__nav-link {
   display: block;
   padding: $space*0.75;

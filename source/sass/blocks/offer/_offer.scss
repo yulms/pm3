@@ -1,5 +1,9 @@
 .offer__price {
   margin: 0;
+
+  @include media-tablet-landscape-up {
+    margin-bottom: $space*0.5;
+  }
 }
 
 .offer__short-info {

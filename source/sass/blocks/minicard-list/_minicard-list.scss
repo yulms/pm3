@@ -19,7 +19,7 @@
 
 .minicard-list__list--grid {
   @include media-mobile-only {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0%, 1fr));
   }
 
   @include media-tablet-portrait-up {
