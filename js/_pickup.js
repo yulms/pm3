@@ -66,7 +66,7 @@ class Pickup {
 
   _readCoords() {
     let coords = [];
-    let coordElements = document.querySelectorAll(COORDS_ELEMENT_SELECTOR);
+    let coordElements = this.element.querySelectorAll(COORDS_ELEMENT_SELECTOR);
     for (let i = 0; i < coordElements.length; i++) {
       // получение координат и преобразование в массив массивов
       let textCoords = coordElements[i].dataset[COORDS_DATA_ATTR_NAME];
@@ -84,8 +84,7 @@ class Pickup {
     let placemark;
     coords.forEach((coord) => {
       placemark = new window.ymaps.Placemark(coord, {}, {
-        // preset: 'islands#dotIcon',
-        preset: 'islands#redSportIcon',
+        preset: 'islands#dotIcon',
         iconColor: PIN_COLOR
       });
       this.map.geoObjects.add(placemark);

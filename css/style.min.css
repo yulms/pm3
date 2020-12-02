@@ -1453,10 +1453,10 @@ img[data-sizes="auto"] {
 .radio-tabs {
   display: flex;
   flex-wrap: wrap;
+  min-width: 0;
   margin: 0;
   padding: 0;
-  border: none;
-  min-width: 0; }
+  border: none; }
 
 .radio-tabs__input:not(:checked):nth-of-type(1) ~ .radio-tabs__content:nth-of-type(1),
 .radio-tabs__input:not(:checked):nth-of-type(2) ~ .radio-tabs__content:nth-of-type(2),
@@ -3906,9 +3906,6 @@ img[data-sizes="auto"] {
 .customer-info__textfield:not(:last-child) {
   margin-bottom: 1rem; }
 
-.delivery__title {
-  margin: 0 0 1rem; }
-
 .delivery__price {
   font-weight: 600; }
   .delivery__price--free {
@@ -3920,33 +3917,27 @@ img[data-sizes="auto"] {
 .delivery__adress-field {
   margin-top: 1rem; }
 
-.delivery__pickup-fieldset {
+.payment__list {
   margin: 0;
-  padding: 0;
-  border: none; }
-
-.delivery__pickup-list {
-  margin: 1rem 0 0;
   padding: 0;
   list-style: none; }
 
-.delivery__pickup-item:not(:last-child) {
-  margin-bottom: 1rem; }
+.payment__item:not(:last-child) {
+  margin-bottom: 0.5rem; }
 
-.delivery__pickup-term {
+.payment__item-description {
+  margin-top: 0.25rem;
+  margin-left: 1.75rem;
   color: #757575; }
 
-.delivery__pickup-description {
-  font-weight: 600; }
-
-.delivery__pickup-info {
-  margin-top: 0.5rem; }
-
-.delivery__pickup-radio[data-checked="false"] + .delivery__pickup-info {
+.payment__radio[data-checked="false"] + .payment__item-description {
   display: none; }
 
 .page-cart__title {
   margin: 1rem 0; }
+
+.page-cart__section-title {
+  margin: 0 0 1rem; }
 
 .page-cart__section {
   margin-bottom: 3rem; }
@@ -3963,7 +3954,7 @@ img[data-sizes="auto"] {
   list-style: none; }
 
 .pickup__item:not(:last-child) {
-  margin-bottom: 1rem; }
+  margin-bottom: 0.5rem; }
 
 .pickup__term {
   color: #757575; }
@@ -3972,7 +3963,7 @@ img[data-sizes="auto"] {
   font-weight: 600; }
 
 .pickup__info {
-  margin-top: 0.5rem; }
+  margin-top: 0.25rem; }
 
 .pickup__radio[data-checked="false"] + .pickup__info {
   display: none; }
