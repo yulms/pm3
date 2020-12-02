@@ -13,6 +13,8 @@ import initAccordion from './_accordion.js';
 import initSliders from './_slider.js';
 import initShowmores from './_showmore.js';
 import initStars from './_stars.js';
+import initRadios from './_radio.js';
+import initPickup from './_pickup.js';
 
 const projectObjects = { // eslint-disable-line
   lazyLoad: initLazyload(),
@@ -29,9 +31,10 @@ const projectObjects = { // eslint-disable-line
   accordion: initAccordion(),
   sliders: initSliders(),
   showMores: initShowmores(),
-  stars: initStars()
+  stars: initStars(),
+  radios: initRadios(),
+  pickup: initPickup()
 };
-
 
 console.log(projectObjects);
 
