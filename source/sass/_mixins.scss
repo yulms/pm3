@@ -40,3 +40,14 @@
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
+@mixin link-dot {
+  content: "";
+  position: absolute;
+  top: 0.64em;
+  left: $space*-1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $color__primary;
+}

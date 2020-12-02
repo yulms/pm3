@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./!head/_head.html")
+
+<body class="page">
+
+  @@include("./header/_header.html")
+
+  <main class="main page__wrapper page-cart">
+
+    <h1 class="title title--2 page-cart__title">Оформление заказа</h1>
+
+
+    <section class="preview page-cart__preview page-cart__section">
+      <h2 class="visually-hidden">Обзор заказа</h2>
+      @@include("./cart-list/_cart-list.html", {"class": "cart-list--page"})
+
+      <div class="preview__footer">
+
+        <div class="preview__footer-promocode">
+          <div class="textfield preview__promocode-field">
+            <label class="textfield__input-container">
+              <input class="textfield__input" type="text" autocomplete="off">
+              <span class="textfield__label">Промокод</span>
+            </label>
+          </div>
+          <button class="button button--options-primary preview__promocode-button" type="button">Применить</button>
+        </div>
+
+        <div class="preview__table-row">
+          <span>Сумма без скидки:</span>
+          <span class="page-cart__price">350<sup>30</sup>р.</span>
+        </div>
+        <div class="preview__table-row">
+          <span>Скидка по акции:</span>
+          <span class="page-cart__price page-cart__price--discount">-6<sup>30</sup>р.</span>
+        </div>
+        <div class="preview__table-row">
+          <span>Скидка по промокоду:</span>
+          <span class="page-cart__price page-cart__price--discount">-63<sup>37</sup>р.</span>
+        </div>
+
+        <div class="preview__table-footer">
+          <div class="preview__table-row">
+            <span>Общая стоимость товаров:</span>
+            <span class="page-cart__total-price">312<sup>74</sup>р.</span>
+          </div>
+          <div class="preview__table-row">
+            <span>Вы экономите:</span>
+            <span>125<sup>30</sup>р.</span>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <section class="customer-info page-cart__customer-info page-cart__section">
+      <div class="customer-info__header">
+        <h2 class="title title--2 customer-info__title">1. Данные покупателя</h2>
+        <button class="link">Войти</button>
+      </div>
+
+      <div class="textfield customer-info__textfield">
+        <label class="textfield__input-container">
+          <input class="textfield__input" type="text" required autocomplete="off">
+          <span class="textfield__label">Имя Фамилия *</span>
+        </label>
+      </div>
+      <div class="textfield customer-info__textfield">
+        <label class="textfield__input-container">
+          <input class="textfield__input" type="text" required autocomplete="off">
+          <span class="textfield__label">Телефон *</span>
+        </label>
+      </div>
+      <div class="textfield customer-info__textfield">
+        <label class="textfield__input-container">
+          <input class="textfield__input" type="text" required autocomplete="off">
+          <span class="textfield__label">Ваш e-mail</span>
+        </label>
+        <div class="textfield__help">На этот адрес будет отправлено подтверждение заказа</div>
+      </div>
+    </section>
+
+
+    <section class="delivery page-cart__delivery page-cart__section">
+      <h2 class="title title--2 page-cart__section-title">2. Доставка</h2>
+
+      <div class="city-choose delivery-info__city-choose">
+        <span class="city-choose__caption">Населенный пункт:</span>
+        <button class="link city-choose__button" data-modal="#modalChooseCity">
+          <span class="visually-hidden">Текущий выбор: </span>
+          <span class="city-choose__current-city">г.&nbspМинск</span>
+          <svg class="icon icon--stroked" width="24" height="24">
+            <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </div>
+
+      <fieldset class="radio-tabs">
+        <legend class="visually-hidden">Способ доставки</legend>
+
+        <input class="radio-tabs__input visually-hidden" id="delivery-type-tab-1" type="radio" name="radio-delivery-type" value="1" checked>
+        <label class="radio-tabs__label" for="delivery-type-tab-1">Курьер</label>
+        <input class="radio-tabs__input visually-hidden" id="delivery-type-tab-2" type="radio" name="radio-delivery-type" value="2">
+        <label class="radio-tabs__label" for="delivery-type-tab-2">Самовывоз</label>
+
+        <div class="radio-tabs__content">
+          <dl class="dl">
+            <dt class="dl__dt">Стоимость доставки</dt>
+            <dd class="dl__dd delivery__price delivery__price--free">бесплатно</dd>
+            <dt class="dl__dt">Срок доставки</dt>
+            <dd class="dl__dd delivery__term">сегодня</dd>
+          </dl>
+
+          <div class="textfield delivery__adress-field">
+            <label class="textfield__input-container">
+              <input class="textfield__input" type="text" name="address" required autocomplete="off">
+              <span class="textfield__label">Адрес доставки *</span>
+            </label>
+          </div>
+        </div>
+        <div class="radio-tabs__content">
+          <dl class="dl">
+            <dt class="dl__dt">Стоимость доставки</dt>
+            <dd class="dl__dd delivery__price">5 рублей</dd>
+          </dl>
+
+          @@include("./pickup/_pickup.html")
+
+        </div>
+
+      </fieldset>
+
+    </section>
+
+
+    <section class="payment page-cart__payment page-cart__section">
+      <h2 class="title title--2 page-cart__section-title">3. Оплата</h2>
+
+      <ul class="payment__list">
+        <li class="payment__item">
+          <label class="radiocheck payment__radio">
+            <input class="radiocheck__input visually-hidden" data-parent-check type="radio" name="radio-payment" value="1" checked>
+            <span class="radiocheck__box radiocheck__box--radio"></span>
+            <span class="radiocheck__caption">Наличными</span>
+          </label>
+          <div class="payment__item-description">Оплата в момент получения товара</div>
+        </li>
+        <li class="payment__item">
+          <label class="radiocheck payment__radio">
+            <input class="radiocheck__input visually-hidden" type="radio" name="radio-payment" value="2">
+            <span class="radiocheck__box radiocheck__box--radio"></span>
+            <span class="radiocheck__caption">Банковской картой</span>
+          </label>
+          <div class="payment__item-description">При получении товара</div>
+        </li>
+        <li class="payment__item">
+          <label class="radiocheck payment__radio">
+            <input class="radiocheck__input visually-hidden" type="radio" name="radio-payment" value="3">
+            <span class="radiocheck__box radiocheck__box--radio"></span>
+            <span class="radiocheck__caption">ЕРИП</span>
+          </label>
+          <div class="payment__item-description">Оплатить сейчас</div>
+        </li>
+        <li class="payment__item">
+          <label class="radiocheck payment__radio">
+            <input class="radiocheck__input visually-hidden" type="radio" name="radio-payment" value="4">
+            <span class="radiocheck__box radiocheck__box--radio"></span>
+            <span class="radiocheck__caption">Безналичный расчет</span>
+          </label>
+          <div class="payment__item-description">Оплата по выставленному счету</div>
+        </li>
+      </ul>
+
+    </section>
+
+
+    <section class="total page-cart__total">
+      <h2 class="title title--2 page-cart__section-title">Итоги заказа</h2>
+    </section>
+
+
+
+
+
+
+
+  </main>
+
+  @@include("./footer/_footer.html")
+
+
+
+  @@include("./modal/_modal-template.html")
+  @@include("./modal/_modal--choose-city.html")
+
+  <script src="js/script.js" type="module"></script>
+</body>
+
+</html>

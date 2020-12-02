@@ -29,6 +29,8 @@
 @import "blocks/showmore/showmore";
 @import "blocks/slider/slider";
 @import "blocks/table/table";
+@import "blocks/dl/dl";
+@import "blocks/radio-tabs/radio-tabs";
 
 // Крупные компоненты
 @import "blocks/breadcrumbs/breadcrumbs";
@@ -61,6 +63,8 @@
 @import "blocks/delivery-info/delivery-info";
 @import "blocks/reviews/reviews";
 @import "blocks/review-write/review-write";
+@import "blocks/page-cart/page-cart";
+@import "blocks/pickup/pickup";
 
 // стили для переопределения остальных
 @import "blocks/ripple/ripple";

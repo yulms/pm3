@@ -1,0 +1,17 @@
+@import "preview";
+@import "customer-info";
+@import "delivery";
+@import "payment";
+
+
+.page-cart__title {
+  margin: $space 0;
+}
+
+.page-cart__section-title {
+  margin: 0 0 $space;
+}
+
+.page-cart__section {
+  margin-bottom: $space*3;
+}
