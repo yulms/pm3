@@ -31,7 +31,7 @@
       "img name quantity"
       "img options quantity"
       "img buttons price" 1fr
-      / minmax(0%, 8rem) auto auto;
+      / minmax(0%, $space*8) auto $space*8;
     row-gap: 0;
   }
 }
@@ -78,6 +78,7 @@
   @include media-tablet-portrait-up {
     align-self: end;
     justify-self: end;
+    text-align: right;
   }
 }
 
@@ -86,6 +87,7 @@
   grid-area: buttons;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 8px;
 }
 

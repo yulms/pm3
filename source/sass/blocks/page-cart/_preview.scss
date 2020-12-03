@@ -1,3 +1,8 @@
+.preview__inner {
+  position: sticky;
+  top: $space*2;
+}
+
 .preview__footer {
   padding-top: $space;
   border-top: 1px solid $color__additional-2;

@@ -1,4 +1,6 @@
 .textfield {
+  // --textfield-bg: #ffffff;
+
   position: relative;
 }
 
@@ -53,7 +55,8 @@
   padding: var(--vertical-padding) $space calc(var(--vertical-padding) - 2px);
   font: inherit;
   color: $color-font__input;
-  background-color: transparent;
+  // background-color: transparent;
+  background-color: var(--textfield-bg, #ffffff);
   border: 1px solid $color__additional-2;
   border-radius: $controls__border-radius;
   outline: 0;
@@ -101,6 +104,7 @@
   white-space: nowrap;
   overflow: hidden;
   background-color: var(--textfield-bg, #ffffff);
+  border-radius: $controls__border-radius;
   transform:
     translateX(-2px)
     translateY(calc(-1 * (var(--line-height) * 0.5 + var(--vertical-padding))))

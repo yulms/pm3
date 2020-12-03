@@ -156,7 +156,8 @@ function initRipple() {
     selectors: [
       'a[href]',
       'button:not(.button--modal-close)',
-      '.chip-set__box'
+      '.chip-set__box',
+      '.radio-tabs__label'
     ]
   };
 
