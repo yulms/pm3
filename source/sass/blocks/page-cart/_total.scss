@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   padding: var(--page-paddings);
-  background-color: $color__additional-1;
+  background-color: $color__additional-1-1;
+  border: 1px solid $color__additional-2;
+  border-radius: $controls__border-radius;
 }
 
 
