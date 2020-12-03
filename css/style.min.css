@@ -3946,7 +3946,9 @@ img[data-sizes="auto"] {
   display: flex;
   flex-direction: column;
   padding: var(--page-paddings);
-  background-color: #faf9f7; }
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px; }
 
 .total__row {
   display: flex;
