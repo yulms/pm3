@@ -114,7 +114,7 @@ class Accordion {
     heading.innerHTML = `<button class="accordion__button" aria-expanded="${initStateIsOpened}" type="button">
                             ${heading.textContent}
                             <svg class="accordion__button-icon" width="32" height="32">
-                              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+                              <use href="img/svg/_sprite.svg#icon-arrow"></use>
                             </svg>
                           </button>`;
   }

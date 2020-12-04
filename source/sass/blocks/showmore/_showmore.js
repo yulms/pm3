@@ -8,7 +8,7 @@ const COLLAPSED_HEIGHT_DATA_ATTR = 'showmoreHeight';
 const BUTTON_CLASS_DATA_ATTR = 'showmoreButtonClass';
 const BUTTON_HTML = `<button class="showmore__button link" aria-expanded="false" type="button">
                       <svg class="showmore__button-icon" width="32" height="32">
-                        <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+                        <use href="img/svg/_sprite.svg#icon-arrow"></use>
                       </svg>
                     </button>`;
 

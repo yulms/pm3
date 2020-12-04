@@ -18,7 +18,7 @@ function getButtonHTML(buttonText) {
   return `<button class="button slider__toggle ${buttonModClass}" type="button">
             <span class="visually-hidden">${buttonText}</span>
             <svg class="slider__toggle-icon" width="24" height="24">
-              <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+              <use href="img/svg/_sprite.svg#icon-arrow"></use>
             </svg>
           </button>`;
 }

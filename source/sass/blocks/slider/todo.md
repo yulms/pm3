@@ -12,14 +12,14 @@
     <button class="button slider__toggle slider__toggle--left" type="button">
       <span class="visually-hidden">Назад</span>
       <svg class="slider__toggle-icon" width="24" height="24">
-        <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+        <use href="img/svg/_sprite.svg#icon-arrow"></use>
       </svg>
     </button>
 
     <button class="button slider__toggle slider__toggle--right" type="button">
       <span class="visually-hidden">Вперед</span>
       <svg class="slider__toggle-icon" width="24" height="24">
-        <use xlink:href="img/svg/_sprite.svg#icon-arrow"></use>
+        <use href="img/svg/_sprite.svg#icon-arrow"></use>
       </svg>
     </button>
   </div>

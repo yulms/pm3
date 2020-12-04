@@ -5,7 +5,6 @@ const plumber = require('gulp-plumber');
 const sourcemap = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const shorthand = require('gulp-shorthand');
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 
@@ -14,9 +13,8 @@ function makeCSS (server) {
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
-    // .pipe(autoprefixer())
-    // .pipe(shorthand())
-    // .pipe(csso())
+    .pipe(autoprefixer())
+    .pipe(csso())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/css'))

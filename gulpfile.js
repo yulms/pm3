@@ -57,3 +57,6 @@ module.exports.default = server;
 module.exports.build = gulp.series(clean, build);
 module.exports.start = gulp.series(clean, build, server);
 module.exports.deploy = deploy;
+module.exports.js = makeJs;
+module.exports.css = makeCSS;
+module.exports.html = makeHTML;

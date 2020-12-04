@@ -9,12 +9,11 @@ const flatten = require('gulp-flatten');
 
 function makeJs() {
   return gulp.src('source/**/*.js')
-  // return gulp.src('source/js/*.js')
     .pipe(flatten())
-    // .pipe(plumber())
+    .pipe(plumber())
     // .pipe(sourcemap.init())
     // .pipe(concat('script.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     // .pipe(rename({ suffix: '.min' }))
     // .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/js'));

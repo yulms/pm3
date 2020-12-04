@@ -22,7 +22,7 @@
 
       <button class="button button--modal-close modal__close-button" type="button">
         <svg class="button__close-icon" width="48" height="48">
-          <use xlink:href="img/svg/_sprite.svg#icon-close"></use>
+          <use href="img/svg/_sprite.svg#icon-close"></use>
         </svg>
       </button>
     </div>
