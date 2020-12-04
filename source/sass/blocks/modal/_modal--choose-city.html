@@ -1,8 +1,9 @@
-<section class="modal__content modal__content--closed" id="modalChooseCity" aria-hidden="true">
+<section class="modal__content modal__content--closed modal-city" id="modalCity" aria-hidden="true">
   <h2 class="modal__header">Выберите город</h2>
   <p class="modal__p">Стоимость и срок доставки заказов зависят от вашего местоположения.</p>
   <p class="modal__p">Укажите город (населенный пункт):</p>
-  <form>
+
+  <form action="#" method="post">
     <div class="textfield custom-select">
       <div class="visually-hidden" id="custom-select-status" aria-live="polite"></div>
       <label class="textfield__input-container">
@@ -41,6 +42,7 @@
 
       <div class="textfield__help" id="custom-select-info">Быстрый поиск населенного пункта</div>
     </div>
-    <button class="button button--options-primary modal__button" type="submit">Применить</button>
+    <button class="button button--options-primary modal-city__apply-button" type="submit">Применить</button>
   </form>
+
 </section>

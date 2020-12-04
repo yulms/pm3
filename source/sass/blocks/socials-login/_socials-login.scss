@@ -1,23 +1,22 @@
 .socials-login {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .socials-login__list {
   display: flex;
   align-items: center;
-  margin: 0 0 0 auto;
+  flex-wrap: wrap;
+  margin: 0 $space*-0.5 0 0;
   padding: 0;
   list-style: none;
-}
-
-.socials-login__item:not(:last-child) {
-  margin-right: $space * 0.5;
 }
 
 .socials-login__link {
   display: flex;
   align-items: center;
+  padding: $space*0.5;
 
   &:hover,
   &:focus {

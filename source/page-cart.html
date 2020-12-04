@@ -11,7 +11,7 @@
 
     <h1 class="title title--1 page-cart__title">Оформление заказа</h1>
 
-    <div class="page-cart__form" action="#" method="post">
+    <form class="page-cart__form" action="#" method="post">
       <section class="preview page-cart__preview">
         <div class="preview__inner">
           <h2 class="visually-hidden">Товары в корзине</h2>
@@ -90,7 +90,7 @@
 
         <div class="city-choose delivery-info__city-choose">
           <span class="city-choose__caption">Населенный пункт:</span>
-          <button class="link city-choose__button" data-modal="#modalChooseCity">
+          <button class="link city-choose__button" data-modal="#modalCity">
             <span class="visually-hidden">Текущий выбор: </span>
             <span class="city-choose__current-city">г.&nbspМинск</span>
             <svg class="icon icon--stroked" width="24" height="24">
@@ -219,22 +219,13 @@
 
         <button class="button button--action-primary" type="submit">Подтвердить заказ</button>
       </section>
-    </div>
-
-
-
-
-
-
+    </form>
 
   </main>
 
   @@include("./footer/_footer.html")
 
-
-
-  @@include("./modal/_modal-template.html")
-  @@include("./modal/_modal--choose-city.html")
+  @@include("./modal/_modal.html")
 
   <script src="js/script.js" type="module"></script>
 </body>

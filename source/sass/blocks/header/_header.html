@@ -7,7 +7,7 @@
 
       <div class="city-choose header__city-choose">
         <span class="city-choose__caption">Доставка в город: </span>
-        <button class="link city-choose__button header__city-button" data-modal="#modalChooseCity">
+        <button class="link city-choose__button header__city-button" data-modal="#modalCity">
           <!-- <div class="city-choose__city-container header__city-container"> -->
           <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24">
             <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
@@ -215,49 +215,13 @@
       <div class="modal modal--bounded modal--closed header__user-modal" aria-label="Меню пользователя">
         <h2 class="visually-hidden">Меню пользователя</h2>
         <p class="header__user-entry-text">Добро пожаловать</p>
-        <a class="button button--options-primary header__user-login-button" href="#">Войти</a>
+        <button class="button button--options-primary header__user-login-button" data-modal="#modalSignIn" data-modal-size="small" type="button">Войти</button>
 
-        <div class="socials-login header__user-socials-login">
-          <span>Войти через:</span>
-          <ul class="socials-login__list">
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon" width="24" height="24">
-                  <use xlink:href="img/svg/_sprite.svg#icon-google"></use>
-                </svg>
-                <span class="visually-hidden">Google</span>
-              </a>
-            </li>
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon socials-login__icon--vk" width="24" height="24">
-                  <use xlink:href="img/svg/_sprite.svg#icon-vk"></use>
-                </svg>
-                <span class="visually-hidden">Вконтакте</span>
-              </a>
-            </li>
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon socials-login__icon--fb" width="24" height="24">
-                  <use xlink:href="img/svg/_sprite.svg#icon-facebook"></use>
-                </svg>
-                <span class="visually-hidden">Фэйсбук</span>
-              </a>
-            </li>
-            <li class="socials-login__item">
-              <a class="socials-login__link" href="#">
-                <svg class="icon socials-login__icon socials-login__icon--ok" width="24" height="24">
-                  <use xlink:href="img/svg/_sprite.svg#icon-ok"></use>
-                </svg>
-                <span class="visually-hidden">Однокласники</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        @@include("./socials-login/_socials-login.html", {"class": "header__user-socials-login"})
 
         <div class="header__user-call2reg">
           <span>Новый покупатель?</span>
-          <a class="link" href="#">Зарегистрироваться</a>
+          <a class="link" href="#" data-modal="#modalRegister" data-modal-size="small">Зарегистрироваться</a>
         </div>
 
         <ul class="dropdown-menu header__user-dropdown-menu">

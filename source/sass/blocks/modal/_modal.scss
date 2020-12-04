@@ -102,6 +102,14 @@
   transform-origin: left top;
 }
 
+.modal--small .modal__inner {
+  width: $space*22;
+}
+
+.modal--big .modal__inner {
+  width: $space*44;
+}
+
 
 .modal--animation-on-close .modal__inner {
   animation: hideModal 75ms linear both;
@@ -164,13 +172,17 @@
   font-weight: 600;
 }
 
+
 .modal__p {
-  margin: 0 0 $space*0.5;
+  margin: 0;
+
+  & + .modal__p {
+    margin-top: $space*0.5;
+  }
 }
 
-.modal__button {
-  width: 100%;
-  margin-top: $space*1.5;
+.modal__element {
+  margin-bottom: $space;
 }
 
 
@@ -193,6 +205,8 @@
   }
 }
 
-// .modal__blur > *:not(.modal) {
-//   filter: blur(1px);
-// }
+
+@import "modal-city";
+@import "modal-signin";
+@import "modal-register";
+@import "modal-remind";

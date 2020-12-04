@@ -64,7 +64,7 @@
         <h3 class="visually-hidden">Выбор населенного пункта</h3>
         <div class="city-choose delivery-info__city-choose">
           <span class="city-choose__caption">Доставка в город: </span>
-          <button class="link city-choose__button" data-modal="#modalChooseCity">
+          <button class="link city-choose__button" data-modal="#modalCity">
             <svg class="icon icon--2x icon--stroked city-choose__pin-icon" width="24" height="24">
               <use xlink:href="img/svg/_sprite.svg#icon-place"></use>
             </svg>
@@ -523,9 +523,7 @@
 
   @@include("./footer/_footer.html")
 
-
-  @@include("./modal/_modal-template.html")
-  @@include("./modal/_modal--choose-city.html")
+  @@include("./modal/_modal.html")
 
   <script src="js/script.js" type="module"></script>
 </body>

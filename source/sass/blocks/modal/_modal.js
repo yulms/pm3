@@ -12,6 +12,16 @@ const ModalPositionClasses = {
   [ModalPosition.LEFT]: 'modal--left'
 };
 
+const ModalSize = {
+  SMALL: 'small',
+  BIG: 'big'
+};
+
+const ModalSizeClasses = {
+  [ModalSize.SMALL]: 'modal--small',
+  [ModalSize.BIG]: 'modal--big'
+};
+
 
 class Modal {
   constructor(overrides) {
@@ -23,7 +33,7 @@ class Modal {
       modalBodySelector: '.modal',
       modalTypeDataAttribute: 'modalPosition',
       defaultPosition: ModalPosition.CENTER,
-      blurClassName: 'modal__blur',
+      modalSizeDataAttribute: 'modalSize',
       overlaySelector : 'overlay',
       modalOverlaySelector: 'modal__overlay',
       closeButtonSelector : '.modal__close-button',
@@ -84,6 +94,13 @@ class Modal {
       currentModal._modalElement.classList.add(ModalPositionClasses[modalPosition]);
     };
 
+    const _addSizeClass = (currentModal) => {
+      let modalSize = triggerElement.dataset[this.modalSizeDataAttribute];
+      if (modalSize) {
+        currentModal._modalElement.classList.add(ModalSizeClasses[modalSize]);
+      }
+    };
+
     const _saveHomelandPosition = (currentModal) => {
       currentModal._modalContentElementHomelandPosition = {
         parentElement: currentModal._modalContentElement.parentElement,
@@ -137,6 +154,7 @@ class Modal {
     currentModal._triggerElement = triggerElement;
     currentModal._modalElement = _cloneModalTemplate();
     _addPositionClass(currentModal);
+    _addSizeClass(currentModal);
 
     let modalContentSelector = triggerElement.getAttribute(this.triggerDataAttributeName);
     currentModal._modalContentElement = document.querySelector(modalContentSelector);
