@@ -177,17 +177,14 @@
   }
 }
 
-img[data-sizes="auto"] {
-  display: block;
-}
-
 .slider__nav-link {
   display: block;
-  padding: $space*0.75;
   outline: none;
 
   // точки
   @include media-mobile-only {
+    padding: $space*0.75;
+
     &::before {
       content: "";
       display: block;
@@ -204,6 +201,7 @@ img[data-sizes="auto"] {
   @include media-tablet-portrait-up {
     width: $space*3.5;
     height: $space*3.5;
+    padding: $space*0.25;
     border-radius: $controls__border-radius;
     transition: box-shadow 75ms linear;
 
