@@ -66,6 +66,10 @@ class Accordion {
 
       if (targetStateIsOpen) {
       // поведение при открытии
+        wrapper.addEventListener('transitionend', () => {
+          wrapper.style.height = 'auto';
+        }, {once: true});
+
         wrapper.style.height = 0;
         wrapper.hidden = false;
         let fullHeight =  wrapper.scrollHeight;
@@ -113,8 +117,8 @@ class Accordion {
   _addButton(heading, initStateIsOpened) {
     heading.innerHTML = `<button class="accordion__button" aria-expanded="${initStateIsOpened}" type="button">
                             ${heading.textContent}
-                            <svg class="accordion__button-icon" width="32" height="32">
-                              <use href="img/svg/_sprite.svg#icon-arrow"></use>
+                            <svg viewBox="0 0 24 24" class="accordion__button-icon" width="32" height="32">
+                              <path fill="none" vector-effect="non-scaling-stroke" d="M7 11l5 4 5-4"/>
                             </svg>
                           </button>`;
   }
