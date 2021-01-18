@@ -1,5 +1,5 @@
 'use strict';
-import { scrollLock } from './util.js';
+import { scrollLock } from '../../../js/util.js';
 
 const SHOW_TEXT_DATA_ATTR = 'showmoreShowtext';
 const HIDE_TEXT_DATA_ATTR = 'showmoreHidetext';

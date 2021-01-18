@@ -10,7 +10,7 @@ const makeCSS = require('./gulp_tasks/make-css').bind(null, browserSync);
 const makeRasterImages = require('./gulp_tasks/make-raster-images');
 const createSvgSprite = require('./gulp_tasks/create-svg-sprite');
 const makeSvgBackground = require('./gulp_tasks/make-svg-background');
-const makeJs = require('./gulp_tasks/make-js');
+const makeJs = require('./gulp_tasks/make-js').bind(null, browserSync);
 const deploy = require('./gulp_tasks/deploy-to-github');
 
 
@@ -43,7 +43,7 @@ function server() {
   gulp.watch('source/img/svg/others/**/*.svg', gulp.series(makeSvgBackground, reloadServer));
   gulp.watch('source/img/favicon/**', gulp.series(copyData, reloadServer));
   gulp.watch('source/**/*.html', gulp.series(makeHTML, reloadServer));
-  gulp.watch('source/**/*.js', gulp.series(makeJs, reloadServer));
+  gulp.watch('source/**/*.js', makeJs);
 }
 
 function reloadServer(cb) {
