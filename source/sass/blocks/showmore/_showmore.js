@@ -114,12 +114,14 @@ class ShowmoreNodes extends Showmore {
     this.element.addEventListener('transitionend', () => {
       scrollLock({lock: false});
       this.element.style.height = 'auto';
+      this.element.style.overflow = '';
     }, {once: true});
 
     // сохраним высоту для возврата к ней после закрытия
     this.collapsedHeight = this.element.scrollHeight;
     scrollLock({lock: true});
     this.element.style.height = this.element.scrollHeight + 'px';
+    this.element.style.overflow = 'hidden';
     this._toggleNodes({isHidden: false});
     this.element.style.height = this.element.scrollHeight + 'px';
     this.button.changeState({isExpanded: true});
@@ -132,6 +134,7 @@ class ShowmoreNodes extends Showmore {
       this._toggleNodes({isHidden: true});
       scrollLock({lock: false});
       this.element.style.height = 'auto';
+      this.element.style.overflow = '';
       this.element.style.transitionDuration = '';
     }, {once: true});
 
@@ -140,6 +143,7 @@ class ShowmoreNodes extends Showmore {
       scrollLock({lock: true});
       this.element.style.transitionDuration = '75ms';
       this.element.style.height = this.collapsedHeight + 'px';
+      this.element.style.overflow = 'hidden';
     }, 0);
     this.button.changeState({isExpanded: false});
     this.stateIsExpanded = false;
