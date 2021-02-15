@@ -67,11 +67,12 @@ class Accordion {
       if (targetStateIsOpen) {
       // поведение при открытии
         wrapper.addEventListener('transitionend', () => {
-          wrapper.style.overflowY = '';
+          wrapper.style.height = 'auto';
+          wrapper.style.overflow = '';
         }, {once: true});
 
         wrapper.style.height = 0;
-        wrapper.style.overflowY = 'hidden';
+        wrapper.style.overflow = 'hidden';
         wrapper.hidden = false;
         let fullHeight =  wrapper.scrollHeight;
         wrapper.style.height = fullHeight + 'px';
@@ -81,14 +82,14 @@ class Accordion {
         wrapper.style.height = fullHeight + 'px';
         wrapper.addEventListener('transitionend', () => {
           wrapper.style.height = 'auto';
-          wrapper.style.overflowY = '';
+          wrapper.style.overflow = '';
           wrapper.hidden = true;
           wrapper.style.transitionDuration = '';
         }, {once: true});
 
         setTimeout(() => {
           wrapper.style.transitionDuration = '75ms';
-          wrapper.style.overflowY = 'hidden';
+          wrapper.style.overflow = 'hidden';
           wrapper.style.height = 0;
         }, 0);
       }
