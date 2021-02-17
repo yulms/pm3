@@ -5,7 +5,7 @@ const fs = require('fs');
 
 
 function createNojekyllFile() {
-  fs.writeFileSync('build/.nojekyll', new Date);
+  fs.writeFileSync('build/.nojekyll', String(new Date));
 }
 
 function deploy(callback) {
