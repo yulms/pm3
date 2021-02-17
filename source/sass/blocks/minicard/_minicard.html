@@ -4,6 +4,19 @@
     <h3 class="minicard__title">@@title</h3>
     <p class="image-container minicard__image-container @@class2">
       <picture>
+        <source type="image/webp"
+                sizes="(min-width: 1456px) 244px,
+                        (min-width: 1344px) calc((100vw - 480px) / 4),
+                        (min-width: 1280px) calc((100vw - 456px) / 3),
+                        (min-width: 1248px) calc(20vw - 48px),
+                        (min-width: 1007px) calc(25vw - 48px),
+                        (min-width: 768px) calc(33vw - 48px),
+                        (min-width: 608px) calc(50vw - 48px),
+                        calc(50vw - 32px)"
+                srcset="img/svg/dummy.svg 1w"
+                data-srcset="img/raster/minicard-@@index_244w.webp 244w,
+                        img/raster/minicard-@@index_366w.webp 366w,
+                        img/raster/minicard-@@index_488w.webp 488w">
         <source sizes="(min-width: 1456px) 244px,
                         (min-width: 1344px) calc((100vw - 480px) / 4),
                         (min-width: 1280px) calc((100vw - 456px) / 3),
@@ -12,14 +25,12 @@
                         (min-width: 768px) calc(33vw - 48px),
                         (min-width: 608px) calc(50vw - 48px),
                         calc(50vw - 32px)"
-                data-srcset="img/raster/minicard-@@index_244w.webp 244w,
-                        img/raster/minicard-@@index_366w.webp 366w,
-                        img/raster/minicard-@@index_488w.webp 488w" type="image/webp">
-        <source data-srcset="img/raster/minicard-@@index_244w.jpg 244w,
+                srcset="img/svg/dummy.svg 1w"
+                data-srcset="img/raster/minicard-@@index_244w.jpg 244w,
                         img/raster/minicard-@@index_366w.jpg 366w,
                         img/raster/minicard-@@index_488w.jpg 488w">
-        <img class="image-container__image" data-src="img/raster/minicard-@@index_244w.jpg"
-             loading="lazy" alt="Открыть страницу покупки @@title" width="244">
+        <img class="image-container__image" src="img/raster/minicard-@@index_488w.jpg"
+             loading="lazy" alt="Открыть страницу покупки @@title" width="244" height="244">
       </picture>
     </p>
   </a>
@@ -46,10 +57,9 @@
 
 
   <p class="price minicard__price">
-    <span class="price__current" aria-label="Текущая цена: ">
-      156<sup>80</sup> р.
-    </span>
-    <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+    <span class="visually-hidden">156.80 рублей</span>
+    <span class="price__current" aria-hidden="true">156<sup>80</sup> р.</span>
+    <del class="price__old">196.30 р.</del>
   </p>
 
   @@include("./stars/_stars.html", {"class": "stars--short minicard__stars"})

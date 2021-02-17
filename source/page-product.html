@@ -30,10 +30,11 @@
       <h2 class="visually-hidden">Уловия продажи</h2>
 
       <p class="price offer__price">
-        <span class="price__current price__current--discount price__current--big" aria-label="Текущая цена: ">
+        <span class="visually-hidden">156.80 рублей</span>
+        <span class="price__current price__current--discount price__current--big" aria-hidden="true">
           156<sup>80</sup> р.
         </span>
-        <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+        <del class="price__old">196.30 р.</del>
         <strong class="price__discount-info">
           <span>скидка</span>
           <span>20%</span>
@@ -118,7 +119,7 @@
       <div class="offer__buy">
 
         <div class="offer__buy-elem offer__buy-elem--quantity textfield custom-select">
-          <div class="visually-hidden" id="custom-select-status" aria-live="polite"></div>
+          <div class="visually-hidden" aria-live="polite"></div>
           <label class="textfield__input-container">
             <span class="textfield__trailing-icon textfield__trailing-icon--dropdown"></span>
             <input class="textfield__input" type="text" aria-describedby="custom-select-info" autocomplete="off" value="1" readonly>
@@ -455,7 +456,8 @@
             <source sizes="(min-width: 1456px) 444px,
                           (min-width: 980px) calc(((100vw - 130px) / 3) - 4px),
                           (min-width: 512px) calc(50vw - 4px), 100vw"
-                    srcset="img/raster/product-1_400w.webp 400w,
+                    srcset="img/svg/dummy.svg 1w"
+                    data-srcset="img/raster/product-1_400w.webp 400w,
                           img/raster/product-1_600w.webp 600w,
                           img/raster/product-1_800w.webp 800w,
                           img/raster/product-1_1000w.webp 1000w"
@@ -464,20 +466,22 @@
                           (min-width: 980px) calc(((100vw - 130px) / 3) - 4px),
                           (min-width: 512px) calc(50vw - 4px),
                           100vw"
-                    srcset="img/raster/product-1_400w.jpg 400w,
+                    srcset="img/svg/dummy.svg 1w"
+                    data-srcset="img/raster/product-1_400w.jpg 400w,
                           img/raster/product-1_600w.jpg 600w,
                           img/raster/product-1_800w.jpg 800w,
                           img/raster/product-1_1000w.jpg 1000w">
-            <img class="buy-card__image" loading="lazy" data-src="img/raster/product-1_600w.jpg" width="360" alt="Изображение 1">
+            <img class="buy-card__image" loading="lazy" src="img/raster/product-1_1000w.jpg" width="360" alt="Изображение 1">
           </picture>
         </div>
 
 
         <div class="price buy-card__price">
-          <span class="price__current price__current--discount price__current--big" aria-label="Текущая цена: ">
+          <span class="visually-hidden">156.80 рублей</span>
+          <span class="price__current price__current--discount price__current--big" aria-hidden="true">
             156<sup>80</sup> р.
           </span>
-          <del class="price__old" aria-label="Цена без скидки: ">196.30 р.</del>
+          <del class="price__old">196.30 р.</del>
           <strong class="price__discount-info">
             <span>скидка</span>
             <span>20%</span>
