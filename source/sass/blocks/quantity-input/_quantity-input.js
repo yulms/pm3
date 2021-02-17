@@ -20,11 +20,13 @@ class QuantityInput {
 
       if (!target) return;
 
+      const inputElement = target.parentElement.querySelector('input');
+
       if (target.classList.contains(this.buttonMoreClass)) {
-        target.previousElementSibling.value++;
+        inputElement.value++;
       } else {
-        if (target.nextElementSibling.value <= 1) return;
-        target.nextElementSibling.value--;
+        if (inputElement.value <= 1) return;
+        inputElement.value--;
       }
     });
   }

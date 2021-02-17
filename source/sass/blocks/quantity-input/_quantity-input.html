@@ -1,4 +1,3 @@
-<label class="visually-hidden" for="quantity-1">Количество: </label>
 <div class="quantity-input__container">
   <button class="quantity-input__button quantity-input__button--less" type="button">
     <span class="visually-hidden">Уменьшить</span>
@@ -6,7 +5,10 @@
       <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"></line>
     </svg>
   </button>
-  <input class="quantity-input__input-field" type="number" name="quantity-@@index" id="quantity-@@index" value="1" autocomplete="off">
+  <label>
+    <span class="visually-hidden">Количество:</span>
+    <input class="quantity-input__input-field" type="number" name="quantity-@@index" value="1" autocomplete="off">
+  </label>
   <button class="quantity-input__button quantity-input__button--more" type="button">
     <span class="visually-hidden">Увеличить</span>
     <svg class="quantity-input__icon" width="24" height="24" viewbox="0 0 24 24">
